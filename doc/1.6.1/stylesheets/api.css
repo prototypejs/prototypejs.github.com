@@ -619,6 +619,12 @@ p.related-to {
       background: url(../images/section-background.png) repeat-x 0 0;
     }
     
+    #api_menu .menu-item a.section:hover {
+      border-color: #69f;
+      color: #D8D9EA;
+      background-image: url(../images/selected-section-background.png);
+    }
+    
 .menu-section {
   margin-bottom: 1.0em;
 }
