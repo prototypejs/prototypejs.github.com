@@ -1,0 +1,8 @@
+destination: ./_site
+auto:        false
+lsi:         false
+server_port: 4000
+pygments:    false
+markdown:    rdiscount
+textile:     redcloth
+permalink:   /:year/:month/:day/:title/
