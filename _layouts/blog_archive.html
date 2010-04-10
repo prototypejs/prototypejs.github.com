@@ -23,7 +23,11 @@
 
 			<div id="disqus_thread"></div>
 			<script type="text/javascript" charset="utf-8">
-			var disqus_url = "http://prototypejs.org{{ page.url }}";
+			{% if page.disqus_url %}
+				var disqus_url = "{{ page.disqus_url }}";
+			{% else %}
+				var disqus_url = "http://prototypejs.org{{ page.url }}";
+			{% end %}
 			</script>
 			<script type="text/javascript" src="http://disqus.com/forums/prototype/embed.js"></script>
 			<noscript><a href="http://disqus.com/forums/prototype/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
