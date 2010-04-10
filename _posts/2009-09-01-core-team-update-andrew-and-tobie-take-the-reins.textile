@@ -4,7 +4,7 @@ author: Sam Stephenson
 author_url: http://conio.net/
 sections: blog
 title: "Core Team update: Andrew & Tobie take the reins"
-disqus_url: http://prototypejs.org/2009/9/1/core-team-update-andrew-and-tobie-take-the-reins
+disqus_url: http://prototypejs.org/2009/09/01/core-team-update-andrew-and-tobie-take-the-reins/
 ---
 
 In addition to [releasing Prototype 1.6.1](http://prototypejs.org/blog/2009/9/1/prototype-1-6-1-released), I'm pleased to announce that Andrew Dupont and Tobie Langel now officially head up the Prototype Core Team. They'll be in charge of maintaining Prototype, deciding what makes the cut for new releases, and handling day-to-day operations.
