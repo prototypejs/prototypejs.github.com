@@ -5,4 +5,4 @@ server_port: 4000
 pygments:    false
 markdown:    rdiscount
 textile:     redcloth
-permalink:   /:year/:month/:day/:title/
+permalink:   /:year/:month/:day/:title
