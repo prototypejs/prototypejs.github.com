@@ -1,0 +1,825 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Prototype JavaScript framework:  Enumerable </title>
+	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" media="print" href="stylesheets/api-print.css" />
+        <!--[if lte IE 6]><link href="/stylesheets/ie-sucks-for-api.css" rel="stylesheet" type="text/css" media="screen"><![endif]-->
+  <link href="http://feeds.feedburner.com/prototype-blog" rel="alternate" type="application/atom+xml" />
+ <script src="javascripts/prototype.js" type="text/javascript"></script>
+<script src="javascripts/code_highlighter.js" type="text/javascript"></script>
+<script src="javascripts/javascript.js" type="text/javascript"></script>
+<script src="javascripts/html.js" type="text/javascript"></script>
+<script src="javascripts/css.js" type="text/javascript"></script>
+<script src="javascripts/ruby.js" type="text/javascript"></script>
+<script src="javascripts/ebnf.js" type="text/javascript"></script>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-82668-3";
+urchinTracker();
+</script>
+<link rel="shortcut icon" href="images/fav.png" type="image/ico" />
+</head>
+
+<body>
+  <!-- container -->
+  <div id="container">
+    <!-- header -->
+    <div id="header">
+      <h1 id="logo"><a href="../index.html">Prototype Javascript Framework</a></h1>
+      <p id="tagline">easing the pain of dynamic web applications</p>
+      <!-- 
+       <div id="api-search">
+         <form action="/search">
+          Search api: <input name="q" type="search" />
+           <input type="hidden" value="api" name="s" />
+         </form>
+       </div>
+    -->
+    </div>
+    <!-- /header -->
+    <!-- nav -->
+          <div id="nav">
+      <ul class="clearfix">
+         <li><a href="../download.html" title="Download the latest version of Prototype">Download</a></li>
+         <li><a href="http://api.prototypejs.org" title="View the Prototype API docs">API Docs</a></li>
+         <li><a href="../learn.html" title="Prototype tips and tutorials">Tips and Tutorials</a></li>
+         <li><a href="http://prototypejs.org/blog" title="The Official Prototype Blog">Blog</a></li>
+         <li><a href="../discuss.html" title="Mailing lists and IRC">Discuss</a></li>
+         <li><a href="../contribute.html" title="Contribute to Prototype">Contribute</a></li>
+      </ul>
+    </div>
+    <!-- /nav -->
+
+    
+    <!-- content -->
+    <div id="content">
+      <div id="cnt-inner">
+        <div id="sidebar">
+          
+          
+          
+          
+          <div class="sblock">            
+          <h3 class="object"><a class="selected" href="enumerable.html">Enumerable</a></h3>
+          <ul class="methods">
+            
+            
+            
+            
+              <li><a href="enumerable/all.html">all</a></li>
+            
+            
+            
+              <li><a href="enumerable/any.html">any</a></li>
+            
+            
+            
+              <li><a href="enumerable/collect.html">collect</a></li>
+            
+            
+            
+              <li><a href="enumerable/detect.html">detect</a></li>
+            
+            
+            
+              <li><a href="enumerable/each.html">each</a></li>
+            
+            
+            
+              <li><a href="enumerable/eachSlice.html">eachSlice</a></li>
+            
+            
+            
+              <li><a href="enumerable/entries.html">entries</a></li>
+            
+            
+            
+              <li><a href="enumerable/find.html">find</a></li>
+            
+            
+            
+              <li><a href="enumerable/findAll.html">findAll</a></li>
+            
+            
+            
+              <li><a href="enumerable/grep.html">grep</a></li>
+            
+            
+            
+              <li><a href="enumerable/inGroupsOf.html">inGroupsOf</a></li>
+            
+            
+            
+              <li><a href="enumerable/include.html">include</a></li>
+            
+            
+            
+              <li><a href="enumerable/inject.html">inject</a></li>
+            
+            
+            
+              <li><a href="enumerable/invoke.html">invoke</a></li>
+            
+            
+            
+              <li><a href="enumerable/map.html">map</a></li>
+            
+            
+            
+              <li><a href="enumerable/max.html">max</a></li>
+            
+            
+            
+              <li><a href="enumerable/member.html">member</a></li>
+            
+            
+            
+              <li><a href="enumerable/min.html">min</a></li>
+            
+            
+            
+              <li><a href="enumerable/partition.html">partition</a></li>
+            
+            
+            
+              <li><a href="enumerable/pluck.html">pluck</a></li>
+            
+            
+            
+              <li><a href="enumerable/reject.html">reject</a></li>
+            
+            
+            
+              <li><a href="enumerable/select.html">select</a></li>
+            
+            
+            
+              <li><a href="enumerable/size.html">size</a></li>
+            
+            
+            
+              <li><a href="enumerable/sortBy.html">sortBy</a></li>
+            
+            
+            
+              <li><a href="enumerable/toArray.html">toArray</a></li>
+            
+            
+            
+              <li><a href="enumerable/zip.html">zip</a></li>
+            
+            
+          </ul>
+          </div>
+          
+          
+          
+          <div class="sblock">
+          <h3>API Docs</h3>
+           
+          <ul class="objects">
+            <li><a href="utility.html" title="Utility Methods">Utility Methods</a></li>
+            
+               
+                <li><a href="ajax.html" title="Ajax">Ajax</a></li>
+               
+            
+               
+                <li><a href="array.html" title="Array">Array</a></li>
+               
+            
+               
+                <li><a href="class.html" title="Class">Class</a></li>
+               
+            
+               
+                <li><a href="date.html" title="Date">Date</a></li>
+               
+            
+               
+                <li><a href="element.html" title="Element">Element</a></li>
+               
+            
+               
+                <li><a href="element/methods.html" title="Element.Methods">Element.Methods</a></li>
+               
+            
+               
+                <li><a href="element/methods/simulated.html" title="Element.Methods.Simulated">Element.Methods.Simulated</a></li>
+               
+            
+               
+                <li><a href="enumerable.html" title="Enumerable">Enumerable</a></li>
+               
+            
+               
+                <li><a href="event.html" title="Event">Event</a></li>
+               
+            
+               
+                <li><a href="form.html" title="Form">Form</a></li>
+               
+            
+               
+                <li><a href="form/element.html" title="Form.Element">Form.Element</a></li>
+               
+            
+               
+                <li><a href="function.html" title="Function">Function</a></li>
+               
+            
+               
+                <li><a href="hash.html" title="Hash">Hash</a></li>
+               
+            
+               
+                <li><a href="insertion.html" title="Insertion">Insertion</a></li>
+               
+            
+               
+                <li><a href="number.html" title="Number">Number</a></li>
+               
+            
+               
+                <li><a href="object.html" title="Object">Object</a></li>
+               
+            
+               
+                <li><a href="objectRange.html" title="ObjectRange">ObjectRange</a></li>
+               
+            
+               
+                <li><a href="periodicalExecuter.html" title="PeriodicalExecuter">PeriodicalExecuter</a></li>
+               
+            
+               
+                <li><a href="position.html" title="Position">Position</a></li>
+               
+            
+               
+                <li><a href="prototype.html" title="Prototype">Prototype</a></li>
+               
+            
+               
+                <li><a href="string.html" title="String">String</a></li>
+               
+            
+               
+                <li><a href="template.html" title="Template">Template</a></li>
+               
+            
+               
+                <li><a href="timedObserver.html" title="TimedObserver">TimedObserver</a></li>
+               
+            
+               
+            
+               
+                <li><a href="document.html" title="document">document</a></li>
+               
+            
+               
+                <li><a href="document/viewport.html" title="document.viewport">document.viewport</a></li>
+               
+            
+          </ul>
+          </div>
+        </div>
+        <!-- main -->
+        <div id="main" class="clearfix">
+          <div id="pagenav">
+            <ul>
+              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
+            </ul>
+          </div>
+          <div id="main-content">
+            
+
+
+  <h2>Enumerable <span id="atom-feed"><a href="../feed/api/enumerable/atom.xml" title="Feed for Enumerable">Atom feed</a></span></h2>
+  
+    <div id="method-list">
+  <ul>
+  
+   
+  
+   
+     <li><a href="enumerable.html#method-all" class="">all</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-any" class="">any</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-collect" class="">collect</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-detect" class="">detect</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-each" class="">each</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-eachslice" class="">eachSlice</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-entries" class="">entries</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-find" class="">find</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-findall" class="">findAll</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-grep" class="">grep</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-ingroupsof" class="">inGroupsOf</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-include" class="">include</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-inject" class="">inject</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-invoke" class="">invoke</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-map" class="">map</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-max" class="">max</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-member" class="">member</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-min" class="">min</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-partition" class="">partition</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-pluck" class="">pluck</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-reject" class="">reject</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-select" class="">select</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-size" class="">size</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-sortby" class="">sortBy</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-toarray" class="">toArray</a></li>
+   
+  
+   
+     <li><a href="enumerable.html#method-zip" class="">zip</a></li>
+   
+  
+  </ul>
+</div>
+
+
+
+    <div id="abody"><p><code>Enumerable</code> provides a large set of useful methods for <em>enumerations</em>, that is, objects that act as collections of values. It is a cornerstone of Prototype.</p>
+
+<p><code>Enumerable</code> is what we like to call a <em>module</em>: a consistent set of methods intended not for independent use, but for <em>mixin</em>: incorporation into other objects that &#8220;fit&#8221; with it.  This meaning of the term &#8220;module&#8221; is borrowed from the Ruby world, which is fitting enough, since <code>Enumerable</code> attempts to mimic at least part of its Ruby-world namesake.</p>
+
+<p>Quite a few objects, in Prototype, mix <code>Enumerable</code> in already.  The most visible cases are <a href="array.html"><code>Array</code></a> and <a href="hash.html"><code>Hash</code></a>, but you&#8217;ll find it in less obvious spots as well, such as in <a href="objectRange.html"><code>ObjectRange</code></a> and various DOM- or AJAX-related objects.</p>
+
+<h3>The <code>context</code> parameter</h3>
+
+<p>Every method of <code>Enumerable</code> that takes an iterator also takes the context object as the next (optional) parameter. The context object is what the iterator is going to be binded to, so the <code>this</code> keyword inside of it will point to the object.</p>
+
+<pre><code class="javascript">var myObject = {};
+
+['foo', 'bar', 'baz'].each(function(name, index) {
+  this[name] = index;
+}, myObject); // we have specified the context
+
+myObject
+//-> { foo: 0, bar: 1, baz: 2}
+</code></pre>
+
+<p>If there is no context argument, the iterator function will preserve the scope it would have anyway.</p>
+
+<h3>Aliases: it&#8217;s all about having it your way</h3>
+
+<p>Just like its Ruby counterpart, <code>Enumerable</code> cares about your comfort enough to provide more than one name for a few behaviors.  This is intended to reduce your learning curve when your technical background made you familiar with one name or another.  However, the documentation attempts to clearly state when one name is &#8220;preferred&#8221; over the other (perhaps due to readability, widely accepted intuitiveness, etc.).</p>
+
+<p>Here are the aliases you&#8217;ll find in <code>Enumerable</code>:</p>
+
+<ul>
+<li><code>map</code> is the same as <a href="enumerable/collect.html"><code>collect</code></a>.</li>
+<li><a href="enumerable/find.html"><code>find</code></a> is the preferred way of using <code>detect</code>.</li>
+<li><a href="enumerable/findAll.html"><code>findAll</code></a> is the same as <code>select</code>.</li>
+<li><a href="enumerable/include.html"><code>include</code></a> is the same as <code>member</code>.</li>
+<li><code>entries</code> is the same as <a href="enumerable/toArray.html"><code>toArray</code></a>.</li>
+</ul>
+
+<h3>Using it efficiently</h3>
+
+<p>When using <code>Enumerable</code>, beginners often create sub-par code, performance-wise, by simple lack of familiarity with the API. There are several use cases when one method will be significantly faster (and often make for more readable code!) than another.  Here are the two main points about this.</p>
+
+<h4><code>collect</code>, <code>invoke</code>, <code>pluck</code> and <code>each</code>: thinking about the use case</h4>
+
+<p>Beginners tend to use <a href="enumerable/each.html"><code>each</code></a> whenever they need to manipulate all elements in the enumeration, and <a href="enumerable/collect.html"><code>collect</code></a> whenever they need to yield a value the same way for each element.  This is the proper way for the generic case, but there are specific use cases where it can be written way more concisely, more elegantly, and with much better performance.</p>
+
+<ul>
+<li>When you need to invoke the same method on all the elements, go with <a href="enumerable/invoke.html"><code>invoke</code></a>.</li>
+<li>When you need to fetch the same property on all the elements, go with <a href="enumerable/pluck.html"><code>pluck</code></a>.</li>
+</ul>
+
+<h4><code>reject</code> and <code>findAll</code> vs. <code>partition</code></h4>
+
+<p>The <a href="enumerable/findAll.html"><code>findAll</code></a>/<code>select</code> methods retrieve all the elements that match a given predicate.  Conversely, the <a href="enumerable/reject.html"><code>reject</code></a> method retrieves all the elements that <em>do not</em> match a predicate.  In the specific case where you need <em>both sets</em>, you can avoid looping twice: just use <a href="enumerable/partition.html"><code>partition</code></a>.</p>
+
+<h3>Mixing <code>Enumerable</code> in your own objects</h3>
+
+<p>So, let&#8217;s say you&#8217;ve created your very own collection-like object (say, some sort of Set, or perhaps something that dynamically fetches data ranges from the server side, lazy-loading style).  You want to be able to mix <code>Enumerable</code> in (and we commend you for it).  How do you go about this?</p>
+
+<p>The <code>Enumerable</code> module basically makes only one requirement on your object: it must provide a method named <code>_each</code> (note the leading underscore), that will accept a function as its unique argument, and will contain the actual &#8220;raw iteration&#8221; algorithm, invoking its argument with each element in turn.</p>
+
+<p>As detailed in the documentation for <a href="enumerable/each.html"><code>each</code></a>, <code>Enumerable</code> provides all the extra layers (handling iteration short-circuits, passing numerical indices, etc.).  You just need to implement the actual basic iteration, as fits your internal structure.</p>
+
+<p>If this leaves you goggling, just have a look at Prototype&#8217;s <code>Array</code>, <code>Hash</code> or <code>ObjectRange</code> objects&#8217; source code.  They all begin with their own <code>_each</code> method, which should help you grasp the idea.</p>
+
+<p>Once you&#8217;re done with this, you just need to mix <code>Enumerable</code> in, which you&#8217;ll usually do <em>before</em> defining your methods, so as to make sure whatever overrides you provide for <code>Enumerable</code> methods will indeed prevail.  In short, your code will probably end up looking like this:</p>
+
+<pre><code class="javascript">var YourObject = Class.create();
+Object.extend(YourObject.prototype, Enumerable);
+Object.extend(YourObject.prototype, {
+  initialize: function() { // with whatever constructor arguments you need
+    // Your construction code
+  },
+
+  _each: function(iterator) {
+    // Your iteration code, invoking iterator at every turn
+  },
+
+  // Your other methods here, including Enumerable overrides
+});
+</code></pre>
+
+<p>Then, obviously, your object can be used like this:</p>
+
+<pre><code class="javascript">var obj = new YourObject();
+// Whatever use here, e.g. to fill it up
+obj.pluck('somePropName');
+obj.invoke('someMethodName');
+obj.size();
+// etc.
+</code></pre></div>
+    <div id="method-excerpts">  
+<h3>Methods</h3>
+
+   
+  
+   
+      <div id="method-all" class="mexcerpt">
+          <h4><a href="enumerable/all.html">all</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">all([iterator = Prototype.K[, context]]) -> Boolean</code></pre>
+
+<p>Determines whether all the elements are boolean-equivalent to <code>true</code>, either
+directly or through computation by the provided iterator.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-any" class="mexcerpt">
+          <h4><a href="enumerable/any.html">any</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">any([iterator = Prototype.K[, context]]) -> Boolean</code></pre>
+
+<p>Determines whether at least one element is boolean-equivalent to <code>true</code>,
+either directly or through computation by the provided iterator.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-collect" class="mexcerpt">
+          <h4><a href="enumerable/collect.html">collect</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">collect(iterator[, context]) -> Array</code></pre>
+
+<p>Returns the results of applying the iterator to each element.  Aliased as <a href="enumerable/map.html"><code>map</code></a>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-detect" class="mexcerpt">
+          <h4><a href="enumerable/detect.html">detect</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">detect(iterator[, context]) -> firstElement | undefined</code></pre>
+
+<p>Finds the first element for which the iterator returns <code>true</code>. Aliased by the <a href="enumerable/find.html"><code>find</code></a> method.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-each" class="mexcerpt">
+          <h4><a href="enumerable/each.html">each</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">each(iterator[, context]) -> Enumerable</code></pre>
+
+<p>The cornerstone of <code>Enumerable</code>.  It lets you iterate over all the elements in
+a generic fashion, then returns the <code>Enumerable</code>, thereby allowing chain-calling.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-eachslice" class="mexcerpt">
+          <h4><a href="enumerable/eachSlice.html">eachSlice</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">eachSlice(size[, iterator = Prototype.K[, context]]) -> [slice...]</code></pre>
+
+<p>Groups items in chunks based on a given size, with last chunk being possibly smaller.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-entries" class="mexcerpt">
+          <h4><a href="enumerable/entries.html">entries</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">entries() -> Array</code></pre>
+
+<p>Alias for the more generic <a href="enumerable/toArray.html"><code>toArray</code></a> method.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-find" class="mexcerpt">
+          <h4><a href="enumerable/find.html">find</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">find(iterator) -> firstElement | undefined</code></pre>
+
+<p>Finds the first element for which the iterator returns <code>true</code>. Convenience alias for <a href="enumerable/detect.html"><code>detect</code></a>, but constitutes the preferred (more readable) syntax.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-findall" class="mexcerpt">
+          <h4><a href="enumerable/findAll.html">findAll</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">findAll(iterator[, context]) -> Array</code></pre>
+
+<p>Returns all the elements for which the iterator returned <code>true</code>.  Aliased as <a href="enumerable/select.html"><code>select</code></a>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-grep" class="mexcerpt">
+          <h4><a href="enumerable/grep.html">grep</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">grep(regex[, iterator = Prototype.K[, context]]) -> Array</code></pre>
+
+<p>Returns all the elements that match the filter. If an iterator is provided, it is used to produce the returned value for each selected element.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-ingroupsof" class="mexcerpt">
+          <h4><a href="enumerable/inGroupsOf.html">inGroupsOf</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">inGroupsOf(size[, filler = null]) -> [group...]</code></pre>
+
+<p>Groups items in fixed-size chunks, using a specific value to fill up the last chunk if necessary.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-include" class="mexcerpt">
+          <h4><a href="enumerable/include.html">include</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">include(object) -> Boolean</code></pre>
+
+<p>Determines whether a given object is in the <code>Enumerable</code> or not, based on the <code>==</code> comparison operator.  Aliased as <a href="enumerable/member.html"><code>member</code></a>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-inject" class="mexcerpt">
+          <h4><a href="enumerable/inject.html">inject</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">inject(accumulator, iterator[, context]) -> accumulatedValue</code></pre>
+
+<p>Incrementally builds a result value based on the successive results of the
+iterator.  This can be used for array construction, numerical sums/averages,
+etc.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-invoke" class="mexcerpt">
+          <h4><a href="enumerable/invoke.html">invoke</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">invoke(methodName[, arg...]) -> Array</code></pre>
+
+<p>Invokes the same method, with the same arguments, for all items in a collection.  Returns the results of the method calls.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-map" class="mexcerpt">
+          <h4><a href="enumerable/map.html">map</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">map(iterator) -> Array</code></pre>
+
+<p>Returns the results of applying the iterator to each element. Convenience alias for <a href="enumerable/collect.html"><code>collect</code></a>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-max" class="mexcerpt">
+          <h4><a href="enumerable/max.html">max</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">max([iterator = Prototype.K[, context]]) -> maxValue</code></pre>
+
+<p>Returns the maximum element (or element-based computation), or <code>undefined</code> if the enumeration is empty.  Elements are either compared directly, or by first applying the iterator and comparing returned values.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-member" class="mexcerpt">
+          <h4><a href="enumerable/member.html">member</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">member(object) -> Boolean</code></pre>
+
+<p>Determines whether a given object is in the <code>Enumerable</code> or not, based on the <code>==</code> comparison operator.  Convenience alias for <a href="enumerable/include.html"><code>include</code></a>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-min" class="mexcerpt">
+          <h4><a href="enumerable/min.html">min</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">min([iterator = Prototype.K[, context]]) -> minValue</code></pre>
+
+<p>Returns the minimum element (or element-based computation), or <code>undefined</code> if the enumeration is empty.  Elements are either compared directly, or by first applying the iterator and comparing returned values.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-partition" class="mexcerpt">
+          <h4><a href="enumerable/partition.html">partition</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">partition([iterator = Prototype.K[, context]]) -> [TrueArray, FalseArray]</code></pre>
+
+<p>Partitions the elements in two groups: those regarded as <code>true</code>, and those considered <code>false</code>.  By default, regular JavaScript boolean equivalence is used, but an iterator can be provided, that computes a boolean representation of the elements.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-pluck" class="mexcerpt">
+          <h4><a href="enumerable/pluck.html">pluck</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">pluck(propertyName) -> Array</code></pre>
+
+<p>Optimization for a common use-case of <a href="enumerable/collect.html"><code>collect</code></a>: fetching the same property for all the elements.  Returns the property values.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-reject" class="mexcerpt">
+          <h4><a href="enumerable/reject.html">reject</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">reject(iterator[, context]) -> Array</code></pre>
+
+<p>Returns all the elements for which the iterator returned <code>false</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-select" class="mexcerpt">
+          <h4><a href="enumerable/select.html">select</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">select(iterator) -> Array</code></pre>
+
+<p>Alias for the <a href="enumerable/findAll.html"><code>findAll</code></a> method.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-size" class="mexcerpt">
+          <h4><a href="enumerable/size.html">size</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">size() -> Number</code></pre>
+
+<p>Returns the size of the enumeration.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-sortby" class="mexcerpt">
+          <h4><a href="enumerable/sortBy.html">sortBy</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">sortBy(iterator[, context]) -> Array</code></pre>
+
+<p>Provides a custom-sorted view of the elements based on the criteria computed, for each element, by the iterator.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-toarray" class="mexcerpt">
+          <h4><a href="enumerable/toArray.html">toArray</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toArray() -> Array</code></pre>
+
+<p>Returns an <code>Array</code> representation of the enumeration. Aliased as <a href="enumerable/entries.html"><code>entries</code></a>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-zip" class="mexcerpt">
+          <h4><a href="enumerable/zip.html">zip</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">zip(Sequence...[, iterator = Prototype.K]) -> Array</code></pre>
+
+<p>Zips together (think of the zip on a pair of trousers) 2+ sequences, providing an array of tuples.  Each tuple contains one value per original sequence.  Tuples can be converted to something else by applying the optional iterator on them.</p></div>
+      </div>
+   
+  
+</div>
+  
+
+
+          </div>
+        </div>
+        <!-- /main -->
+      </div>
+    </div>
+    <!-- /content -->
+    <div id="footer">
+&copy; 2006-2007 Prototype Core Team | Licenses:
+<a rel="license" href="http://dev.rubyonrails.org/browser/spinoffs/prototype/trunk/LICENSE?format=raw">MIT (source code)</a> and <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><abbr title="Creative Commons Attribution-Share Alike 3.0 License">CC BY-SA</abbr> (documentation)</a>.
+      <a id="badge" href="http://mephistoblog.com" title="This site's mojo provided by Mephisto"><img alt="mephisto-badge-tiny" src="images/mephisto-badge-tiny.png" /></a>
+    </div>
+  </div>
+  <!-- /container -->
+
+</body>
+</html>

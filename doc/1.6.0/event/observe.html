@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Prototype JavaScript framework:  Event.observe </title>
+	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" media="print" href="../stylesheets/api-print.css" />
+        <!--[if lte IE 6]><link href="/stylesheets/ie-sucks-for-api.css" rel="stylesheet" type="text/css" media="screen"><![endif]-->
+  <link href="http://feeds.feedburner.com/prototype-blog" rel="alternate" type="application/atom+xml" />
+ <script src="../javascripts/prototype.js" type="text/javascript"></script>
+<script src="../javascripts/code_highlighter.js" type="text/javascript"></script>
+<script src="../javascripts/javascript.js" type="text/javascript"></script>
+<script src="../javascripts/html.js" type="text/javascript"></script>
+<script src="../javascripts/css.js" type="text/javascript"></script>
+<script src="../javascripts/ruby.js" type="text/javascript"></script>
+<script src="../javascripts/ebnf.js" type="text/javascript"></script>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-82668-3";
+urchinTracker();
+</script>
+<link rel="shortcut icon" href="../images/fav.png" type="image/ico" />
+</head>
+
+<body>
+  <!-- container -->
+  <div id="container">
+    <!-- header -->
+    <div id="header">
+      <h1 id="logo"><a href="../../index.html">Prototype Javascript Framework</a></h1>
+      <p id="tagline">easing the pain of dynamic web applications</p>
+      <!-- 
+       <div id="api-search">
+         <form action="/search">
+          Search api: <input name="q" type="search" />
+           <input type="hidden" value="api" name="s" />
+         </form>
+       </div>
+    -->
+    </div>
+    <!-- /header -->
+    <!-- nav -->
+          <div id="nav">
+      <ul class="clearfix">
+         <li><a href="../../download.html" title="Download the latest version of Prototype">Download</a></li>
+         <li><a href="http://api.prototypejs.org" title="View the Prototype API docs">API Docs</a></li>
+         <li><a href="../../learn.html" title="Prototype tips and tutorials">Tips and Tutorials</a></li>
+         <li><a href="http://prototypejs.org/blog" title="The Official Prototype Blog">Blog</a></li>
+         <li><a href="../../discuss.html" title="Mailing lists and IRC">Discuss</a></li>
+         <li><a href="../../contribute.html" title="Contribute to Prototype">Contribute</a></li>
+      </ul>
+    </div>
+    <!-- /nav -->
+
+    
+    <!-- content -->
+    <div id="content">
+      <div id="cnt-inner">
+        <div id="sidebar">
+          
+          
+          
+          
+          <div class="sblock">            
+          <h3 class="object"><a class="selected" href="../event.html">Event</a></h3>
+          <ul class="methods">
+            
+            
+            
+            
+              <li><a href="element.html">element</a></li>
+            
+            
+            
+              <li><a href="extend.html">extend</a></li>
+            
+            
+            
+              <li><a href="findElement.html">findElement</a></li>
+            
+            
+            
+              <li><a href="isLeftClick.html">isLeftClick</a></li>
+            
+            
+            
+              <li class="selected"><a class="selected" href="observe.html">observe</a></li>
+            
+            
+            
+              <li><a href="pointerX.html">pointerX</a></li>
+            
+            
+            
+              <li><a href="pointerY.html">pointerY</a></li>
+            
+            
+            
+              <li><a href="stop.html">stop</a></li>
+            
+            
+            
+              <li><a href="stopObserving.html">stopObserving</a></li>
+            
+            
+            
+              <li><a href="unloadCache.html">unloadCache</a></li>
+            
+            
+          </ul>
+          </div>
+          
+          
+          
+          <div class="sblock">
+          <h3>API Docs</h3>
+           
+          <ul class="objects">
+            <li><a href="../utility.html" title="Utility Methods">Utility Methods</a></li>
+            
+               
+                <li><a href="../ajax.html" title="Ajax">Ajax</a></li>
+               
+            
+               
+                <li><a href="../array.html" title="Array">Array</a></li>
+               
+            
+               
+                <li><a href="../class.html" title="Class">Class</a></li>
+               
+            
+               
+                <li><a href="../date.html" title="Date">Date</a></li>
+               
+            
+               
+                <li><a href="../element.html" title="Element">Element</a></li>
+               
+            
+               
+                <li><a href="../element/methods.html" title="Element.Methods">Element.Methods</a></li>
+               
+            
+               
+                <li><a href="../element/methods/simulated.html" title="Element.Methods.Simulated">Element.Methods.Simulated</a></li>
+               
+            
+               
+                <li><a href="../enumerable.html" title="Enumerable">Enumerable</a></li>
+               
+            
+               
+                <li><a href="../event.html" title="Event">Event</a></li>
+               
+            
+               
+                <li><a href="../form.html" title="Form">Form</a></li>
+               
+            
+               
+                <li><a href="../form/element.html" title="Form.Element">Form.Element</a></li>
+               
+            
+               
+                <li><a href="../function.html" title="Function">Function</a></li>
+               
+            
+               
+                <li><a href="../hash.html" title="Hash">Hash</a></li>
+               
+            
+               
+                <li><a href="../insertion.html" title="Insertion">Insertion</a></li>
+               
+            
+               
+                <li><a href="../number.html" title="Number">Number</a></li>
+               
+            
+               
+                <li><a href="../object.html" title="Object">Object</a></li>
+               
+            
+               
+                <li><a href="../objectRange.html" title="ObjectRange">ObjectRange</a></li>
+               
+            
+               
+                <li><a href="../periodicalExecuter.html" title="PeriodicalExecuter">PeriodicalExecuter</a></li>
+               
+            
+               
+                <li><a href="../position.html" title="Position">Position</a></li>
+               
+            
+               
+                <li><a href="../prototype.html" title="Prototype">Prototype</a></li>
+               
+            
+               
+                <li><a href="../string.html" title="String">String</a></li>
+               
+            
+               
+                <li><a href="../template.html" title="Template">Template</a></li>
+               
+            
+               
+                <li><a href="../timedObserver.html" title="TimedObserver">TimedObserver</a></li>
+               
+            
+               
+            
+               
+                <li><a href="../document.html" title="document">document</a></li>
+               
+            
+               
+                <li><a href="../document/viewport.html" title="document.viewport">document.viewport</a></li>
+               
+            
+          </ul>
+          </div>
+        </div>
+        <!-- main -->
+        <div id="main" class="clearfix">
+          <div id="pagenav">
+            <ul>
+              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
+            </ul>
+          </div>
+          <div id="main-content">
+            
+
+
+  <h2>observe
+
+</h2>
+  
+    <div id="excerpt"><pre><code class="ebnf">Event.observe(element, eventName, handler)</code></pre>
+
+<p>Registers an event handler on a DOM element.</p></div>
+    <div id="abody"><p class="notice">
+  Prior to Prototype 1.6, <code>Event.observe</code> supported a fourth argument (<code>useCapture</code>), a boolean that indicated whether to use the browser&#8217;s capturing phase or its bubbling phase. Since Internet Explorer does not support the capturing phase, we removed this argument from 1.6, lest it give users the false impression that they can use the capturing phase in all browsers.
+</p>
+
+<h3>An important note</h3>
+
+<p>First, if you're coming from a background where you'd use HTML event attributes (e.g. <code>&lt;body onload="return myFunction()"&gt;</code>) or DOM Level-0 event properties (e.g. <code>window.onload = myFunction;</code>), you must shed those vile ways :-) and understand what <code>observe</code> does.</p>
+
+<p>It does not <em>replace</em> existing handlers for that same element+event pair.  It <em>adds</em> to the <em>list of handlers</em> for that pair.  Using <code>observe</code> will never incapacitate earlier calls.</p>
+
+<h3>What are those arguments about?</h3>
+
+<ol>
+<li>The DOM element you want to observe; as always in Prototype, this can be either an actual DOM reference, or the ID string for the element.</li>
+<li>The standardized event name, as per the DOM level supported by your browser (usually <a href="http://www.w3.org/TR/DOM-Level-2-Events/events.html">DOM Level 2 Events</a>, see section 1.6 for event names and details).  This can be as simple as <code>'click'</code>.</li>
+<li>The handler function.  This can be an anonymous function you create on-the-fly, a vanilla function, a <a href="../function/bindAsEventListener.html">bound event listener</a>, it's up to you.</li>
+</ol>
+
+<h3>The handler function</h3>
+
+<p>Four important things about how your handler function is called:</p>
+
+<ol>
+<li>Its first argument is always the event object (on all browsers, including Internet Explorer).</li>
+<li>(New as of 1.6.0.) The event object is extended with methods like <a href="stop.html"><code>stop</code></a>, so you can write <code>event.stop()</code> rather than <code>Event.stop(event)</code>.</li>
+<li>(New as of 1.6.0.) Within the handler, <strong><code>this</code></strong> is a reference to the extended element the handler is associated with.</li>
+<li>(New as of 1.6.0.) The element on which the event actually occurred (the "target") is available from <a href="findElement.html"><code>findElement()</code></a>. (Prior to 1.6.0, you would call <a href="element.html"><code>element()</code></a> method, which still works.)  Note that the target might be a child of the observed element rather than the observed element itself, because of bubbling.</li>
+</ol>
+
+<h3>Which element was that again?</h3>
+
+<p>So there's <strong><code>this</code></strong>, set to the element the handler is on, and the "target" from <code>event.findElement()</code>.  What's the difference?  Bubbling.  Consider this HTML:</p>
+
+<pre><code class="html">&lt;p id='target'&gt;This event stuff is &lt;strong&gt;cool&lt;/strong&gt;.&lt;/p&gt;
+</code></pre>
+
+<p>That defines a <strong><code>p</code></strong> element containing a <strong><code>strong</code></strong> element, both of which also contain text.</p>
+
+<p>Suppose you hook a <code>click</code> handler to that paragraph:</p>
+
+<pre><code class="javascript">Event.observe('target', 'click', function(event) {
+    // ...
+});
+</code></pre>
+
+<p>Within your handler, <strong><code>this</code></strong> is always the <strong><code>p</code></strong> element.  <strong><code>event.findElement()</code></strong>, though, will be either the <strong><code>p</code></strong> element itself, or (if you click the word "cool") the <strong><code>strong</code></strong> element within it.</p>
+
+<p>There's more to <a href="findElement.html"><code>Event#findElement()</code></a> than just returning the element where the event occurred; it can also accept a selector and find the first ancestor matching that selector&nbsp;-- very handy for event delegation.</p>
+
+<h3>The requirement people too often forget&#8230;</h3>
+
+<p>To register a function as an event handler, the DOM element that you want to observe <strong>must already exist</strong> in the DOM (in other words, it must have appeared in the source, or been dynamically created and inserted, before your handler-registration script line runs).</p>
+
+<h3>A simple example</h3>
+
+<p>Let us assume the following (X)HTML fragment:</p>
+
+<pre><code class="html">&lt;form id="signinForm" method="post" action="/auth/signin"&gt;
+&#8230;
+&lt;/form&gt;
+</code></pre>
+
+<p>Here's how to register your function <code>checkForm</code> on form submission:</p>
+
+<pre><code class="javascript">Event.observe('signinForm', 'submit', checkForm);
+</code></pre>
+
+<p>Of course, you'd want this line of code to run once the form exists in the DOM; but putting inline scripts in the document is pretty obtrusive, so instead we'll go for a simple approach that waits till the page is fully loaded:</p>
+
+<pre><code class="javascript">Event.observe(window, 'load', function() {
+  Event.observe('signinForm', 'submit', checkForm);
+});
+</code></pre>
+
+<p>Just a little wrapping&#8230;</p>
+
+<p>Note that if your page is heavy, you might want to run this code before the page is fully loaded: just wait until the DOM is loaded, that will be enough.  (Prototype's <a href="../document/observe.html"><code>dom:loaded</code></a> event can help you with that.)</p>
+
+<h3>The tricky case of methods that need <strong><code>this</code></strong></h3>
+
+<p>Having <strong><code>this</code></strong> reference the observed element is handy, but sometimes you have other things you want to do with it.  Perhaps your handler is a method on an instance of a class, and you want <strong><code>this</code></strong> within the method to refer to the instance.  When you pass a function around (for instance, passing it into <code>observe</code> as the handler), just the function, not its context, is passed around -- it loses its <em>binding</em>.  Later when it's called, <strong><code>this</code></strong> can mean something completely different from what you're expecting.  Consider:</p>
+
+<pre><code class="javascript">var IntMinMaxValidator = Class.create({
+
+    initialize: function(fieldid, allowBlank, minValue, maxValue) {
+        this.fieldid = fieldid;
+        this.allowBlank = allowBlank;
+        this.minValue = minValue;
+        this.maxValue = maxValue;
+        $(fieldid).observe('change', this.validateOnChange); // <== WRONG
+    },
+
+    validateOnChange: function(event) {
+        var value;
+        value = $(this.fieldid).getValue();
+        if (value == '') {
+            if (!this.allowBlanks) {
+                // ...report invalid blank...
+            }
+        } else {
+            value = parseInt(value);
+            if (isNaN(value) || value < this.minValue || value > this.maxValue) {
+                // ...report bad value...
+            }
+        }
+    }
+});
+</code></pre>
+
+<p>When <code>validateOnChange</code> gets called, <strong><code>this</code></strong> will be the field element, not the instance!  So <code>this.minValue</code>, etc., won't exist.  <em>Now</em> you're in trouble.</p>
+
+<p>Or not.</p>
+
+<p>Prototype's <a href="../function/bind.html"><code>bind</code></a> function to the rescue.  Using <code>bind()</code>, you can make sure your method gets the right <strong><code>this</code></strong>.  Just change the indicated line above to this:</p>
+
+<pre><code class="javascript">$(fieldid).observe('change', this.validateOnChange.bind(this)); // <== RIGHT
+</code></pre>
+
+<p>See the <a href="../function/bind.html"><code>bind</code></a> documentation for details.  See also <a href="../function/bindAsEventListener.html"><code>bindAsEventListener</code></a>, with which you can pass arguments to your event handler without using a closure.</p></div>
+  
+
+
+          </div>
+        </div>
+        <!-- /main -->
+      </div>
+    </div>
+    <!-- /content -->
+    <div id="footer">
+&copy; 2006-2007 Prototype Core Team | Licenses:
+<a rel="license" href="http://dev.rubyonrails.org/browser/spinoffs/prototype/trunk/LICENSE?format=raw">MIT (source code)</a> and <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><abbr title="Creative Commons Attribution-Share Alike 3.0 License">CC BY-SA</abbr> (documentation)</a>.
+      <a id="badge" href="http://mephistoblog.com" title="This site's mojo provided by Mephisto"><img alt="mephisto-badge-tiny" src="../images/mephisto-badge-tiny.png" /></a>
+    </div>
+  </div>
+  <!-- /container -->
+
+</body>
+</html>

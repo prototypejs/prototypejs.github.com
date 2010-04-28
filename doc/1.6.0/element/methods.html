@@ -1,0 +1,1413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Prototype JavaScript framework:  Element.Methods </title>
+	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" media="print" href="../stylesheets/api-print.css" />
+        <!--[if lte IE 6]><link href="/stylesheets/ie-sucks-for-api.css" rel="stylesheet" type="text/css" media="screen"><![endif]-->
+  <link href="http://feeds.feedburner.com/prototype-blog" rel="alternate" type="application/atom+xml" />
+ <script src="../javascripts/prototype.js" type="text/javascript"></script>
+<script src="../javascripts/code_highlighter.js" type="text/javascript"></script>
+<script src="../javascripts/javascript.js" type="text/javascript"></script>
+<script src="../javascripts/html.js" type="text/javascript"></script>
+<script src="../javascripts/css.js" type="text/javascript"></script>
+<script src="../javascripts/ruby.js" type="text/javascript"></script>
+<script src="../javascripts/ebnf.js" type="text/javascript"></script>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-82668-3";
+urchinTracker();
+</script>
+<link rel="shortcut icon" href="../images/fav.png" type="image/ico" />
+</head>
+
+<body>
+  <!-- container -->
+  <div id="container">
+    <!-- header -->
+    <div id="header">
+      <h1 id="logo"><a href="../../index.html">Prototype Javascript Framework</a></h1>
+      <p id="tagline">easing the pain of dynamic web applications</p>
+      <!-- 
+       <div id="api-search">
+         <form action="/search">
+          Search api: <input name="q" type="search" />
+           <input type="hidden" value="api" name="s" />
+         </form>
+       </div>
+    -->
+    </div>
+    <!-- /header -->
+    <!-- nav -->
+          <div id="nav">
+      <ul class="clearfix">
+         <li><a href="../../download.html" title="Download the latest version of Prototype">Download</a></li>
+         <li><a href="http://api.prototypejs.org" title="View the Prototype API docs">API Docs</a></li>
+         <li><a href="../../learn.html" title="Prototype tips and tutorials">Tips and Tutorials</a></li>
+         <li><a href="http://prototypejs.org/blog" title="The Official Prototype Blog">Blog</a></li>
+         <li><a href="../../discuss.html" title="Mailing lists and IRC">Discuss</a></li>
+         <li><a href="../../contribute.html" title="Contribute to Prototype">Contribute</a></li>
+      </ul>
+    </div>
+    <!-- /nav -->
+
+    
+    <!-- content -->
+    <div id="content">
+      <div id="cnt-inner">
+        <div id="sidebar">
+          
+          
+          
+          
+          <div class="sblock">            
+          <h3 class="object"><a class="selected" href="methods.html">Element.Methods</a></h3>
+          <ul class="methods">
+            
+            
+            
+            
+              <li><a href="methods/absolutize.html">absolutize</a></li>
+            
+            
+            
+              <li><a href="methods/addClassName.html">addClassName</a></li>
+            
+            
+            
+              <li><a href="methods/adjacent.html">adjacent</a></li>
+            
+            
+            
+              <li><a href="methods/ancestors.html">ancestors</a></li>
+            
+            
+            
+              <li><a href="methods/childElements.html">childElements</a></li>
+            
+            
+            
+              <li><a href="methods/classNames.html">classNames</a></li>
+            
+            
+            
+              <li><a href="methods/cleanwhitespace.html">cleanWhitespace</a></li>
+            
+            
+            
+              <li><a href="methods/cloneposition.html">clonePosition</a></li>
+            
+            
+            
+              <li><a href="methods/cumulativeoffset.html">cumulativeOffset</a></li>
+            
+            
+            
+              <li><a href="methods/cumulativescrolloffset.html">cumulativeScrollOffset</a></li>
+            
+            
+            
+              <li><a href="methods/descendantOf.html">descendantOf</a></li>
+            
+            
+            
+              <li><a href="methods/descendants.html">descendants</a></li>
+            
+            
+            
+              <li><a href="methods/down.html">down</a></li>
+            
+            
+            
+              <li><a href="methods/empty.html">empty</a></li>
+            
+            
+            
+              <li><a href="methods/fire.html">fire</a></li>
+            
+            
+            
+              <li><a href="methods/firstDescendant.html">firstDescendant</a></li>
+            
+            
+            
+              <li><a href="methods/getDimensions.html">getDimensions</a></li>
+            
+            
+            
+              <li><a href="methods/getElementsByClassName.html">getElementsByClassName</a></li>
+            
+            
+            
+              <li><a href="methods/getelementsbyselector.html">getElementsBySelector</a></li>
+            
+            
+            
+              <li><a href="methods/getheight.html">getHeight</a></li>
+            
+            
+            
+              <li><a href="methods/getoffsetparent.html">getOffsetParent</a></li>
+            
+            
+            
+              <li><a href="methods/getStyle.html">getStyle</a></li>
+            
+            
+            
+              <li><a href="methods/getWidth.html">getWidth</a></li>
+            
+            
+            
+              <li><a href="methods/hasClassName.html">hasClassName</a></li>
+            
+            
+            
+              <li><a href="methods/hide.html">hide</a></li>
+            
+            
+            
+              <li><a href="methods/identify.html">identify</a></li>
+            
+            
+            
+              <li><a href="methods/immediateDescendants.html">immediateDescendants</a></li>
+            
+            
+            
+              <li><a href="methods/insert.html">insert</a></li>
+            
+            
+            
+              <li><a href="methods/inspect.html">inspect</a></li>
+            
+            
+            
+              <li><a href="methods/makeClipping.html">makeClipping</a></li>
+            
+            
+            
+              <li><a href="methods/makePositioned.html">makePositioned</a></li>
+            
+            
+            
+              <li><a href="methods/match.html">match</a></li>
+            
+            
+            
+              <li><a href="methods/next.html">next</a></li>
+            
+            
+            
+              <li><a href="methods/nextSiblings.html">nextSiblings</a></li>
+            
+            
+            
+              <li><a href="methods/observe.html">observe</a></li>
+            
+            
+            
+              <li><a href="methods/positionedoffset.html">positionedOffset</a></li>
+            
+            
+            
+              <li><a href="methods/previous.html">previous</a></li>
+            
+            
+            
+              <li><a href="methods/previousSiblings.html">previousSiblings</a></li>
+            
+            
+            
+              <li><a href="methods/readAttribute.html">readAttribute</a></li>
+            
+            
+            
+              <li><a href="methods/recursivelyCollect.html">recursivelyCollect</a></li>
+            
+            
+            
+              <li><a href="methods/relativize.html">relativize</a></li>
+            
+            
+            
+              <li><a href="methods/remove.html">remove</a></li>
+            
+            
+            
+              <li><a href="methods/removeClassName.html">removeClassName</a></li>
+            
+            
+            
+              <li><a href="methods/replace.html">replace</a></li>
+            
+            
+            
+              <li><a href="methods/scrollto.html">scrollTo</a></li>
+            
+            
+            
+              <li><a href="methods/select.html">select</a></li>
+            
+            
+            
+              <li><a href="methods/setOpacity.html">setOpacity</a></li>
+            
+            
+            
+              <li><a href="methods/setStyle.html">setStyle</a></li>
+            
+            
+            
+              <li><a href="methods/show.html">show</a></li>
+            
+            
+            
+              <li><a href="methods/siblings.html">siblings</a></li>
+            
+            
+            
+              <li><a href="methods/stopobserving.html">stopObserving</a></li>
+            
+            
+            
+              <li><a href="methods/toggle.html">toggle</a></li>
+            
+            
+            
+              <li><a href="methods/toggleClassName.html">toggleClassName</a></li>
+            
+            
+            
+              <li><a href="methods/undoClipping.html">undoClipping</a></li>
+            
+            
+            
+              <li><a href="methods/undoPositioned.html">undoPositioned</a></li>
+            
+            
+            
+              <li><a href="methods/up.html">up</a></li>
+            
+            
+            
+              <li><a href="methods/update.html">update</a></li>
+            
+            
+            
+              <li><a href="methods/viewportoffset.html">viewportOffset</a></li>
+            
+            
+            
+              <li><a href="methods/visible.html">visible</a></li>
+            
+            
+            
+              <li><a href="methods/wrap.html">wrap</a></li>
+            
+            
+            
+              <li><a href="methods/writeAttribute.html">writeAttribute</a></li>
+            
+            
+          </ul>
+          </div>
+          
+          
+          
+          <div class="sblock">
+          <h3>API Docs</h3>
+           
+          <ul class="objects">
+            <li><a href="../utility.html" title="Utility Methods">Utility Methods</a></li>
+            
+               
+                <li><a href="../ajax.html" title="Ajax">Ajax</a></li>
+               
+            
+               
+                <li><a href="../array.html" title="Array">Array</a></li>
+               
+            
+               
+                <li><a href="../class.html" title="Class">Class</a></li>
+               
+            
+               
+                <li><a href="../date.html" title="Date">Date</a></li>
+               
+            
+               
+                <li><a href="../element.html" title="Element">Element</a></li>
+               
+            
+               
+                <li><a href="methods.html" title="Element.Methods">Element.Methods</a></li>
+               
+            
+               
+                <li><a href="methods/simulated.html" title="Element.Methods.Simulated">Element.Methods.Simulated</a></li>
+               
+            
+               
+                <li><a href="../enumerable.html" title="Enumerable">Enumerable</a></li>
+               
+            
+               
+                <li><a href="../event.html" title="Event">Event</a></li>
+               
+            
+               
+                <li><a href="../form.html" title="Form">Form</a></li>
+               
+            
+               
+                <li><a href="../form/element.html" title="Form.Element">Form.Element</a></li>
+               
+            
+               
+                <li><a href="../function.html" title="Function">Function</a></li>
+               
+            
+               
+                <li><a href="../hash.html" title="Hash">Hash</a></li>
+               
+            
+               
+                <li><a href="../insertion.html" title="Insertion">Insertion</a></li>
+               
+            
+               
+                <li><a href="../number.html" title="Number">Number</a></li>
+               
+            
+               
+                <li><a href="../object.html" title="Object">Object</a></li>
+               
+            
+               
+                <li><a href="../objectRange.html" title="ObjectRange">ObjectRange</a></li>
+               
+            
+               
+                <li><a href="../periodicalExecuter.html" title="PeriodicalExecuter">PeriodicalExecuter</a></li>
+               
+            
+               
+                <li><a href="../position.html" title="Position">Position</a></li>
+               
+            
+               
+                <li><a href="../prototype.html" title="Prototype">Prototype</a></li>
+               
+            
+               
+                <li><a href="../string.html" title="String">String</a></li>
+               
+            
+               
+                <li><a href="../template.html" title="Template">Template</a></li>
+               
+            
+               
+                <li><a href="../timedObserver.html" title="TimedObserver">TimedObserver</a></li>
+               
+            
+               
+            
+               
+                <li><a href="../document.html" title="document">document</a></li>
+               
+            
+               
+                <li><a href="../document/viewport.html" title="document.viewport">document.viewport</a></li>
+               
+            
+          </ul>
+          </div>
+        </div>
+        <!-- main -->
+        <div id="main" class="clearfix">
+          <div id="pagenav">
+            <ul>
+              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
+            </ul>
+          </div>
+          <div id="main-content">
+            
+
+
+  <h2>Element.Methods <span id="atom-feed"><a href="../../feed/api/element/methods/atom.xml" title="Feed for Element.Methods">Atom feed</a></span></h2>
+  
+    <div id="method-list">
+  <ul>
+  
+   
+  
+   
+     <li><a href="methods.html#method-absolutize" class="1.6">absolutize</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-addclassname" class="">addClassName</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-adjacent" class="1.6">adjacent</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-ancestors" class="">ancestors</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-childelements" class="1.5.1">childElements</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-classnames" class="deprecated">classNames</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-cleanwhitespace" class="">cleanWhitespace</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-cloneposition" class="1.6">clonePosition</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-cumulativeoffset" class="1.6">cumulativeOffset</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-cumulativescrolloffset" class="1.6">cumulativeScrollOffset</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-descendantof" class="">descendantOf</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-descendants" class="">descendants</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-down" class="">down</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-empty" class="">empty</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-fire" class="1.6.0">fire</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-firstdescendant" class="1.5.1">firstDescendant</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-getdimensions" class="">getDimensions</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-getelementsbyclassname" class="deprecated">getElementsByClassName</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-getelementsbyselector" class="deprecated">getElementsBySelector</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-getheight" class="">getHeight</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-getoffsetparent" class="1.6">getOffsetParent</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-getstyle" class="">getStyle</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-getwidth" class="">getWidth</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-hasclassname" class="">hasClassName</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-hide" class="">hide</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-identify" class="1.6">identify</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-immediatedescendants" class="deprecated">immediateDescendants</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-insert" class="1.6">insert</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-inspect" class="">inspect</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-makeclipping" class="">makeClipping</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-makepositioned" class="">makePositioned</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-match" class="">match</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-next" class="">next</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-nextsiblings" class="">nextSiblings</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-observe" class="">observe</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-positionedoffset" class="1.6">positionedOffset</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-previous" class="">previous</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-previoussiblings" class="">previousSiblings</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-readattribute" class="">readAttribute</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-recursivelycollect" class="">recursivelyCollect</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-relativize" class="1.6">relativize</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-remove" class="">remove</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-removeclassname" class="">removeClassName</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-replace" class="">replace</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-scrollto" class="">scrollTo</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-select" class="1.6">select</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-setopacity" class="1.5.1">setOpacity</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-setstyle" class="">setStyle</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-show" class="">show</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-siblings" class="">siblings</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-stopobserving" class="">stopObserving</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-toggle" class="">toggle</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-toggleclassname" class="">toggleClassName</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-undoclipping" class="">undoClipping</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-undopositioned" class="">undoPositioned</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-up" class="">up</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-update" class="">update</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-viewportoffset" class="1.6">viewportOffset</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-visible" class="">visible</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-wrap" class="1.6">wrap</a></li>
+   
+  
+   
+     <li><a href="methods.html#method-writeattribute" class="1.6">writeAttribute</a></li>
+   
+  
+  </ul>
+</div>
+
+
+
+    <div id="abody"><p><code>Element.Methods</code> is a mixin for DOM elements.  The methods of this object are accessed through the <a href="../utility/dollar.html"><code>$()</code> utility</a> or through the <a href="../element.html"><code>Element</code></a> object and shouldn&#8217;t be accessed directly.  </p>
+
+<h3>Examples</h3>
+
+<pre><code class="javascript">
+// Hide the element 
+$(element).hide(); 
+
+//Return an Enumerable of all descendant nodes of the element with the id "article"
+$('articles').descendants();
+</code></pre></div>
+    <div id="method-excerpts">  
+<h3>Methods</h3>
+
+   
+  
+   
+      <div id="method-absolutize" class="mexcerpt">
+          <h4><a href="methods/absolutize.html">absolutize</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">absolutize(element) -> HTMLElement</code></pre>
+
+<p>Turns <code>element</code> into an absolutely-positioned element <em>without</em> changing its position in the page layout.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-addclassname" class="mexcerpt">
+          <h4><a href="methods/addClassName.html">addClassName</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">addClassName(element, className) -> HTMLElement </code></pre>
+
+<p>Adds a CSS class to <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-adjacent" class="mexcerpt">
+          <h4><a href="methods/adjacent.html">adjacent</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">Element.adjacent(element[, selectors...]) -> [HTMLElement...]
+someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
+
+<p>Finds all siblings of the current element that match the given selector(s).</p></div>
+      </div>
+   
+  
+   
+      <div id="method-ancestors" class="mexcerpt">
+          <h4><a href="methods/ancestors.html">ancestors</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">ancestors(element) -> [HTMLElement...]</code></pre>
+
+<p>Collects all of <code>element</code>&#8217;s ancestors and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-childelements" class="mexcerpt">
+          <h4><a href="methods/childElements.html">childElements</a>
+          <div class="box">1.5.1</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">childElements(element) -> [HTMLElement...]</code></pre>
+
+<p>Collects all of the element's  children and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-classnames" class="mexcerpt">
+          <h4><a href="methods/classNames.html">classNames</a>
+          <div class="box">deprecated</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">classNames(element) -> Enumerable</code></pre>
+
+<p>Returns a new instance of <code>ClassNames</code>, an <code>Enumerable</code> object used to read and write CSS class names of <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-cleanwhitespace" class="mexcerpt">
+          <h4><a href="methods/cleanwhitespace.html">cleanWhitespace</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">cleanWhitespace(element) -> HTMLElement</code></pre>
+
+<p>Removes all of <code>element</code>'s text nodes which contain <em>only</em> whitespace. Returns <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-cloneposition" class="mexcerpt">
+          <h4><a href="methods/cloneposition.html">clonePosition</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">clonePosition(element, source[, options]) -> HTMLElement</code></pre>
+
+<p>Clones the position and/or dimensions of <code>source</code> onto <code>element</code> as defined by the optional argument <code>options</code>. </p></div>
+      </div>
+   
+  
+   
+      <div id="method-cumulativeoffset" class="mexcerpt">
+          <h4><a href="methods/cumulativeoffset.html">cumulativeOffset</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">cumulativeOffset(element) -> [Number, Number] also accessible as { left: Number, top: Number }</code></pre>
+
+<p>Returns the offsets of <code>element</code> from the top left corner of the document.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-cumulativescrolloffset" class="mexcerpt">
+          <h4><a href="methods/cumulativescrolloffset.html">cumulativeScrollOffset</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">cumulativeScrollOffset(element) -> [Number, Number] also accessible as { left: Number, top: Number }</code></pre>
+
+<p>Calculates the cumulative scroll offset of an element in nested scrolling containers.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-descendantof" class="mexcerpt">
+          <h4><a href="methods/descendantOf.html">descendantOf</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">descendantOf(element, ancestor) -> Boolean </code></pre>
+
+<p>Checks if <code>element</code> is a descendant of <code>ancestor</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-descendants" class="mexcerpt">
+          <h4><a href="methods/descendants.html">descendants</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">descendants(element) -> [HTMLElement...]</code></pre>
+
+<p>Collects all of <code>element</code>&#8217;s descendants and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-down" class="mexcerpt">
+          <h4><a href="methods/down.html">down</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">down(element[, cssRule][, index = 0]) -> HTMLElement | undefined</code></pre>
+
+<p>Returns element&#8217;s first descendant (or the n-th descendant if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all descendants are considered. If no descendant matches these criteria, <code>undefined</code> is returned.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-empty" class="mexcerpt">
+          <h4><a href="methods/empty.html">empty</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">empty(element) -> Boolean</code></pre>
+
+<p>Tests whether <code>element</code> is empty (i.e. contains only whitespace).</p></div>
+      </div>
+   
+  
+   
+      <div id="method-fire" class="mexcerpt">
+          <h4><a href="methods/fire.html">fire</a>
+          <div class="box">1.6.0</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">fire(eventName[, memo]) -> Event</code></pre>
+
+<p>Fires a custom event with the current element as its target.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-firstdescendant" class="mexcerpt">
+          <h4><a href="methods/firstDescendant.html">firstDescendant</a>
+          <div class="box">1.5.1</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">firstDescendant(element) -> HTMLElement</code></pre>
+
+<p>Returns the first child that is <em>an element</em>. This is opposed to <code>firstChild</code> DOM <strong>property</strong> which will return any node (whitespace in most usual cases).</p></div>
+      </div>
+   
+  
+   
+      <div id="method-getdimensions" class="mexcerpt">
+          <h4><a href="methods/getDimensions.html">getDimensions</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">getDimensions(element) -> {height: Number, width: Number}</code></pre>
+
+<p>Finds the computed <code>width</code> and <code>height</code> of <code>element</code> and returns them as key/value pairs of an object.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-getelementsbyclassname" class="mexcerpt">
+          <h4><a href="methods/getElementsByClassName.html">getElementsByClassName</a>
+          <div class="box">deprecated</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">getElementsByClassName(element, className) -> [HTMLElement...]</code></pre>
+
+<p>Fetches all of  <code>element</code>&#8217;s descendants which have a CSS class of <code>className</code> and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-getelementsbyselector" class="mexcerpt">
+          <h4><a href="methods/getelementsbyselector.html">getElementsBySelector</a>
+          <div class="box">deprecated</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">getElementsBySelector(element, selector...) -> [HTMLElement...]</code></pre>
+
+<p>Takes an arbitrary number of CSS selectors (strings) and returns an array of <a href="extend.html">extended</a> children of <code>element</code> that match any of them.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-getheight" class="mexcerpt">
+          <h4><a href="methods/getheight.html">getHeight</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">getHeight(element) -> Number</code></pre>
+
+<p>Finds and returns the computed height of <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-getoffsetparent" class="mexcerpt">
+          <h4><a href="methods/getoffsetparent.html">getOffsetParent</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">getOffsetParent(element) -> HTMLElement</code></pre>
+
+<p>Returns <code>element</code>&#8217;s closest <em>positioned</em> ancestor. If none is found, the <code>body</code> element is returned.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-getstyle" class="mexcerpt">
+          <h4><a href="methods/getStyle.html">getStyle</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">getStyle(element, property) -> String | null</code></pre>
+
+<p>Returns the given CSS property value of <code>element</code>. <code>property</code> can be specified in either of its CSS or camelized form.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-getwidth" class="mexcerpt">
+          <h4><a href="methods/getWidth.html">getWidth</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">getWidth(element) -> Number</code></pre>
+
+<p>Finds and returns the computed width of <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-hasclassname" class="mexcerpt">
+          <h4><a href="methods/hasClassName.html">hasClassName</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">hasClassName(element, className) -> Boolean</code></pre>
+
+<p>Checks whether <code>element</code> has the given CSS <code>className</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-hide" class="mexcerpt">
+          <h4><a href="methods/hide.html">hide</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">hide(element) -> HTMLElement</code></pre>
+
+<p>Hides and returns <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-identify" class="mexcerpt">
+          <h4><a href="methods/identify.html">identify</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">identify(element) -> id</code></pre>
+
+<p>returns <code>element</code>&#8217;s <code>id</code> attribute if it exists, or sets and returns a unique, auto-generated <code>id</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-immediatedescendants" class="mexcerpt">
+          <h4><a href="methods/immediateDescendants.html">immediateDescendants</a>
+          <div class="box">deprecated</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">immediateDescendants(element) -> [HTMLElement...]</code></pre>
+
+<p>Collects all of the element&#8217;s <em>immediate</em> descendants (i.e. <em>children</em>) and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-insert" class="mexcerpt">
+          <h4><a href="methods/insert.html">insert</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">insert(element, { position: content }) -> HTMLElement
+insert(element, content) -> HTMLElement</code></pre>
+
+<p>Inserts <code>content</code> before, after, at the top of, or at the bottom of <code>element</code>, as specified by the <code>position</code> property of the second argument. If the second argument is the content itself, <code>insert</code> will append it to <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-inspect" class="mexcerpt">
+          <h4><a href="methods/inspect.html">inspect</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">inspect(element) -> String</code></pre>
+
+<p>Returns the debug-oriented string representation of <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-makeclipping" class="mexcerpt">
+          <h4><a href="methods/makeClipping.html">makeClipping</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">makeClipping(element) -> HTMLElement</code></pre>
+
+<p>Simulates the poorly supported CSS <code>clip</code> property by setting <code>element</code>'s overflow value to <code>'hidden'</code>. Returns <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-makepositioned" class="mexcerpt">
+          <h4><a href="methods/makePositioned.html">makePositioned</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">makePositioned(element) -> HTMLElement</code></pre>
+
+<p>Allows for the easy creation of <a href="http://www.w3.org/TR/CSS21/visudet.html#containing-block-details">CSS containing block</a> by setting <code>element</code>'s CSS position to <code>'relative'</code> if its initial position is either <code>'static'</code> or <code>undefined</code>. Returns <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-match" class="mexcerpt">
+          <h4><a href="methods/match.html">match</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">match(element, selector) -> Boolean</code></pre>
+
+<p>Checks if <code>element</code> matches the given CSS <code>selector</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-next" class="mexcerpt">
+          <h4><a href="methods/next.html">next</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">next(element[, cssRule][, index = 0]) -> HTMLElement | undefined</code></pre>
+
+<p>Returns <code>element</code>&#8217;s following sibling (or the <em>index&#8217;th</em> one, if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all following siblings are considered. If no following sibling matches these criteria, <code>undefined</code> is returned.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-nextsiblings" class="mexcerpt">
+          <h4><a href="methods/nextSiblings.html">nextSiblings</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">nextSiblings(element) -> [HTMLElement...]</code></pre>
+
+<p>Collects all of <code>element</code>&#8217;s next siblings and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-observe" class="mexcerpt">
+          <h4><a href="methods/observe.html">observe</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">Element.observe(element, eventName, handler) -> HTMLElement
+someElement.observe(eventName, handler) -> HTMLElement</code></pre>
+
+<p>Registers an event handler on <code>element</code> and returns <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-positionedoffset" class="mexcerpt">
+          <h4><a href="methods/positionedoffset.html">positionedOffset</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">positionedOffset(element) -> [Number, Number] also accessible as { left: Number, top: Number }</code></pre>
+
+<p>Returns <code>element</code>&#8217;s offset relative to its closest positioned ancestor (the element that would be returned by <a href="http://prototypejs.org/api/api/getoffsetparent">Element#getOffsetParent</a>).</p></div>
+      </div>
+   
+  
+   
+      <div id="method-previous" class="mexcerpt">
+          <h4><a href="methods/previous.html">previous</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">previous(element[, cssRule][, index = 0]) -> HTMLElement | undefined</code></pre>
+
+<p>Returns <code>element</code>'s previous sibling (or the <em>index'th</em> one, if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all previous siblings are considered. If no previous sibling matches these criteria, <code>undefined</code> is returned.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-previoussiblings" class="mexcerpt">
+          <h4><a href="methods/previousSiblings.html">previousSiblings</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">previousSiblings(element) -> [HTMLElement...]</code></pre>
+
+<p>Collects all of <code>element</code>&#8217;s previous siblings and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-readattribute" class="mexcerpt">
+          <h4><a href="methods/readAttribute.html">readAttribute</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">readAttribute(element, attribute) -> String | null</code></pre>
+
+<p>Returns the value of <code>element</code>'s <code>attribute</code> or <code>null</code> if <code>attribute</code> has not been specified.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-recursivelycollect" class="mexcerpt">
+          <h4><a href="methods/recursivelyCollect.html">recursivelyCollect</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">recursivelyCollect(element, property) -> [HTMLElement...]</code></pre>
+
+<p>Recursively collects elements whose relationship is specified by <code>property</code>. <code>property</code> has to be a <em>property</em> (a method won&#8217;t do!) of <code>element</code> that points to a <em>single</em> DOM node. Returns an array of <a href="extend.html">extended</a> elements.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-relativize" class="mexcerpt">
+          <h4><a href="methods/relativize.html">relativize</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">relativize(element) -> HTMLElement</code></pre>
+
+<p>Turns <code>element</code> into an relatively-positioned element <em>without</em> changing its position in the page layout.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-remove" class="mexcerpt">
+          <h4><a href="methods/remove.html">remove</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">remove(element) -> HTMLElement</code></pre>
+
+<p>Completely removes <code>element</code> from the document and returns it.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-removeclassname" class="mexcerpt">
+          <h4><a href="methods/removeClassName.html">removeClassName</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">removeClassName(element, className) -> HTMLElement</code></pre>
+
+<p>Removes <code>element</code>&#8217;s CSS <code>className</code> and returns <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-replace" class="mexcerpt">
+          <h4><a href="methods/replace.html">replace</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">replace(element[, html]) -> HTMLElement</code></pre>
+
+<p>Replaces <code>element</code> by the content of the <code>html</code> argument and returns the removed <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-scrollto" class="mexcerpt">
+          <h4><a href="methods/scrollto.html">scrollTo</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">scrollTo(element) -> HTMLElement</code></pre>
+
+<p>Scrolls the window so that <code>element</code> appears at the top of the viewport. Returns <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-select" class="mexcerpt">
+          <h4><a href="methods/select.html">select</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">select(element, selector...) -> [HTMLElement...]</code></pre>
+
+<p>Takes an arbitrary number of CSS selectors (strings) and returns an array of <a href="extend.html">extended</a> descendants of <code>element</code> that match any of them.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-setopacity" class="mexcerpt">
+          <h4><a href="methods/setOpacity.html">setOpacity</a>
+          <div class="box">1.5.1</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">Element.setOpacity(element, opacity) -> [HTMLElement...]
+someElement.setOpacity(opacity) -> [HTMLElement...]</code></pre>
+
+<p>Sets the visual opacity of an element while working around inconsistencies in various browsers. The <code>opacity</code> argument should be a floating point number, where the value of 0 is fully transparent and 1 is fully opaque.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-setstyle" class="mexcerpt">
+          <h4><a href="methods/setStyle.html">setStyle</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">setStyle(element, styles) -> HTMLElement</code></pre>
+
+<p>Modifies <code>element</code>&#8217;s CSS style properties. Styles are passed as a hash of property-value pairs in which the properties are specified in their camelized form.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-show" class="mexcerpt">
+          <h4><a href="methods/show.html">show</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">show(element) -> HTMLElement</code></pre>
+
+<p>Displays and returns <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-siblings" class="mexcerpt">
+          <h4><a href="methods/siblings.html">siblings</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">siblings(element) -> [HTMLElement...]</code></pre>
+
+<p>Collects all of element&#8217;s siblings and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-stopobserving" class="mexcerpt">
+          <h4><a href="methods/stopobserving.html">stopObserving</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">stopObserving(element, eventName, handler) -> HTMLElement</code></pre>
+
+<p>Unregisters <code>handler</code> and returns <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-toggle" class="mexcerpt">
+          <h4><a href="methods/toggle.html">toggle</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toggle(element) -> HTMLElement</code></pre>
+
+<p>Toggles the visibility of <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-toggleclassname" class="mexcerpt">
+          <h4><a href="methods/toggleClassName.html">toggleClassName</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toggleClassName(element, className) -> HTMLElement</code></pre>
+
+<p>Toggles <code>element</code>&#8217;s CSS  <code>className</code> and returns <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-undoclipping" class="mexcerpt">
+          <h4><a href="methods/undoClipping.html">undoClipping</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">undoClipping(element) -> HTMLElement</code></pre>
+
+<p>Sets <code>element</code>&#8217;s CSS <code>overflow</code> property back to the value it had before <a href="makeClipping.html">Element.makeClipping()</a> was applied. Returns <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-undopositioned" class="mexcerpt">
+          <h4><a href="methods/undoPositioned.html">undoPositioned</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">undoPositioned(element) -> HTMLElement</code></pre>
+
+<p>Sets <code>element</code> back to the state it was <em>before</em> <a href="makePositioned.html">Element.makePositioned</a> was applied to it. Returns <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-up" class="mexcerpt">
+          <h4><a href="methods/up.html">up</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">up(element, [cssRule][, index = 0]) -> HTMLElement | undefined</code></pre>
+
+<p>Returns <code>element</code>&#8217;s first ancestor (or the <em>index&#8217;th</em> ancestor, if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all ancestors are considered. If no ancestor matches these criteria, <code>undefined</code> is returned.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-update" class="mexcerpt">
+          <h4><a href="methods/update.html">update</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">update(element[, newContent]) -> HTMLElement</code></pre>
+
+<p>Replaces the content of <code>element</code> with the provided <code>newContent</code> argument and returns <code>element</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-viewportoffset" class="mexcerpt">
+          <h4><a href="methods/viewportoffset.html">viewportOffset</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">viewportOffset(element) -> [Number, Number] also accessible as { left: Number, top: Number }</code></pre>
+
+<p>Returns the X/Y coordinates of <code>element</code> relative to the <em>viewport</em>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-visible" class="mexcerpt">
+          <h4><a href="methods/visible.html">visible</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">visible(element) -> Boolean</code></pre>
+
+<p>Returns a <code>Boolean</code> indicating whether or not <code>element</code> is visible (i.e. whether its inline <code>style</code> property is set to <code>"display: none;"</code>).</p></div>
+      </div>
+   
+  
+   
+      <div id="method-wrap" class="mexcerpt">
+          <h4><a href="methods/wrap.html">wrap</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">Element.wrap(element, wrapper[, attributes]) -> HTMLElement
+someElement.wrap(wrapper[, attributes]) -> HTMLElement</code></pre>
+
+<p>Wraps an element inside another, then returns the wrapper.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-writeattribute" class="mexcerpt">
+          <h4><a href="methods/writeAttribute.html">writeAttribute</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">writeAttribute(element, attribute[, value = true]) -> HTMLElement
+writeAttribute(element, attributes) -> HTMLElement</code></pre>
+
+<p>Adds, specifies or removes attributes passed as either a hash or a name/value pair.</p></div>
+      </div>
+   
+  
+</div>
+  
+
+
+          </div>
+        </div>
+        <!-- /main -->
+      </div>
+    </div>
+    <!-- /content -->
+    <div id="footer">
+&copy; 2006-2007 Prototype Core Team | Licenses:
+<a rel="license" href="http://dev.rubyonrails.org/browser/spinoffs/prototype/trunk/LICENSE?format=raw">MIT (source code)</a> and <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><abbr title="Creative Commons Attribution-Share Alike 3.0 License">CC BY-SA</abbr> (documentation)</a>.
+      <a id="badge" href="http://mephistoblog.com" title="This site's mojo provided by Mephisto"><img alt="mephisto-badge-tiny" src="../images/mephisto-badge-tiny.png" /></a>
+    </div>
+  </div>
+  <!-- /container -->
+
+</body>
+</html>

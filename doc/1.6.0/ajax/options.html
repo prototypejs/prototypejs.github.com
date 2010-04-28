@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Prototype JavaScript framework:  Ajax.Ajax Options </title>
+	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" media="print" href="../stylesheets/api-print.css" />
+        <!--[if lte IE 6]><link href="/stylesheets/ie-sucks-for-api.css" rel="stylesheet" type="text/css" media="screen"><![endif]-->
+  <link href="http://feeds.feedburner.com/prototype-blog" rel="alternate" type="application/atom+xml" />
+ <script src="../javascripts/prototype.js" type="text/javascript"></script>
+<script src="../javascripts/code_highlighter.js" type="text/javascript"></script>
+<script src="../javascripts/javascript.js" type="text/javascript"></script>
+<script src="../javascripts/html.js" type="text/javascript"></script>
+<script src="../javascripts/css.js" type="text/javascript"></script>
+<script src="../javascripts/ruby.js" type="text/javascript"></script>
+<script src="../javascripts/ebnf.js" type="text/javascript"></script>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-82668-3";
+urchinTracker();
+</script>
+<link rel="shortcut icon" href="../images/fav.png" type="image/ico" />
+</head>
+
+<body>
+  <!-- container -->
+  <div id="container">
+    <!-- header -->
+    <div id="header">
+      <h1 id="logo"><a href="../../index.html">Prototype Javascript Framework</a></h1>
+      <p id="tagline">easing the pain of dynamic web applications</p>
+      <!-- 
+       <div id="api-search">
+         <form action="/search">
+          Search api: <input name="q" type="search" />
+           <input type="hidden" value="api" name="s" />
+         </form>
+       </div>
+    -->
+    </div>
+    <!-- /header -->
+    <!-- nav -->
+          <div id="nav">
+      <ul class="clearfix">
+         <li><a href="../../download.html" title="Download the latest version of Prototype">Download</a></li>
+         <li><a href="http://api.prototypejs.org" title="View the Prototype API docs">API Docs</a></li>
+         <li><a href="../../learn.html" title="Prototype tips and tutorials">Tips and Tutorials</a></li>
+         <li><a href="http://prototypejs.org/blog" title="The Official Prototype Blog">Blog</a></li>
+         <li><a href="../../discuss.html" title="Mailing lists and IRC">Discuss</a></li>
+         <li><a href="../../contribute.html" title="Contribute to Prototype">Contribute</a></li>
+      </ul>
+    </div>
+    <!-- /nav -->
+
+    
+    <!-- content -->
+    <div id="content">
+      <div id="cnt-inner">
+        <div id="sidebar">
+          
+          
+          
+          
+          <div class="sblock">            
+          <h3 class="object"><a class="selected" href="../ajax.html">Ajax</a></h3>
+          <ul class="methods">
+            
+            
+            
+            
+              <li class="selected"><a class="selected" href="options.html">Ajax Options</a></li>
+            
+            
+            
+              <li><a href="periodicalUpdater.html">Ajax.PeriodicalUpdater</a></li>
+            
+            
+            
+              <li><a href="request.html">Ajax.Request</a></li>
+            
+            
+            
+              <li><a href="responders.html">Ajax.Responders</a></li>
+            
+            
+            
+              <li><a href="response.html">Ajax.Response</a></li>
+            
+            
+            
+              <li><a href="updater.html">Ajax.Updater</a></li>
+            
+            
+          </ul>
+          </div>
+          
+          
+          
+          <div class="sblock">
+          <h3>API Docs</h3>
+           
+          <ul class="objects">
+            <li><a href="../utility.html" title="Utility Methods">Utility Methods</a></li>
+            
+               
+                <li><a href="../ajax.html" title="Ajax">Ajax</a></li>
+               
+            
+               
+                <li><a href="../array.html" title="Array">Array</a></li>
+               
+            
+               
+                <li><a href="../class.html" title="Class">Class</a></li>
+               
+            
+               
+                <li><a href="../date.html" title="Date">Date</a></li>
+               
+            
+               
+                <li><a href="../element.html" title="Element">Element</a></li>
+               
+            
+               
+                <li><a href="../element/methods.html" title="Element.Methods">Element.Methods</a></li>
+               
+            
+               
+                <li><a href="../element/methods/simulated.html" title="Element.Methods.Simulated">Element.Methods.Simulated</a></li>
+               
+            
+               
+                <li><a href="../enumerable.html" title="Enumerable">Enumerable</a></li>
+               
+            
+               
+                <li><a href="../event.html" title="Event">Event</a></li>
+               
+            
+               
+                <li><a href="../form.html" title="Form">Form</a></li>
+               
+            
+               
+                <li><a href="../form/element.html" title="Form.Element">Form.Element</a></li>
+               
+            
+               
+                <li><a href="../function.html" title="Function">Function</a></li>
+               
+            
+               
+                <li><a href="../hash.html" title="Hash">Hash</a></li>
+               
+            
+               
+                <li><a href="../insertion.html" title="Insertion">Insertion</a></li>
+               
+            
+               
+                <li><a href="../number.html" title="Number">Number</a></li>
+               
+            
+               
+                <li><a href="../object.html" title="Object">Object</a></li>
+               
+            
+               
+                <li><a href="../objectRange.html" title="ObjectRange">ObjectRange</a></li>
+               
+            
+               
+                <li><a href="../periodicalExecuter.html" title="PeriodicalExecuter">PeriodicalExecuter</a></li>
+               
+            
+               
+                <li><a href="../position.html" title="Position">Position</a></li>
+               
+            
+               
+                <li><a href="../prototype.html" title="Prototype">Prototype</a></li>
+               
+            
+               
+                <li><a href="../string.html" title="String">String</a></li>
+               
+            
+               
+                <li><a href="../template.html" title="Template">Template</a></li>
+               
+            
+               
+                <li><a href="../timedObserver.html" title="TimedObserver">TimedObserver</a></li>
+               
+            
+               
+            
+               
+                <li><a href="../document.html" title="document">document</a></li>
+               
+            
+               
+                <li><a href="../document/viewport.html" title="document.viewport">document.viewport</a></li>
+               
+            
+          </ul>
+          </div>
+        </div>
+        <!-- main -->
+        <div id="main" class="clearfix">
+          <div id="pagenav">
+            <ul>
+              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
+            </ul>
+          </div>
+          <div id="main-content">
+            
+
+
+  <h2>Ajax Options
+
+</h2>
+  
+    <div id="excerpt"><p>This details all core options (shared by all AJAX requesters) and callbacks.</p></div>
+    <div id="abody"><p>All requester object in the <code>Ajax</code> namespace share a common set of <strong>options</strong> and <strong>callbacks</strong>.  Callbacks are called at various points in the life-cycle of a request, and always feature the same list of arguments. They are passed to requesters right along with their other options.</p>
+
+<h3>Common options</h3>
+
+<table class="data" cellspacing="0" cellpadding="0">
+<thead>
+  <tr>
+    <th>Option</th>
+    <th>Default</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th><code>asynchronous</code></th>
+    <td><code>true</code></td>
+    <td>Determines whether <code>XMLHttpRequest</code> is used asynchronously or not.  Since synchronous usage is rather unsettling, and usually bad taste, you should avoid changing this.  Seriously.</td>
+  </tr>
+  <tr>
+    <th><code>contentType</code></th>
+    <td><code>'application/x-www-form-urlencoded'</code></td>
+    <td>The <code>Content-Type</code> header for your request.  You might want to send XML instead of the regular URL-encoded format, in which case you would have to change this.</td>
+  </tr>
+  <tr>
+    <th><code>encoding</code></th>
+    <td><code>'UTF-8'</code></td>
+    <td>The encoding for your request contents.  It is best left as is, but should weird encoding issues arise, you may have to tweak it in accordance with other encoding-related parts of your page code and server side.</td>
+  </tr>
+  <tr>
+    <th><code>method</code></th>
+    <td><code>'post'</code></td>
+    <td>The HTTP method to use for the request.  The other widespread possibility is <code>'get'</code>.  As a Ruby On Rails special, Prototype also reacts to other verbs (such as <code>'put'</code> and <code>'delete'</code> by actually using <code>'post'</code> and putting an extra <code>'_method'</code> parameter with the originally requested method in there.</td>
+  </tr>
+  <tr>
+    <th><code>parameters</code></th>
+    <td><code>''</code></td>
+    <td>The parameters for the request, which will be encoded into the URL for a <code>'get'</code> method, or into the request body for the other methods.  This can be provided either as a URL-encoded string or as any <a href="../hash.html"><code>Hash</code></a>-compatible object (basically anything), with properties representing parameters.</td>
+  </tr>
+  <tr>
+    <th><code>postBody</code></th>
+    <td>None</td>
+    <td>Specific contents for the request body on a <code>'post'</code> method (actual method, after possible conversion as described in the <code>method</code> opt
+ion above).  If it is not provided, the contents of the <code>parameters</code> option will be used instead.</td>
+  </tr>
+  <tr>
+    <th><code>requestHeaders</code></th>
+    <td>See text</td>
+    <td>
+      <p>Request headers can be passed under two forms:</p>
+
+      <ul>
+        <li>As an <strong>object</strong>, with properties representing headers.</li>
+        <li>As an <strong>array</strong>, with even-index (0, 2&#8230;) elements being header names, and odd-index (1, 3&#8230;) elements being values.</li>
+      </ul>
+
+      <p>Prototype automatically provides a set of default headers, that this option can override and augment:</p>
+
+      <ul>
+        <li><strong><code>X-Requested-With</code></strong> is set to <code>'XMLHttpRequest'</code>.</li>
+        <li><strong><code>X-Prototype-Version</code></strong> provides Prototype's current version (e.g. 1.5.0).</li>
+        <li><strong><code>Accept</code></strong> defaults to <code>'text/javascript, text/html, application/xml, text/xml, */*'</code></li>
+        <li><strong><code>Content-type</code></strong> is built based on the <code>contentType</code> and <code>encoding</code> options.</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <th><code>evalJS</code></th>
+    <td>true</td>
+    <td>Automatically evals the content of <code>Ajax.Response#responseText</code> if the content-type returned by the server is one of the following: <code>application/ecmascript</code>,
+<code>application/javascript</code>,
+<code>application/x-ecmascript</code>,
+<code>application/x-javascript</code>,
+<code>text/ecmascript</code>,
+<code>text/javascript</code>,
+<code>text/x-ecmascript</code>, or 
+<code>text/x-javascript</code> <em>and</em> the request obeys <a href="http://en.wikipedia.org/wiki/Same_origin_policy"><abbr title="Same Origin Policy">SOP</abbr></a>. If you need to force evalutation, pass <code>'force'</code>. To prevent it altogether, pass <code>false</code>.</td>
+  </tr>
+  <tr>
+    <th><code>evalJSON</code></th>
+    <td>true</td>
+    <td>Automatically evals the content of <code>Ajax.Response#responseText</code> and populates <code>Ajax.Response#responseJSON</code> with it if the content-type returned by the server is set to <code>application/json</code>. If the request doesn't obey <a href="http://en.wikipedia.org/wiki/Same_origin_policy"><abbr title="Same Origin Policy">SOP</abbr></a>, the content is sanitized before evaluation. If you need to force evalutation, pass <code>'force'</code>. To prevent it altogether, pass <code>false</code>.</td>
+  </tr>
+  <tr>
+    <th><code>sanitizeJSON</code></th>
+    <td><code>false</code> for local requests, <code>true</code> otherwise.</td>
+    <td>Sanitizes the content of <code>Ajax.Response#responseText</code> before evaluating it.</td>
+  </tr>
+</tbody>
+</table>
+
+<h3>Common callbacks</h3>
+
+<p>When used on individual instances, all callbacks (except <code>onException</code>) are invoked with two parameters: the <code>XMLHttpRequest</code> object and the result of evaluating the <code>X-JSON</code> response header, if any (can be <code>null</code>).</p>
+
+<p>For another way of describing their chronological order and which callbacks are mutually exclusive, see <a href="request.html"><code>Ajax.Request</code></a>.</p>
+
+<table class="data" cellspacing="0" cellpadding="0">
+<thead>
+  <tr>
+    <th>Callback</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th><code>onCreate</code><br /><span style="color:gray;font-size:90%">(v1.5.1)</span></th>
+    <td>Triggered when the <code>Ajax.Request</code> object is initialized. This is <em>after</em> the parameters and the URL have been processed, but <em>before</em> first using the methods of the XHR object.</td>
+  </tr>
+  <tr>
+    <th><code>onComplete</code></th>
+    <td>Triggered at the very end of a request's life-cycle, once the request completed, status-specific callbacks were called, and possible automatic behaviors were processed.</td>
+  </tr>
+  <tr>
+    <th><code>onException</code></th>
+    <td>Triggered whenever an XHR error arises.  Has a custom signature: the first argument is the requester (i.e. an <code>Ajax.Request</code> instance), the second is the exception object.</td>
+  </tr>
+  <tr>
+    <th><code>onFailure</code></th>
+    <td>Invoked when a request completes and its status code exists but is not in the 2xy family.  This is skipped if a code-specific callback is defined, and happens <em>before</em> <code>onComplete</code>.</td>
+  </tr>
+  <tr>
+    <th><code>onInteractive</code></th>
+    <td>(Not guaranteed) Triggered whenever the requester receives a part of the response (but not the final part), should it be sent in several packets.</td>
+  </tr>
+  <tr>
+    <th><code>onLoaded</code></th>
+    <td>(Not guaranteed) Triggered once the underlying XHR object is setup, the connection open, and ready to send its actual request.</td>
+  </tr>
+  <tr>
+    <th><code>onLoading</code></th>
+    <td>(Not guaranteed) Triggered when the underlying XHR object is being setup, and its connection opened.</td>
+  </tr>
+  <tr>
+    <th><code>onSuccess</code></th>
+    <td>Invoked when a request completes and its status code is undefined or belongs in the 2xy family.  This is skipped if a code-specific callback is defined, and happens <em>before</em> <code>onComplete</code>.</td>
+  </tr>
+  <tr>
+    <th><code>onUninitialized</code></th>
+    <td>(Not guaranteed) Invoked when the XHR object was just created.</td>
+  </tr>
+  <tr>
+    <th><code>on</code><em>XYZ</em></th>
+    <td>With <em>XYZ</em> being an HTTP status code for the response.  Invoked when the response just completed, and the status code is exactly the one we used in t
+he callback name.  Prevents execution of <code>onSuccess</code> / <code>onFailure</code>.  Happens <em>before</em> <code>onComplete</code>.</td>
+  </tr>
+</tbody>
+</table>
+
+<h3>Responder callbacks</h3>
+
+<p>When used on responders, all callbacks (except <code>onException</code> and <code>onCreate</code>) are invoked with three parameters: the requester (i.e. the corresponding "instance" of <code>Ajax.Request</code>) object, the <code>XMLHttpRequest</code> object and the result of evaluating the <code>X-JSON</code> response header, if any (can be <code>null</code>).  They also execute in the context of the responder, bound to the <strong><code>this</code></strong> reference.</p>
+
+<table class="data" cellspacing="0" cellpadding="0">
+<thead>
+  <tr>
+    <th>Callback</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th><code>onCreate</code></th>
+    <td>Triggered whenever a requester object from the <code>Ajax</code> namespace is created, after its parameters where adjusted and its before its XHR connection is opened.  This takes two arguments: the requester object and the underlying XHR object.<td>
+  </tr>
+  <tr>
+    <th><code>onComplete</code></th>
+    <td>Triggered at the very end of a request's life-cycle, once the request completed, status-specific callbacks were called, and possible automatic behaviors were processed.</td>
+  </tr>
+  <tr>
+    <th><code>onException</code></th>
+    <td>Triggered whenever an XHR error arises.  Has a custom signature: the first argument is the requester (i.e. an <code>Ajax.Request</code> instance), the second is the exception object.</td>
+  </tr>
+  <tr>
+    <th><code>onInteractive</code></th>
+    <td>(Not guaranteed) Triggered whenever the requester receives a part of the response (but not the final part), should it be sent in several packets.</td>
+  </tr>
+  <tr>
+    <th><code>onLoaded</code></th>
+    <td>(Not guaranteed) Triggered once the underlying XHR object is setup, the connection open, and ready to send its actual request.</td>
+  </tr>
+  <tr>
+    <th><code>onLoading</code></th>
+    <td>(Not guaranteed) Triggered when the underlying XHR object is being setup, and its connection opened.</td>
+  </tr>
+  <tr>
+    <th><code>onUninitialized</code></th>
+    <td>(Not guaranteed) Invoked when the XHR object was just created.</td>
+  </tr>
+</tbody>
+</table></div>
+  
+
+
+          </div>
+        </div>
+        <!-- /main -->
+      </div>
+    </div>
+    <!-- /content -->
+    <div id="footer">
+&copy; 2006-2007 Prototype Core Team | Licenses:
+<a rel="license" href="http://dev.rubyonrails.org/browser/spinoffs/prototype/trunk/LICENSE?format=raw">MIT (source code)</a> and <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><abbr title="Creative Commons Attribution-Share Alike 3.0 License">CC BY-SA</abbr> (documentation)</a>.
+      <a id="badge" href="http://mephistoblog.com" title="This site's mojo provided by Mephisto"><img alt="mephisto-badge-tiny" src="../images/mephisto-badge-tiny.png" /></a>
+    </div>
+  </div>
+  <!-- /container -->
+
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Prototype JavaScript framework:  Hash </title>
+	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" media="print" href="stylesheets/api-print.css" />
+        <!--[if lte IE 6]><link href="/stylesheets/ie-sucks-for-api.css" rel="stylesheet" type="text/css" media="screen"><![endif]-->
+  <link href="http://feeds.feedburner.com/prototype-blog" rel="alternate" type="application/atom+xml" />
+ <script src="javascripts/prototype.js" type="text/javascript"></script>
+<script src="javascripts/code_highlighter.js" type="text/javascript"></script>
+<script src="javascripts/javascript.js" type="text/javascript"></script>
+<script src="javascripts/html.js" type="text/javascript"></script>
+<script src="javascripts/css.js" type="text/javascript"></script>
+<script src="javascripts/ruby.js" type="text/javascript"></script>
+<script src="javascripts/ebnf.js" type="text/javascript"></script>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-82668-3";
+urchinTracker();
+</script>
+<link rel="shortcut icon" href="images/fav.png" type="image/ico" />
+</head>
+
+<body>
+  <!-- container -->
+  <div id="container">
+    <!-- header -->
+    <div id="header">
+      <h1 id="logo"><a href="../index.html">Prototype Javascript Framework</a></h1>
+      <p id="tagline">easing the pain of dynamic web applications</p>
+      <!-- 
+       <div id="api-search">
+         <form action="/search">
+          Search api: <input name="q" type="search" />
+           <input type="hidden" value="api" name="s" />
+         </form>
+       </div>
+    -->
+    </div>
+    <!-- /header -->
+    <!-- nav -->
+          <div id="nav">
+      <ul class="clearfix">
+         <li><a href="../download.html" title="Download the latest version of Prototype">Download</a></li>
+         <li><a href="http://api.prototypejs.org" title="View the Prototype API docs">API Docs</a></li>
+         <li><a href="../learn.html" title="Prototype tips and tutorials">Tips and Tutorials</a></li>
+         <li><a href="http://prototypejs.org/blog" title="The Official Prototype Blog">Blog</a></li>
+         <li><a href="../discuss.html" title="Mailing lists and IRC">Discuss</a></li>
+         <li><a href="../contribute.html" title="Contribute to Prototype">Contribute</a></li>
+      </ul>
+    </div>
+    <!-- /nav -->
+
+    
+    <!-- content -->
+    <div id="content">
+      <div id="cnt-inner">
+        <div id="sidebar">
+          
+          
+          
+          
+          <div class="sblock">            
+          <h3 class="object"><a class="selected" href="hash.html">Hash</a></h3>
+          <ul class="methods">
+            
+            
+            
+            
+              <li><a href="hash/clone.html">clone</a></li>
+            
+            
+            
+              <li><a href="hash/each.html">each</a></li>
+            
+            
+            
+              <li><a href="hash/get.html">get</a></li>
+            
+            
+            
+              <li><a href="hash/inspect.html">inspect</a></li>
+            
+            
+            
+              <li><a href="hash/keys.html">keys</a></li>
+            
+            
+            
+              <li><a href="hash/merge.html">merge</a></li>
+            
+            
+            
+              <li><a href="hash/remove.html">remove</a></li>
+            
+            
+            
+              <li><a href="hash/set.html">set</a></li>
+            
+            
+            
+              <li><a href="hash/tojson.html">toJSON</a></li>
+            
+            
+            
+              <li><a href="hash/toobject.html">toObject</a></li>
+            
+            
+            
+              <li><a href="hash/toQueryString.html">toQueryString</a></li>
+            
+            
+            
+              <li><a href="hash/unset.html">unset</a></li>
+            
+            
+            
+              <li><a href="hash/update.html">update</a></li>
+            
+            
+            
+              <li><a href="hash/values.html">values</a></li>
+            
+            
+          </ul>
+          </div>
+          
+          
+          
+          <div class="sblock">
+          <h3>API Docs</h3>
+           
+          <ul class="objects">
+            <li><a href="utility.html" title="Utility Methods">Utility Methods</a></li>
+            
+               
+                <li><a href="ajax.html" title="Ajax">Ajax</a></li>
+               
+            
+               
+                <li><a href="array.html" title="Array">Array</a></li>
+               
+            
+               
+                <li><a href="class.html" title="Class">Class</a></li>
+               
+            
+               
+                <li><a href="date.html" title="Date">Date</a></li>
+               
+            
+               
+                <li><a href="element.html" title="Element">Element</a></li>
+               
+            
+               
+                <li><a href="element/methods.html" title="Element.Methods">Element.Methods</a></li>
+               
+            
+               
+                <li><a href="element/methods/simulated.html" title="Element.Methods.Simulated">Element.Methods.Simulated</a></li>
+               
+            
+               
+                <li><a href="enumerable.html" title="Enumerable">Enumerable</a></li>
+               
+            
+               
+                <li><a href="event.html" title="Event">Event</a></li>
+               
+            
+               
+                <li><a href="form.html" title="Form">Form</a></li>
+               
+            
+               
+                <li><a href="form/element.html" title="Form.Element">Form.Element</a></li>
+               
+            
+               
+                <li><a href="function.html" title="Function">Function</a></li>
+               
+            
+               
+                <li><a href="hash.html" title="Hash">Hash</a></li>
+               
+            
+               
+                <li><a href="insertion.html" title="Insertion">Insertion</a></li>
+               
+            
+               
+                <li><a href="number.html" title="Number">Number</a></li>
+               
+            
+               
+                <li><a href="object.html" title="Object">Object</a></li>
+               
+            
+               
+                <li><a href="objectRange.html" title="ObjectRange">ObjectRange</a></li>
+               
+            
+               
+                <li><a href="periodicalExecuter.html" title="PeriodicalExecuter">PeriodicalExecuter</a></li>
+               
+            
+               
+                <li><a href="position.html" title="Position">Position</a></li>
+               
+            
+               
+                <li><a href="prototype.html" title="Prototype">Prototype</a></li>
+               
+            
+               
+                <li><a href="string.html" title="String">String</a></li>
+               
+            
+               
+                <li><a href="template.html" title="Template">Template</a></li>
+               
+            
+               
+                <li><a href="timedObserver.html" title="TimedObserver">TimedObserver</a></li>
+               
+            
+               
+            
+               
+                <li><a href="document.html" title="document">document</a></li>
+               
+            
+               
+                <li><a href="document/viewport.html" title="document.viewport">document.viewport</a></li>
+               
+            
+          </ul>
+          </div>
+        </div>
+        <!-- main -->
+        <div id="main" class="clearfix">
+          <div id="pagenav">
+            <ul>
+              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
+            </ul>
+          </div>
+          <div id="main-content">
+            
+
+
+  <h2>Hash <span id="atom-feed"><a href="../feed/api/hash/atom.xml" title="Feed for Hash">Atom feed</a></span></h2>
+  
+    <div id="method-list">
+  <ul>
+  
+   
+  
+   
+     <li><a href="hash.html#method-clone" class="1.6">clone</a></li>
+   
+  
+   
+     <li><a href="hash.html#method-each" class="">each</a></li>
+   
+  
+   
+     <li><a href="hash.html#method-get" class="1.6">get</a></li>
+   
+  
+   
+     <li><a href="hash.html#method-inspect" class="">inspect</a></li>
+   
+  
+   
+     <li><a href="hash.html#method-keys" class="">keys</a></li>
+   
+  
+   
+     <li><a href="hash.html#method-merge" class="1.6 modified">merge</a></li>
+   
+  
+   
+     <li><a href="hash.html#method-remove" class="deprecated">remove</a></li>
+   
+  
+   
+     <li><a href="hash.html#method-set" class="1.6">set</a></li>
+   
+  
+   
+     <li><a href="hash.html#method-tojson" class="1.5.1">toJSON</a></li>
+   
+  
+   
+     <li><a href="hash.html#method-toobject" class="1.6">toObject</a></li>
+   
+  
+   
+     <li><a href="hash.html#method-toquerystring" class="1.6 modified">toQueryString</a></li>
+   
+  
+   
+     <li><a href="hash.html#method-unset" class="1.6">unset</a></li>
+   
+  
+   
+     <li><a href="hash.html#method-update" class="1.6">update</a></li>
+   
+  
+   
+     <li><a href="hash.html#method-values" class="">values</a></li>
+   
+  
+  </ul>
+</div>
+
+
+
+    <div id="abody"><p>Hash can be thought of as an <em>associative array</em>, binding unique keys to values (which are not necessarily unique), though it can not guarantee consistent order its elements when iterating. Because of the nature of JavaScript programming language, every object is in fact a hash; but <code>Hash</code> adds a number of methods that let you enumerate keys and values, iterate over key/value pairs, merge two hashes together, encode the hash into a query string representation, etc.</p>
+
+<h3>Creating a hash</h3>
+
+<p>There are two ways to construct a <code>Hash</code> instance: the first is regular JavaScript object instantiation with the <code>new</code> keyword, and the second is using the <a href="utility/dollar-h.html"><code>$H</code></a> function. Passing a plain JavaScript object or a Hash to any of them would clone it, keeping your original object intact.</p>
+
+<p>You can call both constructor methods without arguments, too; they will assume an empty hash.</p>
+
+<h3>Backwards compatibility changes in Prototype 1.6</h3>
+
+<p class="notice"> <strong>Backwards compatibility change</strong> - Although it serves the same purpose as before, the new version of Hash is <strong>not</strong> compatible with the Hash class in previous versions of Prototype.</p>
+
+<p>Hash properties are now hidden away in a private store to prevent the risk of collision with Hash&#8217;s instance and mixed-in methods. This means that properties of the hash can no longer be set, accessed or deleted directly; you must use the <a href="hash/get.html"><code>Hash#get(key)</code></a>, <a href="hash/set.html"><code>Hash#set(key, value)</code></a> and <a href="hash/unset.html"><code>Hash#unset(key)</code></a> instance methods instead. To illustrate:</p>
+
+<pre><code class="javascript">var myhash = new Hash();
+
+// old API  -->  new API
+myhash.name = "Bob";  -->  myhash.set('name', 'Bob');
+myhash.name;          -->  myhash.get('name');
+delete myhash.name;   -->  myhash.unset('name');</code></pre>
+
+<p>You should also be aware of other changes to the Hash API:</p>
+
+<ul>
+<li>The $H(object) shortcut is now completely equivalent to new Hash(object). Both always return a new object, regardless of whether the argument was an Object or another Hash.</li>
+<li>Hash#merge returns a new Hash instead of modifying the Hash it&#8217;s called on.</li>
+<li>Hash#update is a destructive version of Hash#merge that modifies the Hash it&#8217;s called on.</li>
+<li>Hash#clone returns a new, cloned instance of Hash.</li>
+<li>Hash#toObject that returns a copy of the Hash&#8217;s inner Object.</li>
+<li>Hash.toQueryString is now an alias of Object.toQueryString.  (Hash.toQueryString is deprecated and will be removed in a future version of Prototype.)</li>
+<li>Hash#remove has been removed in favor of Hash#unset.</li>
+<li>Hash.toJSON has been removed in favor of Object.toJSON or the Hash#toJSON instance method.</li>
+</ul>
+
+<h3>Notes for earlier versions of Prototype (&lt; 1.6)</h3>
+
+<p>Passing a hash to $H did not clone it.</p>
+
+<p><code>Hash</code> could not hold <em>any</em> key because of having Enumerable mixed in, as well as its own methods. After adding a key that had the same name as any of those methods, this method would no longer be callable. You could get away with doing that to methods you didn&#8217;t need, but there were still issues:</p>
+
+<pre><code class="javascript">
+var h = new Hash({ ... });
+h['each'] = 'my own stuff';
+h.map();
+// -> errors out because 'each' is not a function
+</code></pre>
+
+<p>The most important method in Enumerable is <a href="enumerable/each.html">&#8216;each&#8217;</a>, and&mdash;since almost every other method uses it&mdash;overwriting it renders our hash instance practically useless. You couldn&#8217;t get away with using &#8216;_each&#8217;, too, since it also is an internal Enumerable method.</p></div>
+    <div id="method-excerpts">  
+<h3>Methods</h3>
+
+   
+  
+   
+      <div id="method-clone" class="mexcerpt">
+          <h4><a href="hash/clone.html">clone</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">clone() -> newHash</code></pre>
+
+<p>Returns a clone of hash.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-each" class="mexcerpt">
+          <h4><a href="hash/each.html">each</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">each(iterator) -> Hash</code></pre>
+
+<p>Iterates over the name/value pairs in the hash.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-get" class="mexcerpt">
+          <h4><a href="hash/get.html">get</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">get(key) -> value</code></pre>
+
+<p>Returns the value of the hash&#8217;s <code>key</code> property.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-inspect" class="mexcerpt">
+          <h4><a href="hash/inspect.html">inspect</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">inspect() -> String</code></pre>
+
+<p>Returns the debug-oriented string representation of the hash.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-keys" class="mexcerpt">
+          <h4><a href="hash/keys.html">keys</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">keys() -> [String...]</code></pre>
+
+<p>Provides an Array of keys (that is, property names) for the hash.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-merge" class="mexcerpt">
+          <h4><a href="hash/merge.html">merge</a>
+          <div class="box">1.6 modified</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">merge(object) -> newHash</code></pre>
+
+<p>Merges <code>object</code> to hash and returns the result of that merge.
+<em>Prior to v1.6.0:</em> This was destructive (object's values were added to hash).
+<em>Since v1.6.0:</em> This is no longer destructive (hash is cloned before the operation).</p></div>
+      </div>
+   
+  
+   
+      <div id="method-remove" class="mexcerpt">
+          <h4><a href="hash/remove.html">remove</a>
+          <div class="box">deprecated</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">remove(key) -> value
+remove(key1, key2...) -> Array</code></pre>
+
+<p>Removes keys from a hash and returns their values. <em>Not available since v1.6.0</em>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-set" class="mexcerpt">
+          <h4><a href="hash/set.html">set</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">set(key, value) -> value</code></pre>
+
+<p>Sets the hash&#8217;s <code>key</code> property to <code>value</code> and returns <code>value</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-tojson" class="mexcerpt">
+          <h4><a href="hash/tojson.html">toJSON</a>
+          <div class="box">1.5.1</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toJSON() -> String</code></pre>
+
+<p>Returns a JSON string.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-toobject" class="mexcerpt">
+          <h4><a href="hash/toobject.html">toObject</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toObject() -> Object</code></pre>
+
+<p>Returns a cloned, vanilla object.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-toquerystring" class="mexcerpt">
+          <h4><a href="hash/toQueryString.html">toQueryString</a>
+          <div class="box">1.6 modified</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toQueryString() -> String</code></pre>
+
+<p>Turns a hash into its URL-encoded query string representation.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-unset" class="mexcerpt">
+          <h4><a href="hash/unset.html">unset</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">unset(key) -> value</code></pre>
+
+<p>Deletes the hash&#8217;s <code>key</code> property and returns its value.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-update" class="mexcerpt">
+          <h4><a href="hash/update.html">update</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">update(object) -> Hash</code></pre>
+
+<p>Updates hash with the key/value pairs of <code>object</code>. The original hash will be modified.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-values" class="mexcerpt">
+          <h4><a href="hash/values.html">values</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">values() -> Array</code></pre>
+
+<p>Collect the values of a hash and returns them in an array.</p></div>
+      </div>
+   
+  
+</div>
+  
+
+
+          </div>
+        </div>
+        <!-- /main -->
+      </div>
+    </div>
+    <!-- /content -->
+    <div id="footer">
+&copy; 2006-2007 Prototype Core Team | Licenses:
+<a rel="license" href="http://dev.rubyonrails.org/browser/spinoffs/prototype/trunk/LICENSE?format=raw">MIT (source code)</a> and <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><abbr title="Creative Commons Attribution-Share Alike 3.0 License">CC BY-SA</abbr> (documentation)</a>.
+      <a id="badge" href="http://mephistoblog.com" title="This site's mojo provided by Mephisto"><img alt="mephisto-badge-tiny" src="images/mephisto-badge-tiny.png" /></a>
+    </div>
+  </div>
+  <!-- /container -->
+
+</body>
+</html>

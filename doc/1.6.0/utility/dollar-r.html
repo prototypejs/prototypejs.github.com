@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Prototype JavaScript framework:  Utility Methods.$R </title>
+	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" media="print" href="../stylesheets/api-print.css" />
+        <!--[if lte IE 6]><link href="/stylesheets/ie-sucks-for-api.css" rel="stylesheet" type="text/css" media="screen"><![endif]-->
+  <link href="http://feeds.feedburner.com/prototype-blog" rel="alternate" type="application/atom+xml" />
+ <script src="../javascripts/prototype.js" type="text/javascript"></script>
+<script src="../javascripts/code_highlighter.js" type="text/javascript"></script>
+<script src="../javascripts/javascript.js" type="text/javascript"></script>
+<script src="../javascripts/html.js" type="text/javascript"></script>
+<script src="../javascripts/css.js" type="text/javascript"></script>
+<script src="../javascripts/ruby.js" type="text/javascript"></script>
+<script src="../javascripts/ebnf.js" type="text/javascript"></script>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-82668-3";
+urchinTracker();
+</script>
+<link rel="shortcut icon" href="../images/fav.png" type="image/ico" />
+</head>
+
+<body>
+  <!-- container -->
+  <div id="container">
+    <!-- header -->
+    <div id="header">
+      <h1 id="logo"><a href="../../index.html">Prototype Javascript Framework</a></h1>
+      <p id="tagline">easing the pain of dynamic web applications</p>
+      <!-- 
+       <div id="api-search">
+         <form action="/search">
+          Search api: <input name="q" type="search" />
+           <input type="hidden" value="api" name="s" />
+         </form>
+       </div>
+    -->
+    </div>
+    <!-- /header -->
+    <!-- nav -->
+          <div id="nav">
+      <ul class="clearfix">
+         <li><a href="../../download.html" title="Download the latest version of Prototype">Download</a></li>
+         <li><a href="http://api.prototypejs.org" title="View the Prototype API docs">API Docs</a></li>
+         <li><a href="../../learn.html" title="Prototype tips and tutorials">Tips and Tutorials</a></li>
+         <li><a href="http://prototypejs.org/blog" title="The Official Prototype Blog">Blog</a></li>
+         <li><a href="../../discuss.html" title="Mailing lists and IRC">Discuss</a></li>
+         <li><a href="../../contribute.html" title="Contribute to Prototype">Contribute</a></li>
+      </ul>
+    </div>
+    <!-- /nav -->
+
+    
+    <!-- content -->
+    <div id="content">
+      <div id="cnt-inner">
+        <div id="sidebar">
+          
+          
+          
+          
+          <div class="sblock">            
+          <h3 class="object"><a class="selected" href="../utility.html">Utility Methods</a></h3>
+          <ul class="methods">
+            
+            
+              <li><a href="dollar.html">$</a></li>
+            
+            
+            
+              <li><a href="dollar-dollar.html">$$</a></li>
+            
+            
+            
+              <li><a href="dollar-a.html">$A</a></li>
+            
+            
+            
+              <li><a href="dollar-f.html">$F</a></li>
+            
+            
+            
+              <li><a href="dollar-h.html">$H</a></li>
+            
+            
+            
+              <li class="selected"><a class="selected" href="dollar-r.html">$R</a></li>
+            
+            
+            
+              <li><a href="dollar-w.html">$w</a></li>
+            
+            
+            
+              <li><a href="try-these.html">Try.these</a></li>
+            
+            
+            
+            
+            
+              <li><a href="getElementsByClassName.html">document.getElementsByClassName</a></li>
+            
+            
+          </ul>
+          </div>
+          
+          
+          
+          <div class="sblock">
+          <h3>API Docs</h3>
+           
+          <ul class="objects">
+            <li><a href="../utility.html" title="Utility Methods">Utility Methods</a></li>
+            
+               
+                <li><a href="../ajax.html" title="Ajax">Ajax</a></li>
+               
+            
+               
+                <li><a href="../array.html" title="Array">Array</a></li>
+               
+            
+               
+                <li><a href="../class.html" title="Class">Class</a></li>
+               
+            
+               
+                <li><a href="../date.html" title="Date">Date</a></li>
+               
+            
+               
+                <li><a href="../element.html" title="Element">Element</a></li>
+               
+            
+               
+                <li><a href="../element/methods.html" title="Element.Methods">Element.Methods</a></li>
+               
+            
+               
+                <li><a href="../element/methods/simulated.html" title="Element.Methods.Simulated">Element.Methods.Simulated</a></li>
+               
+            
+               
+                <li><a href="../enumerable.html" title="Enumerable">Enumerable</a></li>
+               
+            
+               
+                <li><a href="../event.html" title="Event">Event</a></li>
+               
+            
+               
+                <li><a href="../form.html" title="Form">Form</a></li>
+               
+            
+               
+                <li><a href="../form/element.html" title="Form.Element">Form.Element</a></li>
+               
+            
+               
+                <li><a href="../function.html" title="Function">Function</a></li>
+               
+            
+               
+                <li><a href="../hash.html" title="Hash">Hash</a></li>
+               
+            
+               
+                <li><a href="../insertion.html" title="Insertion">Insertion</a></li>
+               
+            
+               
+                <li><a href="../number.html" title="Number">Number</a></li>
+               
+            
+               
+                <li><a href="../object.html" title="Object">Object</a></li>
+               
+            
+               
+                <li><a href="../objectRange.html" title="ObjectRange">ObjectRange</a></li>
+               
+            
+               
+                <li><a href="../periodicalExecuter.html" title="PeriodicalExecuter">PeriodicalExecuter</a></li>
+               
+            
+               
+                <li><a href="../position.html" title="Position">Position</a></li>
+               
+            
+               
+                <li><a href="../prototype.html" title="Prototype">Prototype</a></li>
+               
+            
+               
+                <li><a href="../string.html" title="String">String</a></li>
+               
+            
+               
+                <li><a href="../template.html" title="Template">Template</a></li>
+               
+            
+               
+                <li><a href="../timedObserver.html" title="TimedObserver">TimedObserver</a></li>
+               
+            
+               
+            
+               
+                <li><a href="../document.html" title="document">document</a></li>
+               
+            
+               
+                <li><a href="../document/viewport.html" title="document.viewport">document.viewport</a></li>
+               
+            
+          </ul>
+          </div>
+        </div>
+        <!-- main -->
+        <div id="main" class="clearfix">
+          <div id="pagenav">
+            <ul>
+              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
+            </ul>
+          </div>
+          <div id="main-content">
+            
+
+
+  <h2>$R
+
+</h2>
+  
+    <div id="excerpt"><pre><code class="ebnf">$R(start, end[, exclusive = false]) -> ObjectRange</code></pre>
+
+<p>Creates a new <code>ObjectRange</code> object. This method is a convenience wrapper around the <a href="../objectRange.html"><code>ObjectRange</code></a> constructor, but <code>$R</code> is the preferred alias.</p></div>
+    <div id="abody"><p><a href="../objectRange.html"><code>ObjectRange</code></a> instances represent a range of consecutive values, be they numerical, textual, or of another type that semantically supports value ranges. See the type&#8217;s documentation for further details, and to discover how your own objects can support value ranges.</p>
+
+<p>The <code>$R</code> function takes exactly the same arguments as the original constructor: the <strong>lower and upper bounds</strong> (value of the same, proper type), and <strong>whether the upper bound is exclusive</strong> or not. By default, the upper bound is inclusive.</p>
+
+<h3>Examples</h3>
+
+<pre><code class="javascript">
+$R(0, 10).include(10)
+// -> true
+
+$A($R(0, 5)).join(', ')
+// -> '0, 1, 2, 3, 4, 5'
+
+$A($R('aa', 'ah')).join(', ')
+// -> 'aa, ab, ac, ad, ae, af, ag, ah'
+
+$R(0, 10, true).include(10)
+// -> false
+
+$R(0, 10, true).each(function(value) {
+  // invoked 10 times for value = 0 to 9
+});
+</code></pre>
+
+<p>Note that <code>ObjectRange</code> mixes in the <a href="../enumerable.html"><code>Enumerable</code></a> module: this makes it easy to convert a range to an <code>Array</code> (<code>Enumerable</code> provides the <a href="../enumerable/toArray.html"><code>toArray</code></a> method, which makes the <a href="dollar-a.html"><code>$A</code></a> conversion straightforward), or to iterate through values. (Note, however, that getting the bounds back will be more efficiently done using the <code>start</code> and <code>end</code> properties than calling the <a href="../enumerable/min.html"><code>min()</code></a> and <a href="../enumerable/max.html"><code>max()</code></a> methods).</p></div>
+  
+
+
+          </div>
+        </div>
+        <!-- /main -->
+      </div>
+    </div>
+    <!-- /content -->
+    <div id="footer">
+&copy; 2006-2007 Prototype Core Team | Licenses:
+<a rel="license" href="http://dev.rubyonrails.org/browser/spinoffs/prototype/trunk/LICENSE?format=raw">MIT (source code)</a> and <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><abbr title="Creative Commons Attribution-Share Alike 3.0 License">CC BY-SA</abbr> (documentation)</a>.
+      <a id="badge" href="http://mephistoblog.com" title="This site's mojo provided by Mephisto"><img alt="mephisto-badge-tiny" src="../images/mephisto-badge-tiny.png" /></a>
+    </div>
+  </div>
+  <!-- /container -->
+
+</body>
+</html>

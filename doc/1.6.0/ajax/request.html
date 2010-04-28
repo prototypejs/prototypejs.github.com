@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Prototype JavaScript framework:  Ajax.Ajax.Request </title>
+	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" media="print" href="../stylesheets/api-print.css" />
+        <!--[if lte IE 6]><link href="/stylesheets/ie-sucks-for-api.css" rel="stylesheet" type="text/css" media="screen"><![endif]-->
+  <link href="http://feeds.feedburner.com/prototype-blog" rel="alternate" type="application/atom+xml" />
+ <script src="../javascripts/prototype.js" type="text/javascript"></script>
+<script src="../javascripts/code_highlighter.js" type="text/javascript"></script>
+<script src="../javascripts/javascript.js" type="text/javascript"></script>
+<script src="../javascripts/html.js" type="text/javascript"></script>
+<script src="../javascripts/css.js" type="text/javascript"></script>
+<script src="../javascripts/ruby.js" type="text/javascript"></script>
+<script src="../javascripts/ebnf.js" type="text/javascript"></script>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-82668-3";
+urchinTracker();
+</script>
+<link rel="shortcut icon" href="../images/fav.png" type="image/ico" />
+</head>
+
+<body>
+  <!-- container -->
+  <div id="container">
+    <!-- header -->
+    <div id="header">
+      <h1 id="logo"><a href="../../index.html">Prototype Javascript Framework</a></h1>
+      <p id="tagline">easing the pain of dynamic web applications</p>
+      <!-- 
+       <div id="api-search">
+         <form action="/search">
+          Search api: <input name="q" type="search" />
+           <input type="hidden" value="api" name="s" />
+         </form>
+       </div>
+    -->
+    </div>
+    <!-- /header -->
+    <!-- nav -->
+          <div id="nav">
+      <ul class="clearfix">
+         <li><a href="../../download.html" title="Download the latest version of Prototype">Download</a></li>
+         <li><a href="http://api.prototypejs.org" title="View the Prototype API docs">API Docs</a></li>
+         <li><a href="../../learn.html" title="Prototype tips and tutorials">Tips and Tutorials</a></li>
+         <li><a href="http://prototypejs.org/blog" title="The Official Prototype Blog">Blog</a></li>
+         <li><a href="../../discuss.html" title="Mailing lists and IRC">Discuss</a></li>
+         <li><a href="../../contribute.html" title="Contribute to Prototype">Contribute</a></li>
+      </ul>
+    </div>
+    <!-- /nav -->
+
+    
+    <!-- content -->
+    <div id="content">
+      <div id="cnt-inner">
+        <div id="sidebar">
+          
+          
+          
+          
+          <div class="sblock">            
+          <h3 class="object"><a class="selected" href="../ajax.html">Ajax</a></h3>
+          <ul class="methods">
+            
+            
+            
+            
+              <li><a href="options.html">Ajax Options</a></li>
+            
+            
+            
+              <li><a href="periodicalUpdater.html">Ajax.PeriodicalUpdater</a></li>
+            
+            
+            
+              <li class="selected"><a class="selected" href="request.html">Ajax.Request</a></li>
+            
+            
+            
+              <li><a href="responders.html">Ajax.Responders</a></li>
+            
+            
+            
+              <li><a href="response.html">Ajax.Response</a></li>
+            
+            
+            
+              <li><a href="updater.html">Ajax.Updater</a></li>
+            
+            
+          </ul>
+          </div>
+          
+          
+          
+          <div class="sblock">
+          <h3>API Docs</h3>
+           
+          <ul class="objects">
+            <li><a href="../utility.html" title="Utility Methods">Utility Methods</a></li>
+            
+               
+                <li><a href="../ajax.html" title="Ajax">Ajax</a></li>
+               
+            
+               
+                <li><a href="../array.html" title="Array">Array</a></li>
+               
+            
+               
+                <li><a href="../class.html" title="Class">Class</a></li>
+               
+            
+               
+                <li><a href="../date.html" title="Date">Date</a></li>
+               
+            
+               
+                <li><a href="../element.html" title="Element">Element</a></li>
+               
+            
+               
+                <li><a href="../element/methods.html" title="Element.Methods">Element.Methods</a></li>
+               
+            
+               
+                <li><a href="../element/methods/simulated.html" title="Element.Methods.Simulated">Element.Methods.Simulated</a></li>
+               
+            
+               
+                <li><a href="../enumerable.html" title="Enumerable">Enumerable</a></li>
+               
+            
+               
+                <li><a href="../event.html" title="Event">Event</a></li>
+               
+            
+               
+                <li><a href="../form.html" title="Form">Form</a></li>
+               
+            
+               
+                <li><a href="../form/element.html" title="Form.Element">Form.Element</a></li>
+               
+            
+               
+                <li><a href="../function.html" title="Function">Function</a></li>
+               
+            
+               
+                <li><a href="../hash.html" title="Hash">Hash</a></li>
+               
+            
+               
+                <li><a href="../insertion.html" title="Insertion">Insertion</a></li>
+               
+            
+               
+                <li><a href="../number.html" title="Number">Number</a></li>
+               
+            
+               
+                <li><a href="../object.html" title="Object">Object</a></li>
+               
+            
+               
+                <li><a href="../objectRange.html" title="ObjectRange">ObjectRange</a></li>
+               
+            
+               
+                <li><a href="../periodicalExecuter.html" title="PeriodicalExecuter">PeriodicalExecuter</a></li>
+               
+            
+               
+                <li><a href="../position.html" title="Position">Position</a></li>
+               
+            
+               
+                <li><a href="../prototype.html" title="Prototype">Prototype</a></li>
+               
+            
+               
+                <li><a href="../string.html" title="String">String</a></li>
+               
+            
+               
+                <li><a href="../template.html" title="Template">Template</a></li>
+               
+            
+               
+                <li><a href="../timedObserver.html" title="TimedObserver">TimedObserver</a></li>
+               
+            
+               
+            
+               
+                <li><a href="../document.html" title="document">document</a></li>
+               
+            
+               
+                <li><a href="../document/viewport.html" title="document.viewport">document.viewport</a></li>
+               
+            
+          </ul>
+          </div>
+        </div>
+        <!-- main -->
+        <div id="main" class="clearfix">
+          <div id="pagenav">
+            <ul>
+              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
+            </ul>
+          </div>
+          <div id="main-content">
+            
+
+
+  <h2>Ajax.Request
+
+</h2>
+  
+    <div id="excerpt"><pre><code class="ebnf">new Ajax.Request(url[, options])</code></pre>
+
+<p>Initiates and processes an AJAX request.</p></div>
+    <div id="abody"><p>This object is a general-purpose AJAX requester: it handles the life-cycle of the request, handles the boilerplate, and lets you plug in callback functions for your custom needs.</p>
+
+<p>In the optional options hash, you usually provide a <code>onComplete</code> and/or <code>onSuccess</code> callback, unless you're in the edge case where you're getting a JavaScript-typed response, that will automatically be <code>eval</code>'d.</p>
+
+<p>For a full list of common options and callbacks, see <a href="options.html">Ajax Options</a>.</p>
+
+<p>The only proper way to create a requester is through the <strong><code>new</code></strong> operator.  As soon as the object is created, it initiates the request, then goes on processing it throughout its life-cyle.</p>
+
+<h3>A basic example</h3>
+
+<pre><code class="javascript">
+var url = '/proxy?url=' + encodeURIComponent('http://www.google.com/search?q=Prototype');
+// notice the use of a proxy to circumvent the Same Origin Policy.
+
+new Ajax.Request(url, {
+  method: 'get',
+  onSuccess: function(transport) {
+    var notice = $('notice');
+    if (transport.responseText.match(/href="http:\/\/prototypejs.org/))
+      notice.update('Yeah! You are in the Top 10!').setStyle({ background: '#dfd' });
+    else
+      notice.update('Damn! You are beyond #10...').setStyle({ background: '#fdd' });
+  }
+});
+</code></pre>
+
+<h3>Request life-cycle</h3>
+
+<p>Underneath our nice requester objects lies, of course, <code>XMLHttpRequest</code>.  The defined life-cycle is as follows:</p>
+
+<ol>
+<li>Created</li>
+<li>Initialized</li>
+<li>Request sent</li>
+<li>Response being received (can occur many times, as packets come in)</li>
+<li>Response received, request complete</li>
+</ol>
+
+<p>As you can see in <a href="options.html">Ajax options</a>, Prototype's AJAX objects define a whole slew of callbacks, which are triggered in the following order:</p>
+
+<ol>
+<li><code>onCreate</code> (this is actually a callback reserved to <a href="responders.html">AJAX global responders</a>)</li>
+<li><code>onUninitialized</code> (maps on Created)</li>
+<li><code>onLoading</code> (maps on Initialized)</li>
+<li><code>onLoaded</code> (maps on Request sent)</li>
+<li><code>onInteractive</code> (maps on Response being received)</li>
+<li><code>on</code><em>XYZ</em> (numerical response status code), onSuccess or onFailure (see below)</li>
+<li><code>onComplete</code></li>
+</ol>
+
+<p>The two last steps both map on <em>Response received</em>, in that order.  If a status-specific callback is defined, it gets invoked.  Otherwise, if <code>onSuccess</code> is defined and the response is deemed a success (see below), it is invoked.  Otherwise, if <code>onFailure</code> is defined and the response is <em>not</em> deemed a sucess, it is invoked.  Only after that potential first callback is <code>onComplete</code> called.</p>
+
+<h4>A note on portability</h4>
+
+<p>Depending on how your browser implements <code>XMLHttpRequest</code>, one or more callbacks may never be invoked.  In particular, <code>onLoaded</code> and <code>onInteractive</code> are not a 100% safe bet so far.  However, the global <code>onCreate</code>, <code>onUninitialized</code> and the two final steps are very much guaranteed.</p>
+
+<h3><code>onSuccess</code> and <code>onFailure</code>, the under-used callbacks</h3>
+
+<p>Way too many people use <code>Ajax.Request</code> in a similar manner to raw XHR, defining only an <code>onComplete</code> callback even when they're only interested in "successful" responses, thereby testing it by hand:</p>
+
+<pre><code class="javascript">
+// This is too bad, there's better!
+new Ajax.Request('/your/url', {
+  onComplete: function(transport) {
+    if (200 == transport.status)
+      // yada yada yada
+  }
+});
+</code></pre>
+
+<p>First, as described below, you could use better "success" detection: success is generally defined, HTTP-wise, as either no response status or a "2xy" response status (e.g., 201 is a success, too).  See the example below.</p>
+
+<p>Second, you could dispense with status testing altogether!  Prototype adds callbacks specific to success and failure, which we listed above.  Here's what you could do if you're only interested in success, for instance:</p>
+
+<pre><code class="javascript">
+new Ajax.Request('/your/url', {
+  onSuccess: function(transport) {
+      // yada yada yada
+  }
+});
+</code></pre>
+
+<h3>Automatic JavaScript response evaluation</h3>
+
+<p>If an ajax request follows the <a href="http://en.wikipedia.org/wiki/Same_origin_policy (or SOP">Same Origin Policy</a> <em>and</em> it's response has a JavaScript-related content-type, the content of the <code>responseText</code> property will automatically be passed to <code>eval</code> </p>
+
+<p>What this means is, you don't even need to provide a callback to leverage pure-JavaScript AJAX responses.  That's pretty cool, wouldn't you say?  The list of JavaScript-related MIME types handled by Prototype is:</p>
+
+<ul>
+<li><code>application/ecmascript</code></li>
+<li><code>application/javascript</code></li>
+<li><code>application/x-ecmascript</code></li>
+<li><code>application/x-javascript</code></li>
+<li><code>text/ecmascript</code></li>
+<li><code>text/javascript</code></li>
+<li><code>text/x-ecmascript</code></li>
+<li><code>text/x-javascript</code></li>
+</ul>
+
+<p>The MIME type string is examined in a case-insensitive manner.</p>
+
+<h3>Methods you may find useful</h3>
+
+<p>Instances of the Request object provide several methods that can come in handy in your callback functions, especially once the request completed.</p>
+
+<h4>Is the response a successful one?</h4>
+
+<p>The <code>success()</code> method examines the XHR's <code>status</code> property, and follows general HTTP guidelines: unknown status is deemed successful, as is the whole 2xy status code family.  It's a generally better way of testing your response than the usual <code>200 == transport.status</code>.</p>
+
+<h4>Getting HTTP response headers</h4>
+
+<p>While you can obtain response headers from the XHR object, using its <code>getResponseHeader</code> method, this makes for slightly verbose code, and several implementations may raise an exception when the header is not found. To make this easier, you can use the <code>Ajax.Response#getHeader</code> method, which just delegates to the longer version and returns <code>null</code> should an exception occur:</p>
+
+<pre><code class="javascript">
+new Ajax.Request('/your/url', {
+  onSuccess: function(response) {
+    // Note how we brace against null values
+    if ((response.getHeader('Server') || '').match(/Apache/))
+      ++gApacheCount;
+    // Remainder of the code
+  }
+});
+</code></pre>
+
+<h4>Evaluating JSON headers</h4>
+
+<p>Some backends will return JSON not as response text, but in the <code>X-JSON</code> header. In which case, you don't even need to evaluate the returned JSON yourself, as Prototype automatically does so and passes it as the <code>headerJSON</code> property of the <code>Ajax.Response</code> object. Note that if there is no such header or its contents is invalid, this property will be set to <code>null</code>.</p>
+
+<pre><code class="javascript">
+new Ajax.Request('/your/url', {
+  onSuccess: function(transport) {
+    transport.headerJSON
+  }
+});
+</code></pre></div>
+  
+
+
+          </div>
+        </div>
+        <!-- /main -->
+      </div>
+    </div>
+    <!-- /content -->
+    <div id="footer">
+&copy; 2006-2007 Prototype Core Team | Licenses:
+<a rel="license" href="http://dev.rubyonrails.org/browser/spinoffs/prototype/trunk/LICENSE?format=raw">MIT (source code)</a> and <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><abbr title="Creative Commons Attribution-Share Alike 3.0 License">CC BY-SA</abbr> (documentation)</a>.
+      <a id="badge" href="http://mephistoblog.com" title="This site's mojo provided by Mephisto"><img alt="mephisto-badge-tiny" src="../images/mephisto-badge-tiny.png" /></a>
+    </div>
+  </div>
+  <!-- /container -->
+
+</body>
+</html>

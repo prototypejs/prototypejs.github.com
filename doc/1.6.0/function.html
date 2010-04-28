@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Prototype JavaScript framework:  Function </title>
+	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" media="print" href="stylesheets/api-print.css" />
+        <!--[if lte IE 6]><link href="/stylesheets/ie-sucks-for-api.css" rel="stylesheet" type="text/css" media="screen"><![endif]-->
+  <link href="http://feeds.feedburner.com/prototype-blog" rel="alternate" type="application/atom+xml" />
+ <script src="javascripts/prototype.js" type="text/javascript"></script>
+<script src="javascripts/code_highlighter.js" type="text/javascript"></script>
+<script src="javascripts/javascript.js" type="text/javascript"></script>
+<script src="javascripts/html.js" type="text/javascript"></script>
+<script src="javascripts/css.js" type="text/javascript"></script>
+<script src="javascripts/ruby.js" type="text/javascript"></script>
+<script src="javascripts/ebnf.js" type="text/javascript"></script>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-82668-3";
+urchinTracker();
+</script>
+<link rel="shortcut icon" href="images/fav.png" type="image/ico" />
+</head>
+
+<body>
+  <!-- container -->
+  <div id="container">
+    <!-- header -->
+    <div id="header">
+      <h1 id="logo"><a href="../index.html">Prototype Javascript Framework</a></h1>
+      <p id="tagline">easing the pain of dynamic web applications</p>
+      <!-- 
+       <div id="api-search">
+         <form action="/search">
+          Search api: <input name="q" type="search" />
+           <input type="hidden" value="api" name="s" />
+         </form>
+       </div>
+    -->
+    </div>
+    <!-- /header -->
+    <!-- nav -->
+          <div id="nav">
+      <ul class="clearfix">
+         <li><a href="../download.html" title="Download the latest version of Prototype">Download</a></li>
+         <li><a href="http://api.prototypejs.org" title="View the Prototype API docs">API Docs</a></li>
+         <li><a href="../learn.html" title="Prototype tips and tutorials">Tips and Tutorials</a></li>
+         <li><a href="http://prototypejs.org/blog" title="The Official Prototype Blog">Blog</a></li>
+         <li><a href="../discuss.html" title="Mailing lists and IRC">Discuss</a></li>
+         <li><a href="../contribute.html" title="Contribute to Prototype">Contribute</a></li>
+      </ul>
+    </div>
+    <!-- /nav -->
+
+    
+    <!-- content -->
+    <div id="content">
+      <div id="cnt-inner">
+        <div id="sidebar">
+          
+          
+          
+          
+          <div class="sblock">            
+          <h3 class="object"><a class="selected" href="function.html">Function</a></h3>
+          <ul class="methods">
+            
+            
+            
+            
+              <li><a href="function/argumentNames.html">argumentNames</a></li>
+            
+            
+            
+              <li><a href="function/bind.html">bind</a></li>
+            
+            
+            
+              <li><a href="function/bindAsEventListener.html">bindAsEventListener</a></li>
+            
+            
+            
+              <li><a href="function/curry.html">curry</a></li>
+            
+            
+            
+              <li><a href="function/defer.html">defer</a></li>
+            
+            
+            
+              <li><a href="function/delay.html">delay</a></li>
+            
+            
+            
+              <li><a href="function/methodize.html">methodize</a></li>
+            
+            
+            
+              <li><a href="function/wrap.html">wrap</a></li>
+            
+            
+          </ul>
+          </div>
+          
+          
+          
+          <div class="sblock">
+          <h3>API Docs</h3>
+           
+          <ul class="objects">
+            <li><a href="utility.html" title="Utility Methods">Utility Methods</a></li>
+            
+               
+                <li><a href="ajax.html" title="Ajax">Ajax</a></li>
+               
+            
+               
+                <li><a href="array.html" title="Array">Array</a></li>
+               
+            
+               
+                <li><a href="class.html" title="Class">Class</a></li>
+               
+            
+               
+                <li><a href="date.html" title="Date">Date</a></li>
+               
+            
+               
+                <li><a href="element.html" title="Element">Element</a></li>
+               
+            
+               
+                <li><a href="element/methods.html" title="Element.Methods">Element.Methods</a></li>
+               
+            
+               
+                <li><a href="element/methods/simulated.html" title="Element.Methods.Simulated">Element.Methods.Simulated</a></li>
+               
+            
+               
+                <li><a href="enumerable.html" title="Enumerable">Enumerable</a></li>
+               
+            
+               
+                <li><a href="event.html" title="Event">Event</a></li>
+               
+            
+               
+                <li><a href="form.html" title="Form">Form</a></li>
+               
+            
+               
+                <li><a href="form/element.html" title="Form.Element">Form.Element</a></li>
+               
+            
+               
+                <li><a href="function.html" title="Function">Function</a></li>
+               
+            
+               
+                <li><a href="hash.html" title="Hash">Hash</a></li>
+               
+            
+               
+                <li><a href="insertion.html" title="Insertion">Insertion</a></li>
+               
+            
+               
+                <li><a href="number.html" title="Number">Number</a></li>
+               
+            
+               
+                <li><a href="object.html" title="Object">Object</a></li>
+               
+            
+               
+                <li><a href="objectRange.html" title="ObjectRange">ObjectRange</a></li>
+               
+            
+               
+                <li><a href="periodicalExecuter.html" title="PeriodicalExecuter">PeriodicalExecuter</a></li>
+               
+            
+               
+                <li><a href="position.html" title="Position">Position</a></li>
+               
+            
+               
+                <li><a href="prototype.html" title="Prototype">Prototype</a></li>
+               
+            
+               
+                <li><a href="string.html" title="String">String</a></li>
+               
+            
+               
+                <li><a href="template.html" title="Template">Template</a></li>
+               
+            
+               
+                <li><a href="timedObserver.html" title="TimedObserver">TimedObserver</a></li>
+               
+            
+               
+            
+               
+                <li><a href="document.html" title="document">document</a></li>
+               
+            
+               
+                <li><a href="document/viewport.html" title="document.viewport">document.viewport</a></li>
+               
+            
+          </ul>
+          </div>
+        </div>
+        <!-- main -->
+        <div id="main" class="clearfix">
+          <div id="pagenav">
+            <ul>
+              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
+            </ul>
+          </div>
+          <div id="main-content">
+            
+
+
+  <h2>Function <span id="atom-feed"><a href="../feed/api/function/atom.xml" title="Feed for Function">Atom feed</a></span></h2>
+  
+    <div id="method-list">
+  <ul>
+  
+   
+  
+   
+     <li><a href="function.html#method-argumentnames" class="1.6">argumentNames</a></li>
+   
+  
+   
+     <li><a href="function.html#method-bind" class="">bind</a></li>
+   
+  
+   
+     <li><a href="function.html#method-bindaseventlistener" class="">bindAsEventListener</a></li>
+   
+  
+   
+     <li><a href="function.html#method-curry" class="1.6.0">curry</a></li>
+   
+  
+   
+     <li><a href="function.html#method-defer" class="1.6.0">defer</a></li>
+   
+  
+   
+     <li><a href="function.html#method-delay" class="1.6.0">delay</a></li>
+   
+  
+   
+     <li><a href="function.html#method-methodize" class="">methodize</a></li>
+   
+  
+   
+     <li><a href="function.html#method-wrap" class="1.6.0">wrap</a></li>
+   
+  
+  </ul>
+</div>
+
+
+
+    <div id="abody"><p>Prototype takes issue with only one aspect of functions: <strong>binding</strong>.</p>
+
+<h3>What is binding?</h3>
+
+<p>&#8220;Binding&#8221; basically determines the meaning, when a function runs, of the <strong><code>this</code></strong> keyword.  While there usually is a proper default binding (<code>this</code> refers to whichever object the method is called on), this can be
+&#8220;lost&#8221; sometimes, for instance when passing a function reference as an argument.</p>
+
+<p>If you don&#8217;t know much about the <code>this</code> keyword in JavaScript, hop to the docs for the <a href="function/bind.html"><code>bind()</code></a> method. The examples there will clear it up.</p>
+
+<h3>Prototype to the rescue!</h3>
+
+<p>Prototype solves this.  You&#8217;ll find two new methods on any function: one that guarantees binding (it can even guarantee early parameters!), and one that is specific to functions intended as event handlers.</p></div>
+    <div id="method-excerpts">  
+<h3>Methods</h3>
+
+   
+  
+   
+      <div id="method-argumentnames" class="mexcerpt">
+          <h4><a href="function/argumentNames.html">argumentNames</a>
+          <div class="box">1.6</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">someFunction.argumentNames() -> Array</code></pre>
+
+<p>Reads the argument names as defined in the function definition and returns the values as an array of strings, or an empty array if the function is defined without parameters.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-bind" class="mexcerpt">
+          <h4><a href="function/bind.html">bind</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">bind(thisObj[, arg...]) -> Function</code></pre>
+
+<p>Wraps the function in another, locking its execution scope to an object specified by <code>thisObj</code>.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-bindaseventlistener" class="mexcerpt">
+          <h4><a href="function/bindAsEventListener.html">bindAsEventListener</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">bindAsEventListener(thisObj[, arg...]) -> Function</code></pre>
+
+<p>An event-specific variant of <a href="function/bind.html"><code>bind</code></a> which makes sure the function will recieve the current event object as the first argument when executing.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-curry" class="mexcerpt">
+          <h4><a href="function/curry.html">curry</a>
+          <div class="box">1.6.0</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">
+  curry(arg...) -> Function
+</code></pre>
+
+<p>Partially applies the function, returning a function with one or more arguments already &#8220;filled in.&#8221;</p></div>
+      </div>
+   
+  
+   
+      <div id="method-defer" class="mexcerpt">
+          <h4><a href="function/defer.html">defer</a>
+          <div class="box">1.6.0</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">defer(arg...) -> Number</code></pre>
+
+<p>Schedules the function to run as soon as the interpreter is idle.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-delay" class="mexcerpt">
+          <h4><a href="function/delay.html">delay</a>
+          <div class="box">1.6.0</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">delay(seconds[, arg...]) -> Number</code></pre>
+
+<p>Schedules the function to run after the specified amount of time, passing any arguments given.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-methodize" class="mexcerpt">
+          <h4><a href="function/methodize.html">methodize</a>
+          
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">someFunction.methodize() -> Function</code></pre>
+
+<p>Takes a function and wraps it in another function that, at call time, pushes <code>this</code> to the original function as the first argument.</p></div>
+      </div>
+   
+  
+   
+      <div id="method-wrap" class="mexcerpt">
+          <h4><a href="function/wrap.html">wrap</a>
+          <div class="box">1.6.0</div>
+          </h4>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">wrap(wrapperFunction[, arg...]) -> Function</code></pre>
+
+<p>Returns a function &#8220;wrapped&#8221; around the original function.</p></div>
+      </div>
+   
+  
+</div>
+  
+
+
+          </div>
+        </div>
+        <!-- /main -->
+      </div>
+    </div>
+    <!-- /content -->
+    <div id="footer">
+&copy; 2006-2007 Prototype Core Team | Licenses:
+<a rel="license" href="http://dev.rubyonrails.org/browser/spinoffs/prototype/trunk/LICENSE?format=raw">MIT (source code)</a> and <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><abbr title="Creative Commons Attribution-Share Alike 3.0 License">CC BY-SA</abbr> (documentation)</a>.
+      <a id="badge" href="http://mephistoblog.com" title="This site's mojo provided by Mephisto"><img alt="mephisto-badge-tiny" src="images/mephisto-badge-tiny.png" /></a>
+    </div>
+  </div>
+  <!-- /container -->
+
+</body>
+</html>

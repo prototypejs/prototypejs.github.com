@@ -1,0 +1,45 @@
+body {
+  margin: .6in;
+  font-family: Verdana, sans-serif;
+  font-size: 12pt;
+}
+
+#header, #sidebar, #nav, #pagenav, #footer {
+  display: none;
+}
+
+#main, #main-content {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000 !important;
+}
+
+h3 {
+  page-break-after: avoid;
+}
+
+#main-content a {
+ text-decoration: underline;
+ color: #777 !important;
+}
+
+#main-content h3 a {
+  text-decoration: none;
+}
+
+#main-content p a:link:after, #main-content p a:visited:after, 
+#main-content li a:link:after, #main-content li a:visited:after, 
+#main-content h3 a:link:after, #main-content h3 a:visited:after {
+	content: " → (" attr(href) ") ";
+}
+
+#method-list a:link:after, #method-list a:visited:after { 
+    content: " " !important;  
+}
+
+#excerpt {
+  border: 1px solid #ccc;
+  color: #333;
+}

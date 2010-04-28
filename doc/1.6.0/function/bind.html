@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Prototype JavaScript framework:  Function.bind </title>
+	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" media="print" href="../stylesheets/api-print.css" />
+        <!--[if lte IE 6]><link href="/stylesheets/ie-sucks-for-api.css" rel="stylesheet" type="text/css" media="screen"><![endif]-->
+  <link href="http://feeds.feedburner.com/prototype-blog" rel="alternate" type="application/atom+xml" />
+ <script src="../javascripts/prototype.js" type="text/javascript"></script>
+<script src="../javascripts/code_highlighter.js" type="text/javascript"></script>
+<script src="../javascripts/javascript.js" type="text/javascript"></script>
+<script src="../javascripts/html.js" type="text/javascript"></script>
+<script src="../javascripts/css.js" type="text/javascript"></script>
+<script src="../javascripts/ruby.js" type="text/javascript"></script>
+<script src="../javascripts/ebnf.js" type="text/javascript"></script>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-82668-3";
+urchinTracker();
+</script>
+<link rel="shortcut icon" href="../images/fav.png" type="image/ico" />
+</head>
+
+<body>
+  <!-- container -->
+  <div id="container">
+    <!-- header -->
+    <div id="header">
+      <h1 id="logo"><a href="../../index.html">Prototype Javascript Framework</a></h1>
+      <p id="tagline">easing the pain of dynamic web applications</p>
+      <!-- 
+       <div id="api-search">
+         <form action="/search">
+          Search api: <input name="q" type="search" />
+           <input type="hidden" value="api" name="s" />
+         </form>
+       </div>
+    -->
+    </div>
+    <!-- /header -->
+    <!-- nav -->
+          <div id="nav">
+      <ul class="clearfix">
+         <li><a href="../../download.html" title="Download the latest version of Prototype">Download</a></li>
+         <li><a href="http://api.prototypejs.org" title="View the Prototype API docs">API Docs</a></li>
+         <li><a href="../../learn.html" title="Prototype tips and tutorials">Tips and Tutorials</a></li>
+         <li><a href="http://prototypejs.org/blog" title="The Official Prototype Blog">Blog</a></li>
+         <li><a href="../../discuss.html" title="Mailing lists and IRC">Discuss</a></li>
+         <li><a href="../../contribute.html" title="Contribute to Prototype">Contribute</a></li>
+      </ul>
+    </div>
+    <!-- /nav -->
+
+    
+    <!-- content -->
+    <div id="content">
+      <div id="cnt-inner">
+        <div id="sidebar">
+          
+          
+          
+          
+          <div class="sblock">            
+          <h3 class="object"><a class="selected" href="../function.html">Function</a></h3>
+          <ul class="methods">
+            
+            
+            
+            
+              <li><a href="argumentNames.html">argumentNames</a></li>
+            
+            
+            
+              <li class="selected"><a class="selected" href="bind.html">bind</a></li>
+            
+            
+            
+              <li><a href="bindAsEventListener.html">bindAsEventListener</a></li>
+            
+            
+            
+              <li><a href="curry.html">curry</a></li>
+            
+            
+            
+              <li><a href="defer.html">defer</a></li>
+            
+            
+            
+              <li><a href="delay.html">delay</a></li>
+            
+            
+            
+              <li><a href="methodize.html">methodize</a></li>
+            
+            
+            
+              <li><a href="wrap.html">wrap</a></li>
+            
+            
+          </ul>
+          </div>
+          
+          
+          
+          <div class="sblock">
+          <h3>API Docs</h3>
+           
+          <ul class="objects">
+            <li><a href="../utility.html" title="Utility Methods">Utility Methods</a></li>
+            
+               
+                <li><a href="../ajax.html" title="Ajax">Ajax</a></li>
+               
+            
+               
+                <li><a href="../array.html" title="Array">Array</a></li>
+               
+            
+               
+                <li><a href="../class.html" title="Class">Class</a></li>
+               
+            
+               
+                <li><a href="../date.html" title="Date">Date</a></li>
+               
+            
+               
+                <li><a href="../element.html" title="Element">Element</a></li>
+               
+            
+               
+                <li><a href="../element/methods.html" title="Element.Methods">Element.Methods</a></li>
+               
+            
+               
+                <li><a href="../element/methods/simulated.html" title="Element.Methods.Simulated">Element.Methods.Simulated</a></li>
+               
+            
+               
+                <li><a href="../enumerable.html" title="Enumerable">Enumerable</a></li>
+               
+            
+               
+                <li><a href="../event.html" title="Event">Event</a></li>
+               
+            
+               
+                <li><a href="../form.html" title="Form">Form</a></li>
+               
+            
+               
+                <li><a href="../form/element.html" title="Form.Element">Form.Element</a></li>
+               
+            
+               
+                <li><a href="../function.html" title="Function">Function</a></li>
+               
+            
+               
+                <li><a href="../hash.html" title="Hash">Hash</a></li>
+               
+            
+               
+                <li><a href="../insertion.html" title="Insertion">Insertion</a></li>
+               
+            
+               
+                <li><a href="../number.html" title="Number">Number</a></li>
+               
+            
+               
+                <li><a href="../object.html" title="Object">Object</a></li>
+               
+            
+               
+                <li><a href="../objectRange.html" title="ObjectRange">ObjectRange</a></li>
+               
+            
+               
+                <li><a href="../periodicalExecuter.html" title="PeriodicalExecuter">PeriodicalExecuter</a></li>
+               
+            
+               
+                <li><a href="../position.html" title="Position">Position</a></li>
+               
+            
+               
+                <li><a href="../prototype.html" title="Prototype">Prototype</a></li>
+               
+            
+               
+                <li><a href="../string.html" title="String">String</a></li>
+               
+            
+               
+                <li><a href="../template.html" title="Template">Template</a></li>
+               
+            
+               
+                <li><a href="../timedObserver.html" title="TimedObserver">TimedObserver</a></li>
+               
+            
+               
+            
+               
+                <li><a href="../document.html" title="document">document</a></li>
+               
+            
+               
+                <li><a href="../document/viewport.html" title="document.viewport">document.viewport</a></li>
+               
+            
+          </ul>
+          </div>
+        </div>
+        <!-- main -->
+        <div id="main" class="clearfix">
+          <div id="pagenav">
+            <ul>
+              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
+            </ul>
+          </div>
+          <div id="main-content">
+            
+
+
+  <h2>bind
+
+</h2>
+  
+    <div id="excerpt"><pre><code class="ebnf">bind(thisObj[, arg...]) -> Function</code></pre>
+
+<p>Wraps the function in another, locking its execution scope to an object specified by <code>thisObj</code>.</p></div>
+    <div id="abody"><p>As discussed on the <a href="../function.html">general <code>Function</code> page</a>, binding can be a pretty tricky thing for a newcomer, but it generally is a very simple concept. It requires the basic understanding of the JavaScript language.</p>
+
+<p>In JavaScript, functions are executed in a specific context (often referred to as &#8220;scope&#8221;). <strong>Inside the function the <code>this</code> keyword becomes a reference to that scope.</strong> Since every function is in fact a property of some object&#8212;global functions are properties of the <code>window</code> object&#8212;the execution scope is the object from which the function was called, or (more precisely) the object that holds a reference to the function:</p>
+
+<pre><code class="javascript">
+window.name = "the window object"
+
+function scopeTest() {
+  return this.name
+}
+
+// calling the function in global scope:
+scopeTest()
+// -> "the window object"
+
+var foo = {
+  name: "the foo object!",
+  otherScopeTest: function() { return this.name }
+}
+
+foo.otherScopeTest()
+// -> "the foo object!"
+</code></pre>
+
+<p>Because of the dynamic nature of the language, we can&#8217;t be sure that, for instance, <code>otherScopeTest()</code> will always be called on our <code>foo</code> object. The reference to it can be copied somewhere else, like on the <code>window</code> object:</p>
+
+<pre><code class="javascript">
+// ... continuing from the last example
+
+// note that we aren't calling the function, we're simply referencing it
+window.test = foo.otherScopeTest
+// now we are actually calling it:
+test()
+// -> "the window object"
+</code></pre>
+
+<p>The last call demonstrates how the same function can behave differently depending on its execution scope.</p>
+
+<p>When you begin passing around function references in your code, you often want them to become fixated on a specific scope. Prototype can guarantee that your function will execute with the object you want under the <code>this</code> keyword just by invoking <code>bind</code> on it. You can also save the returned function and use it multiple times if you need so.</p>
+
+<h3>Examples</h3>
+
+<p>The code below is simply proof-of-concept:</p>
+
+<pre><code class="javascript">
+var obj = {
+  name: 'A nice demo',
+  fx: function() {
+    alert(this.name);
+  }
+};
+
+window.name = 'I am such a beautiful window!';
+
+function runFx(f) {
+  f();
+}
+
+var fx2 = obj.fx.bind(obj);
+
+runFx(obj.fx);
+runFx(fx2);
+</code></pre>
+
+<form style="margin: 1em 0;">
+  <input type="button" id="btnBindDemo" value="Try it out!"/>
+</form>
+
+<script type="text/javascript">
+var obj = {
+  name: 'A nice demo',
+  fx: function() {
+    alert(this.name);
+  }
+};
+
+function runFx(f) {
+  f();
+}
+
+var fx2 = obj.fx.bind(obj);
+
+Event.observe('btnBindDemo', 'click', function() {
+  var oldName = window.name;
+  window.name = 'I am such a beautiful window!';
+  runFx(obj.fx);
+  runFx(fx2);
+  window.name = oldName;
+});
+</script>
+
+<p>Now, what few people realize is, <code>bind</code> can also be used to prepend arguments to the final argument list:</p>
+
+<pre><code class="javascript">
+var obj = {
+  name: 'A nice demo',
+  fx: function() {
+    alert(this.name + '\n' + $A(arguments).join(', '));
+  }
+};
+
+var fx2 = obj.fx.bind(obj, 1, 2, 3);
+fx2(4, 5); // Alerts the proper name, then "1, 2, 3, 4, 5"
+</code></pre>
+
+<form style="margin: 1em 0;">
+  <input type="button" id="btnBindArgsDemo" value="Try it out!"/>
+</form>
+
+<script type="text/javascript">
+var obj2 = {
+  name: 'A nice demo',
+  fx: function() {
+    alert(this.name + '\n' + $A(arguments).join(', '));
+  }
+};
+
+var fx3 = obj2.fx.bind(obj2, 1, 2, 3);
+Event.observe('btnBindArgsDemo', 'click', function() {
+  var oldName = window.name;
+  window.name = 'I am such a beautiful window!';
+  fx3(4, 5);
+  window.name = oldName;
+});
+</script>
+
+<h3>Not yet clear enough?</h3>
+
+<p>OK, try <a href="http://www.encytemedia.com/blog/articles/2007/7/18/javascript-scope-and-binding">Justin&#8217;s sweet article explaining function binding</a>.</p></div>
+  
+
+
+          </div>
+        </div>
+        <!-- /main -->
+      </div>
+    </div>
+    <!-- /content -->
+    <div id="footer">
+&copy; 2006-2007 Prototype Core Team | Licenses:
+<a rel="license" href="http://dev.rubyonrails.org/browser/spinoffs/prototype/trunk/LICENSE?format=raw">MIT (source code)</a> and <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><abbr title="Creative Commons Attribution-Share Alike 3.0 License">CC BY-SA</abbr> (documentation)</a>.
+      <a id="badge" href="http://mephistoblog.com" title="This site's mojo provided by Mephisto"><img alt="mephisto-badge-tiny" src="../images/mephisto-badge-tiny.png" /></a>
+    </div>
+  </div>
+  <!-- /container -->
+
+</body>
+</html>

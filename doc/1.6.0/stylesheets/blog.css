@@ -1,0 +1,321 @@
+/* lucida grande pseudo-italic looks awful, so let's use Trebuchet for italic instead */
+
+em, i, cite, var {
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+#col1 { 
+  width: 500px;
+}
+
+#col2 {
+  margin-left: 540px;
+}
+
+/*------------------------------------------------------------------------
+ *=UTILS
+ ------------------------------------------------------------------------*/
+
+img { border: 0; }
+
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.clearfix {display: inline-table;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+pre {
+  margin: 0.5em 0 !important;
+}
+
+/*------------------------------------------------------------------------
+ *=BLOG
+ ------------------------------------------------------------------------*/
+#blog h2 {
+  font-size: 170%;
+  font-weight: normal;
+  margin-bottom: 5px;
+  line-height: 100%;
+}
+
+#blog #excerpt {
+   line-height: 160%;
+   font-size: 110%;
+   color: #333;
+}
+
+.barticle {
+  margin-bottom: 20px;
+}
+
+.barticle .meta, #bhead #meta {
+  font-size: 82%;
+  color: #777;
+  font-weight: bold;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  background: url(../images/cmt.png) no-repeat;
+}
+
+#archives .arbody a { color:#223377; text-decoration:underline }
+#archives .arbody a:hover { color:#ff6600 }
+#archives .arbody a:visited { color:#333 }
+
+.blogarticle {
+  font-size: 102%;
+  line-height: 150%;
+}
+
+.blogarticle p.question,
+.blogarticle span.interviewee {
+  font-weight: bold;
+  color: #333;
+}
+
+.interview-request {
+  font-style: italic;
+  font-size: 82%;
+  color: #777;
+  border-top: 1px solid #ccc;
+  margin-top: 15px;
+  padding: 10px 1em 0 1em;  
+}
+
+.interview-request a,
+.blogarticle a, #excerpt a {
+    color: #f60;
+}
+
+.interview-request a:hover,
+.blogarticle a:hover, #excerpt a:hover {
+  color: #000;
+}
+
+#blog h2 a {
+  color: #237;
+  text-shadow: 2px 2px #fff;
+}
+
+#blog h2 a:hover {
+  color: #f60;
+}
+
+.arbody {
+  line-height: 150%;
+}
+
+.cats {
+  list-style: none;
+}
+
+.cats li a {
+  display: block;
+  padding: 5px 5px 5px 25px;
+  border-bottom: 1px solid #eee;
+  background: url(../images/method.png) 5px 50% no-repeat;
+}
+
+.cats li a:hover {
+  background-color: #eee;
+}
+
+#blog h3, #blog h4, #blog h5 {
+  margin-top: 20px;
+  margin-bottom: 0.5em;
+  margin-left: -10px;
+  color: #333;
+}
+
+#blog p {
+  margin-bottom: 10px;
+}
+
+pre {
+    overflow: auto;
+}
+
+pre code {
+  font-size: 95% !important;
+}
+/*------------------------------------------------------------------------
+ *=SIDEBAR
+ ------------------------------------------------------------------------*/
+ #col2 h2 {
+  font-size: 92%;
+  padding: 5px 0;
+  border-top: 3px solid #17c;
+  font-weight: bold;
+}
+
+.sblock {
+  margin-bottom: 20px;
+}
+
+.sblock input {
+  border: 1px solid #ccc;
+}
+
+input.simage {
+  border: none;
+  vertical-align: middle;
+}
+
+p.tiny {
+  font-size: 84%;
+  color: #777;
+}
+
+#col2 div.no-area h2 {
+  border: none !important;
+  margin-bottom: 2px !important;
+  padding-bottom: 0;
+}
+
+/*------------------------------------------------------------------------
+ *=COMMENTS
+ ------------------------------------------------------------------------*/
+#comment-form-cnt {
+  border-top: 3px solid #ccc;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+#comment-form input {
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+#comment-form textarea {
+  width: 400px;
+  border: 1px solid #ccc;
+}
+
+#comment-form-cnt h3 {
+  margin: 0 !important;
+  color: #15A;
+}
+
+#comment-form-cnt p {
+  font-size: 82%;
+}
+
+label {
+  font-weight: bold;
+  font-size: 92%;
+}
+
+dd {
+  margin-bottom: 10px;
+}
+
+.cmt {
+  background: #F8F8EC;
+  padding: 10px;
+  border: 1px solid #EEEEC7;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.cmt cite {
+  position: relative;
+  height: 80px !important;
+}
+
+.cmt .gravatar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 3px;
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.cauthor a {
+  color: #15A;
+  border-bottom: 1px dotted #ccc;
+  padding-left: 20px;
+  background: url(../images/member.png) 0 50% no-repeat;
+}
+
+a.cmt-anchor {
+  position: absolute;
+  display: block;
+  width: 14px;
+  height: 14px;
+  right: 5px !important;
+  top: 5px;
+  text-indent: -9999px;
+  background: url(../images/comment.png) no-repeat;
+}
+
+.cmt .cauthor, .cmt .cdate {
+  font-style: normal;
+  font-weight: bold;
+  display: block;
+  margin: 5px 0;
+}
+
+.cmt .cdate {
+  font-weight: normal;
+  color: #b62;
+  font-size: 82%;
+  padding: 5px;
+  text-align: right;
+}
+
+.cbody {
+  font-size: 92%;
+  margin: 10px 0;
+  color: #441;
+  padding-left: 20px;
+}
+
+.cbody pre {
+  background: #F8F8DF;
+  margin: 10px 0;
+}
+
+.cbody blockquote {
+  margin: 10px;
+  font-style: italic;
+}
+
+.cbody a {
+  color: #EE8811;
+}
+
+.by-author, .by-user {
+   border: 1px solid #9ADEFF;
+   background-color: #E6F7FF;
+}
+
+.by-author .cbody, .by-user .cbody {
+     color: #184B62 !important;
+}
+
+.by-author .cbody pre, .by-user .cbody pre {
+  background: #DBF3FF;
+}
+
+/* notice for blog */
+
+#comment-form .notice {
+  background:#ffdaca url(../images/pitfall.gif) center no-repeat;
+  background-position: 15px 50%;
+  text-align: left;
+  padding: 0.6em 2em 0.6em 75px;
+  border: 2px solid #ff7349; border-width: 2px 0;
+}
+
+#comment-form .notice a {
+  text-decoration: underline;
+}
