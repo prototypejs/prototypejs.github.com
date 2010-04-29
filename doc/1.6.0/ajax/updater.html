@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Ajax.Ajax.Updater </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -188,11 +186,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -203,8 +197,8 @@ urchinTracker();
   
     <div id="excerpt"><pre><code class="ebnf">new Ajax.Updater(container, url[, options])</code></pre>
 
-<p>Performs an AJAX request and updates a container&#8217;s contents based on the response text.</p></div>
-    <div id="abody"><p><code>Ajax.Updater</code> is a specialization of <a href="request.html"><code>Ajax.Request</code></a>: everything about the latter is true for the former.  If you&#8217;re unfamiliar with <code>Ajax.Request</code>, go read its documentation before going ahead with this one.</p>
+<p>Performs an AJAX request and updates a container&#x2019;s contents based on the response text.</p></div>
+    <div id="abody"><p><code>Ajax.Updater</code> is a specialization of <a href="request.html"><code>Ajax.Request</code></a>: everything about the latter is true for the former.  If you&#x2019;re unfamiliar with <code>Ajax.Request</code>, go read its documentation before going ahead with this one.</p>
 
 <h3>A simple example</h3>
 
@@ -278,11 +272,11 @@ coolFunc = function() {
 }
 </code></pre>
 
-<p>That&#8217;s a common trickster, biting beginners in the ankle. So watch out!</p>
+<p>That&#x2019;s a common trickster, biting beginners in the ankle. So watch out!</p>
 
 <h3>Single container, or success/failure alternative?</h3>
 
-<p>The examples above all assume you&#8217;re going to update the same container whether your request succeeds or fails.  There may very well be times when you don&#8217;t want that.  You may want to update only for successful requests, or update a different container on failed requests.</p>
+<p>The examples above all assume you&#x2019;re going to update the same container whether your request succeeds or fails.  There may very well be times when you don&#x2019;t want that.  You may want to update only for successful requests, or update a different container on failed requests.</p>
 
 <p>To achieve this, you can pass an object instead of a DOM element for the <code>container</code> parameter.  This object <strong>must</strong> exhibit a <code>success</code> property, whose value is 
 the container to be updated upon successful requests.  If you also provide it with a <code>failure</code> property, its value will be used as the container for failed requests.</p>

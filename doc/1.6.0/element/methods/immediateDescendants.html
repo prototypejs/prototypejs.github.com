@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.immediateDescendants </title>
 	<link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,14 +423,14 @@ urchinTracker();
 <div class="box">deprecated</div>
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">immediateDescendants(element) -> [HTMLElement...]</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">immediateDescendants(element) -&gt; [HTMLElement...]</code></pre>
 
-<p>Collects all of the element&#8217;s <em>immediate</em> descendants (i.e. <em>children</em>) and returns them as an array of <a href="../extend.html">extended</a> elements.</p></div>
+<p>Collects all of the element&#x2019;s <em>immediate</em> descendants (i.e. <em>children</em>) and returns them as an array of <a href="../extend.html">extended</a> elements.</p></div>
     <div id="abody"><p class="deprecated">As of Prototype 1.6, <code>Element#immediateDescendants</code> has been deprecated in favor of <a href="../childelements.html"><code>Element#childElements</code></a>.</p>
 
 <p>The returned array reflects the children order in the document (e.g., an index of 0 refers to the topmost child of <code>element</code>).</p>
 
-<p>Note that all of Prototype&#8217;s DOM traversal methods ignore text nodes and return element nodes only.</p>
+<p>Note that all of Prototype&#x2019;s DOM traversal methods ignore text nodes and return element nodes only.</p>
 
 <h3>Examples</h3>
 
@@ -451,13 +445,13 @@ urchinTracker();
 
 <pre><code class="javascript">
 $('australopithecus').immediateDescendants();
-// -> [div#homo-erectus]
+// -&gt; [div#homo-erectus]
 
 $('homo-erectus').immediateDescendants();
-// -> [div#homo-neanderthalensis, div#homo-sapiens]
+// -&gt; [div#homo-neanderthalensis, div#homo-sapiens]
 
 $('homo-sapiens').immediateDescendants();
-// -> []
+// -&gt; []
 </code></pre></div>
   
 

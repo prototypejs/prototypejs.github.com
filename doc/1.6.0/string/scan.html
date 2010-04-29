@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  String.scan </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -288,11 +286,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -301,7 +295,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">scan(pattern, iterator) -> string</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">scan(pattern, iterator) -&gt; string</code></pre>
 
 <p>Allows iterating over every occurrence of the given pattern (which can be a string or a regular expression). Returns the original string.</p></div>
     <div id="abody"><p>Internally just calls <a href="gsub.html"><code>String#gsub</code></a> passing it <code>pattern</code> and <code>iterator</code> as arguments.</p>
@@ -309,24 +303,24 @@ urchinTracker();
 <h3>Examples</h3>
 
 <pre><code class="javascript">
-'apple, pear & orange'.scan(/\w+/, alert);
-// -> 'apple pear orange' (and displays 'apple', 'pear' and 'orange' in three successive alert dialogs)
+'apple, pear  orange'.scan(/\w+/, alert);
+// -&gt; 'apple pear orange' (and displays 'apple', 'pear' and 'orange' in three successive alert dialogs)
 </code></pre>
 
 <p>Can be used to populate an array:</p>
 
 <pre><code class="javascript">
 var fruits = [];
-'apple, pear & orange'.scan(/\w+/, function(match){ fruits.push(match[0])});
+'apple, pear  orange'.scan(/\w+/, function(match){ fruits.push(match[0])});
 fruits.inspect()
-// -> ['apple', 'pear', 'orange']
+// -&gt; ['apple', 'pear', 'orange']
 </code></pre>
 
 <p>or even to work on the DOM:</p>
 
 <pre><code class="javascript">
-'failure-message, success-message & spinner'.scan(/(\w|-)+/, Element.toggle)
-// -> 'failure-message, success-message & spinner' (and toggles the visibility of each DOM element)
+'failure-message, success-message  spinner'.scan(/(\w|-)+/, Element.toggle)
+// -&gt; 'failure-message, success-message  spinner' (and toggles the visibility of each DOM element)
 </code></pre>
 
 <h3>Note</h3>

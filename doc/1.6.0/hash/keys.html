@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Hash.keys </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -220,11 +218,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -233,19 +227,19 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">keys() -> [String...]</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">keys() -&gt; [String...]</code></pre>
 
 <p>Provides an Array of keys (that is, property names) for the hash.</p></div>
-    <div id="abody"><p>Note: the order of key names is browser-dependent (based on the <code>for</code>&#8230;<code>in</code> loop). Also, this currently skips any property whose value is a function (such as hash methods).</p>
+    <div id="abody"><p>Note: the order of key names is browser-dependent (based on the <code>for</code>&#x2026;<code>in</code> loop). Also, this currently skips any property whose value is a function (such as hash methods).</p>
 
 <h3>Examples</h3>
 
 <pre><code class="javascript">
 $H({ name: 'Prototype', version: 1.5 }).keys().sort()
-// -> ['name', 'version']
+// -&gt; ['name', 'version']
 
 $H().keys()
-// -> []
+// -&gt; []
 </code></pre></div>
   
 

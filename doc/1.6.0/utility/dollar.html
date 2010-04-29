@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Utility Methods.$ </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -200,11 +198,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -213,8 +207,8 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">$(id | element) -> HTMLElement
-$((id | element)...) -> [HTMLElement...]</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">$(id | element) -&gt; HTMLElement
+$((id | element)...) -&gt; [HTMLElement...]</code></pre>
 
 <p>If provided with a string, returns the element in the document with matching ID; otherwise returns the passed element. Takes in an arbitrary number of arguments. All elements returned by the function are extended with Prototype DOM extensions.</p></div>
     <div id="abody"><p>The <code>$</code> function is the cornerstone of Prototype, its Swiss Army knife.  Not only does it provide a handy alias for <code>document.getElementById</code>, it also lets you pass indifferently IDs (strings) or DOM node references to your functions:</p>
@@ -226,7 +220,7 @@ function foo(element) {
 }
 </code></pre>
 
-<p>Code written this way is flexible — you can pass it the ID of the element or the element itself without any type sniffing.</p>
+<p>Code written this way is flexible &#x2014; you can pass it the ID of the element or the element itself without any type sniffing.</p>
 
 <p>Invoking it with only one argument returns the element, while invoking it with multiple arguments returns an array of elements (and this works recursively: if you're twisted, you could pass it an array containing some arrays, and so forth).  As this is dependent on <code>getElementById</code>, <a href="http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-getElBId">W3C specs</a> apply: nonexistent IDs will yield <code>null</code> and IDs present multiple times in the DOM will yield erratic results.  <strong>If you're assigning the same ID to multiple elements, you're doing it wrong!</strong></p>
 

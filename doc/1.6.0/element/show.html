@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.show </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,7 +423,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">show(element) -> HTMLElement</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">show(element) -&gt; HTMLElement</code></pre>
 
 <p>Displays and returns <code>element</code>.</p></div>
     <div id="abody"><h3>Examples</h3>
@@ -440,7 +434,7 @@ urchinTracker();
 
 <pre><code class="javascript">
 $('error-message').show();
-// -> HTMLElement (and displays div#error-message)
+// -&gt; HTMLElement (and displays div#error-message)
 </code></pre>
 
 <h3>Notes</h3>
@@ -454,14 +448,14 @@ $('error-message').show();
   }
 &lt;/style&gt;
 
-[&#8230;]
+[&#x2026;]
 
 &lt;div id="hidden-by-css"&gt;&lt;/div&gt;
 </code></pre>
 
 <pre><code class="javascript">
 $('hidden-by-css').show(); // DOES NOT WORK!
-// -> HTMLElement (div#error-message is still hidden!)
+// -&gt; HTMLElement (div#error-message is still hidden!)
 </code></pre>
 
 <h3>Backwards compatibility change</h3>
@@ -472,7 +466,7 @@ $('hidden-by-css').show(); // DOES NOT WORK!
 
 <pre><code class="javascript">
 ['content', 'navigation', 'footer'].each(Element.show);
-// -> ['content', 'navigation', 'footer'] 
+// -&gt; ['content', 'navigation', 'footer'] 
 // and displays #content, #navigation and #footer.
 </code></pre>
 
@@ -480,7 +474,7 @@ $('hidden-by-css').show(); // DOES NOT WORK!
 
 <pre><code class="javascript">
 $('content', 'navigation', 'footer').invoke('show');
-// -> [HTMLElement, HTMLElement, HTMLElement] (#content, #navigation and #footer)
+// -&gt; [HTMLElement, HTMLElement, HTMLElement] (#content, #navigation and #footer)
 // and displays #content, #navigation and #footer.
 </code></pre></div>
   

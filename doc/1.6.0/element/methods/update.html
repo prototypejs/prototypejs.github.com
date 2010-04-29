@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.update </title>
 	<link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,7 +423,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">update(element[, newContent]) -> HTMLElement</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">update(element[, newContent]) -&gt; HTMLElement</code></pre>
 
 <p>Replaces the content of <code>element</code> with the provided <code>newContent</code> argument and returns <code>element</code>.</p></div>
     <div id="abody"><p><code>newContent</code> can be plain text, an HTML snippet, or any JavaScript object which has a <code>toString()</code> method.</p>
@@ -450,45 +444,45 @@ urchinTracker();
 
 <pre><code class="javascript">
 $('fruits').update('kiwi, banana and apple');
-// -> HTMLElement
+// -&gt; HTMLElement
 $('fruits').innerHTML
-// -> 'kiwi, banana and apple'
+// -&gt; 'kiwi, banana and apple'
 </code></pre>
 
-<p>Clearing the element&#8217;s content:</p>
+<p>Clearing the element&#x2019;s content:</p>
 
 <pre><code class="javascript">
 $('fruits').update();
-// -> HTMLElement
+// -&gt; HTMLElement
 $('fruits').innerHTML;
-// -> '' (an empty string)
+// -&gt; '' (an empty string)
 </code></pre>
 
 <p>And now inserting an HTML snippet:</p>
 
 <pre><code class="javascript">
 $('fruits').update('&lt;p&gt;Kiwi, banana &lt;em&gt;and&lt;/em&gt; apple.&lt;/p&gt;');
-// -> HTMLElement
+// -&gt; HTMLElement
 $('fruits').innerHTML;
-// -> '&lt;p&gt;Kiwi, banana &lt;em&gt;and&lt;/em&gt; apple.&lt;/p&gt;'
+// -&gt; '&lt;p&gt;Kiwi, banana &lt;em&gt;and&lt;/em&gt; apple.&lt;/p&gt;'
 </code></pre>
 
-<p>&#8230; with a &lt;script&gt; tag thrown in:</p>
+<p>&#x2026; with a &lt;script&gt; tag thrown in:</p>
 
 <pre><code class="javascript">
 $('fruits').update('&lt;p&gt;Kiwi, banana &lt;em&gt;and&lt;/em&gt; apple.&lt;/p&gt;&lt;script&gt;alert("updated!")&lt;/script&gt;');
-// -> HTMLElement (and prints "updated!" in an alert dialog).
+// -&gt; HTMLElement (and prints "updated!" in an alert dialog).
 $('fruits').innerHTML;
-// -> '&lt;p&gt;Kiwi, banana &lt;em&gt;and&lt;/em&gt; apple.&lt;/p&gt;'
+// -&gt; '&lt;p&gt;Kiwi, banana &lt;em&gt;and&lt;/em&gt; apple.&lt;/p&gt;'
 </code></pre>
 
 <p>Relying on the <code>toString()</code> method:</p>
 
 <pre><code class="javascript">
 $('fruits').update(123);
-// -> HTMLElement
+// -&gt; HTMLElement
 $('fruits').innerHTML;
-// -> '123'
+// -&gt; '123'
 </code></pre>
 
 <p>Finally, you can do some pretty funky stuff by defining your own <code>toString()</code> method on your custom objects:</p>
@@ -507,7 +501,7 @@ var apple = new Fruit('apple');
 
 $('fruits').update(apple);
 $('fruits').innerHTML;
-// -> 'I am a fruit and my name is "apple".'
+// -&gt; 'I am a fruit and my name is "apple".'
 </code></pre></div>
   
 

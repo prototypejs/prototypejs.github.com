@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Prototype </title>
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -172,11 +170,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -201,23 +195,23 @@ urchinTracker();
 
 
 
-    <div id="abody"><p>The <code>Prototype</code> namespace provides fundamental information about the Prototype library you&#8217;re using, as well as a central repository for default iterators or functions.</p>
+    <div id="abody"><p>The <code>Prototype</code> namespace provides fundamental information about the Prototype library you&#x2019;re using, as well as a central repository for default iterators or functions.</p>
 
-<p>We say &#8220;namespace,&#8221; because the <code>Prototype</code> object is not intended for instantiation, nor for mixing in other objects.  It&#8217;s really just&#8230; a namespace.</p>
+<p>We say &#x201C;namespace,&#x201D; because the <code>Prototype</code> object is not intended for instantiation, nor for mixing in other objects.  It&#x2019;s really just&#x2026; a namespace.</p>
 
 <h3>Your version of Prototype</h3>
 
-<p>Your scripts can check against a particular version of Prototype by examining <code>Prototype.Version</code>, which is a version string (e.g. &#8220;1.5.0&#8221;).  The famous <a href="http://script.aculo.us">script.aculo.us</a> library does this at load time to ensure it&#8217;s being used with a reasonably recent version of Prototype, for instance.</p>
+<p>Your scripts can check against a particular version of Prototype by examining <code>Prototype.Version</code>, which is a version string (e.g. &#x201C;1.5.0&#x201D;).  The famous <a href="http://script.aculo.us">script.aculo.us</a> library does this at load time to ensure it&#x2019;s being used with a reasonably recent version of Prototype, for instance.</p>
 
 <h3>Browser features</h3>
 
-<p>Prototype also provides a (nascent) repository of browser feature information, which it then uses here and there in its source code.  The idea is, first, to make Prototype&#8217;s source code more readable; and second, to centralize whatever scripting trickery might be necessary to detect the browser feature, in order to ease maintenance.</p>
+<p>Prototype also provides a (nascent) repository of browser feature information, which it then uses here and there in its source code.  The idea is, first, to make Prototype&#x2019;s source code more readable; and second, to centralize whatever scripting trickery might be necessary to detect the browser feature, in order to ease maintenance.</p>
 
 <p>The only currently available feature detection is browser support for <a href="http://www.w3.org/TR/DOM-Level-3-XPath/xpath.html">DOM Level 3 XPath</a>, accessible as a <code>boolean</code> at <code>Prototype.BrowserFeatures.XPath</code>.</p>
 
 <h3>Default iterators and functions</h3>
 
-<p>Numerous methods in Prototype objects (most notably the <a href="enumerable.html"><code>Enumerable</code></a> module) let the user pass in a custom iterator, but make it optional by defaulting to an &#8220;identity function&#8221; (an iterator that just returns its argument, untouched).  This is the <code>Prototype.K</code> function, which you&#8217;ll see referred to in many places.</p>
+<p>Numerous methods in Prototype objects (most notably the <a href="enumerable.html"><code>Enumerable</code></a> module) let the user pass in a custom iterator, but make it optional by defaulting to an &#x201C;identity function&#x201D; (an iterator that just returns its argument, untouched).  This is the <code>Prototype.K</code> function, which you&#x2019;ll see referred to in many places.</p>
 
 <p>Many methods also take it easy by protecting themselves against missing methods here and there, reverting to empty functions when a supposedly available method is missing.  Such a function simply ignores its potential arguments, and does nothing whatsoever (which is, oddly enough, blazing fast).  The quintessential empty function sits, unsurprisingly, at <code>Prototype.emptyFunction</code> (note the lowercase first letter).</p></div>
     <div id="method-excerpts">  
@@ -228,9 +222,9 @@ urchinTracker();
           <h4><a href="prototype/K.html">K</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">K(argument) -> argument</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">K(argument) -&gt; argument</code></pre>
 
-<p><code>K</code> is Prototype&#8217;s very own <a href="http://en.wikipedia.org/wiki/Identity_function">identity function</a>, i.e. it returns its <code>argument</code> untouched.</p></div>
+<p><code>K</code> is Prototype&#x2019;s very own <a href="http://en.wikipedia.org/wiki/Identity_function">identity function</a>, i.e. it returns its <code>argument</code> untouched.</p></div>
       </div>
    
   
@@ -243,7 +237,7 @@ urchinTracker();
           </h4>
            <div class="mexcerpt-cnt"><pre><code class="ebnf">emptyFunction([argument...])</code></pre>
 
-<p>The <code>emptyFunction</code> does nothing&#8230; and returns nothing!</p></div>
+<p>The <code>emptyFunction</code> does nothing&#x2026; and returns nothing!</p></div>
       </div>
    
   

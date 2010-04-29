@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Position.withinIncludingScrolloffsets </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -212,11 +210,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -225,12 +219,12 @@ urchinTracker();
 <div class="box">deprecated</div>
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">withinIncludingScrolloffsets(element, x, y) -> Boolean</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">withinIncludingScrolloffsets(element, x, y) -&gt; Boolean</code></pre>
 
 <p>Indicates whether the point <code>x, y</code> (measured from the top-left corner of the document) is within the boundaries of <code>element</code>.  Used instead of <a href="within.html">Position.within</a> whenever <code>element</code> is a child of a scrolling container. Must be called immediately before <a href="overlap.html">Position.overlap</a> and immediately after <a href="prepare.html">Position.prepare</a>.</p></div>
     <div id="abody"><p class="deprecated">Deprecated.</p>
 
-<p>This method handles an edge case of <a href="within.html"><code>Position.within</code></a>: when <code>element</code> is the child of a scrolling container.  (Scriptaculous, for instance, uses it whenever a Draggable&#8217;s container is scrollable.) For performance reasons, this method should not be used unless you need this specific edge case.</p>
+<p>This method handles an edge case of <a href="within.html"><code>Position.within</code></a>: when <code>element</code> is the child of a scrolling container.  (Scriptaculous, for instance, uses it whenever a Draggable&#x2019;s container is scrollable.) For performance reasons, this method should not be used unless you need this specific edge case.</p>
 
 <p>You <em>must</em> call <a href="prepare.html"><code>Position.prepare</code></a> first, since it calculates offsets that are used by this method.</p></div>
   

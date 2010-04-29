@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Enumerable.any </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -268,11 +266,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -281,11 +275,11 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">any([iterator = Prototype.K[, context]]) -> Boolean</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">any([iterator = Prototype.K[, context]]) -&gt; Boolean</code></pre>
 
 <p>Determines whether at least one element is boolean-equivalent to <code>true</code>,
 either directly or through computation by the provided iterator.</p></div>
-    <div id="abody"><p>The code obviously short-circuits as soon as it finds an element that &#8220;passes&#8221;
+    <div id="abody"><p>The code obviously short-circuits as soon as it finds an element that &#x201C;passes&#x201D;
 (that is boolean-equivalent to <code>true</code>).  If no iterator is provided, the
 elements are used directly.  Otherwise, each element is passed to the
 iterator, and the result value is used for boolean equivalence.</p>
@@ -296,16 +290,16 @@ iterator, and the result value is used for boolean equivalence.</p>
 
 <pre><code class="javascript">
 [].any()
-// -> false (empty arrays have no elements that could be true-equivalent)
+// -&gt; false (empty arrays have no elements that could be true-equivalent)
 
 $R(0, 2).any()
-// -> true (on the second loop cycle, 1 is true-equivalent)
+// -&gt; true (on the second loop cycle, 1 is true-equivalent)
 
 [2, 4, 6, 8, 10].any(function(n) { return 0 == n % 3; })
-// -> true (the iterator will return true on 6: the array does have 1+ multiple of 3)
+// -&gt; true (the iterator will return true on 6: the array does have 1+ multiple of 3)
 
 $H({ opt1: null, opt2: false, opt3: '', opt4: 'pfew!' }).any(function(pair) { return pair.value; })
-// -> true (thanks to the opt4/'pfew!' pair, whose value is true-equivalent)
+// -&gt; true (thanks to the opt4/'pfew!' pair, whose value is true-equivalent)
 </code></pre>
 
 <h3>See also</h3>

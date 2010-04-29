@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Function.wrap </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -196,11 +194,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -209,17 +203,17 @@ urchinTracker();
 <div class="box">1.6.0</div>
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">wrap(wrapperFunction[, arg...]) -> Function</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">wrap(wrapperFunction[, arg...]) -&gt; Function</code></pre>
 
-<p>Returns a function &#8220;wrapped&#8221; around the original function.</p></div>
-    <div id="abody"><p><code>Function#wrap</code> distills the essence of <a href="http://en.wikipedia.org/wiki/Aspect-oriented_programming &#8220;Aspect-oriented programming - Wikipedia, the free encyclopedia&#8221;">aspect-oriented programming</a> into a single method, letting you easily build on existing functions by specifying before and after behavior, transforming the return value, or even preventing the original function from being called.</p>
+<p>Returns a function &#x201C;wrapped&#x201D; around the original function.</p></div>
+    <div id="abody"><p><code>Function#wrap</code> distills the essence of <a href="http://en.wikipedia.org/wiki/Aspect-oriented_programming &#x201C;Aspect-oriented programming - Wikipedia, the free encyclopedia&#x201D;">aspect-oriented programming</a> into a single method, letting you easily build on existing functions by specifying before and after behavior, transforming the return value, or even preventing the original function from being called.</p>
 
 <h3>Examples</h3>
 
 <pre><code class="javascript">
 String.prototype.capitalize = String.prototype.capitalize.wrap( 
   function(proceed, eachWord) { 
-    if (eachWord && this.include(" ")) {
+    if (eachWord  this.include(" ")) {
       // capitalize each word in the string
       return this.split(" ").invoke("capitalize").join(" ");
     } else {

@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Position.within </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -212,11 +210,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -225,27 +219,27 @@ urchinTracker();
 <div class="box">deprecated</div>
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">within(element, x, y) -> Boolean</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">within(element, x, y) -&gt; Boolean</code></pre>
 
 <p>Indicates whether the point <code>x, y</code> (measured from the top-left corner of the document) is within the boundaries of <code>element</code>.  Must be called immediately before <a href="overlap.html">Position.overlap</a>.</p></div>
     <div id="abody"><p class="deprecated">Deprecated.</p>
 
-<p>This function uses <code>Position.cumulativeOffset</code> to determine <code>element</code>&#8217;s offset from the top of the page, then combines those values with <code>element</code>&#8217;s height and width to identify the offsets of all four corners of the element.  It then compares these coordinates to the <code>x</code> and <code>y</code> arguments, returning <code>true</code> if those coordinates fall within the bounding box of <code>element</code>.</p>
+<p>This function uses <code>Position.cumulativeOffset</code> to determine <code>element</code>&#x2019;s offset from the top of the page, then combines those values with <code>element</code>&#x2019;s height and width to identify the offsets of all four corners of the element.  It then compares these coordinates to the <code>x</code> and <code>y</code> arguments, returning <code>true</code> if those coordinates fall within the bounding box of <code>element</code>.</p>
 
 <h3>Example</h3>
 
 <pre><code class="javascript">
 var element = $('some_positioned_element');
 Position.cumulativeOffset(element);
-// -> [100, 100]  (item is 100px from the left and top edges of the page)
+// -&gt; [100, 100]  (item is 100px from the left and top edges of the page)
 Element.getDimensions(element);
-// -> { width: 150, height: 150 }
+// -&gt; { width: 150, height: 150 }
 
 Position.within(element, 200, 200);
-// -> true
+// -&gt; true
 
 Position.within(element, 260, 260);
-// -> false
+// -&gt; false
 </code></pre></div>
   
 

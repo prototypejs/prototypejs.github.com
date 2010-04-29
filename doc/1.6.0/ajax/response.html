@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Ajax.Ajax.Response </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -188,11 +186,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -202,7 +196,7 @@ urchinTracker();
 </h2>
   
     <div id="excerpt"><p>The object passed as the first argument of all Ajax requests callbacks.</p></div>
-    <div id="abody"><p>This is a wrapper around the native <code>xmlHttpRequest</code> object (or it&#8217;s <code>ActiveX</code> counterpart). It normalizes cross-browser issues while adding support for JSON via the <code>responseJSON</code> and <code>headerJSON</code> properties. </p>
+    <div id="abody"><p>This is a wrapper around the native <code>xmlHttpRequest</code> object (or it&#x2019;s <code>ActiveX</code> counterpart). It normalizes cross-browser issues while adding support for JSON via the <code>responseJSON</code> and <code>headerJSON</code> properties. </p>
 
 <h3>Properties of the <code>Ajax.Response</code> object</h3>
 
@@ -228,7 +222,7 @@ urchinTracker();
   <tr>
     <td><code> readyState </code></td>
     <td><code>Number</code></td>
-    <td>The request&#8217;s current state. <code>0</code> corresponds to <code>"Uninitialized"</code>, <code>1</code> to <code>"Loading"</code>, <code>2</code> to <code>"Loaded"</code>, <code>3</code> to <code>"Interactive"</code> and <code>4</code> to <code>"Complete"</code>.</td>
+    <td>The request&#x2019;s current state. <code>0</code> corresponds to <code>"Uninitialized"</code>, <code>1</code> to <code>"Loading"</code>, <code>2</code> to <code>"Loaded"</code>, <code>3</code> to <code>"Interactive"</code> and <code>4</code> to <code>"Complete"</code>.</td>
   </tr>
 
   <tr>
@@ -282,22 +276,22 @@ urchinTracker();
   <tr>
     <td><code>getHeader(name)</code></td>
     <td><code>String</code> or <code>null</code></td>
-    <td>Returns the value of the requested header if present. <code>null</code> otherwise. Does <em>not</em> throw errors on undefined headers like it&#8217;s native counterpart does.</td>
+    <td>Returns the value of the requested header if present. <code>null</code> otherwise. Does <em>not</em> throw errors on undefined headers like it&#x2019;s native counterpart does.</td>
   </tr>
   <tr>
      <td><code>getAllHeaders()</code></td>
     <td><code>String</code> or <code>null</code></td>
-    <td>Returns a string containing all headers separated by a line break. Does <em>not</em> throw errors if no headers are present like it&#8217;s native counterpart does.</td>
+    <td>Returns a string containing all headers separated by a line break. Does <em>not</em> throw errors if no headers are present like it&#x2019;s native counterpart does.</td>
   </tr>
   <tr>
     <td><code>getResponseHeader(name)</code></td>
     <td><code>String</code></td>
-    <td>Returns the value of the requested header if present. Throws an error otherwise. This is just a wrapper around the <code>xmlHttpRequest</code> object&#8217;s native method. Prefer it&#8217;s shorter counterpart <code>getHeader</code>.</td>
+    <td>Returns the value of the requested header if present. Throws an error otherwise. This is just a wrapper around the <code>xmlHttpRequest</code> object&#x2019;s native method. Prefer it&#x2019;s shorter counterpart <code>getHeader</code>.</td>
   </tr>
   <tr>
      <td><code>getAllResponseHeaders()</code></td>
     <td><code>String</code></td>
-    <td>Returns a string containing all headers separated by a line break. Throws an error otherwise. This is just a wrapper around the <code>xmlHttpRequest</code> object&#8217;s native method. Prefer it&#8217;s shorter counterpart <code>getAllHeaders</code>.</td>
+    <td>Returns a string containing all headers separated by a line break. Throws an error otherwise. This is just a wrapper around the <code>xmlHttpRequest</code> object&#x2019;s native method. Prefer it&#x2019;s shorter counterpart <code>getAllHeaders</code>.</td>
   </tr>
 </tbody>
 </table></div>

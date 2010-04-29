@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Position.overlap </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -212,11 +210,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -225,7 +219,7 @@ urchinTracker();
 <div class="box">deprecated</div>
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">overlap(mode, element) -> Number</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">overlap(mode, element) -&gt; Number</code></pre>
 
 <p>Returns a Number between <code>0</code> and <code>1</code> corresponding to the proportion to which <code>element</code> overlaps the point previously defined by <a href="within.html">Position.within</a>. <code>mode</code> can be set to either <code>vertical</code> or <code>horizontal</code>.</p></div>
     <div id="abody"><p class="deprecated">Deprecated.</p>
@@ -241,18 +235,18 @@ urchinTracker();
 <pre><code class="javascript">
 var element = $('some_positioned_element');
 Position.cumulativeOffset(element);
-// -> [100, 100] (element is 100px from the top and left edges of the page)
+// -&gt; [100, 100] (element is 100px from the top and left edges of the page)
 element.getDimensions();
-// -> { width: 150, height: 150 }
+// -&gt; { width: 150, height: 150 }
 
 Position.within(element, 175, 145);
-// -> true
+// -&gt; true
 
 Position.overlap('horizontal', element);
-// -> 0.5 (point is halfway across the element's length)
+// -&gt; 0.5 (point is halfway across the element's length)
 
 Position.overlap('vertical', element);
-// -> 0.3 (point is 3/10ths of the way across the element's height)
+// -&gt; 0.3 (point is 3/10ths of the way across the element's height)
 </code></pre></div>
   
 

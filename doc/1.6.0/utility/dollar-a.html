@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Utility Methods.$A </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -200,11 +198,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -213,7 +207,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">$A(iterable) -> actualArray</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">$A(iterable) -&gt; actualArray</code></pre>
 
 <p>Accepts an array-like collection (anything with numeric indices) and returns its equivalent as an actual <code>Array</code> object. This method is a convenience alias of <a href="../array/from.html"><code>Array.from</code></a>, but is the preferred way of casting to an <code>Array</code>.</p></div>
     <div id="abody"><p>The primary use of <code>$A()</code> is to obtain an actual <code>Array</code> object based on anything that could pass as an array (e.g. the <code>NodeList</code> or <code>HTMLCollection</code> objects returned by numerous DOM methods, or the predefined <code>arguments</code> reference within your functions).</p>

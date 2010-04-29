@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Event.unloadCache </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -204,11 +202,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -227,15 +221,15 @@ urchinTracker();
 
 <h3>The sad tale of MSIE, event handlers and memory leaks</h3>
 
-<p>There is a significant issue with MSIE, which is that under a variety of conditions, it just will not release event handlers when the page unloads.  These handlers will stay in RAM, filling it up slowly, clogging the browser&#8217;s arteries.  This is known as a memory leak.</p>
+<p>There is a significant issue with MSIE, which is that under a variety of conditions, it just will not release event handlers when the page unloads.  These handlers will stay in RAM, filling it up slowly, clogging the browser&#x2019;s arteries.  This is known as a memory leak.</p>
 
 <p>Of course, manually keeping tabs on all the handlers you register (which you do through <a href="observe.html"><code>observe</code></a>, being such a nice person) is pretty tedious.  And boring.  It would be, in short, the essence of un-cool.</p>
 
 <p>Which is why Prototype takes care of it for you.  It keeps tabs, and when <code>unloadCache</code> is called, it unregisters everything and frees references, which is akin to sending a big pink lavender-perfumed invitation to the garbage collector.</p>
 
-<h3>You don&#8217;t even need to know this</h3>
+<h3>You don&#x2019;t even need to know this</h3>
 
-<p>What&#8217;s even better is, Prototype automatically hooks <code>unloadCache</code> to page unloading, exclusively for MSIE.  So you don&#8217;t have anything to do.  It&#8217;s all taken care of.  We just though you&#8217;d like to know.  Go do something productive, some value-added JavaScript code for instance.  We&#8217;re not here to hinder you with automatable details.</p></div>
+<p>What&#x2019;s even better is, Prototype automatically hooks <code>unloadCache</code> to page unloading, exclusively for MSIE.  So you don&#x2019;t have anything to do.  It&#x2019;s all taken care of.  We just though you&#x2019;d like to know.  Go do something productive, some value-added JavaScript code for instance.  We&#x2019;re not here to hinder you with automatable details.</p></div>
   
 
 

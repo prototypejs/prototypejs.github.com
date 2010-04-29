@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.up </title>
 	<link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,12 +423,12 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">up(element, [cssRule][, index = 0]) -> HTMLElement | undefined</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">up(element, [cssRule][, index = 0]) -&gt; HTMLElement | undefined</code></pre>
 
-<p>Returns <code>element</code>&#8217;s first ancestor (or the <em>index&#8217;th</em> ancestor, if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all ancestors are considered. If no ancestor matches these criteria, <code>undefined</code> is returned.</p></div>
-    <div id="abody"><p>The <code>Element.up</code> method is part of Prototype&#8217;s ultimate DOM traversal toolkit (check out <a href="down.html"><code>Element.down</code></a>, <a href="next.html"><code>Element.next</code></a> and <a href="previous.html"><code>Element.previous</code></a> for some more Prototypish niceness). It allows precise index-based and/or CSS rule-based selection of any of <code>element</code>&#8217;s <strong>ancestors</strong>.</p>
+<p>Returns <code>element</code>&#x2019;s first ancestor (or the <em>index&#x2019;th</em> ancestor, if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all ancestors are considered. If no ancestor matches these criteria, <code>undefined</code> is returned.</p></div>
+    <div id="abody"><p>The <code>Element.up</code> method is part of Prototype&#x2019;s ultimate DOM traversal toolkit (check out <a href="down.html"><code>Element.down</code></a>, <a href="next.html"><code>Element.next</code></a> and <a href="previous.html"><code>Element.previous</code></a> for some more Prototypish niceness). It allows precise index-based and/or CSS rule-based selection of any of <code>element</code>&#x2019;s <strong>ancestors</strong>.</p>
 
-<p>As it totally ignores text nodes (it only returns elements), you don&#8217;t have to worry about whitespace-only nodes.</p>
+<p>As it totally ignores text nodes (it only returns elements), you don&#x2019;t have to worry about whitespace-only nodes.</p>
 
 <p>And as an added bonus, all elements returned are already <a href="../extend.html">extended</a> allowing chaining:</p>
 
@@ -446,9 +440,9 @@ $(element).down(1).next('li', 2).hide();
 
 <h3>Arguments</h3>
 
-<p>If no argument is passed, <code>element</code>&#8217;s first ancestor is returned (this is similar as calling <code>parentNode</code> except <code>Element.up</code> returns an already <a href="../extend.html">extended element</a>.</p>
+<p>If no argument is passed, <code>element</code>&#x2019;s first ancestor is returned (this is similar as calling <code>parentNode</code> except <code>Element.up</code> returns an already <a href="../extend.html">extended element</a>.</p>
 
-<p>If an index is passed, <code>element</code>&#8217;s corresponding ancestor is is returned. (This is equivalent to selecting an element from the array of elements returned by the method <a href="ancestors.html"><code>Element.ancestors</code></a>). Note that the first element has an index of 0.</p>
+<p>If an index is passed, <code>element</code>&#x2019;s corresponding ancestor is is returned. (This is equivalent to selecting an element from the array of elements returned by the method <a href="ancestors.html"><code>Element.ancestors</code></a>). Note that the first element has an index of 0.</p>
 
 <p>If <code>cssRule</code> is defined, <code>Element.up</code> will return the first ancestor that matches it.</p>
 
@@ -460,7 +454,7 @@ $(element).down(1).next('li', 2).hide();
 
 <pre><code class="html">
 &lt;html&gt;
-  [&#8230;]
+  [&#x2026;]
   &lt;body&gt;
     &lt;ul id="fruits"&gt;
       &lt;li id="apples" class="keeps-the-doctor-away"&gt;
@@ -481,22 +475,22 @@ $(element).down(1).next('li', 2).hide();
 $('fruits').up();
 // equivalent:
 $('fruits').up(0);
-// -> body
+// -&gt; body
 
 $('mutsu').up(2);
-// -> ul#fruits
+// -&gt; ul#fruits
 
 $('mutsu').up('li');
-// -> li#apples
+// -&gt; li#apples
 
 $('mutsu').up('.keeps-the-doctor-away');
-// -> li#apples
+// -&gt; li#apples
 
 $('mutsu').up('ul', 1);
-// -> ul#fruits
+// -&gt; ul#fruits
 
 $('mutsu').up('div');
-// -> undefined
+// -&gt; undefined
 </code></pre></div>
   
 

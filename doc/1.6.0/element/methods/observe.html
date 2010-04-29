@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.observe </title>
 	<link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,8 +423,8 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">Element.observe(element, eventName, handler) -> HTMLElement
-someElement.observe(eventName, handler) -> HTMLElement</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">Element.observe(element, eventName, handler) -&gt; HTMLElement
+someElement.observe(eventName, handler) -&gt; HTMLElement</code></pre>
 
 <p>Registers an event handler on <code>element</code> and returns <code>element</code>.</p></div>
     <div id="abody"><p>This is a simple proxy for <a href="../../event/observe.html">Event.observe</a>. Please refer to it for further information.</p>
@@ -441,7 +435,7 @@ someElement.observe(eventName, handler) -> HTMLElement</code></pre>
 $(element).observe('click', function(event){
   alert(Event.element(event).innerHTML);
  });
-// -> HTMLElement (and will display an alert dialog containing 
+// -&gt; HTMLElement (and will display an alert dialog containing 
 // element's innerHTML when element is clicked).
 </code></pre></div>
   

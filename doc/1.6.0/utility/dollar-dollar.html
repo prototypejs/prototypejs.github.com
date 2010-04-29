@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Utility Methods.$$ </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -200,11 +198,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -213,7 +207,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">$$(cssRule...) -> [HTMLElement...]</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">$$(cssRule...) -&gt; [HTMLElement...]</code></pre>
 
 <p>Takes an arbitrary number of CSS selectors (strings) and returns a document-order array of extended DOM elements that match any of them.</p></div>
     <div id="abody"><p>Sometimes the usual tools from your DOM arsenal -- <code>document.getElementById()</code> encapsulated by <a href="dollar.html"><code>$()</code></a>, <code>getElementsByTagName()</code> and even Prototype's very own <code>getElementsByClassName()</code> extensions -- just aren't enough to quickly find our elements or collections of elements. If you know the DOM tree structure, you can simply resort to CSS selectors to get the job done.</p>
@@ -221,13 +215,13 @@ urchinTracker();
 <h3>Quick examples</h3>
 
 <pre><code class="javascript">$$('div');
-// -> all DIVs in the document.  Same as document.getElementsByTagName('div')!
+// -&gt; all DIVs in the document.  Same as document.getElementsByTagName('div')!
 
 $$('#contents');
-// -> same as $('contents'), only it returns an array anyway (even though IDs must be unique within a document).
+// -&gt; same as $('contents'), only it returns an array anyway (even though IDs must be unique within a document).
 
 $$('li.faux');
-// -> all LI elements with class 'faux'
+// -&gt; all LI elements with class 'faux'
 </code></pre>
 
 <p>The <code>$$</code> function searches the entire document.  For selector queries on more specific sections of a document, use <a href="../element/methods/getElementsBySelector.html"><code>Element#getElementsBySelector</code></a>.</p>
@@ -262,25 +256,25 @@ $$('li.faux');
 <h3>Examples</h3>
 
 <pre><code class="javascript">$$('#contents a[rel]');
-// -> all links inside the element of ID "contents" with a rel attribute
+// -&gt; all links inside the element of ID "contents" with a rel attribute
 
 $$('a[href="#"]');
-// -> all links with a href attribute of value "#" (eyeew!)
+// -&gt; all links with a href attribute of value "#" (eyeew!)
 
 $$('#navbar a', '#sidebar a');
-// -> all links within the elements of ID "navbar" or "sidebar"
+// -&gt; all links within the elements of ID "navbar" or "sidebar"
 </code></pre>
 
 <p><strong>With version 1.5.1 and above</strong> you can do various types of advanced selectors:</p>
 
 <pre><code class="javascript">$$('a:not([rel~=nofollow])');
-// -> all links, excluding those whose rel attribute contains the word "nofollow"
+// -&gt; all links, excluding those whose rel attribute contains the word "nofollow"
 
-$$('table tbody > tr:nth-child(even)');
-// -> all even rows within all table bodies
+$$('table tbody &gt; tr:nth-child(even)');
+// -&gt; all even rows within all table bodies
 
 $$('div:empty');
-// -> all DIVs without content (i.e., whitespace-only)
+// -&gt; all DIVs without content (i.e., whitespace-only)
 </code></pre></div>
   
 

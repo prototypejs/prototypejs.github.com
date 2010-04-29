@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Enumerable.include </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -268,11 +266,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -281,7 +275,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">include(object) -> Boolean</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">include(object) -&gt; Boolean</code></pre>
 
 <p>Determines whether a given object is in the <code>Enumerable</code> or not, based on the <code>==</code> comparison operator.  Aliased as <a href="member.html"><code>member</code></a>.</p></div>
     <div id="abody"><p>Note this is not strict equality (<code>===</code>, comparing both value and type), but
@@ -294,13 +288,13 @@ use <a href="any.html"><code>any</code></a> instead.</p>
 
 <pre><code class="javascript">
 $R(1,15).include(10)
-// -> true
+// -&gt; true
 
 ['hello', 'world'].include('HELLO')
-// -> false
+// -&gt; false
 
 [1, 2, '3', '4', '5'].include(3)
-// -> true (== ignores actual type)
+// -&gt; true (== ignores actual type)
 </code></pre></div>
   
 

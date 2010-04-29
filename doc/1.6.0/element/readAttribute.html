@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.readAttribute </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,7 +423,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">readAttribute(element, attribute) -> String | null</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">readAttribute(element, attribute) -&gt; String | null</code></pre>
 
 <p>Returns the value of <code>element</code>'s <code>attribute</code> or <code>null</code> if <code>attribute</code> has not been specified.</p></div>
     <div id="abody"><p>This method serves two purposes. First it acts as a simple wrapper around <code>getAttribute</code> which isn't a "real" function in Safari and Internet Explorer (it doesn't have <code>.apply</code> or <code>.call</code> for  instance). Secondly, it cleans up the horrible mess Internet Explorer makes when handling attributes.</p>
@@ -442,13 +436,13 @@ urchinTracker();
 
 <pre><code class="javascript">
 $('tag').readAttribute('href');
-// -> '/tags/prototype'
+// -&gt; '/tags/prototype'
 
 $('tag').readAttribute('title');
-// -> 'view related bookmarks.'
+// -&gt; 'view related bookmarks.'
 
 $('tag').readAttribute('my_widget');
-// -> 'some info.'
+// -&gt; 'some info.'
 </code></pre></div>
   
 

@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Template </title>
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -168,11 +166,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -210,7 +204,7 @@ var show = {title: 'The Simpsons', author: 'Matt Groening', network: 'FOX' };
 
 // let's format our data
 myTemplate.evaluate(show);
-// -> The TV show The Simpsons was created by Matt Groening.
+// -&gt; The TV show The Simpsons was created by Matt Groening.
 </code></pre> 
 
 <h3>Templates are meant to be reused</h3>
@@ -231,9 +225,9 @@ var templ = new Template('Multiply by #{factor} to convert from #{from} to #{to}
 [conversion1, conversion2, conversion3].each( function(conv){
     templ.evaluate(conv);
 });
-// -> Multiply by 3.28 to convert from meters to feet.
-// -> Multiply by 0.9478 to convert from kilojoules to BTUs.
-// -> Multiply by 1024 to convert from megabytes to gigabytes.
+// -&gt; Multiply by 3.28 to convert from meters to feet.
+// -&gt; Multiply by 0.9478 to convert from kilojoules to BTUs.
+// -&gt; Multiply by 1024 to convert from megabytes to gigabytes.
 </code></pre> 
 
 <h3>Escape sequence</h3>
@@ -246,7 +240,7 @@ var templ = new Template('Multiply by #{factor} to convert from #{from} to #{to}
 var t = new Template('in #{lang} we also use the \\#{variable} syntax for templates.');
 var data = {lang:'Ruby', variable: '(not used)'};
 t.evaluate(data);
-// -> in Ruby we also use the #{variable} syntax for templates.
+// -&gt; in Ruby we also use the #{variable} syntax for templates.
 </code></pre> 
 
 <h3>Custom syntaxes</h3>
@@ -258,7 +252,7 @@ Let's put together a template that uses a syntax similar to the ubiquitous <stro
 <pre><code class="javascript">
 var syntax = /(^|.|\r|\n)(\&lt;%=\s*(\w+)\s*%\&gt;)/; //matches symbols like '&lt;%= field %&gt;'
 var t = new Template('&lt;div&gt;Name: &lt;b&gt;&lt;%= name %&gt;&lt;/b&gt;, Age: &lt;b&gt;&lt;%=age%&gt;&lt;/b&gt;&lt;/div&gt;', syntax);
-t.evaluate( {name: 'John Smith', age: 26} ); // -> &lt;div&gt;Name: &lt;b&gt;John Smith&lt;/b&gt;, Age: &lt;b&gt;26&lt;/b&gt;&lt;/div&gt;
+t.evaluate( {name: 'John Smith', age: 26} ); // -&gt; &lt;div&gt;Name: &lt;b&gt;John Smith&lt;/b&gt;, Age: &lt;b&gt;26&lt;/b&gt;&lt;/div&gt;
 </code></pre> 
 
 <p>There are important constraints to any custom syntax. Any syntax must provide at least three groupings in the regular expression. The first grouping is to capture what comes before the symbol, to detect the backslash escape character (no, you cannot use a different character.) The second grouping captures the entire symbol and will be completely replaced upon evaluation. Lastly, the third required grouping captures the name of the field inside the symbol.</p></div>
@@ -272,9 +266,9 @@ t.evaluate( {name: 'John Smith', age: 26} ); // -> &lt;div&gt;Name: &lt;b&gt;Joh
           <h4><a href="template/evaluate.html">evaluate</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">evaluate(object) -> String</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">evaluate(object) -&gt; String</code></pre>
 
-<p>Applies the template to the given <code>object</code>&#8217;s data, producing a formatted string with symbols replaced by corresponding <code>object</code>&#8217;s properties.</p></div>
+<p>Applies the template to the given <code>object</code>&#x2019;s data, producing a formatted string with symbols replaced by corresponding <code>object</code>&#x2019;s properties.</p></div>
       </div>
    
   

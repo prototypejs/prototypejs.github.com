@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.next </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,12 +423,12 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">next(element[, cssRule][, index = 0]) -> HTMLElement | undefined</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">next(element[, cssRule][, index = 0]) -&gt; HTMLElement | undefined</code></pre>
 
-<p>Returns <code>element</code>&#8217;s following sibling (or the <em>index&#8217;th</em> one, if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all following siblings are considered. If no following sibling matches these criteria, <code>undefined</code> is returned.</p></div>
-    <div id="abody"><p>The <code>Element.next</code> method is part of Prototype&#8217;s ultimate DOM traversal toolkit (check out <a href="up.html"><code>Element.up</code></a>, <a href="down.html"><code>Element.down</code></a> and <a href="previous.html"><code>Element.previous</code></a> for some more Prototypish niceness). It allows precise index-based and/or CSS rule-based selection of any of <code>element</code>&#8217;s <strong>following siblings</strong>. (Note that two elements are considered siblings if they have the same parent, so for example, the <code>head</code> and <code>body</code> elements are siblings&#8212;their parent is the <code>html</code> element.)</p>
+<p>Returns <code>element</code>&#x2019;s following sibling (or the <em>index&#x2019;th</em> one, if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all following siblings are considered. If no following sibling matches these criteria, <code>undefined</code> is returned.</p></div>
+    <div id="abody"><p>The <code>Element.next</code> method is part of Prototype&#x2019;s ultimate DOM traversal toolkit (check out <a href="up.html"><code>Element.up</code></a>, <a href="down.html"><code>Element.down</code></a> and <a href="previous.html"><code>Element.previous</code></a> for some more Prototypish niceness). It allows precise index-based and/or CSS rule-based selection of any of <code>element</code>&#x2019;s <strong>following siblings</strong>. (Note that two elements are considered siblings if they have the same parent, so for example, the <code>head</code> and <code>body</code> elements are siblings&#x2014;their parent is the <code>html</code> element.)</p>
 
-<p>As it totally ignores text nodes (it only returns elements), you don&#8217;t have to worry about whitespace-only nodes.</p>
+<p>As it totally ignores text nodes (it only returns elements), you don&#x2019;t have to worry about whitespace-only nodes.</p>
 
 <p>And as an added bonus, all elements returned are already <a href="extend.html">extended</a> allowing chaining:</p>
 
@@ -446,13 +440,13 @@ $(element).down(1).next('li', 2).hide();
 
 <h3>Arguments</h3>
 
-<p>If no argument is passed, <code>element</code>&#8217;s following sibling is returned (this is similar as calling <code>nextSibling</code> except <code>Element.next</code> returns an already <a href="extend.html">extended element</a>).</p>
+<p>If no argument is passed, <code>element</code>&#x2019;s following sibling is returned (this is similar as calling <code>nextSibling</code> except <code>Element.next</code> returns an already <a href="extend.html">extended element</a>).</p>
 
-<p>If an index is passed, <code>element</code>&#8217;s corresponding following sibling is returned. (This is equivalent to selecting an element from the array of elements returned by the method <a href="nextSiblings.html"><code>Element.nextSiblings</code></a>). Note that the sibling <em>right below</em> <code>element</code> has an index of 0.</p>
+<p>If an index is passed, <code>element</code>&#x2019;s corresponding following sibling is returned. (This is equivalent to selecting an element from the array of elements returned by the method <a href="nextSiblings.html"><code>Element.nextSiblings</code></a>). Note that the sibling <em>right below</em> <code>element</code> has an index of 0.</p>
 
 <p>If <code>cssRule</code> is defined, <code>Element.next</code> will return the <code>element</code> first following sibling that matches it.</p>
 
-<p>If both <code>cssRule</code> and <code>index</code> are defined, <code>Element.next</code> will collect all of <code>element</code>&#8217;s following siblings matching the given CSS rule and will return the one specified by the index.</p>
+<p>If both <code>cssRule</code> and <code>index</code> are defined, <code>Element.next</code> will collect all of <code>element</code>&#x2019;s following siblings matching the given CSS rule and will return the one specified by the index.</p>
 
 <p><strong>In all of the above cases, if no following sibling is found, <code>undefined</code> will be returned.</strong></p>
 
@@ -477,22 +471,22 @@ $(element).down(1).next('li', 2).hide();
 $('list-of-apples').next();
 // equivalent:
 $('list-of-apples').next(0);
-// -> p#sayings
+// -&gt; p#sayings
 
 $('title').next(1);
-// -> ul#list-of-apples
+// -&gt; ul#list-of-apples
 
 $('title').next('p');
-// -> p#sayings
+// -&gt; p#sayings
 
 $('golden-delicious').next('.yummy');
-// -> li#mcintosh
+// -&gt; li#mcintosh
 
 $('golden-delicious').next('.yummy', 1);
-// -> li#ida-red
+// -&gt; li#ida-red
 
 $('ida-red').next();
-// -> undefined
+// -&gt; undefined
 </code></pre></div>
   
 

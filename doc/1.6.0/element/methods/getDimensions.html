@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.getDimensions </title>
 	<link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,12 +423,12 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">getDimensions(element) -> {height: Number, width: Number}</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">getDimensions(element) -&gt; {height: Number, width: Number}</code></pre>
 
 <p>Finds the computed <code>width</code> and <code>height</code> of <code>element</code> and returns them as key/value pairs of an object.</p></div>
     <div id="abody"><p>This method returns correct values on elements whose display is set to <code>none</code> either in an inline style rule or in an CSS stylesheet.</p>
 
-<p>In order to avoid calling the method twice, you should consider caching the values returned in a variable as shown below. If you only need <code>element</code>&#8217;s width or height, consider using <a href="getWidth.html"><code>Element.getWidth</code></a> or <a href="getHeight.html"><code>Element.getHeight</code></a> instead.</p>
+<p>In order to avoid calling the method twice, you should consider caching the values returned in a variable as shown below. If you only need <code>element</code>&#x2019;s width or height, consider using <a href="getWidth.html"><code>Element.getWidth</code></a> or <a href="getHeight.html"><code>Element.getHeight</code></a> instead.</p>
 
 <p>Note that all values are returned as <em>numbers only</em>  although they are <em>expressed in pixels</em>.</p>
 
@@ -446,13 +440,13 @@ urchinTracker();
 
 <pre><code class="javascript">
 var dimensions = $('rectangle').getDimensions();
-// -> {width: 200, height: 100}
+// -&gt; {width: 200, height: 100}
 
 dimensions.width;
-// -> 200
+// -&gt; 200
 
 dimensions.height;
-// -> 100
+// -&gt; 100
 </code></pre></div>
   
 

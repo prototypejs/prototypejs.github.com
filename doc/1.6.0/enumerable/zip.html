@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Enumerable.zip </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -268,11 +266,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -281,7 +275,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">zip(Sequence...[, iterator = Prototype.K]) -> Array</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">zip(Sequence...[, iterator = Prototype.K]) -&gt; Array</code></pre>
 
 <p>Zips together (think of the zip on a pair of trousers) 2+ sequences, providing an array of tuples.  Each tuple contains one value per original sequence.  Tuples can be converted to something else by applying the optional iterator on them.</p></div>
     <div id="abody"><p>For those who never encountered a <code>zip</code> function before (i.e. have not worked enough with languages such as Haskell or Ruby ;-)), the exact behavior of this method might be difficult to grasp.  Here are a few examples that should clear it up.</p>
@@ -290,22 +284,22 @@ urchinTracker();
 
 <pre><code class="javascript">
 var firstNames = ['Justin', 'Mislav', 'Tobie', 'Christophe'];
-var lastNames = ['Palmer', 'Marohnić', 'Langel', 'Porteneuve'];
+var lastNames = ['Palmer', 'Marohni&#x107;', 'Langel', 'Porteneuve'];
 
 firstNames.zip(lastNames)
-// -> [['Justin', 'Palmer'], ['Mislav', 'Marohnić'], ['Tobie', 'Langel'], ['Christophe', 'Porteneuve']]
+// -&gt; [['Justin', 'Palmer'], ['Mislav', 'Marohni&#x107;'], ['Tobie', 'Langel'], ['Christophe', 'Porteneuve']]
 
 firstNames.zip(lastNames, function(a) { return a.join(' '); })
-// -> ['Justin Palmer', 'Mislav Marohnić', 'Tobie Langel', 'Christophe Porteneuve']
+// -&gt; ['Justin Palmer', 'Mislav Marohni&#x107;', 'Tobie Langel', 'Christophe Porteneuve']
 
 var cities = ['Memphis', 'Zagreb', 'Montreal', 'Paris'];
 firstNames.zip(lastNames, cities, function(p) {
   return p[0] + ' ' + p[1] + ', ' + p[2];
 })
-// -> ['Justin Palmer, Memphis', 'Mislav Marohnić, Zagreb', 'Tobie Langel, Montreal', 'Christophe Porteneuve, Paris']
+// -&gt; ['Justin Palmer, Memphis', 'Mislav Marohni&#x107;, Zagreb', 'Tobie Langel, Montreal', 'Christophe Porteneuve, Paris']
 
 firstNames.zip($R(1, 100), function(a) { return a.reverse().join('. '); })
-// -> ['1. Justin', '2. Mislav', '3. Tobie', '4. Christophe']
+// -&gt; ['1. Justin', '2. Mislav', '3. Tobie', '4. Christophe']
 </code></pre></div>
   
 

@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Utility Methods </title>
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -200,11 +198,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -257,11 +251,11 @@ urchinTracker();
 
 
 
-    <div id="abody"><p>Prototype provides a number of &#8220;convenience&#8221; methods. Most are aliases of other Prototype methods, with the exception of the <code>$</code> method, which wraps DOM nodes with additional functionality.</p>
+    <div id="abody"><p>Prototype provides a number of &#x201C;convenience&#x201D; methods. Most are aliases of other Prototype methods, with the exception of the <code>$</code> method, which wraps DOM nodes with additional functionality.</p>
 
 <p>These utility methods all address scripting needs that are <strong>so common</strong> that their names were made as concise as can be.  Hence the <code>$</code>-based convention.</p>
 
-<p>The most commonly used utility method is without doubt <a href="utility/dollar.html"><code>$()</code></a>, which is, for instance, used pervasively within Prototype&#8217;s code to let you pass either element IDs or actual DOM element references just about anywhere an element argument is possible. It actually goes <strong>way beyond</strong> a simple wrapper around <code>document.getElementById</code>; check it out to see just how useful it is.</p>
+<p>The most commonly used utility method is without doubt <a href="utility/dollar.html"><code>$()</code></a>, which is, for instance, used pervasively within Prototype&#x2019;s code to let you pass either element IDs or actual DOM element references just about anywhere an element argument is possible. It actually goes <strong>way beyond</strong> a simple wrapper around <code>document.getElementById</code>; check it out to see just how useful it is.</p>
 
 <p>These methods are one of the cornerstones of efficient Prototype-based JavaScript coding. Take the time to learn them well.</p></div>
     <div id="method-excerpts">  
@@ -272,8 +266,8 @@ urchinTracker();
           <h4><a href="utility/dollar.html">$</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">$(id | element) -> HTMLElement
-$((id | element)...) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">$(id | element) -&gt; HTMLElement
+$((id | element)...) -&gt; [HTMLElement...]</code></pre>
 
 <p>If provided with a string, returns the element in the document with matching ID; otherwise returns the passed element. Takes in an arbitrary number of arguments. All elements returned by the function are extended with Prototype DOM extensions.</p></div>
       </div>
@@ -284,7 +278,7 @@ $((id | element)...) -> [HTMLElement...]</code></pre>
           <h4><a href="utility/dollar-dollar.html">$$</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">$$(cssRule...) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">$$(cssRule...) -&gt; [HTMLElement...]</code></pre>
 
 <p>Takes an arbitrary number of CSS selectors (strings) and returns a document-order array of extended DOM elements that match any of them.</p></div>
       </div>
@@ -295,7 +289,7 @@ $((id | element)...) -> [HTMLElement...]</code></pre>
           <h4><a href="utility/dollar-a.html">$A</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">$A(iterable) -> actualArray</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">$A(iterable) -&gt; actualArray</code></pre>
 
 <p>Accepts an array-like collection (anything with numeric indices) and returns its equivalent as an actual <code>Array</code> object. This method is a convenience alias of <a href="array/from.html"><code>Array.from</code></a>, but is the preferred way of casting to an <code>Array</code>.</p></div>
       </div>
@@ -306,7 +300,7 @@ $((id | element)...) -> [HTMLElement...]</code></pre>
           <h4><a href="utility/dollar-f.html">$F</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">$F(element) -> value</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">$F(element) -&gt; value</code></pre>
 
 <p>Returns the value of a form control. This is a convenience alias of <a href="form/element/getValue.html"><code>Form.Element.getValue</code></a>. Refer to it for full details.</p></div>
       </div>
@@ -317,9 +311,9 @@ $((id | element)...) -> [HTMLElement...]</code></pre>
           <h4><a href="utility/dollar-h.html">$H</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">$H([obj]) -> Hash</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">$H([obj]) -&gt; Hash</code></pre>
 
-<p>Creates a <a href="hash.html"><code>Hash</code></a> (which is synonymous to &#8220;map&#8221; or &#8220;associative array&#8221; for our purposes). A convenience wrapper around the <code>Hash</code> constructor, with a safeguard that lets you pass an existing <code>Hash</code> object and get it back untouched (instead of uselessly cloning it).</p></div>
+<p>Creates a <a href="hash.html"><code>Hash</code></a> (which is synonymous to &#x201C;map&#x201D; or &#x201C;associative array&#x201D; for our purposes). A convenience wrapper around the <code>Hash</code> constructor, with a safeguard that lets you pass an existing <code>Hash</code> object and get it back untouched (instead of uselessly cloning it).</p></div>
       </div>
    
   
@@ -328,7 +322,7 @@ $((id | element)...) -> [HTMLElement...]</code></pre>
           <h4><a href="utility/dollar-r.html">$R</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">$R(start, end[, exclusive = false]) -> ObjectRange</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">$R(start, end[, exclusive = false]) -&gt; ObjectRange</code></pre>
 
 <p>Creates a new <code>ObjectRange</code> object. This method is a convenience wrapper around the <a href="objectRange.html"><code>ObjectRange</code></a> constructor, but <code>$R</code> is the preferred alias.</p></div>
       </div>
@@ -339,7 +333,7 @@ $((id | element)...) -> [HTMLElement...]</code></pre>
           <h4><a href="utility/dollar-w.html">$w</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">$w(String) -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">$w(String) -&gt; Array</code></pre>
 
 <p>Splits a string into an <code>Array</code>, treating all whitespace as delimiters. Equivalent to Ruby's <code>%w{foo bar}</code> or Perl's <code>qw(foo bar)</code>.</p></div>
       </div>
@@ -350,7 +344,7 @@ $((id | element)...) -> [HTMLElement...]</code></pre>
           <h4><a href="utility/try-these.html">Try.these</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">Try.these(Function...) -> firstOKResult</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">Try.these(Function...) -&gt; firstOKResult</code></pre>
 
 <p>Accepts an arbitrary number of functions and returns the result of the first one that doesn't throw an error.</p></div>
       </div>
@@ -363,7 +357,7 @@ $((id | element)...) -> [HTMLElement...]</code></pre>
           <h4><a href="utility/getElementsByClassName.html">document.getElementsByClassName</a>
           <div class="box">deprecated</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="">document.getElementsByClassName(className[, element]) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="">document.getElementsByClassName(className[, element]) -&gt; [HTMLElement...]</code></pre>
 
 <p>Retrieves (and extends) all the elements that have a CSS class name of <code>className</code>.  The optional <code>element</code> parameter specifies a parent element to search under.</p></div>
       </div>

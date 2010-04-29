@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Enumerable.findAll </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -268,11 +266,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -281,7 +275,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">findAll(iterator[, context]) -> Array</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">findAll(iterator[, context]) -&gt; Array</code></pre>
 
 <p>Returns all the elements for which the iterator returned <code>true</code>.  Aliased as <a href="select.html"><code>select</code></a>.</p></div>
     <div id="abody"><p>This is a sort of all-purpose version of <a href="grep.html"><code>grep</code></a> (which is specific to
@@ -294,12 +288,12 @@ predicate for the elements, providing maximum flexibility.</p>
 
 <pre><code class="javascript">
 $R(1, 10).findAll(function(n) { return 0 == n % 2; })
-// -> [2, 4, 6, 8, 10]
+// -&gt; [2, 4, 6, 8, 10]
 
 [ 'hello', 'world', 'this', 'is', 'nice'].findAll(function(s) {
-  return s.length >= 5;
+  return s.length &gt;= 5;
 })
-// -> ['hello', 'world']
+// -&gt; ['hello', 'world']
 </code></pre>
 
 <h3>See also</h3>

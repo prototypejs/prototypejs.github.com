@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Hash </title>
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -220,11 +218,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -309,23 +303,23 @@ urchinTracker();
 
 <p class="notice"> <strong>Backwards compatibility change</strong> - Although it serves the same purpose as before, the new version of Hash is <strong>not</strong> compatible with the Hash class in previous versions of Prototype.</p>
 
-<p>Hash properties are now hidden away in a private store to prevent the risk of collision with Hash&#8217;s instance and mixed-in methods. This means that properties of the hash can no longer be set, accessed or deleted directly; you must use the <a href="hash/get.html"><code>Hash#get(key)</code></a>, <a href="hash/set.html"><code>Hash#set(key, value)</code></a> and <a href="hash/unset.html"><code>Hash#unset(key)</code></a> instance methods instead. To illustrate:</p>
+<p>Hash properties are now hidden away in a private store to prevent the risk of collision with Hash&#x2019;s instance and mixed-in methods. This means that properties of the hash can no longer be set, accessed or deleted directly; you must use the <a href="hash/get.html"><code>Hash#get(key)</code></a>, <a href="hash/set.html"><code>Hash#set(key, value)</code></a> and <a href="hash/unset.html"><code>Hash#unset(key)</code></a> instance methods instead. To illustrate:</p>
 
 <pre><code class="javascript">var myhash = new Hash();
 
-// old API  -->  new API
-myhash.name = "Bob";  -->  myhash.set('name', 'Bob');
-myhash.name;          -->  myhash.get('name');
-delete myhash.name;   -->  myhash.unset('name');</code></pre>
+// old API  --&gt;  new API
+myhash.name = "Bob";  --&gt;  myhash.set('name', 'Bob');
+myhash.name;          --&gt;  myhash.get('name');
+delete myhash.name;   --&gt;  myhash.unset('name');</code></pre>
 
 <p>You should also be aware of other changes to the Hash API:</p>
 
 <ul>
 <li>The $H(object) shortcut is now completely equivalent to new Hash(object). Both always return a new object, regardless of whether the argument was an Object or another Hash.</li>
-<li>Hash#merge returns a new Hash instead of modifying the Hash it&#8217;s called on.</li>
-<li>Hash#update is a destructive version of Hash#merge that modifies the Hash it&#8217;s called on.</li>
+<li>Hash#merge returns a new Hash instead of modifying the Hash it&#x2019;s called on.</li>
+<li>Hash#update is a destructive version of Hash#merge that modifies the Hash it&#x2019;s called on.</li>
 <li>Hash#clone returns a new, cloned instance of Hash.</li>
-<li>Hash#toObject that returns a copy of the Hash&#8217;s inner Object.</li>
+<li>Hash#toObject that returns a copy of the Hash&#x2019;s inner Object.</li>
 <li>Hash.toQueryString is now an alias of Object.toQueryString.  (Hash.toQueryString is deprecated and will be removed in a future version of Prototype.)</li>
 <li>Hash#remove has been removed in favor of Hash#unset.</li>
 <li>Hash.toJSON has been removed in favor of Object.toJSON or the Hash#toJSON instance method.</li>
@@ -335,16 +329,16 @@ delete myhash.name;   -->  myhash.unset('name');</code></pre>
 
 <p>Passing a hash to $H did not clone it.</p>
 
-<p><code>Hash</code> could not hold <em>any</em> key because of having Enumerable mixed in, as well as its own methods. After adding a key that had the same name as any of those methods, this method would no longer be callable. You could get away with doing that to methods you didn&#8217;t need, but there were still issues:</p>
+<p><code>Hash</code> could not hold <em>any</em> key because of having Enumerable mixed in, as well as its own methods. After adding a key that had the same name as any of those methods, this method would no longer be callable. You could get away with doing that to methods you didn&#x2019;t need, but there were still issues:</p>
 
 <pre><code class="javascript">
 var h = new Hash({ ... });
 h['each'] = 'my own stuff';
 h.map();
-// -> errors out because 'each' is not a function
+// -&gt; errors out because 'each' is not a function
 </code></pre>
 
-<p>The most important method in Enumerable is <a href="enumerable/each.html">&#8216;each&#8217;</a>, and&mdash;since almost every other method uses it&mdash;overwriting it renders our hash instance practically useless. You couldn&#8217;t get away with using &#8216;_each&#8217;, too, since it also is an internal Enumerable method.</p></div>
+<p>The most important method in Enumerable is <a href="enumerable/each.html">&#x2018;each&#x2019;</a>, and&mdash;since almost every other method uses it&mdash;overwriting it renders our hash instance practically useless. You couldn&#x2019;t get away with using &#x2018;_each&#x2019;, too, since it also is an internal Enumerable method.</p></div>
     <div id="method-excerpts">  
 <h3>Methods</h3>
 
@@ -355,7 +349,7 @@ h.map();
           <h4><a href="hash/clone.html">clone</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">clone() -> newHash</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">clone() -&gt; newHash</code></pre>
 
 <p>Returns a clone of hash.</p></div>
       </div>
@@ -366,7 +360,7 @@ h.map();
           <h4><a href="hash/each.html">each</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">each(iterator) -> Hash</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">each(iterator) -&gt; Hash</code></pre>
 
 <p>Iterates over the name/value pairs in the hash.</p></div>
       </div>
@@ -377,9 +371,9 @@ h.map();
           <h4><a href="hash/get.html">get</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">get(key) -> value</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">get(key) -&gt; value</code></pre>
 
-<p>Returns the value of the hash&#8217;s <code>key</code> property.</p></div>
+<p>Returns the value of the hash&#x2019;s <code>key</code> property.</p></div>
       </div>
    
   
@@ -388,7 +382,7 @@ h.map();
           <h4><a href="hash/inspect.html">inspect</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">inspect() -> String</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">inspect() -&gt; String</code></pre>
 
 <p>Returns the debug-oriented string representation of the hash.</p></div>
       </div>
@@ -399,7 +393,7 @@ h.map();
           <h4><a href="hash/keys.html">keys</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">keys() -> [String...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">keys() -&gt; [String...]</code></pre>
 
 <p>Provides an Array of keys (that is, property names) for the hash.</p></div>
       </div>
@@ -410,7 +404,7 @@ h.map();
           <h4><a href="hash/merge.html">merge</a>
           <div class="box">1.6 modified</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">merge(object) -> newHash</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">merge(object) -&gt; newHash</code></pre>
 
 <p>Merges <code>object</code> to hash and returns the result of that merge.
 <em>Prior to v1.6.0:</em> This was destructive (object's values were added to hash).
@@ -423,8 +417,8 @@ h.map();
           <h4><a href="hash/remove.html">remove</a>
           <div class="box">deprecated</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">remove(key) -> value
-remove(key1, key2...) -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">remove(key) -&gt; value
+remove(key1, key2...) -&gt; Array</code></pre>
 
 <p>Removes keys from a hash and returns their values. <em>Not available since v1.6.0</em>.</p></div>
       </div>
@@ -435,9 +429,9 @@ remove(key1, key2...) -> Array</code></pre>
           <h4><a href="hash/set.html">set</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">set(key, value) -> value</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">set(key, value) -&gt; value</code></pre>
 
-<p>Sets the hash&#8217;s <code>key</code> property to <code>value</code> and returns <code>value</code>.</p></div>
+<p>Sets the hash&#x2019;s <code>key</code> property to <code>value</code> and returns <code>value</code>.</p></div>
       </div>
    
   
@@ -446,7 +440,7 @@ remove(key1, key2...) -> Array</code></pre>
           <h4><a href="hash/tojson.html">toJSON</a>
           <div class="box">1.5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">toJSON() -> String</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toJSON() -&gt; String</code></pre>
 
 <p>Returns a JSON string.</p></div>
       </div>
@@ -457,7 +451,7 @@ remove(key1, key2...) -> Array</code></pre>
           <h4><a href="hash/toobject.html">toObject</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">toObject() -> Object</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toObject() -&gt; Object</code></pre>
 
 <p>Returns a cloned, vanilla object.</p></div>
       </div>
@@ -468,7 +462,7 @@ remove(key1, key2...) -> Array</code></pre>
           <h4><a href="hash/toQueryString.html">toQueryString</a>
           <div class="box">1.6 modified</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">toQueryString() -> String</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toQueryString() -&gt; String</code></pre>
 
 <p>Turns a hash into its URL-encoded query string representation.</p></div>
       </div>
@@ -479,9 +473,9 @@ remove(key1, key2...) -> Array</code></pre>
           <h4><a href="hash/unset.html">unset</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">unset(key) -> value</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">unset(key) -&gt; value</code></pre>
 
-<p>Deletes the hash&#8217;s <code>key</code> property and returns its value.</p></div>
+<p>Deletes the hash&#x2019;s <code>key</code> property and returns its value.</p></div>
       </div>
    
   
@@ -490,7 +484,7 @@ remove(key1, key2...) -> Array</code></pre>
           <h4><a href="hash/update.html">update</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">update(object) -> Hash</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">update(object) -&gt; Hash</code></pre>
 
 <p>Updates hash with the key/value pairs of <code>object</code>. The original hash will be modified.</p></div>
       </div>
@@ -501,7 +495,7 @@ remove(key1, key2...) -> Array</code></pre>
           <h4><a href="hash/values.html">values</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">values() -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">values() -&gt; Array</code></pre>
 
 <p>Collect the values of a hash and returns them in an array.</p></div>
       </div>

@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Event </title>
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -204,11 +202,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -265,7 +259,7 @@ urchinTracker();
 
 
 
-    <div id="abody"><h3>&#9834; What a wonderful mess (it would be) &#9835;</h3>
+    <div id="abody"><h3>&#x266A; What a wonderful mess (it would be) &#x266B;</h3>
 
 <p>Event management is one of the really sore spots of cross-browser scripting.</p>
 
@@ -273,11 +267,11 @@ urchinTracker();
 
 <h3>Prototype to the rescue!</h3>
 
-<p>Of course, Prototype smooths it over so well you&#8217;ll forget these troubles even exist.  Enter the <code>Event</code> namespace.  It is replete with methods (listed at the top and bottom of this page), that all take the current event object as an argument, and happily produce the information you&#8217;re requesting, across all major browsers.</p>
+<p>Of course, Prototype smooths it over so well you&#x2019;ll forget these troubles even exist.  Enter the <code>Event</code> namespace.  It is replete with methods (listed at the top and bottom of this page), that all take the current event object as an argument, and happily produce the information you&#x2019;re requesting, across all major browsers.</p>
 
 <p><code>Event</code> also provides a standardized list of key codes you can use with keyboard-related events.  The following constants are defined in the namespace: <code>KEY_BACKSPACE</code>, <code>KEY_TAB</code>, <code>KEY_RETURN</code>, <code>KEY_ESC</code>, <code>KEY_LEFT</code>, <code>KEY_UP</code>, <code>KEY_RIGHT</code>, <code>KEY_DOWN</code>, <code>KEY_DELETE</code>, <code>KEY_HOME</code>, <code>KEY_END</code>, <code>KEY_PAGEUP</code>, <code>KEY_PAGEDOWN</code>. The names are self-explanatory.</p>
 
-<p>The functions you&#8217;re most likely to use a lot are <a href="event/observe.html"><code>observe</code></a>, <a href="event/element.html"><code>element</code></a> and <a href="event/stop.html"><code>stop</code></a>.  As for the others, your mileage may vary; it&#8217;s all about what your web app does.</p>
+<p>The functions you&#x2019;re most likely to use a lot are <a href="event/observe.html"><code>observe</code></a>, <a href="event/element.html"><code>element</code></a> and <a href="event/stop.html"><code>stop</code></a>.  As for the others, your mileage may vary; it&#x2019;s all about what your web app does.</p>
 
 <h3>Instance methods on event objects <div class="box">1.6</div></h3>
 
@@ -301,7 +295,7 @@ function respondToClick(event) {
   element.addClassName('active');
 }</code></pre>
 
-<p>These methods are added to the event object through <a href="event/extend.html"><code>Event.extend</code></a>, in the same way that <code>Element</code> methods are added to DOM nodes through <a href="element/extend.html"><code>Element.extend</code></a>. Events are extended automatically when handlers are registered with Prototype&#8217;s <a href="event/observe.html"><code>Event.observe</code></a> method; if you&#8217;re using a different method of event registration, for whatever reason, you&#8217;ll need to extend these events manually with <code>Event.extend</code>. </p></div>
+<p>These methods are added to the event object through <a href="event/extend.html"><code>Event.extend</code></a>, in the same way that <code>Element</code> methods are added to DOM nodes through <a href="element/extend.html"><code>Element.extend</code></a>. Events are extended automatically when handlers are registered with Prototype&#x2019;s <a href="event/observe.html"><code>Event.observe</code></a> method; if you&#x2019;re using a different method of event registration, for whatever reason, you&#x2019;ll need to extend these events manually with <code>Event.extend</code>. </p></div>
     <div id="method-excerpts">  
 <h3>Methods</h3>
 
@@ -312,7 +306,7 @@ function respondToClick(event) {
           <h4><a href="event/element.html">element</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">Event.element(event) -> Element</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">Event.element(event) -&gt; Element</code></pre>
 
 <p>Returns the DOM element on which the event occurred.</p></div>
       </div>
@@ -334,7 +328,7 @@ function respondToClick(event) {
           <h4><a href="event/findElement.html">findElement</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">Event.findElement(event, tagName) -> Element</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">Event.findElement(event, tagName) -&gt; Element</code></pre>
 
 <p>Returns the first DOM element with a given tag name, upwards from the one on which the event occurred.</p></div>
       </div>
@@ -345,9 +339,9 @@ function respondToClick(event) {
           <h4><a href="event/isLeftClick.html">isLeftClick</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">Event.isLeftClick(event) -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">Event.isLeftClick(event) -&gt; Boolean</code></pre>
 
-<p>Determines whether a button-related mouse event was about the &#8220;left&#8221; (primary, actually) button.</p></div>
+<p>Determines whether a button-related mouse event was about the &#x201C;left&#x201D; (primary, actually) button.</p></div>
       </div>
    
   
@@ -367,7 +361,7 @@ function respondToClick(event) {
           <h4><a href="event/pointerX.html">pointerX</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">Event.pointerX(event) -> Number</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">Event.pointerX(event) -&gt; Number</code></pre>
 
 <p>Returns the absolute horizontal position for a mouse event.</p></div>
       </div>
@@ -378,7 +372,7 @@ function respondToClick(event) {
           <h4><a href="event/pointerY.html">pointerY</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">Event.pointerY(event) -> Number</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">Event.pointerY(event) -&gt; Number</code></pre>
 
 <p>Returns the absolute vertical position for a mouse event.</p></div>
       </div>
@@ -391,7 +385,7 @@ function respondToClick(event) {
           </h4>
            <div class="mexcerpt-cnt"><pre><code class="ebnf">Event.stop(event)</code></pre>
 
-<p>Stops the event&#8217;s propagation and prevents its default action from being triggered eventually.</p></div>
+<p>Stops the event&#x2019;s propagation and prevents its default action from being triggered eventually.</p></div>
       </div>
    
   

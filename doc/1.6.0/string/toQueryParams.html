@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  String.toQueryParams </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -288,11 +286,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -301,10 +295,10 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">toQueryParams([separator = '&']) -> Object</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">toQueryParams([separator = '']) -&gt; Object</code></pre>
 
 <p>Parses a URI-like query string and returns an object composed of parameter/value pairs.</p></div>
-    <div id="abody"><p>This method is realy targeted at parsing query strings (hence the default value of <code>"&amp;"</code> for the <code>separator</code> argument).</p>
+    <div id="abody"><p>This method is realy targeted at parsing query strings (hence the default value of <code>""</code> for the <code>separator</code> argument).</p>
 
 <p>For this reason, it does <em>not</em> consider anything that is either before a question mark (which signals the beginning of a query string) or beyond the hash symbol (<code>"#"</code>), and runs <code>decodeURIComponent()</code> on each parameter/value pair.</p>
 
@@ -315,23 +309,23 @@ urchinTracker();
 <h3>Examples</h3>
 
 <pre><code class="javascript">
-'section=blog&id=45'.toQueryParams();
-// -> {section: 'blog', id: '45'}
+'section=blog=45'.toQueryParams();
+// -&gt; {section: 'blog', id: '45'}
 
 'section=blog;id=45'.toQueryParams();
-// -> {section: 'blog', id: '45'}
+// -&gt; {section: 'blog', id: '45'}
 
-'http://www.example.com?section=blog&id=45#comments'.toQueryParams();
-// -> {section: 'blog', id: '45'}
+'http://www.example.com?section=blog=45#comments'.toQueryParams();
+// -&gt; {section: 'blog', id: '45'}
 
-'section=blog&tag=javascript&tag=prototype&tag=doc'.toQueryParams();
-// -> {section: 'blog', tag: ['javascript', 'prototype', 'doc']}
+'section=blog=javascript=prototype=doc'.toQueryParams();
+// -&gt; {section: 'blog', tag: ['javascript', 'prototype', 'doc']}
 
 'tag=ruby%20on%20rails'.toQueryParams();
-// -> {tag: 'ruby on rails'}
+// -&gt; {tag: 'ruby on rails'}
 
-'id=45&raw'.toQueryParams();
-// -> {id: '45', raw: undefined}
+'id=45'.toQueryParams();
+// -&gt; {id: '45', raw: undefined}
 </code></pre></div>
   
 

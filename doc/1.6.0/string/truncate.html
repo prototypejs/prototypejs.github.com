@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  String.truncate </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -288,11 +286,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -301,7 +295,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">truncate([length = 30[, suffix = '...']]) -> string</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">truncate([length = 30[, suffix = '...']]) -&gt; string</code></pre>
 
 <p>Truncates a string to the given length and appends a suffix to it (indicating that it is only an excerpt).</p></div>
     <div id="abody"><p>Of course, <code>String#truncate</code>does not modify strings which are shorter than the specified length.</p>
@@ -314,16 +308,16 @@ urchinTracker();
 
 <pre><code class="javascript">
 'A random sentence whose length exceeds 30 characters.'.truncate();
-// -> 'A random sentence whose len...'
+// -&gt; 'A random sentence whose len...'
 
 'Some random text'.truncate();
-// -> 'Some random text.'
+// -&gt; 'Some random text.'
 
 'Some random text'.truncate(10);
-// -> 'Some ra...'
+// -&gt; 'Some ra...'
 
 'Some random text'.truncate(10, ' [...]');
-// -> 'Some [...]'
+// -&gt; 'Some [...]'
 </code></pre></div>
   
 

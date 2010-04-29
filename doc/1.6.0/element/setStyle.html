@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.setStyle </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,9 +423,9 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">setStyle(element, styles) -> HTMLElement</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">setStyle(element, styles) -&gt; HTMLElement</code></pre>
 
-<p>Modifies <code>element</code>&#8217;s CSS style properties. Styles are passed as a hash of property-value pairs in which the properties are specified in their camelized form.</p></div>
+<p>Modifies <code>element</code>&#x2019;s CSS style properties. Styles are passed as a hash of property-value pairs in which the properties are specified in their camelized form.</p></div>
     <div id="abody"><h3>Examples</h3>
 
 <pre><code class="javascript">
@@ -439,25 +433,25 @@ $(element).setStyle({
   backgroundColor: '#900',
   fontSize: '12px'
 });
-// -> HTMLElement
+// -&gt; HTMLElement
 </code></pre>
 
 <h3>Notes</h3>
 
-<p>The method transparently deals with browser inconsistencies for <code>float</code>&#8212;however, as <code>float</code> is a reserved keyword, you must either escape it or use <code>cssFloat</code> instead&#8212;and <code>opacity</code>&#8212;which accepts values between 0 (fully transparent) and 1 (fully opaque). You can safely use either of the following across all browsers:</p>
+<p>The method transparently deals with browser inconsistencies for <code>float</code>&#x2014;however, as <code>float</code> is a reserved keyword, you must either escape it or use <code>cssFloat</code> instead&#x2014;and <code>opacity</code>&#x2014;which accepts values between 0 (fully transparent) and 1 (fully opaque). You can safely use either of the following across all browsers:</p>
 
 <pre><code class="javascript">
 $(element).setStyle({
   cssFloat: 'left',
   opacity: 0.5
 });
-// -> HTMLElement
+// -&gt; HTMLElement
 
 $(element).setStyle({
   'float': 'left', // notice how float is surrounded by single quotes
   opacity: 0.5
 });
-// -> HTMLElement
+// -&gt; HTMLElement
 </code></pre>
 
 <p>Not all CSS shorthand properties are supported. You may only use the CSS properties described in the <a href="http://www.w3.org/TR/DOM-Level-2-Style/css.html#CSS-ElementCSSInlineStyle">Document Object Model (DOM) Level 2 Style Specification</a>.</p></div>

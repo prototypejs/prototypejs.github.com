@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Function.curry </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -196,11 +194,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -210,17 +204,17 @@ urchinTracker();
 </h2>
   
     <div id="excerpt"><pre><code class="ebnf">
-  curry(arg...) -> Function
+  curry(arg...) -&gt; Function
 </code></pre>
 
-<p>Partially applies the function, returning a function with one or more arguments already &#8220;filled in.&#8221;</p></div>
+<p>Partially applies the function, returning a function with one or more arguments already &#x201C;filled in.&#x201D;</p></div>
     <div id="abody"><p><code>Function#curry</code> works just like <a href="bind.html"><code>Function#bind</code></a> without the initial scope argument.</p>
 
 <h3>Examples</h3>
 
 <pre><code class="javascript">
 String.prototype.splitOnSpaces = String.prototype.split.curry(" ");
-"foo bar baz thud".splitOnSpaces(); //-> ["foo", "bar", "baz", "thud"]
+"foo bar baz thud".splitOnSpaces(); //-&gt; ["foo", "bar", "baz", "thud"]
 </code></pre></div>
   
 

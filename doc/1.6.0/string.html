@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  String </title>
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -288,11 +286,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -444,7 +438,7 @@ urchinTracker();
           <h4><a href="string/blank.html">blank</a>
           <div class="box">1.5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">blank() -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">blank() -&gt; Boolean</code></pre>
 
 <p>Check if the string is 'blank', meaning either empty or containing only whitespace.</p></div>
       </div>
@@ -455,7 +449,7 @@ urchinTracker();
           <h4><a href="string/camelize.html">camelize</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">camelize() -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">camelize() -&gt; string</code></pre>
 
 <p>Converts a string separated by dashes into a camelCase equivalent. For instance, <code>'foo-bar'</code> would be converted to <code>'fooBar'</code>.</p></div>
       </div>
@@ -466,7 +460,7 @@ urchinTracker();
           <h4><a href="string/capitalize.html">capitalize</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">capitalize() -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">capitalize() -&gt; string</code></pre>
 
 <p>Capitalizes the first letter of a string and downcases all the others.</p></div>
       </div>
@@ -477,7 +471,7 @@ urchinTracker();
           <h4><a href="string/dasherize.html">dasherize</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">dasherize() -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">dasherize() -&gt; string</code></pre>
 
 <p>Replaces every instance of the underscore character (<code>"_"</code>) by a dash (<code>"-"</code>).</p></div>
       </div>
@@ -488,7 +482,7 @@ urchinTracker();
           <h4><a href="string/empty.html">empty</a>
           <div class="box">1.5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">empty() -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">empty() -&gt; Boolean</code></pre>
 
 <p>Checks if the string is empty.</p></div>
       </div>
@@ -499,7 +493,7 @@ urchinTracker();
           <h4><a href="string/endsWith.html">endsWith</a>
           <div class="box">1.5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">endsWith(substring) -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">endsWith(substring) -&gt; Boolean</code></pre>
 
 <p>Checks if the string ends with <code>substring</code>.</p></div>
       </div>
@@ -510,7 +504,7 @@ urchinTracker();
           <h4><a href="string/escapeHTML.html">escapeHTML</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf"> escapeHTML() -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf"> escapeHTML() -&gt; string</code></pre>
 
 <p>Converts HTML special characters to their entity equivalents.  </p></div>
       </div>
@@ -521,7 +515,7 @@ urchinTracker();
           <h4><a href="string/evalJSON.html">evalJSON</a>
           <div class="box">1.5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">evalJSON([sanitize = false]) -> object</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">evalJSON([sanitize = false]) -&gt; object</code></pre>
 
 <p>Evaluates the JSON in the string and returns the resulting object. If the optional <code>sanitize</code> parameter is set to <code>true</code>, the string is checked for possible malicious attempts and <code>eval</code> is not called if one is detected.</p></div>
       </div>
@@ -532,7 +526,7 @@ urchinTracker();
           <h4><a href="string/evalScripts.html">evalScripts</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">evalScripts() -> [returnedValue...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">evalScripts() -&gt; [returnedValue...]</code></pre>
 
 <p>Evaluates the content of any <code>script</code> block present in the string. Returns an array containing the value returned by each script.</p></div>
       </div>
@@ -543,7 +537,7 @@ urchinTracker();
           <h4><a href="string/extractScripts.html">extractScripts</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf"> extractScripts() -> [script...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf"> extractScripts() -&gt; [script...]</code></pre>
 
 <p>Exctracts the content of any <code>script</code> block present in the string and returns them as an array of strings.</p></div>
       </div>
@@ -554,7 +548,7 @@ urchinTracker();
           <h4><a href="string/gsub.html">gsub</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">gsub(pattern, replacement) -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">gsub(pattern, replacement) -&gt; string</code></pre>
 
 <p>Returns the string with <em>every</em> occurence of a given pattern replaced by either a regular string, the returned value of a function or a <a href="template.html"><code>Template</code> string</a>. The pattern can be a string or a regular expression.</p></div>
       </div>
@@ -565,7 +559,7 @@ urchinTracker();
           <h4><a href="string/include.html">include</a>
           <div class="box">1.5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">include(substring) -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">include(substring) -&gt; Boolean</code></pre>
 
 <p>Check if the string contains a substring.</p></div>
       </div>
@@ -576,7 +570,7 @@ urchinTracker();
           <h4><a href="string/inspect.html">inspect</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">inspect([useDoubleQuotes = false]) -> String</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">inspect([useDoubleQuotes = false]) -&gt; String</code></pre>
 
 <p>Returns a debug-oriented version of the string (i.e. wrapped in single or double quotes, with backslashes and quotes escaped). </p></div>
       </div>
@@ -587,9 +581,9 @@ urchinTracker();
           <h4><a href="string/interpolate.html">interpolate</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">interpolate(object[, pattern]) -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">interpolate(object[, pattern]) -&gt; string</code></pre>
 
-<p>Treats the string as a Template and fills it with <code>object</code>&#8217;s properties.</p></div>
+<p>Treats the string as a Template and fills it with <code>object</code>&#x2019;s properties.</p></div>
       </div>
    
   
@@ -598,7 +592,7 @@ urchinTracker();
           <h4><a href="string/isJSON.html">isJSON</a>
           <div class="box">1.5.1.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">isJSON() -> boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">isJSON() -&gt; boolean</code></pre>
 
 <p>Check if the string is valid JSON by the use of regular expressions. This security method is called internally.</p></div>
       </div>
@@ -618,7 +612,7 @@ urchinTracker();
           <h4><a href="string/scan.html">scan</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">scan(pattern, iterator) -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">scan(pattern, iterator) -&gt; string</code></pre>
 
 <p>Allows iterating over every occurrence of the given pattern (which can be a string or a regular expression). Returns the original string.</p></div>
       </div>
@@ -629,7 +623,7 @@ urchinTracker();
           <h4><a href="string/startsWith.html">startsWith</a>
           <div class="box">1.5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">startsWith(substring) -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">startsWith(substring) -&gt; Boolean</code></pre>
 
 <p>Checks if the string starts with <code>substring</code>.</p></div>
       </div>
@@ -640,7 +634,7 @@ urchinTracker();
           <h4><a href="string/strip.html">strip</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">strip() -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">strip() -&gt; string</code></pre>
 
 <p>Strips all leading and trailing whitespace from a string.</p></div>
       </div>
@@ -651,7 +645,7 @@ urchinTracker();
           <h4><a href="string/stripScripts.html">stripScripts</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">stripScripts() -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">stripScripts() -&gt; string</code></pre>
 
 <p>Strips a string of anything that looks like an HTML <code>script</code> block.</p></div>
       </div>
@@ -662,7 +656,7 @@ urchinTracker();
           <h4><a href="string/stripTags.html">stripTags</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">stripTags() -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">stripTags() -&gt; string</code></pre>
 
 <p>Strips a string of any HTML tag.</p></div>
       </div>
@@ -673,7 +667,7 @@ urchinTracker();
           <h4><a href="string/sub.html">sub</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">sub(pattern, replacement[, count = 1]) -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">sub(pattern, replacement[, count = 1]) -&gt; string</code></pre>
 
 <p>Returns a string with the <em>first</em> <code>count</code> occurrences of  <code>pattern</code> replaced by either a regular string, the returned value of a function or a <a href="template.html"><code>Template</code> string</a>. <code>pattern</code> can be a string or a regular expression.</p></div>
       </div>
@@ -684,7 +678,7 @@ urchinTracker();
           <h4><a href="string/succ.html">succ</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">succ() -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">succ() -&gt; string</code></pre>
 
 <p>Used internally by <a href="http://prototypejs.org/api/objectrange"><code>ObjectRange</code></a>. Converts the last character of the string to the following character in the Unicode alphabet.</p></div>
       </div>
@@ -695,7 +689,7 @@ urchinTracker();
           <h4><a href="string/times.html">times</a>
           <div class="box">1.5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">times(count) -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">times(count) -&gt; string</code></pre>
 
 <p>Concatenates the string <code>count</code> times.</p></div>
       </div>
@@ -706,7 +700,7 @@ urchinTracker();
           <h4><a href="string/toArray.html">toArray</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">toArray() -> [character...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toArray() -&gt; [character...]</code></pre>
 
 <p>Splits the string character-by-character and returns an array with the result.</p></div>
       </div>
@@ -717,7 +711,7 @@ urchinTracker();
           <h4><a href="string/toJSON.html">toJSON</a>
           <div class="box">1.5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">toJSON() -> String</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toJSON() -&gt; String</code></pre>
 
 <p>Returns a JSON string.</p></div>
       </div>
@@ -728,7 +722,7 @@ urchinTracker();
           <h4><a href="string/toQueryParams.html">toQueryParams</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">toQueryParams([separator = '&']) -> Object</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toQueryParams([separator = '']) -&gt; Object</code></pre>
 
 <p>Parses a URI-like query string and returns an object composed of parameter/value pairs.</p></div>
       </div>
@@ -739,7 +733,7 @@ urchinTracker();
           <h4><a href="string/truncate.html">truncate</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">truncate([length = 30[, suffix = '...']]) -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">truncate([length = 30[, suffix = '...']]) -&gt; string</code></pre>
 
 <p>Truncates a string to the given length and appends a suffix to it (indicating that it is only an excerpt).</p></div>
       </div>
@@ -750,7 +744,7 @@ urchinTracker();
           <h4><a href="string/underscore.html">underscore</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">underscore() -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">underscore() -&gt; string</code></pre>
 
 <p>Converts a camelized string into a series of words separated by an underscore (<code>"_"</code>).</p></div>
       </div>
@@ -761,7 +755,7 @@ urchinTracker();
           <h4><a href="string/unescapeHTML.html">unescapeHTML</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf"> unescapeHTML() -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf"> unescapeHTML() -&gt; string</code></pre>
 
 <p>Strips tags and converts the entity forms of special HTML characters to their normal form.</p></div>
       </div>
@@ -772,7 +766,7 @@ urchinTracker();
           <h4><a href="string/unfilterjson.html">unfilterJSON</a>
           <div class="box">1..5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">unfilterJSON([filter = Prototype.JSONFilter]) -> String</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">unfilterJSON([filter = Prototype.JSONFilter]) -&gt; String</code></pre>
 
 <p>Strips comment delimiters around Ajax JSON or JavaScript responses. This security method is called internally.</p></div>
       </div>

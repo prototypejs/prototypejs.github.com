@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.addMethods </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -510,7 +504,7 @@ Element.addMethods({
 
 <pre><code class="javascript">
 $(element).wrap('div');
-// -> HTMLElement (div)
+// -&gt; HTMLElement (div)
 </code></pre>
 
 <pre><code class="html">
@@ -541,7 +535,7 @@ Element.addMethods({
 
 <pre><code class="javascript">
 $(element).ajaxUpdate('/new/content');
-// -> HTMLElement
+// -&gt; HTMLElement
 </code></pre>
 
 <p>This method will first replace the content of <code>element</code> with one of those nifty Ajax activity indicator. It will then create a new <a href="../ajax/updater.html"><code>Ajax.Updater</code></a>, which in turn will update the content of <code>element</code> with its request result, removing the spinner as it does.</p>
@@ -557,7 +551,7 @@ $(element).ajaxUpdate('/new/content');
 <pre><code class="javascript">
 Form.Element.Methods.processing = function(element, text) {
   element = $(element);
-  if (element.tagName.toLowerCase() == 'input' && ['button', 'submit'].include(element.type))
+  if (element.tagName.toLowerCase() == 'input'  ['button', 'submit'].include(element.type))
     element.value = (text === undefined ? 'Please wait...' : text);
   return element.disable();
 };

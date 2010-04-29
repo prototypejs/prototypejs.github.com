@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Number </title>
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -200,11 +198,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -278,13 +272,13 @@ $R(1, 10).each(function(index) {
 });
 
 (128).toColorPart()
-// -> '80'
+// -&gt; '80'
 
 (10).toColorPart()
-// -> '0a'
+// -&gt; '0a'
 
 '#' + [128, 10, 16].invoke('toColorPart').join('')
-// -> '#800a10'
+// -&gt; '#800a10'
 </code></pre></div>
     <div id="method-excerpts">  
 <h3>Methods</h3>
@@ -296,7 +290,7 @@ $R(1, 10).each(function(index) {
           <h4><a href="number/abs.html">abs</a>
           <div class="box">1.6.0</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">abs() -> Number</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">abs() -&gt; Number</code></pre>
 
 <p>Returns the absolute value of the number.</p></div>
       </div>
@@ -307,7 +301,7 @@ $R(1, 10).each(function(index) {
           <h4><a href="number/ceil.html">ceil</a>
           <div class="box">1.6.0</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">ceil() -> Number</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">ceil() -&gt; Number</code></pre>
 
 <p>Returns the smallest integer greater than or equal to the number.</p></div>
       </div>
@@ -318,7 +312,7 @@ $R(1, 10).each(function(index) {
           <h4><a href="number/floor.html">floor</a>
           <div class="box">1.6.0</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">floor() -> Number</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">floor() -&gt; Number</code></pre>
 
 <p>Returns the largest integer less than or equal to the number.</p></div>
       </div>
@@ -329,7 +323,7 @@ $R(1, 10).each(function(index) {
           <h4><a href="number/round.html">round</a>
           <div class="box">1.6.0</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">round() -> Number</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">round() -&gt; Number</code></pre>
 
 <p>Rounds the number to the nearest integer.</p></div>
       </div>
@@ -340,7 +334,7 @@ $R(1, 10).each(function(index) {
           <h4><a href="number/succ.html">succ</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">succ() -> Number</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">succ() -&gt; Number</code></pre>
 
 <p>Returns the successor of the current <code>Number</code>, as defined by current + 1.  Used to make numbers compatible with <a href="objectRange.html"><code>ObjectRange</code></a>.</p></div>
       </div>
@@ -351,7 +345,7 @@ $R(1, 10).each(function(index) {
           <h4><a href="number/times.html">times</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">times(iterator) -> Number</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">times(iterator) -&gt; Number</code></pre>
 
 <p>Encapsulates a regular [0..n[ loop, Ruby-style.</p></div>
       </div>
@@ -362,7 +356,7 @@ $R(1, 10).each(function(index) {
           <h4><a href="number/toColorPart.html">toColorPart</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">toColorPart() -> String</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toColorPart() -&gt; String</code></pre>
 
 <p>Produces a 2-digit hexadecimal representation of the number (which is therefore assumed to be in the [0..255] range).  Useful for composing CSS color strings.</p></div>
       </div>
@@ -373,7 +367,7 @@ $R(1, 10).each(function(index) {
           <h4><a href="number/tojson.html">toJSON</a>
           <div class="box">1.5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">toJSON() -> String</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toJSON() -&gt; String</code></pre>
 
 <p>Returns a JSON string.</p></div>
       </div>
@@ -384,9 +378,9 @@ $R(1, 10).each(function(index) {
           <h4><a href="number/toPaddedString.html">toPaddedString</a>
           <div class="box">1.5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">toPaddedString(length[, radix]) -> String</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toPaddedString(length[, radix]) -&gt; String</code></pre>
 
-<p>Converts the number into a string padded with <code>0</code>s so that the string&#8217;s length is at least equal to <code>length</code>. Takes an optional <code>radix</code> argument which specifies the base to use for conversion.</p></div>
+<p>Converts the number into a string padded with <code>0</code>s so that the string&#x2019;s length is at least equal to <code>length</code>. Takes an optional <code>radix</code> argument which specifies the base to use for conversion.</p></div>
       </div>
    
   

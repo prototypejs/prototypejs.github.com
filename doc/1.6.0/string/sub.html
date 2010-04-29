@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  String.sub </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -288,11 +286,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -301,7 +295,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">sub(pattern, replacement[, count = 1]) -> string</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">sub(pattern, replacement[, count = 1]) -&gt; string</code></pre>
 
 <p>Returns a string with the <em>first</em> <code>count</code> occurrences of  <code>pattern</code> replaced by either a regular string, the returned value of a function or a <a href="../template.html"><code>Template</code> string</a>. <code>pattern</code> can be a string or a regular expression.</p></div>
     <div id="abody"><p>Unlike  <a href="gsub.html"><code>String#gsub</code></a>, <code>String#sub</code> takes a third optional parameter which specifies the number of occurrences of the pattern which will be replaced. If not specified, it will default to 1.</p>
@@ -314,26 +308,26 @@ urchinTracker();
 var fruits = 'apple pear orange';
 
  fruits.sub(' ', ', ');
-// -> 'apple, pear orange'
+// -&gt; 'apple, pear orange'
 
  fruits.sub(' ', ', ', 1);
-// -> 'apple, pear orange'
+// -&gt; 'apple, pear orange'
 
  fruits.sub(' ', ', ', 2);
-// -> 'apple, pear, orange'
+// -&gt; 'apple, pear, orange'
 
 fruits.sub(/\w+/, function(match){return match[0].capitalize() + ','}, 2);
-// -> 'Apple, Pear, orange'
+// -&gt; 'Apple, Pear, orange'
 
 var markdown = '![a pear](/img/pear.jpg) ![an orange](/img/orange.jpg)';
 
 markdown.sub(/!\[(.*?)\]\((.*?)\)/, function(match){
   return '&lt;img alt="' + match[1] + '" src="' + match[2] + '" /&gt;';
 });
-// -> '&lt;img alt="a pear" src="/img/pear.jpg" /&gt; ![an orange](/img/orange.jpg)'
+// -&gt; '&lt;img alt="a pear" src="/img/pear.jpg" /&gt; ![an orange](/img/orange.jpg)'
 
 markdown.sub(/!\[(.*?)\]\((.*?)\)/, '&lt;img alt="#{1}" src="#{2}" /&gt;');
-// -> '&lt;img alt="a pear" src="/img/pear.jpg" /&gt; ![an orange](/img/orange.jpg)'
+// -&gt; '&lt;img alt="a pear" src="/img/pear.jpg" /&gt; ![an orange](/img/orange.jpg)'
 </code></pre>
 
 <h3>Note</h3>

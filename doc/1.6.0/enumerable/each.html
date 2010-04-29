@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Enumerable.each </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -268,11 +266,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -281,7 +275,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">each(iterator[, context]) -> Enumerable</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">each(iterator[, context]) -&gt; Enumerable</code></pre>
 
 <p>The cornerstone of <code>Enumerable</code>.  It lets you iterate over all the elements in
 a generic fashion, then returns the <code>Enumerable</code>, thereby allowing chain-calling.</p></div>
@@ -320,7 +314,7 @@ method.</p>
 [ 'hello', 'world'].each(function(s, index) {
   alert(index + ': ' + s);
 });
-// alerts -> '0: hello' then '1: world'
+// alerts -&gt; '0: hello' then '1: world'
 
 // This could be done better with an accumulator using inject, but humor me
 // here...
@@ -328,11 +322,11 @@ var result = [];
 $R(1,10).each(function(n) {
   if (0 == n % 2)
     throw $continue;
-  if (n > 6)
+  if (n &gt; 6)
     throw $break;
   result.push(n);
 });
-// result -> [1, 3, 5]
+// result -&gt; [1, 3, 5]
 </code></pre>
 
 <h3><code>each</code> vs. <code>_each</code></h3>
@@ -341,7 +335,7 @@ $R(1,10).each(function(n) {
 in order for a class to mix in <code>Enumerable</code>, it has to provide the fundamental
 looping code appropriate to its internal structure.  This basic iteration
 method must be called <code>_each</code>, and it only receives one argument: the iterator
-function.  You&#8217;ll find further details on the main page.</p>
+function.  You&#x2019;ll find further details on the main page.</p>
 
 <p>Basically, <code>Enumerable.each</code> wraps the actual looping code provided by <code>_each</code>
 with:</p>

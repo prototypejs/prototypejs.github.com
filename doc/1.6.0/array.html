@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Array </title>
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -232,11 +230,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -332,22 +326,22 @@ urchinTracker();
 
 <p>With Prototype, arrays become much, much more than the trivial objects we were used to manipulate, limiting ourselves to using their <code>length</code> property and their <code>[]</code> indexing operator. They become very powerful objects, that greatly simplify the code for 99% of the common use cases involving them.</p>
 
-<h3>Why you should stop using <code>for</code>&#8230;<code>in</code> to iterate (or never take it up)</h3>
+<h3>Why you should stop using <code>for</code>&#x2026;<code>in</code> to iterate (or never take it up)</h3>
 
-<p>Many JavaScript authors have been misled into using the <code>for</code>&#8230;<code>in</code> JavaScript construct to loop over array elements. This kind of code just won&#8217;t work with Prototype.</p>
+<p>Many JavaScript authors have been misled into using the <code>for</code>&#x2026;<code>in</code> JavaScript construct to loop over array elements. This kind of code just won&#x2019;t work with Prototype.</p>
 
-<p>You see, the <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMA 262</a> standard, which defines ECMAScript 3rd edition, supposedly implemented by all major browsers <em>including MSIE</em>, defines numerous methods on <code>Array</code> (§15.4.4), including such nice methods as <code>concat</code>, <code>join</code>, <code>pop</code> and <code>push</code>, to name but a few among the ten methods specified.</p>
+<p>You see, the <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMA 262</a> standard, which defines ECMAScript 3rd edition, supposedly implemented by all major browsers <em>including MSIE</em>, defines numerous methods on <code>Array</code> (&#xA7;15.4.4), including such nice methods as <code>concat</code>, <code>join</code>, <code>pop</code> and <code>push</code>, to name but a few among the ten methods specified.</p>
 
-<p>This same standard explicitely defines that the <code>for</code>&#8230;<code>in</code> construct (§12.6.4) exists to <strong>enumerate the properties</strong> of the object appearing on the right side of the <code>in</code> keyword. Only properties specifically marked as non-enumerable are ignored by such a loop. By default, the prototype and the <code>length</code> properties are so marked, which prevents you from enumerating over array methods when using <code>for</code>&#8230;<code>in</code>.  This comfort led developers to use <code>for</code>&#8230;<code>in</code> as a shortcut for indexing loops, when it is not its actual purpose.</p>
+<p>This same standard explicitely defines that the <code>for</code>&#x2026;<code>in</code> construct (&#xA7;12.6.4) exists to <strong>enumerate the properties</strong> of the object appearing on the right side of the <code>in</code> keyword. Only properties specifically marked as non-enumerable are ignored by such a loop. By default, the prototype and the <code>length</code> properties are so marked, which prevents you from enumerating over array methods when using <code>for</code>&#x2026;<code>in</code>.  This comfort led developers to use <code>for</code>&#x2026;<code>in</code> as a shortcut for indexing loops, when it is not its actual purpose.</p>
 
-<p>However, Prototype has no way to mark the methods it adds to <code>Array.prototype</code> as non-enumerable. Therefore, using <code>for</code>&#8230;<code>in</code> on arrays when using Prototype will enumerate all extended methods as well, such as those coming from the <a href="enumerable.html"><code>Enumerable</code></a> module, and those Prototype puts in the <code>Array</code> namespace (described in this section, and listed further below).</p>
+<p>However, Prototype has no way to mark the methods it adds to <code>Array.prototype</code> as non-enumerable. Therefore, using <code>for</code>&#x2026;<code>in</code> on arrays when using Prototype will enumerate all extended methods as well, such as those coming from the <a href="enumerable.html"><code>Enumerable</code></a> module, and those Prototype puts in the <code>Array</code> namespace (described in this section, and listed further below).</p>
 
 <h4>What is a developer to do?</h4>
 
 <p>You can revert to vanilla loops:</p>
 
 <pre><code class="javascript">
-for (var index = 0; index < myArray.length; ++index) {
+for (var index = 0; index  myArray.length; ++index) {
   var item = myArray[index];
   // Your code working on item here...
 }
@@ -361,15 +355,15 @@ myArray.each(function(item) {
 });
 </code></pre>
 
-<p>This side-effect enforcement of the true purpose of <code>for</code>&#8230;<code>in</code> is actually not so much of a burden: as you&#8217;ll see, most of what you used to loop over arrays for can be concisely done using the new methods provided by <code>Array</code> or the mixed-in <a href="enumerable.html"><code>Enumerable</code></a> module. So manual loops should be fairly rare.</p>
+<p>This side-effect enforcement of the true purpose of <code>for</code>&#x2026;<code>in</code> is actually not so much of a burden: as you&#x2019;ll see, most of what you used to loop over arrays for can be concisely done using the new methods provided by <code>Array</code> or the mixed-in <a href="enumerable.html"><code>Enumerable</code></a> module. So manual loops should be fairly rare.</p>
 
 <h3>A note on performance</h3>
 
-<p>Should you have a very large array, using iterators with <em>lexical closures</em> (anonymous functions that you pass to the iterators, that get invoked at every loop iteration), such as <a href="enumerable/each.html"><code>each</code></a>, or relying on repetitive array construction (such as <a href="array/uniq.html"><code>uniq</code></a>), may yield unsatisfactory performance. In such cases, you&#8217;re better off writing manual indexing loops, but take care then to cache the <code>length</code> property and use the prefix <code>++</code> operator:</p>
+<p>Should you have a very large array, using iterators with <em>lexical closures</em> (anonymous functions that you pass to the iterators, that get invoked at every loop iteration), such as <a href="enumerable/each.html"><code>each</code></a>, or relying on repetitive array construction (such as <a href="array/uniq.html"><code>uniq</code></a>), may yield unsatisfactory performance. In such cases, you&#x2019;re better off writing manual indexing loops, but take care then to cache the <code>length</code> property and use the prefix <code>++</code> operator:</p>
 
 <pre><code class="javascript">
 // Custom loop with cached length property: maximum full-loop performance on very large arrays!
-for (var index = 0, len = myArray.length; index < len; ++index) {
+for (var index = 0, len = myArray.length; index  len; ++index) {
   var item = myArray[index];
   // Your code working on item here...
 }
@@ -384,7 +378,7 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/clear.html">clear</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">clear() -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">clear() -&gt; Array</code></pre>
 
 <p>Clears the array (makes it empty).</p></div>
       </div>
@@ -395,7 +389,7 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/clone.html">clone</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">clone() -> newArray</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">clone() -&gt; newArray</code></pre>
 
 <p>Returns a duplicate of the array, leaving the original array intact.</p></div>
       </div>
@@ -406,7 +400,7 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/compact.html">compact</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">compact() -> newArray</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">compact() -&gt; newArray</code></pre>
 
 <p>Returns a new version of the array, without any <code>null</code>/<code>undefined</code> values.</p></div>
       </div>
@@ -417,7 +411,7 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/each.html">each</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">each(iterator) -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">each(iterator) -&gt; Array</code></pre>
 
 <p>Iterates over the array in ascending numerical index order.</p></div>
       </div>
@@ -428,7 +422,7 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/first.html">first</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">first() -> value</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">first() -&gt; value</code></pre>
 
 <p>Returns the first item in the array, or <code>undefined</code> if the array is empty.</p></div>
       </div>
@@ -439,9 +433,9 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/flatten.html">flatten</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">flatten() -> newArray</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">flatten() -&gt; newArray</code></pre>
 
-<p>Returns a &#8220;flat&#8221; (one-dimensional) version of the array.  Nested arrays are recursively injected &#8220;inline.&#8221;  This can prove very useful when handling the results of a recursive collection algorithm, for instance.</p></div>
+<p>Returns a &#x201C;flat&#x201D; (one-dimensional) version of the array.  Nested arrays are recursively injected &#x201C;inline.&#x201D;  This can prove very useful when handling the results of a recursive collection algorithm, for instance.</p></div>
       </div>
    
   
@@ -450,7 +444,7 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/from.html">from</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">Array.from(iterable) -> actualArray</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">Array.from(iterable) -&gt; actualArray</code></pre>
 
 <p>Clones an existing array or creates a new one from an array-like collection.</p>
 
@@ -463,9 +457,9 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/indexof.html">indexOf</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">indexOf(value) -> position</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">indexOf(value) -&gt; position</code></pre>
 
-<p>Returns the position of the first occurrence of the argument within the array.  If the argument doesn&#8217;t exist in the array, returns -1.</p></div>
+<p>Returns the position of the first occurrence of the argument within the array.  If the argument doesn&#x2019;t exist in the array, returns -1.</p></div>
       </div>
    
   
@@ -474,7 +468,7 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/inspect.html">inspect</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">inspect() -> String</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">inspect() -&gt; String</code></pre>
 
 <p>Returns the debug-oriented string representation of an array.</p></div>
       </div>
@@ -485,7 +479,7 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/last.html">last</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">last() -> value</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">last() -&gt; value</code></pre>
 
 <p>Returns the last item in the array, or <code>undefined</code> if the array is empty.</p></div>
       </div>
@@ -496,7 +490,7 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/reduce.html">reduce</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">reduce() -> Array | singleValue</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">reduce() -&gt; Array | singleValue</code></pre>
 
 <p>Reduces arrays: one-element arrays are turned into their unique element, while multiple-element arrays are returned untouched.</p></div>
       </div>
@@ -507,7 +501,7 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/reverse.html">reverse</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">reverse([inline = true]) -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">reverse([inline = true]) -&gt; Array</code></pre>
 
 <p>Returns the reversed version of the array.  By default, directly reverses the original. If <code>inline</code> is set to <code>false</code>, uses a clone of the original array.</p></div>
       </div>
@@ -518,7 +512,7 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/size.html">size</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">size() -> Number</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">size() -&gt; Number</code></pre>
 
 <p>Returns the size of the array.</p></div>
       </div>
@@ -529,7 +523,7 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/toarray.html">toArray</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">toArray() -> newArray</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toArray() -&gt; newArray</code></pre>
 
 <p>This is just a local optimization of the mixed-in <a href="enumerable/toArray.html"><code>toArray</code></a> from <a href="enumerable.html"><code>Enumerable</code></a>.</p></div>
       </div>
@@ -540,7 +534,7 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/tojson.html">toJSON</a>
           <div class="box">1.5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">toJSON() -> String</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toJSON() -&gt; String</code></pre>
 
 <p>Returns a JSON string.</p></div>
       </div>
@@ -551,7 +545,7 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/uniq.html">uniq</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">uniq() -> newArray</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">uniq() -&gt; newArray</code></pre>
 
 <p>Produces a duplicate-free version of an array.  If no duplicates are found, the original array is returned.</p></div>
       </div>
@@ -562,7 +556,7 @@ for (var index = 0, len = myArray.length; index < len; ++index) {
           <h4><a href="array/without.html">without</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">without(value...) -> newArray</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">without(value...) -&gt; newArray</code></pre>
 
 <p>Produces a new version of the array that does not contain any of the specified values.</p></div>
       </div>

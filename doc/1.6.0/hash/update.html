@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Hash.update </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -220,11 +218,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -233,10 +227,10 @@ urchinTracker();
 <div class="box">1.6</div>
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">update(object) -> Hash</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">update(object) -&gt; Hash</code></pre>
 
 <p>Updates hash with the key/value pairs of <code>object</code>. The original hash will be modified.</p></div>
-    <div id="abody"><p>Duplicate keys will cause an overwrite of hash&#8217;s keys.  This is useful for selectively overwriting values on specific keys (e.g. exerting some level of control over a series of options).</p>
+    <div id="abody"><p>Duplicate keys will cause an overwrite of hash&#x2019;s keys.  This is useful for selectively overwriting values on specific keys (e.g. exerting some level of control over a series of options).</p>
 
 <p>The argument can be a <code>Hash</code> or just a vanilla <code>Object</code>.</p>
 
@@ -246,10 +240,10 @@ urchinTracker();
 var h = $H({ name: 'Prototype', version: 1.5 });
 
 h.update({ version: 1.6, author: 'Sam' }).inspect();
-// -> #&lt;Hash:{'name': 'Prototype', 'version': 1.6, 'author': 'Sam'}&gt;
+// -&gt; #&lt;Hash:{'name': 'Prototype', 'version': 1.6, 'author': 'Sam'}&gt;
 
 h.inspect();
-// -> #&lt;Hash:{'name': 'Prototype', 'version': 1.6, 'author': 'Sam'}&gt;
+// -&gt; #&lt;Hash:{'name': 'Prototype', 'version': 1.6, 'author': 'Sam'}&gt;
 </code></pre>
 
 <h3>See also</h3>

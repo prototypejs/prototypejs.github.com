@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.previous </title>
 	<link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,10 +423,10 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">previous(element[, cssRule][, index = 0]) -> HTMLElement | undefined</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">previous(element[, cssRule][, index = 0]) -&gt; HTMLElement | undefined</code></pre>
 
 <p>Returns <code>element</code>'s previous sibling (or the <em>index'th</em> one, if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all previous siblings are considered. If no previous sibling matches these criteria, <code>undefined</code> is returned.</p></div>
-    <div id="abody"><p>The <code>Element.previous</code> method is part of Prototype's ultimate DOM traversal toolkit (check out <a href="up.html"><code>Element.up</code></a>, <a href="down.html"><code>Element.down</code></a> and <a href="next.html"><code>Element.next</code></a> for some more Prototypish niceness). It allows precise index-based and/or CSS rule-based selection of any of <code>element</code>'s <strong>previous siblings</strong>. (Note that two elements are considered siblings if they have the same parent, so for example, the <code>head</code> and <code>body</code> elements are siblings&#8212;their parent is the <code>html</code> element.)</p>
+    <div id="abody"><p>The <code>Element.previous</code> method is part of Prototype's ultimate DOM traversal toolkit (check out <a href="up.html"><code>Element.up</code></a>, <a href="down.html"><code>Element.down</code></a> and <a href="next.html"><code>Element.next</code></a> for some more Prototypish niceness). It allows precise index-based and/or CSS rule-based selection of any of <code>element</code>'s <strong>previous siblings</strong>. (Note that two elements are considered siblings if they have the same parent, so for example, the <code>head</code> and <code>body</code> elements are siblings&#x2014;their parent is the <code>html</code> element.)</p>
 
 <p>As it totally ignores text nodes (it only returns elements), you don't have to worry about whitespace-only nodes.</p>
 
@@ -477,22 +471,22 @@ $(element).down(1).next('li', 2).hide();
 $('saying').previous();
 // equivalent:
 $('saying').previous(0);
-// -> ul#list-of-apples
+// -&gt; ul#list-of-apples
 
 $('saying').previous(1);
-// -> h3
+// -&gt; h3
 
 $('saying').previous('h3');
-// -> h3
+// -&gt; h3
 
 $('ida-red').previous('.yummy');
-// -> li#mutsu
+// -&gt; li#mutsu
 
 $('ida-red').previous('.yummy', 1);
-// -> li#golden-delicious
+// -&gt; li#golden-delicious
 
 $('ida-red').previous(5);
-// -> undefined
+// -&gt; undefined
 </code></pre></div>
   
 

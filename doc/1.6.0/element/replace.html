@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.replace </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,7 +423,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">replace(element[, html]) -> HTMLElement</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">replace(element[, html]) -&gt; HTMLElement</code></pre>
 
 <p>Replaces <code>element</code> by the content of the <code>html</code> argument and returns the removed <code>element</code>.</p></div>
     <div id="abody"><p class="notice">Using <code>replace</code> as an instance method (e.g., <code>$('foo').replace('&lt;p&gt;Bar&lt;/p&gt;')</code>) causes errors in Opera 9 when used on <code>input</code> elements. The <code>replace</code> property is reserved on <code>input</code>s as part of <a href="http://www.whatwg.org/specs/web-forms/current-work/">Web Forms 2</a>. As a workaround, use the generic version instead (<code>Element.replace('foo', '&lt;p&gt;Bar&lt;/p&gt;')</code>).</p>
@@ -454,37 +448,37 @@ urchinTracker();
 
 <pre><code class="javascript">
 $('first').replace('&lt;ul id="favorite"&gt;&lt;li&gt;kiwi&lt;/li&gt;&lt;li&gt;banana&lt;/li&gt;&lt;li&gt;apple&lt;/li&gt;&lt;/ul&gt;');
-// -> HTMLElement (p#first)
+// -&gt; HTMLElement (p#first)
 $('fruits').innerHTML;
-// -> '&lt;ul id="favorite"&gt;&lt;li&gt;kiwi&lt;/li&gt;&lt;li&gt;banana&lt;/li&gt;&lt;li&gt;apple&lt;/li&gt;&lt;/ul&gt;'
+// -&gt; '&lt;ul id="favorite"&gt;&lt;li&gt;kiwi&lt;/li&gt;&lt;li&gt;banana&lt;/li&gt;&lt;li&gt;apple&lt;/li&gt;&lt;/ul&gt;'
 </code></pre>
 
 <p>Again, with a &lt;script&gt; tag thrown in:</p>
 
 <pre><code class="javascript">
 $('favorite').replace('&lt;p id="still-first"&gt;Melon, oranges &lt;em&gt;and&lt;/em&gt; grapes.&lt;/p&gt;&lt;script&gt;alert("removed!")&lt;/script&gt;');
-// -> HTMLElement (ul#favorite) and prints "removed!" in an alert dialog.
+// -&gt; HTMLElement (ul#favorite) and prints "removed!" in an alert dialog.
 $('fruits').innerHTML
-// -> '&lt;p id="still-first"&gt;Melon, oranges &lt;em&gt;and&lt;/em&gt; grapes.&lt;/p&gt;'
+// -&gt; '&lt;p id="still-first"&gt;Melon, oranges &lt;em&gt;and&lt;/em&gt; grapes.&lt;/p&gt;'
 </code></pre>
 
 <p>With plain text:</p>
 
 <pre><code class="javascript">
 $('still-first').replace('Melon, oranges and grapes.');
-// -> HTMLElement (p#still-first)
+// -&gt; HTMLElement (p#still-first)
 $('fruits').innerHTML
-// -> 'Melon, oranges and grapes.'
+// -&gt; 'Melon, oranges and grapes.'
 </code></pre>
 
 <p>Finally, relying on the <code>toString()</code> method:</p>
 
 <pre><code class="javascript">
 $('fruits').replace(123);
-// -> HTMLElement
+// -&gt; HTMLElement
 
 $('food').innerHTML;
-// -> '123'
+// -&gt; '123'
 </code></pre></div>
   
 

@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Form.Element </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -200,11 +198,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -259,7 +253,7 @@ urchinTracker();
 
     <div id="abody"><p>This is a collection of methods that assist in dealing with form controls. They provide ways to focus, serialize, disable/enable or extract current value from a specific control.</p>
 
-<p>In Prototype, <code>Form.Element</code> is also aliased <code>Field</code> and all these methods are available directly on INPUT, SELECT and TEXTAREA elements that have been extended (see <a href="../../learn/extensions.html">&#8220;How Prototype extends the DOM&#8221;</a>). Therefore, these are equivalent:</p>
+<p>In Prototype, <code>Form.Element</code> is also aliased <code>Field</code> and all these methods are available directly on INPUT, SELECT and TEXTAREA elements that have been extended (see <a href="../../learn/extensions.html">&#x201C;How Prototype extends the DOM&#x201D;</a>). Therefore, these are equivalent:</p>
 
 <pre><code class="javascript">
 Form.Element.activate('myfield')
@@ -278,7 +272,7 @@ $('myfield').activate()
           <h4><a href="element/activate.html">activate</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">activate(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">activate(element) -&gt; HTMLElement</code></pre>
 
 <p>Gives focus to a form control and selects its contents if it is a text input.</p></div>
       </div>
@@ -289,7 +283,7 @@ $('myfield').activate()
           <h4><a href="element/clear.html">clear</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">clear(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">clear(element) -&gt; HTMLElement</code></pre>
 
 <p>Clears the contents of a text input.</p></div>
       </div>
@@ -300,7 +294,7 @@ $('myfield').activate()
           <h4><a href="element/disable.html">disable</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">disable(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">disable(element) -&gt; HTMLElement</code></pre>
 
 <p>Disables a form control, effectively preventing its value to be changed until it is enabled again.</p></div>
       </div>
@@ -311,7 +305,7 @@ $('myfield').activate()
           <h4><a href="element/enable.html">enable</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">enable(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">enable(element) -&gt; HTMLElement</code></pre>
 
 <p>Enables a previously disabled form control.</p></div>
       </div>
@@ -322,7 +316,7 @@ $('myfield').activate()
           <h4><a href="element/focus.html">focus</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">focus(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">focus(element) -&gt; HTMLElement</code></pre>
 
 <p>Gives keyboard focus to an element.</p></div>
       </div>
@@ -333,7 +327,7 @@ $('myfield').activate()
           <h4><a href="element/getValue.html">getValue</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">getValue(element) -> string | array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">getValue(element) -&gt; string | array</code></pre>
 
 <p>Returns the current value of a form control. A string is returned for most controls; only multiple select boxes return an array of values. The global shortcut for this method is <a href="../utility/dollar-f.html"><code>$F()</code></a>.</p></div>
       </div>
@@ -344,7 +338,7 @@ $('myfield').activate()
           <h4><a href="element/present.html">present</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">present(element) -> boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">present(element) -&gt; boolean</code></pre>
 
 <p>Returns true if a text input has contents, false otherwise.</p></div>
       </div>
@@ -355,7 +349,7 @@ $('myfield').activate()
           <h4><a href="element/select.html">select</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">select(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">select(element) -&gt; HTMLElement</code></pre>
 
 <p>Selects the current text in a text input.</p></div>
       </div>
@@ -366,7 +360,7 @@ $('myfield').activate()
           <h4><a href="element/serialize.html">serialize</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">serialize(element) -> string</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">serialize(element) -&gt; string</code></pre>
 
 <p>Creates an URL-encoded string representation of a form control in the <code>name=value</code> format.</p></div>
       </div>

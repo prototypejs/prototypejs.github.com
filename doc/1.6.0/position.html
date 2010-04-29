@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Position </title>
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -212,11 +210,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -305,7 +299,7 @@ urchinTracker();
           <h4><a href="position/clone.html">clone</a>
           <div class="box">deprecated</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">clone(source, target[, options]) -> [Number, Number]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">clone(source, target[, options]) -&gt; [Number, Number]</code></pre>
 
 <p>Clones the position and/or dimensions of <code>source</code> onto <code>target</code> as defined by the optional argument <code>options</code>. </p></div>
       </div>
@@ -316,7 +310,7 @@ urchinTracker();
           <h4><a href="position/cumulativeoffset.html">cumulativeOffset</a>
           <div class="box">deprecated</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">cumulativeOffset(element) -> [Number, Number]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">cumulativeOffset(element) -&gt; [Number, Number]</code></pre>
 
 <p>Returns the offsets of <code>element</code> from the top left corner of the document.</p></div>
       </div>
@@ -327,9 +321,9 @@ urchinTracker();
           <h4><a href="position/offsetparent.html">offsetParent</a>
           <div class="box">deprecated</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">offsetParent(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">offsetParent(element) -&gt; HTMLElement</code></pre>
 
-<p>Returns <code>element</code>&#8217;s closest <em>positioned</em> ancestor. If none is found, the <code>body</code> element is returned.</p></div>
+<p>Returns <code>element</code>&#x2019;s closest <em>positioned</em> ancestor. If none is found, the <code>body</code> element is returned.</p></div>
       </div>
    
   
@@ -338,7 +332,7 @@ urchinTracker();
           <h4><a href="position/overlap.html">overlap</a>
           <div class="box">deprecated</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">overlap(mode, element) -> Number</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">overlap(mode, element) -&gt; Number</code></pre>
 
 <p>Returns a Number between <code>0</code> and <code>1</code> corresponding to the proportion to which <code>element</code> overlaps the point previously defined by <a href="position/within.html">Position.within</a>. <code>mode</code> can be set to either <code>vertical</code> or <code>horizontal</code>.</p></div>
       </div>
@@ -349,7 +343,7 @@ urchinTracker();
           <h4><a href="position/page.html">page</a>
           <div class="box">deprecated</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">page(element) -> [Number, Number]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">page(element) -&gt; [Number, Number]</code></pre>
 
 <p>Returns the X/Y coordinates of <code>element</code> relative to the <em>viewport</em>.</p></div>
       </div>
@@ -360,9 +354,9 @@ urchinTracker();
           <h4><a href="position/positionedoffset.html">positionedOffset</a>
           <div class="box">deprecated</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">positionedOffset(element) -> [Number, Number]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">positionedOffset(element) -&gt; [Number, Number]</code></pre>
 
-<p>Calculates the element&#8217;s offset relative to its closest positioned ancestor (i.e., the element that would be returned by <a href="position/offsetParent.html">Position.offsetParent(element)</a>.</p></div>
+<p>Calculates the element&#x2019;s offset relative to its closest positioned ancestor (i.e., the element that would be returned by <a href="position/offsetParent.html">Position.offsetParent(element)</a>.</p></div>
       </div>
    
   
@@ -382,7 +376,7 @@ urchinTracker();
           <h4><a href="position/realoffset.html">realOffset</a>
           <div class="box">deprecated</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">realOffset(element) -> [Number, Number]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">realOffset(element) -&gt; [Number, Number]</code></pre>
 
 <p>Calculates the cumulative scroll offset of an element in nested scrolling containers.</p></div>
       </div>
@@ -404,7 +398,7 @@ urchinTracker();
           <h4><a href="position/within.html">within</a>
           <div class="box">deprecated</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">within(element, x, y) -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">within(element, x, y) -&gt; Boolean</code></pre>
 
 <p>Indicates whether the point <code>x, y</code> (measured from the top-left corner of the document) is within the boundaries of <code>element</code>.  Must be called immediately before <a href="position/overlap.html">Position.overlap</a>.</p></div>
       </div>
@@ -415,7 +409,7 @@ urchinTracker();
           <h4><a href="position/withinIncludingScrolloffsets.html">withinIncludingScrolloffsets</a>
           <div class="box">deprecated</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">withinIncludingScrolloffsets(element, x, y) -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">withinIncludingScrolloffsets(element, x, y) -&gt; Boolean</code></pre>
 
 <p>Indicates whether the point <code>x, y</code> (measured from the top-left corner of the document) is within the boundaries of <code>element</code>.  Used instead of <a href="position/within.html">Position.within</a> whenever <code>element</code> is a child of a scrolling container. Must be called immediately before <a href="position/overlap.html">Position.overlap</a> and immediately after <a href="position/prepare.html">Position.prepare</a>.</p></div>
       </div>

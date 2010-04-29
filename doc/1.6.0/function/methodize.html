@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Function.methodize </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -196,11 +194,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -209,7 +203,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">someFunction.methodize() -> Function</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">someFunction.methodize() -&gt; Function</code></pre>
 
 <p>Takes a function and wraps it in another function that, at call time, pushes <code>this</code> to the original function as the first argument.</p></div>
     <div id="abody"><p>The <code>methodize</code> method transforms the original function that has an explicit first argument to a function that passes <code>this</code> (the current context) as an implicit first argument at call time. It is useful when we want to transform a function that takes an object to a method of that object or its prototype, shortening its signature by one argument.</p>
@@ -226,13 +220,13 @@ var object = {};
 
 // use the original function
 fn(object, 'bar');
-object.value //-> 'bar'
+object.value //-&gt; 'bar'
 
 // if we methodize it and copy over to the object, it becomes
 // a method of the object and takes 1 argument less:
 object.fnMethodized = fn.methodize();
 object.fnMethodized('boom!');
-object.value //-> 'boom!'
+object.value //-&gt; 'boom!'
 </code></pre>
 
 <p>Of course, usage shown in the example is rarely useful. It's more useful to copy methodized functions to object prototypes so that new methods are immediately shared among instances. In Prototype library, <code>methodize</code> has important usage in DOM and Event modules; <a href="../element/methods.html"><code>Element.Methods</code></a> and <code>Event.Methods</code> are methodized and placed in their native prototypes so that they are available on DOM nodes and event objects, respectively.</p></div>

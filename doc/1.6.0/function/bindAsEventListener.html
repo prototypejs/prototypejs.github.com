@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Function.bindAsEventListener </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -196,11 +194,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -209,14 +203,14 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">bindAsEventListener(thisObj[, arg...]) -> Function</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">bindAsEventListener(thisObj[, arg...]) -&gt; Function</code></pre>
 
 <p>An event-specific variant of <a href="bind.html"><code>bind</code></a> which makes sure the function will recieve the current event object as the first argument when executing.</p></div>
-    <div id="abody"><p>If you&#8217;re unclear on what &#8220;binding&#8221; is, check out <code>Function</code>&#8217;s <a href="../function.html">API page</a>.  If you don&#8217;t quite understand what <a href="bind.html"><code>bind()</code></a> does, check out its specific article.</p>
+    <div id="abody"><p>If you&#x2019;re unclear on what &#x201C;binding&#x201D; is, check out <code>Function</code>&#x2019;s <a href="../function.html">API page</a>.  If you don&#x2019;t quite understand what <a href="bind.html"><code>bind()</code></a> does, check out its specific article.</p>
 
-<p>When you&#8217;re creating methods that you want to use as event handlers, you need to get the current event somehow, as well as control the <em>context</em> in which the method will run. <code>bindAsEventListener</code> takes care of both, as it binds the handler to the specified context (<code>thisObj</code>) and makes sure the event object gets passed to the handler when the event actually occurs.</p>
+<p>When you&#x2019;re creating methods that you want to use as event handlers, you need to get the current event somehow, as well as control the <em>context</em> in which the method will run. <code>bindAsEventListener</code> takes care of both, as it binds the handler to the specified context (<code>thisObj</code>) and makes sure the event object gets passed to the handler when the event actually occurs.</p>
 
-<p>This method also works around the problem in MSIE when using DOM level 0 style of event handling and the event object <em>isn&#8217;t</em> passed as the first argument, but has to be read from <code>window.event</code> instead. You can forget about that with this method as you don&#8217;t have to do it manually.</p>
+<p>This method also works around the problem in MSIE when using DOM level 0 style of event handling and the event object <em>isn&#x2019;t</em> passed as the first argument, but has to be read from <code>window.event</code> instead. You can forget about that with this method as you don&#x2019;t have to do it manually.</p>
 
 <p>You typically use this method in conjunction with <a href="../event/observe.html"><code>Event.observe</code></a>, and anywhere you need to pass a method as an event listener.</p>
 

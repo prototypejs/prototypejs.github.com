@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.wrap </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,13 +423,13 @@ urchinTracker();
 <div class="box">1.6</div>
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">Element.wrap(element, wrapper[, attributes]) -> HTMLElement
-someElement.wrap(wrapper[, attributes]) -> HTMLElement</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">Element.wrap(element, wrapper[, attributes]) -&gt; HTMLElement
+someElement.wrap(wrapper[, attributes]) -&gt; HTMLElement</code></pre>
 
 <p>Wraps an element inside another, then returns the wrapper.</p></div>
     <div id="abody"><p class="notice">Using <code>wrap</code> as an instance method (e.g., <code>$('foo').wrap('p')</code>) causes errors in Internet Explorer when used on <code>textarea</code> elements. The <code>wrap</code> property is reserved on <code>textarea</code>s as a proprietary extension to HTML. As a workaround, use the generic version instead (<code>Element.wrap('foo', 'p')</code>).</p>
 
-<p>If the given element exists on the page, <code>Element#wrap</code> will wrap it in place — its position will remain the same.</p>
+<p>If the given element exists on the page, <code>Element#wrap</code> will wrap it in place &#x2014;&#xA0;its position will remain the same.</p>
 
 <p>The <code>wrapper</code> argument can be <em>either</em> an existing <code>HTMLElement</code> <em>or</em> a string representing the tag name of an element to be created. The optional <code>attributes</code> argument can contain a list of attribute/value pairs that will be set on the wrapper using <a href="writeAttribute.html"><code>Element#writeAttribute</code></a>.</p>
 
@@ -443,7 +437,7 @@ someElement.wrap(wrapper[, attributes]) -> HTMLElement</code></pre>
 
 <h4>Original HTML</h4>
 
-<pre><code class="html">&lt;table id=&quot;data&quot;&gt;
+<pre><code class="html">&lt;table id="data"&gt;
   &lt;tr&gt;
     &lt;th&gt;Foo&lt;/th&gt;
     &lt;th&gt;Bar&lt;/th&gt;
@@ -468,8 +462,8 @@ $('data').wrap('div', { 'class': 'table-wrapper' });
 
 <h4>Resulting HTML</h4>
 
-<pre><code class="html">&lt;div class=&quot;table-wrapper&quot;&gt;
-  &lt;table id=&quot;data&quot;&gt;
+<pre><code class="html">&lt;div class="table-wrapper"&gt;
+  &lt;table id="data"&gt;
     &lt;tr&gt;
       &lt;th&gt;Foo&lt;/th&gt;
       &lt;th&gt;Bar&lt;/th&gt;

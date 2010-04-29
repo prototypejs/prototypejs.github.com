@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Enumerable.all </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -268,11 +266,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -281,11 +275,11 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">all([iterator = Prototype.K[, context]]) -> Boolean</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">all([iterator = Prototype.K[, context]]) -&gt; Boolean</code></pre>
 
 <p>Determines whether all the elements are boolean-equivalent to <code>true</code>, either
 directly or through computation by the provided iterator.</p></div>
-    <div id="abody"><p>The code obviously short-circuits as soon as it finds an element that &#8220;fails&#8221;
+    <div id="abody"><p>The code obviously short-circuits as soon as it finds an element that &#x201C;fails&#x201D;
 (that is boolean-equivalent to <code>false</code>).  If no iterator is provided, the
 elements are used directly.  Otherwise, each element is passed to the
 iterator, and the result value is used for boolean equivalence.</p>
@@ -296,19 +290,19 @@ iterator, and the result value is used for boolean equivalence.</p>
 
 <pre><code class="javascript">
 [].all()
-// -> true (empty arrays have no elements that could be false-equivalent)
+// -&gt; true (empty arrays have no elements that could be false-equivalent)
 
 $R(1, 5).all()
-// -> true (all values in [1..5] are true-equivalent)
+// -&gt; true (all values in [1..5] are true-equivalent)
 
 [0, 1, 2].all()
-// -> false (with only one loop cycle: 0 is false-equivalent)
+// -&gt; false (with only one loop cycle: 0 is false-equivalent)
 
-[9, 10, 15].all(function(n) { return n >= 10; })
-// -> false (the iterator will return false on 9)
+[9, 10, 15].all(function(n) { return n &gt;= 10; })
+// -&gt; false (the iterator will return false on 9)
 
 $H({ name: 'John', age: 29, oops: false }).all(function(pair) { return pair.value; })
-// -> false (the oops/false pair yields a value of false)
+// -&gt; false (the oops/false pair yields a value of false)
 </code></pre>
 
 <h3>See also</h3>

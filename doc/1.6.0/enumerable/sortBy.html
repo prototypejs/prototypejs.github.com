@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Enumerable.sortBy </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -268,11 +266,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -281,7 +275,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">sortBy(iterator[, context]) -> Array</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">sortBy(iterator[, context]) -&gt; Array</code></pre>
 
 <p>Provides a custom-sorted view of the elements based on the criteria computed, for each element, by the iterator.</p></div>
     <div id="abody"><p>Elements of equivalent criterion value are left in existing order.  Computed criteria must have well-defined strict weak ordering semantics (i.e. the <code>&lt;</code> operator must exist between any two criteria).</p>
@@ -294,13 +288,13 @@ urchinTracker();
 
 <pre><code class="javascript">
 ['hello', 'world', 'this', 'is', 'nice'].sortBy(function(s) { return s.length; })
-// -> 'is', 'this', 'nice', 'hello', 'world']
+// -&gt; 'is', 'this', 'nice', 'hello', 'world']
 
 ['hello', 'world', 'this', 'is', 'cool'].sortBy(function(s) {
   var md = s.match(/[aeiouy]/g);
   return null == md ? 0 : md.length;
 })
-// -> [ 'world', 'this', 'is', 'hello', 'cool'] (sorted by vowel count)
+// -&gt; [ 'world', 'this', 'is', 'hello', 'cool'] (sorted by vowel count)
 </code></pre></div>
   
 

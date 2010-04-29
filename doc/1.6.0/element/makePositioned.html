@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.makePositioned </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,7 +423,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">makePositioned(element) -> HTMLElement</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">makePositioned(element) -&gt; HTMLElement</code></pre>
 
 <p>Allows for the easy creation of <a href="http://www.w3.org/TR/CSS21/visudet.html#containing-block-details">CSS containing block</a> by setting <code>element</code>'s CSS position to <code>'relative'</code> if its initial position is either <code>'static'</code> or <code>undefined</code>. Returns <code>element</code>.</p></div>
     <div id="abody"><p>To revert back to <code>element</code>'s original CSS position, use <a href="undoPositioned.html">Element.undoPositioned</a>.</p>
@@ -439,7 +433,7 @@ urchinTracker();
 <p>Consider the following case:</p>
 
 <pre><code class="html">
-&lt;p&gt;lorem [&#8230;]&lt;/p&gt;
+&lt;p&gt;lorem [&#x2026;]&lt;/p&gt;
 &lt;div id="container"&gt;
   &lt;div id="element" style="position: absolute; top: 20px; left: 20px;"&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -451,7 +445,7 @@ urchinTracker();
 
 <pre><code class="javascript">
 $('container').makePositioned();
-// -> HTMLElement
+// -&gt; HTMLElement
 </code></pre>
 
 <p>Which yields the expected layout:</p>

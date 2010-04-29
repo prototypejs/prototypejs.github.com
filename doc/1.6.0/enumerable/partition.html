@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Enumerable.partition </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -268,11 +266,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -281,7 +275,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">partition([iterator = Prototype.K[, context]]) -> [TrueArray, FalseArray]</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">partition([iterator = Prototype.K[, context]]) -&gt; [TrueArray, FalseArray]</code></pre>
 
 <p>Partitions the elements in two groups: those regarded as <code>true</code>, and those considered <code>false</code>.  By default, regular JavaScript boolean equivalence is used, but an iterator can be provided, that computes a boolean representation of the elements.</p></div>
     <div id="abody"><p>This is a preferred solution to using both <a href="findAll.html"><code>findAll</code></a>/<code>select</code> and
@@ -292,12 +286,12 @@ urchinTracker();
 <h3>Examples</h3>
 
 <pre><code class="javascript">['hello', null, 42, false, true, , 17].partition()
-// -> [['hello', 42, true, 17], [null, false, undefined]]
+// -&gt; [['hello', 42, true, 17], [null, false, undefined]]
 
 $R(1, 10).partition(function(n) {
   return 0 == n % 2;
 })
-// -> [[2, 4, 6, 8, 10], [1, 3, 5, 7, 9]]
+// -&gt; [[2, 4, 6, 8, 10], [1, 3, 5, 7, 9]]
 </code></pre></div>
   
 

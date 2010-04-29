@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Function </title>
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -196,11 +194,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -253,14 +247,14 @@ urchinTracker();
 
 <h3>What is binding?</h3>
 
-<p>&#8220;Binding&#8221; basically determines the meaning, when a function runs, of the <strong><code>this</code></strong> keyword.  While there usually is a proper default binding (<code>this</code> refers to whichever object the method is called on), this can be
-&#8220;lost&#8221; sometimes, for instance when passing a function reference as an argument.</p>
+<p>&#x201C;Binding&#x201D; basically determines the meaning, when a function runs, of the <strong><code>this</code></strong> keyword.  While there usually is a proper default binding (<code>this</code> refers to whichever object the method is called on), this can be
+&#x201C;lost&#x201D; sometimes, for instance when passing a function reference as an argument.</p>
 
-<p>If you don&#8217;t know much about the <code>this</code> keyword in JavaScript, hop to the docs for the <a href="function/bind.html"><code>bind()</code></a> method. The examples there will clear it up.</p>
+<p>If you don&#x2019;t know much about the <code>this</code> keyword in JavaScript, hop to the docs for the <a href="function/bind.html"><code>bind()</code></a> method. The examples there will clear it up.</p>
 
 <h3>Prototype to the rescue!</h3>
 
-<p>Prototype solves this.  You&#8217;ll find two new methods on any function: one that guarantees binding (it can even guarantee early parameters!), and one that is specific to functions intended as event handlers.</p></div>
+<p>Prototype solves this.  You&#x2019;ll find two new methods on any function: one that guarantees binding (it can even guarantee early parameters!), and one that is specific to functions intended as event handlers.</p></div>
     <div id="method-excerpts">  
 <h3>Methods</h3>
 
@@ -271,7 +265,7 @@ urchinTracker();
           <h4><a href="function/argumentNames.html">argumentNames</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">someFunction.argumentNames() -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">someFunction.argumentNames() -&gt; Array</code></pre>
 
 <p>Reads the argument names as defined in the function definition and returns the values as an array of strings, or an empty array if the function is defined without parameters.</p></div>
       </div>
@@ -282,7 +276,7 @@ urchinTracker();
           <h4><a href="function/bind.html">bind</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">bind(thisObj[, arg...]) -> Function</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">bind(thisObj[, arg...]) -&gt; Function</code></pre>
 
 <p>Wraps the function in another, locking its execution scope to an object specified by <code>thisObj</code>.</p></div>
       </div>
@@ -293,7 +287,7 @@ urchinTracker();
           <h4><a href="function/bindAsEventListener.html">bindAsEventListener</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">bindAsEventListener(thisObj[, arg...]) -> Function</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">bindAsEventListener(thisObj[, arg...]) -&gt; Function</code></pre>
 
 <p>An event-specific variant of <a href="function/bind.html"><code>bind</code></a> which makes sure the function will recieve the current event object as the first argument when executing.</p></div>
       </div>
@@ -305,10 +299,10 @@ urchinTracker();
           <div class="box">1.6.0</div>
           </h4>
            <div class="mexcerpt-cnt"><pre><code class="ebnf">
-  curry(arg...) -> Function
+  curry(arg...) -&gt; Function
 </code></pre>
 
-<p>Partially applies the function, returning a function with one or more arguments already &#8220;filled in.&#8221;</p></div>
+<p>Partially applies the function, returning a function with one or more arguments already &#x201C;filled in.&#x201D;</p></div>
       </div>
    
   
@@ -317,7 +311,7 @@ urchinTracker();
           <h4><a href="function/defer.html">defer</a>
           <div class="box">1.6.0</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">defer(arg...) -> Number</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">defer(arg...) -&gt; Number</code></pre>
 
 <p>Schedules the function to run as soon as the interpreter is idle.</p></div>
       </div>
@@ -328,7 +322,7 @@ urchinTracker();
           <h4><a href="function/delay.html">delay</a>
           <div class="box">1.6.0</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">delay(seconds[, arg...]) -> Number</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">delay(seconds[, arg...]) -&gt; Number</code></pre>
 
 <p>Schedules the function to run after the specified amount of time, passing any arguments given.</p></div>
       </div>
@@ -339,7 +333,7 @@ urchinTracker();
           <h4><a href="function/methodize.html">methodize</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">someFunction.methodize() -> Function</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">someFunction.methodize() -&gt; Function</code></pre>
 
 <p>Takes a function and wraps it in another function that, at call time, pushes <code>this</code> to the original function as the first argument.</p></div>
       </div>
@@ -350,9 +344,9 @@ urchinTracker();
           <h4><a href="function/wrap.html">wrap</a>
           <div class="box">1.6.0</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">wrap(wrapperFunction[, arg...]) -> Function</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">wrap(wrapperFunction[, arg...]) -&gt; Function</code></pre>
 
-<p>Returns a function &#8220;wrapped&#8221; around the original function.</p></div>
+<p>Returns a function &#x201C;wrapped&#x201D; around the original function.</p></div>
       </div>
    
   

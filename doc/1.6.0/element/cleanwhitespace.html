@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.cleanWhitespace </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,7 +423,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">cleanWhitespace(element) -> HTMLElement</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">cleanWhitespace(element) -&gt; HTMLElement</code></pre>
 
 <p>Removes all of <code>element</code>'s text nodes which contain <em>only</em> whitespace. Returns <code>element</code>.</p></div>
     <div id="abody"><p><code>Element.cleanWhitespace</code> removes whitespace-only text nodes. This can be very useful when using standard methods like <code>nextSibling</code>, <code>previousSibling</code>, <code>firstChild</code> or <code>lastChild</code> to walk the DOM.</p>
@@ -453,7 +447,7 @@ urchinTracker();
 <pre><code class="javascript">
 var element = $('apples');
 element.firstChild.innerHTML;
-// -> undefined
+// -&gt; undefined
 </code></pre>
 
 <p>That doesn't seem to work to well. Why is that ? <code>ul#apples</code>'s first child is actually a text node containing only whitespace that sits between <code>&lt;ul id="apples"&gt;</code> and <code>&lt;li&gt;Mutsu&lt;/li&gt;</code>.</p>
@@ -474,7 +468,7 @@ element.cleanWhitespace();
 
 <pre><code class="javascript">
 element.firstChild.innerHTML;
-// -> 'Mutsu'
+// -&gt; 'Mutsu'
 </code></pre></div>
   
 

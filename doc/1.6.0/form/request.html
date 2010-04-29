@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Form.request </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -204,11 +202,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -217,13 +211,13 @@ urchinTracker();
 <div class="box">1.5.1</div>
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">request([options]) -> new Ajax.Request</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">request([options]) -&gt; new Ajax.Request</code></pre>
 
-<p>A convenience method for serializing and submitting the form via an Ajax.Request to the URL of the form&#8217;s <code>action</code> attribute. The <code>options</code> parameter is passed to the Ajax.Request instance, allowing to override the HTTP method and to specify additional parameters.</p></div>
+<p>A convenience method for serializing and submitting the form via an Ajax.Request to the URL of the form&#x2019;s <code>action</code> attribute. The <code>options</code> parameter is passed to the Ajax.Request instance, allowing to override the HTTP method and to specify additional parameters.</p></div>
     <div id="abody"><p>Options passed to <code>request()</code> are intelligently merged with the underlying <a href="../ajax/options.html"><code>Ajax.Request</code> options</a>:</p>
 
 <ul>
-<li>If the form has a method attribute, its value is used for the <code>Ajax.Request</code> <code>method</code> option.  If a method option is passed to <code>request()</code>, it takes precedence over the form&#8217;s method attribute. If neither is specified, method defaults to &#8220;POST&#8221;. </li>
+<li>If the form has a method attribute, its value is used for the <code>Ajax.Request</code> <code>method</code> option.  If a method option is passed to <code>request()</code>, it takes precedence over the form&#x2019;s method attribute. If neither is specified, method defaults to &#x201C;POST&#x201D;. </li>
 <li>Key-value pairs specified in the <code>parameters</code> option (either as a hash or a query string) will be merged with (and <em>take precedence</em> over) the serialized form parameters.</li>
 </ul>
 
@@ -231,22 +225,22 @@ urchinTracker();
 
 <p>Suppose you have this HTML form:</p>
 
-<pre><code class="html">&lt;form id=&quot;person-example&quot; method=&quot;POST&quot; action=&quot;/user/info&quot;&gt;
+<pre><code class="html">&lt;form id="person-example" method="POST" action="/user/info"&gt;
   &lt;fieldset&gt;&lt;legend&gt;User info&lt;/legend&gt;
-  &lt;div&gt;&lt;label for=&quot;username&quot;&gt;Username:&lt;/label&gt;
-    &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; value=&quot;&quot; /&gt;&lt;/div&gt;
-  &lt;div&gt;&lt;label for=&quot;age&quot;&gt;Age:&lt;/label&gt;
-    &lt;input type=&quot;text&quot; name=&quot;age&quot; id=&quot;age&quot; value=&quot;&quot; size=&quot;3&quot; /&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" name="username" id="username" value="" /&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;label for="age"&gt;Age:&lt;/label&gt;
+    &lt;input type="text" name="age" id="age" value="" size="3" /&gt;&lt;/div&gt;
 
-  &lt;div&gt;&lt;label for=&quot;hobbies&quot;&gt;Your hobbies are:&lt;/label&gt;
-  &lt;select name=&quot;hobbies[]&quot; id=&quot;hobbies&quot; multiple=&quot;multiple&quot;&gt;
+  &lt;div&gt;&lt;label for="hobbies"&gt;Your hobbies are:&lt;/label&gt;
+  &lt;select name="hobbies[]" id="hobbies" multiple="multiple"&gt;
     &lt;option&gt;coding&lt;/option&gt;
     &lt;option&gt;swimming&lt;/option&gt;
     &lt;option&gt;hiking&lt;/option&gt;
     &lt;option&gt;drawing&lt;/option&gt;
   &lt;/select&gt;
  &lt;/div&gt;
-  &lt;div class=&quot;buttonrow&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;serialize!&quot; /&gt;&lt;/div&gt;
+  &lt;div class="buttonrow"&gt;&lt;input type="submit" value="serialize!" /&gt;&lt;/div&gt;
   &lt;/fieldset&gt;
 &lt;/form&gt;
 </code></pre>

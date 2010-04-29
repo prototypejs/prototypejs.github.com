@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.down </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,12 +423,12 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">down(element[, cssRule][, index = 0]) -> HTMLElement | undefined</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">down(element[, cssRule][, index = 0]) -&gt; HTMLElement | undefined</code></pre>
 
-<p>Returns element&#8217;s first descendant (or the n-th descendant if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all descendants are considered. If no descendant matches these criteria, <code>undefined</code> is returned.</p></div>
-    <div id="abody"><p>The <code>Element.down</code> method is part of Prototype&#8217;s ultimate DOM traversal toolkit (check out <a href="up.html"><code>Element.up</code></a>, <a href="next.html"><code>Element.next</code></a> and <a href="previous.html"><code>Element.previous</code></a> for some more Prototypish niceness). It allows precise index-based and/or CSS rule-based selection of any of the element&#8217;s descendants.</p>
+<p>Returns element&#x2019;s first descendant (or the n-th descendant if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all descendants are considered. If no descendant matches these criteria, <code>undefined</code> is returned.</p></div>
+    <div id="abody"><p>The <code>Element.down</code> method is part of Prototype&#x2019;s ultimate DOM traversal toolkit (check out <a href="up.html"><code>Element.up</code></a>, <a href="next.html"><code>Element.next</code></a> and <a href="previous.html"><code>Element.previous</code></a> for some more Prototypish niceness). It allows precise index-based and/or CSS rule-based selection of any of the element&#x2019;s descendants.</p>
 
-<p>As it totally ignores text nodes (it only returns elements), you don&#8217;t have to worry about whitespace nodes.</p>
+<p>As it totally ignores text nodes (it only returns elements), you don&#x2019;t have to worry about whitespace nodes.</p>
 
 <p>And as an added bonus, all elements returned are already <a href="extend.html">extended</a> allowing chaining:</p>
 
@@ -446,11 +440,11 @@ $(element).down(1).next('li', 2).hide();
 
 <h3>Arguments</h3>
 
-<p>If no argument is passed, <code>element</code>&#8217;s first descendant is returned (this is similar as calling <code>firstChild</code> except <code>Element.down</code> returns an already <a href="extend.html">extended element</a>.</p>
+<p>If no argument is passed, <code>element</code>&#x2019;s first descendant is returned (this is similar as calling <code>firstChild</code> except <code>Element.down</code> returns an already <a href="extend.html">extended element</a>.</p>
 
-<p>If an index is passed, <code>element</code>&#8217;s corresponding descendant is returned. (This is equivalent to selecting an element from the array of elements returned by the method <a href="descendants.html"><code>Element.descendants</code></a>.) Note that the first element has an index of 0.</p>
+<p>If an index is passed, <code>element</code>&#x2019;s corresponding descendant is returned. (This is equivalent to selecting an element from the array of elements returned by the method <a href="descendants.html"><code>Element.descendants</code></a>.) Note that the first element has an index of 0.</p>
 
-<p>If <code>cssRule</code> is defined, <code>Element.down</code> will return the first descendant that matches it. This is a great way to grab the first item in a list for example (just pass in &#8216;li&#8217; as the method&#8217;s first argument).</p>
+<p>If <code>cssRule</code> is defined, <code>Element.down</code> will return the first descendant that matches it. This is a great way to grab the first item in a list for example (just pass in &#x2018;li&#x2019; as the method&#x2019;s first argument).</p>
 
 <p>If both <code>cssRule</code> and <code>index</code> are defined, <code>Element.down</code> will collect all the descendants matching the given CSS rule and will return the one specified by the index.</p>
 
@@ -475,22 +469,22 @@ $(element).down(1).next('li', 2).hide();
 $('fruits').down();
 // equivalent:
 $('fruits').down(0);
-// -> li#apple
+// -&gt; li#apple
 
 $('fruits').down(3);
-// -> li#golden-delicious
+// -&gt; li#golden-delicious
 
 $('apples').down('li');
-// -> li#golden-delicious
+// -&gt; li#golden-delicious
 
 $('apples').down('li.yummy');
-// -> li#mutsu
+// -&gt; li#mutsu
 
 $('fruits').down('.yummy', 1);
-// -> li#mcintosh
+// -&gt; li#mcintosh
 
 $('fruits').down(99);
-// -> undefined
+// -&gt; undefined
 </code></pre></div>
   
 

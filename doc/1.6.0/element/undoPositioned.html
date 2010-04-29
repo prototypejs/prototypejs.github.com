@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.undoPositioned </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,7 +423,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">undoPositioned(element) -> HTMLElement</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">undoPositioned(element) -&gt; HTMLElement</code></pre>
 
 <p>Sets <code>element</code> back to the state it was <em>before</em> <a href="makePositioned.html">Element.makePositioned</a> was applied to it. Returns <code>element</code>.</p></div>
     <div id="abody"><p><code>element</code>'s absolutely positioned children will now have their positions set relatively to <code>element</code>'s nearest ancestor with a CSS <code>position</code> of  <code>'absolute'</code>, <code>'relative'</code> or <code>'fixed'</code>.</p>
@@ -437,7 +431,7 @@ urchinTracker();
 <h3>Example</h3>
 
 <pre><code class="html">
-&lt;p&gt;lorem [&#8230;]&lt;/p&gt;
+&lt;p&gt;lorem [&#x2026;]&lt;/p&gt;
 &lt;div id="container"&gt;
   &lt;div id="element" style="position: absolute; top: 20px; left: 20px;"&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -445,7 +439,7 @@ urchinTracker();
 
 <pre><code class="javascript">
 $('container').makePositioned();
-// -> HTMLElement
+// -&gt; HTMLElement
 </code></pre>
 
 <p><img src="/assets/2007/2/24/makepos_after.png" alt="example" /></p>
@@ -454,7 +448,7 @@ $('container').makePositioned();
 
 <pre><code class="javascript">
 $('container').undoPositioned();
-// -> HTMLElement
+// -&gt; HTMLElement
 </code></pre>
 
 <p><img src="/assets/2007/2/24/makepos_before.png" alt="example" /></p></div>

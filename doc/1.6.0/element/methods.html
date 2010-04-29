@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.Methods </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -408,11 +406,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -673,7 +667,7 @@ urchinTracker();
 
 
 
-    <div id="abody"><p><code>Element.Methods</code> is a mixin for DOM elements.  The methods of this object are accessed through the <a href="../utility/dollar.html"><code>$()</code> utility</a> or through the <a href="../element.html"><code>Element</code></a> object and shouldn&#8217;t be accessed directly.  </p>
+    <div id="abody"><p><code>Element.Methods</code> is a mixin for DOM elements.  The methods of this object are accessed through the <a href="../utility/dollar.html"><code>$()</code> utility</a> or through the <a href="../element.html"><code>Element</code></a> object and shouldn&#x2019;t be accessed directly.  </p>
 
 <h3>Examples</h3>
 
@@ -694,7 +688,7 @@ $('articles').descendants();
           <h4><a href="methods/absolutize.html">absolutize</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">absolutize(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">absolutize(element) -&gt; HTMLElement</code></pre>
 
 <p>Turns <code>element</code> into an absolutely-positioned element <em>without</em> changing its position in the page layout.</p></div>
       </div>
@@ -705,7 +699,7 @@ $('articles').descendants();
           <h4><a href="methods/addClassName.html">addClassName</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">addClassName(element, className) -> HTMLElement </code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">addClassName(element, className) -&gt; HTMLElement </code></pre>
 
 <p>Adds a CSS class to <code>element</code>.</p></div>
       </div>
@@ -716,8 +710,8 @@ $('articles').descendants();
           <h4><a href="methods/adjacent.html">adjacent</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">Element.adjacent(element[, selectors...]) -> [HTMLElement...]
-someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">Element.adjacent(element[, selectors...]) -&gt; [HTMLElement...]
+someElement.adjacent([selectors...]) -&gt; [HTMLElement...]</code></pre>
 
 <p>Finds all siblings of the current element that match the given selector(s).</p></div>
       </div>
@@ -728,9 +722,9 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/ancestors.html">ancestors</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">ancestors(element) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">ancestors(element) -&gt; [HTMLElement...]</code></pre>
 
-<p>Collects all of <code>element</code>&#8217;s ancestors and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
+<p>Collects all of <code>element</code>&#x2019;s ancestors and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
       </div>
    
   
@@ -739,7 +733,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/childElements.html">childElements</a>
           <div class="box">1.5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">childElements(element) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">childElements(element) -&gt; [HTMLElement...]</code></pre>
 
 <p>Collects all of the element's  children and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
       </div>
@@ -750,7 +744,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/classNames.html">classNames</a>
           <div class="box">deprecated</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">classNames(element) -> Enumerable</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">classNames(element) -&gt; Enumerable</code></pre>
 
 <p>Returns a new instance of <code>ClassNames</code>, an <code>Enumerable</code> object used to read and write CSS class names of <code>element</code>.</p></div>
       </div>
@@ -761,7 +755,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/cleanwhitespace.html">cleanWhitespace</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">cleanWhitespace(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">cleanWhitespace(element) -&gt; HTMLElement</code></pre>
 
 <p>Removes all of <code>element</code>'s text nodes which contain <em>only</em> whitespace. Returns <code>element</code>.</p></div>
       </div>
@@ -772,7 +766,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/cloneposition.html">clonePosition</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">clonePosition(element, source[, options]) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">clonePosition(element, source[, options]) -&gt; HTMLElement</code></pre>
 
 <p>Clones the position and/or dimensions of <code>source</code> onto <code>element</code> as defined by the optional argument <code>options</code>. </p></div>
       </div>
@@ -783,7 +777,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/cumulativeoffset.html">cumulativeOffset</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">cumulativeOffset(element) -> [Number, Number] also accessible as { left: Number, top: Number }</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">cumulativeOffset(element) -&gt; [Number, Number] also accessible as { left: Number, top: Number }</code></pre>
 
 <p>Returns the offsets of <code>element</code> from the top left corner of the document.</p></div>
       </div>
@@ -794,7 +788,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/cumulativescrolloffset.html">cumulativeScrollOffset</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">cumulativeScrollOffset(element) -> [Number, Number] also accessible as { left: Number, top: Number }</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">cumulativeScrollOffset(element) -&gt; [Number, Number] also accessible as { left: Number, top: Number }</code></pre>
 
 <p>Calculates the cumulative scroll offset of an element in nested scrolling containers.</p></div>
       </div>
@@ -805,7 +799,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/descendantOf.html">descendantOf</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">descendantOf(element, ancestor) -> Boolean </code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">descendantOf(element, ancestor) -&gt; Boolean </code></pre>
 
 <p>Checks if <code>element</code> is a descendant of <code>ancestor</code>.</p></div>
       </div>
@@ -816,9 +810,9 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/descendants.html">descendants</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">descendants(element) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">descendants(element) -&gt; [HTMLElement...]</code></pre>
 
-<p>Collects all of <code>element</code>&#8217;s descendants and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
+<p>Collects all of <code>element</code>&#x2019;s descendants and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
       </div>
    
   
@@ -827,9 +821,9 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/down.html">down</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">down(element[, cssRule][, index = 0]) -> HTMLElement | undefined</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">down(element[, cssRule][, index = 0]) -&gt; HTMLElement | undefined</code></pre>
 
-<p>Returns element&#8217;s first descendant (or the n-th descendant if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all descendants are considered. If no descendant matches these criteria, <code>undefined</code> is returned.</p></div>
+<p>Returns element&#x2019;s first descendant (or the n-th descendant if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all descendants are considered. If no descendant matches these criteria, <code>undefined</code> is returned.</p></div>
       </div>
    
   
@@ -838,7 +832,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/empty.html">empty</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">empty(element) -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">empty(element) -&gt; Boolean</code></pre>
 
 <p>Tests whether <code>element</code> is empty (i.e. contains only whitespace).</p></div>
       </div>
@@ -849,7 +843,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/fire.html">fire</a>
           <div class="box">1.6.0</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">fire(eventName[, memo]) -> Event</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">fire(eventName[, memo]) -&gt; Event</code></pre>
 
 <p>Fires a custom event with the current element as its target.</p></div>
       </div>
@@ -860,7 +854,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/firstDescendant.html">firstDescendant</a>
           <div class="box">1.5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">firstDescendant(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">firstDescendant(element) -&gt; HTMLElement</code></pre>
 
 <p>Returns the first child that is <em>an element</em>. This is opposed to <code>firstChild</code> DOM <strong>property</strong> which will return any node (whitespace in most usual cases).</p></div>
       </div>
@@ -871,7 +865,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/getDimensions.html">getDimensions</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">getDimensions(element) -> {height: Number, width: Number}</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">getDimensions(element) -&gt; {height: Number, width: Number}</code></pre>
 
 <p>Finds the computed <code>width</code> and <code>height</code> of <code>element</code> and returns them as key/value pairs of an object.</p></div>
       </div>
@@ -882,9 +876,9 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/getElementsByClassName.html">getElementsByClassName</a>
           <div class="box">deprecated</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">getElementsByClassName(element, className) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">getElementsByClassName(element, className) -&gt; [HTMLElement...]</code></pre>
 
-<p>Fetches all of  <code>element</code>&#8217;s descendants which have a CSS class of <code>className</code> and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
+<p>Fetches all of  <code>element</code>&#x2019;s descendants which have a CSS class of <code>className</code> and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
       </div>
    
   
@@ -893,7 +887,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/getelementsbyselector.html">getElementsBySelector</a>
           <div class="box">deprecated</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">getElementsBySelector(element, selector...) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">getElementsBySelector(element, selector...) -&gt; [HTMLElement...]</code></pre>
 
 <p>Takes an arbitrary number of CSS selectors (strings) and returns an array of <a href="extend.html">extended</a> children of <code>element</code> that match any of them.</p></div>
       </div>
@@ -904,7 +898,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/getheight.html">getHeight</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">getHeight(element) -> Number</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">getHeight(element) -&gt; Number</code></pre>
 
 <p>Finds and returns the computed height of <code>element</code>.</p></div>
       </div>
@@ -915,9 +909,9 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/getoffsetparent.html">getOffsetParent</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">getOffsetParent(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">getOffsetParent(element) -&gt; HTMLElement</code></pre>
 
-<p>Returns <code>element</code>&#8217;s closest <em>positioned</em> ancestor. If none is found, the <code>body</code> element is returned.</p></div>
+<p>Returns <code>element</code>&#x2019;s closest <em>positioned</em> ancestor. If none is found, the <code>body</code> element is returned.</p></div>
       </div>
    
   
@@ -926,7 +920,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/getStyle.html">getStyle</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">getStyle(element, property) -> String | null</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">getStyle(element, property) -&gt; String | null</code></pre>
 
 <p>Returns the given CSS property value of <code>element</code>. <code>property</code> can be specified in either of its CSS or camelized form.</p></div>
       </div>
@@ -937,7 +931,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/getWidth.html">getWidth</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">getWidth(element) -> Number</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">getWidth(element) -&gt; Number</code></pre>
 
 <p>Finds and returns the computed width of <code>element</code>.</p></div>
       </div>
@@ -948,7 +942,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/hasClassName.html">hasClassName</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">hasClassName(element, className) -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">hasClassName(element, className) -&gt; Boolean</code></pre>
 
 <p>Checks whether <code>element</code> has the given CSS <code>className</code>.</p></div>
       </div>
@@ -959,7 +953,7 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/hide.html">hide</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">hide(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">hide(element) -&gt; HTMLElement</code></pre>
 
 <p>Hides and returns <code>element</code>.</p></div>
       </div>
@@ -970,9 +964,9 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/identify.html">identify</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">identify(element) -> id</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">identify(element) -&gt; id</code></pre>
 
-<p>returns <code>element</code>&#8217;s <code>id</code> attribute if it exists, or sets and returns a unique, auto-generated <code>id</code>.</p></div>
+<p>returns <code>element</code>&#x2019;s <code>id</code> attribute if it exists, or sets and returns a unique, auto-generated <code>id</code>.</p></div>
       </div>
    
   
@@ -981,9 +975,9 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/immediateDescendants.html">immediateDescendants</a>
           <div class="box">deprecated</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">immediateDescendants(element) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">immediateDescendants(element) -&gt; [HTMLElement...]</code></pre>
 
-<p>Collects all of the element&#8217;s <em>immediate</em> descendants (i.e. <em>children</em>) and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
+<p>Collects all of the element&#x2019;s <em>immediate</em> descendants (i.e. <em>children</em>) and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
       </div>
    
   
@@ -992,8 +986,8 @@ someElement.adjacent([selectors...]) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/insert.html">insert</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">insert(element, { position: content }) -> HTMLElement
-insert(element, content) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">insert(element, { position: content }) -&gt; HTMLElement
+insert(element, content) -&gt; HTMLElement</code></pre>
 
 <p>Inserts <code>content</code> before, after, at the top of, or at the bottom of <code>element</code>, as specified by the <code>position</code> property of the second argument. If the second argument is the content itself, <code>insert</code> will append it to <code>element</code>.</p></div>
       </div>
@@ -1004,7 +998,7 @@ insert(element, content) -> HTMLElement</code></pre>
           <h4><a href="methods/inspect.html">inspect</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">inspect(element) -> String</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">inspect(element) -&gt; String</code></pre>
 
 <p>Returns the debug-oriented string representation of <code>element</code>.</p></div>
       </div>
@@ -1015,7 +1009,7 @@ insert(element, content) -> HTMLElement</code></pre>
           <h4><a href="methods/makeClipping.html">makeClipping</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">makeClipping(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">makeClipping(element) -&gt; HTMLElement</code></pre>
 
 <p>Simulates the poorly supported CSS <code>clip</code> property by setting <code>element</code>'s overflow value to <code>'hidden'</code>. Returns <code>element</code>.</p></div>
       </div>
@@ -1026,7 +1020,7 @@ insert(element, content) -> HTMLElement</code></pre>
           <h4><a href="methods/makePositioned.html">makePositioned</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">makePositioned(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">makePositioned(element) -&gt; HTMLElement</code></pre>
 
 <p>Allows for the easy creation of <a href="http://www.w3.org/TR/CSS21/visudet.html#containing-block-details">CSS containing block</a> by setting <code>element</code>'s CSS position to <code>'relative'</code> if its initial position is either <code>'static'</code> or <code>undefined</code>. Returns <code>element</code>.</p></div>
       </div>
@@ -1037,7 +1031,7 @@ insert(element, content) -> HTMLElement</code></pre>
           <h4><a href="methods/match.html">match</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">match(element, selector) -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">match(element, selector) -&gt; Boolean</code></pre>
 
 <p>Checks if <code>element</code> matches the given CSS <code>selector</code>.</p></div>
       </div>
@@ -1048,9 +1042,9 @@ insert(element, content) -> HTMLElement</code></pre>
           <h4><a href="methods/next.html">next</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">next(element[, cssRule][, index = 0]) -> HTMLElement | undefined</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">next(element[, cssRule][, index = 0]) -&gt; HTMLElement | undefined</code></pre>
 
-<p>Returns <code>element</code>&#8217;s following sibling (or the <em>index&#8217;th</em> one, if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all following siblings are considered. If no following sibling matches these criteria, <code>undefined</code> is returned.</p></div>
+<p>Returns <code>element</code>&#x2019;s following sibling (or the <em>index&#x2019;th</em> one, if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all following siblings are considered. If no following sibling matches these criteria, <code>undefined</code> is returned.</p></div>
       </div>
    
   
@@ -1059,9 +1053,9 @@ insert(element, content) -> HTMLElement</code></pre>
           <h4><a href="methods/nextSiblings.html">nextSiblings</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">nextSiblings(element) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">nextSiblings(element) -&gt; [HTMLElement...]</code></pre>
 
-<p>Collects all of <code>element</code>&#8217;s next siblings and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
+<p>Collects all of <code>element</code>&#x2019;s next siblings and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
       </div>
    
   
@@ -1070,8 +1064,8 @@ insert(element, content) -> HTMLElement</code></pre>
           <h4><a href="methods/observe.html">observe</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">Element.observe(element, eventName, handler) -> HTMLElement
-someElement.observe(eventName, handler) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">Element.observe(element, eventName, handler) -&gt; HTMLElement
+someElement.observe(eventName, handler) -&gt; HTMLElement</code></pre>
 
 <p>Registers an event handler on <code>element</code> and returns <code>element</code>.</p></div>
       </div>
@@ -1082,9 +1076,9 @@ someElement.observe(eventName, handler) -> HTMLElement</code></pre>
           <h4><a href="methods/positionedoffset.html">positionedOffset</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">positionedOffset(element) -> [Number, Number] also accessible as { left: Number, top: Number }</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">positionedOffset(element) -&gt; [Number, Number] also accessible as { left: Number, top: Number }</code></pre>
 
-<p>Returns <code>element</code>&#8217;s offset relative to its closest positioned ancestor (the element that would be returned by <a href="http://prototypejs.org/api/api/getoffsetparent">Element#getOffsetParent</a>).</p></div>
+<p>Returns <code>element</code>&#x2019;s offset relative to its closest positioned ancestor (the element that would be returned by <a href="http://prototypejs.org/api/api/getoffsetparent">Element#getOffsetParent</a>).</p></div>
       </div>
    
   
@@ -1093,7 +1087,7 @@ someElement.observe(eventName, handler) -> HTMLElement</code></pre>
           <h4><a href="methods/previous.html">previous</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">previous(element[, cssRule][, index = 0]) -> HTMLElement | undefined</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">previous(element[, cssRule][, index = 0]) -&gt; HTMLElement | undefined</code></pre>
 
 <p>Returns <code>element</code>'s previous sibling (or the <em>index'th</em> one, if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all previous siblings are considered. If no previous sibling matches these criteria, <code>undefined</code> is returned.</p></div>
       </div>
@@ -1104,9 +1098,9 @@ someElement.observe(eventName, handler) -> HTMLElement</code></pre>
           <h4><a href="methods/previousSiblings.html">previousSiblings</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">previousSiblings(element) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">previousSiblings(element) -&gt; [HTMLElement...]</code></pre>
 
-<p>Collects all of <code>element</code>&#8217;s previous siblings and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
+<p>Collects all of <code>element</code>&#x2019;s previous siblings and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
       </div>
    
   
@@ -1115,7 +1109,7 @@ someElement.observe(eventName, handler) -> HTMLElement</code></pre>
           <h4><a href="methods/readAttribute.html">readAttribute</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">readAttribute(element, attribute) -> String | null</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">readAttribute(element, attribute) -&gt; String | null</code></pre>
 
 <p>Returns the value of <code>element</code>'s <code>attribute</code> or <code>null</code> if <code>attribute</code> has not been specified.</p></div>
       </div>
@@ -1126,9 +1120,9 @@ someElement.observe(eventName, handler) -> HTMLElement</code></pre>
           <h4><a href="methods/recursivelyCollect.html">recursivelyCollect</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">recursivelyCollect(element, property) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">recursivelyCollect(element, property) -&gt; [HTMLElement...]</code></pre>
 
-<p>Recursively collects elements whose relationship is specified by <code>property</code>. <code>property</code> has to be a <em>property</em> (a method won&#8217;t do!) of <code>element</code> that points to a <em>single</em> DOM node. Returns an array of <a href="extend.html">extended</a> elements.</p></div>
+<p>Recursively collects elements whose relationship is specified by <code>property</code>. <code>property</code> has to be a <em>property</em> (a method won&#x2019;t do!) of <code>element</code> that points to a <em>single</em> DOM node. Returns an array of <a href="extend.html">extended</a> elements.</p></div>
       </div>
    
   
@@ -1137,7 +1131,7 @@ someElement.observe(eventName, handler) -> HTMLElement</code></pre>
           <h4><a href="methods/relativize.html">relativize</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">relativize(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">relativize(element) -&gt; HTMLElement</code></pre>
 
 <p>Turns <code>element</code> into an relatively-positioned element <em>without</em> changing its position in the page layout.</p></div>
       </div>
@@ -1148,7 +1142,7 @@ someElement.observe(eventName, handler) -> HTMLElement</code></pre>
           <h4><a href="methods/remove.html">remove</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">remove(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">remove(element) -&gt; HTMLElement</code></pre>
 
 <p>Completely removes <code>element</code> from the document and returns it.</p></div>
       </div>
@@ -1159,9 +1153,9 @@ someElement.observe(eventName, handler) -> HTMLElement</code></pre>
           <h4><a href="methods/removeClassName.html">removeClassName</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">removeClassName(element, className) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">removeClassName(element, className) -&gt; HTMLElement</code></pre>
 
-<p>Removes <code>element</code>&#8217;s CSS <code>className</code> and returns <code>element</code>.</p></div>
+<p>Removes <code>element</code>&#x2019;s CSS <code>className</code> and returns <code>element</code>.</p></div>
       </div>
    
   
@@ -1170,7 +1164,7 @@ someElement.observe(eventName, handler) -> HTMLElement</code></pre>
           <h4><a href="methods/replace.html">replace</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">replace(element[, html]) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">replace(element[, html]) -&gt; HTMLElement</code></pre>
 
 <p>Replaces <code>element</code> by the content of the <code>html</code> argument and returns the removed <code>element</code>.</p></div>
       </div>
@@ -1181,7 +1175,7 @@ someElement.observe(eventName, handler) -> HTMLElement</code></pre>
           <h4><a href="methods/scrollto.html">scrollTo</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">scrollTo(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">scrollTo(element) -&gt; HTMLElement</code></pre>
 
 <p>Scrolls the window so that <code>element</code> appears at the top of the viewport. Returns <code>element</code>.</p></div>
       </div>
@@ -1192,7 +1186,7 @@ someElement.observe(eventName, handler) -> HTMLElement</code></pre>
           <h4><a href="methods/select.html">select</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">select(element, selector...) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">select(element, selector...) -&gt; [HTMLElement...]</code></pre>
 
 <p>Takes an arbitrary number of CSS selectors (strings) and returns an array of <a href="extend.html">extended</a> descendants of <code>element</code> that match any of them.</p></div>
       </div>
@@ -1203,8 +1197,8 @@ someElement.observe(eventName, handler) -> HTMLElement</code></pre>
           <h4><a href="methods/setOpacity.html">setOpacity</a>
           <div class="box">1.5.1</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">Element.setOpacity(element, opacity) -> [HTMLElement...]
-someElement.setOpacity(opacity) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">Element.setOpacity(element, opacity) -&gt; [HTMLElement...]
+someElement.setOpacity(opacity) -&gt; [HTMLElement...]</code></pre>
 
 <p>Sets the visual opacity of an element while working around inconsistencies in various browsers. The <code>opacity</code> argument should be a floating point number, where the value of 0 is fully transparent and 1 is fully opaque.</p></div>
       </div>
@@ -1215,9 +1209,9 @@ someElement.setOpacity(opacity) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/setStyle.html">setStyle</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">setStyle(element, styles) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">setStyle(element, styles) -&gt; HTMLElement</code></pre>
 
-<p>Modifies <code>element</code>&#8217;s CSS style properties. Styles are passed as a hash of property-value pairs in which the properties are specified in their camelized form.</p></div>
+<p>Modifies <code>element</code>&#x2019;s CSS style properties. Styles are passed as a hash of property-value pairs in which the properties are specified in their camelized form.</p></div>
       </div>
    
   
@@ -1226,7 +1220,7 @@ someElement.setOpacity(opacity) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/show.html">show</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">show(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">show(element) -&gt; HTMLElement</code></pre>
 
 <p>Displays and returns <code>element</code>.</p></div>
       </div>
@@ -1237,9 +1231,9 @@ someElement.setOpacity(opacity) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/siblings.html">siblings</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">siblings(element) -> [HTMLElement...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">siblings(element) -&gt; [HTMLElement...]</code></pre>
 
-<p>Collects all of element&#8217;s siblings and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
+<p>Collects all of element&#x2019;s siblings and returns them as an array of <a href="extend.html">extended</a> elements.</p></div>
       </div>
    
   
@@ -1248,7 +1242,7 @@ someElement.setOpacity(opacity) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/stopobserving.html">stopObserving</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">stopObserving(element, eventName, handler) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">stopObserving(element, eventName, handler) -&gt; HTMLElement</code></pre>
 
 <p>Unregisters <code>handler</code> and returns <code>element</code>.</p></div>
       </div>
@@ -1259,7 +1253,7 @@ someElement.setOpacity(opacity) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/toggle.html">toggle</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">toggle(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toggle(element) -&gt; HTMLElement</code></pre>
 
 <p>Toggles the visibility of <code>element</code>.</p></div>
       </div>
@@ -1270,9 +1264,9 @@ someElement.setOpacity(opacity) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/toggleClassName.html">toggleClassName</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">toggleClassName(element, className) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toggleClassName(element, className) -&gt; HTMLElement</code></pre>
 
-<p>Toggles <code>element</code>&#8217;s CSS  <code>className</code> and returns <code>element</code>.</p></div>
+<p>Toggles <code>element</code>&#x2019;s CSS  <code>className</code> and returns <code>element</code>.</p></div>
       </div>
    
   
@@ -1281,9 +1275,9 @@ someElement.setOpacity(opacity) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/undoClipping.html">undoClipping</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">undoClipping(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">undoClipping(element) -&gt; HTMLElement</code></pre>
 
-<p>Sets <code>element</code>&#8217;s CSS <code>overflow</code> property back to the value it had before <a href="makeClipping.html">Element.makeClipping()</a> was applied. Returns <code>element</code>.</p></div>
+<p>Sets <code>element</code>&#x2019;s CSS <code>overflow</code> property back to the value it had before <a href="makeClipping.html">Element.makeClipping()</a> was applied. Returns <code>element</code>.</p></div>
       </div>
    
   
@@ -1292,7 +1286,7 @@ someElement.setOpacity(opacity) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/undoPositioned.html">undoPositioned</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">undoPositioned(element) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">undoPositioned(element) -&gt; HTMLElement</code></pre>
 
 <p>Sets <code>element</code> back to the state it was <em>before</em> <a href="makePositioned.html">Element.makePositioned</a> was applied to it. Returns <code>element</code>.</p></div>
       </div>
@@ -1303,9 +1297,9 @@ someElement.setOpacity(opacity) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/up.html">up</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">up(element, [cssRule][, index = 0]) -> HTMLElement | undefined</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">up(element, [cssRule][, index = 0]) -&gt; HTMLElement | undefined</code></pre>
 
-<p>Returns <code>element</code>&#8217;s first ancestor (or the <em>index&#8217;th</em> ancestor, if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all ancestors are considered. If no ancestor matches these criteria, <code>undefined</code> is returned.</p></div>
+<p>Returns <code>element</code>&#x2019;s first ancestor (or the <em>index&#x2019;th</em> ancestor, if <code>index</code> is specified) that matches <code>cssRule</code>. If no <code>cssRule</code> is provided, all ancestors are considered. If no ancestor matches these criteria, <code>undefined</code> is returned.</p></div>
       </div>
    
   
@@ -1314,7 +1308,7 @@ someElement.setOpacity(opacity) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/update.html">update</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">update(element[, newContent]) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">update(element[, newContent]) -&gt; HTMLElement</code></pre>
 
 <p>Replaces the content of <code>element</code> with the provided <code>newContent</code> argument and returns <code>element</code>.</p></div>
       </div>
@@ -1325,7 +1319,7 @@ someElement.setOpacity(opacity) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/viewportoffset.html">viewportOffset</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">viewportOffset(element) -> [Number, Number] also accessible as { left: Number, top: Number }</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">viewportOffset(element) -&gt; [Number, Number] also accessible as { left: Number, top: Number }</code></pre>
 
 <p>Returns the X/Y coordinates of <code>element</code> relative to the <em>viewport</em>.</p></div>
       </div>
@@ -1336,7 +1330,7 @@ someElement.setOpacity(opacity) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/visible.html">visible</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">visible(element) -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">visible(element) -&gt; Boolean</code></pre>
 
 <p>Returns a <code>Boolean</code> indicating whether or not <code>element</code> is visible (i.e. whether its inline <code>style</code> property is set to <code>"display: none;"</code>).</p></div>
       </div>
@@ -1347,8 +1341,8 @@ someElement.setOpacity(opacity) -> [HTMLElement...]</code></pre>
           <h4><a href="methods/wrap.html">wrap</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">Element.wrap(element, wrapper[, attributes]) -> HTMLElement
-someElement.wrap(wrapper[, attributes]) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">Element.wrap(element, wrapper[, attributes]) -&gt; HTMLElement
+someElement.wrap(wrapper[, attributes]) -&gt; HTMLElement</code></pre>
 
 <p>Wraps an element inside another, then returns the wrapper.</p></div>
       </div>
@@ -1359,8 +1353,8 @@ someElement.wrap(wrapper[, attributes]) -> HTMLElement</code></pre>
           <h4><a href="methods/writeAttribute.html">writeAttribute</a>
           <div class="box">1.6</div>
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">writeAttribute(element, attribute[, value = true]) -> HTMLElement
-writeAttribute(element, attributes) -> HTMLElement</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">writeAttribute(element, attribute[, value = true]) -&gt; HTMLElement
+writeAttribute(element, attributes) -&gt; HTMLElement</code></pre>
 
 <p>Adds, specifies or removes attributes passed as either a hash or a name/value pair.</p></div>
       </div>

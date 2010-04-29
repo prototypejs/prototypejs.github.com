@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Enumerable.eachSlice </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -268,11 +266,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -281,10 +275,10 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">eachSlice(size[, iterator = Prototype.K[, context]]) -> [slice...]</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">eachSlice(size[, iterator = Prototype.K[, context]]) -&gt; [slice...]</code></pre>
 
 <p>Groups items in chunks based on a given size, with last chunk being possibly smaller.</p></div>
-    <div id="abody"><p>Sometimes, you want to cut collections into chunks. Roughly equal-sized. Maybe you want to put it into multiple columns, or some other stylish layout. Maybe you can only pass so many at a time to a back-end processing layer (aaaah, those hard-coded, arbitrary limits in legacy software&#8230; ). Maybe you just feel like it. Just use <code>eachSlice</code> or its fixed-size variant, <a href="inGroupsOf.html"><code>inGroupsOf</code></a>.</p>
+    <div id="abody"><p>Sometimes, you want to cut collections into chunks. Roughly equal-sized. Maybe you want to put it into multiple columns, or some other stylish layout. Maybe you can only pass so many at a time to a back-end processing layer (aaaah, those hard-coded, arbitrary limits in legacy software&#x2026; ). Maybe you just feel like it. Just use <code>eachSlice</code> or its fixed-size variant, <a href="inGroupsOf.html"><code>inGroupsOf</code></a>.</p>
 
 <p>The optional <code>context</code> parameter is what the iterator function will be bound to. If used, the <code>this</code> keyword inside the iterator will point to the object given by the argument.</p>
 
@@ -293,7 +287,7 @@ urchinTracker();
 <pre><code class="javascript">
 var students = [
   { name: 'Sunny', age: 20 },  { name: 'Audrey', age: 21 },
-  { name: 'Matt', age: 20 },   { name: 'Élodie', age: 26 },
+  { name: 'Matt', age: 20 },   { name: '&#xC9;lodie', age: 26 },
   { name: 'Will', age: 21 },   { name: 'David', age: 23 },
   { name: 'Julien', age: 22 }, { name: 'Thomas', age: 21 },
   { name: 'Serpil', age: 22 }
@@ -302,12 +296,12 @@ var students = [
 students.eachSlice(4, function(toon) {
   return toon.pluck('name');
 })
-// -> [ ['Sunny', 'Audrey', 'Matt', 'Élodie'],
+// -&gt; [ ['Sunny', 'Audrey', 'Matt', '&#xC9;lodie'],
 //      ['Will', 'David', 'Julien', 'Thomas'],
 //      ['Serpil'] ]
 
 students.eachSlice(2).first()
-// -> [{ name: 'Sunny', age: 20 }, { name: 'Audrey', age: 21 }]
+// -&gt; [{ name: 'Sunny', age: 20 }, { name: 'Audrey', age: 21 }]
 </code></pre>
 
 <h3>See also</h3>

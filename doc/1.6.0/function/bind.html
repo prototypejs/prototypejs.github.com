@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Function.bind </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -196,11 +194,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -209,12 +203,12 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">bind(thisObj[, arg...]) -> Function</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">bind(thisObj[, arg...]) -&gt; Function</code></pre>
 
 <p>Wraps the function in another, locking its execution scope to an object specified by <code>thisObj</code>.</p></div>
     <div id="abody"><p>As discussed on the <a href="../function.html">general <code>Function</code> page</a>, binding can be a pretty tricky thing for a newcomer, but it generally is a very simple concept. It requires the basic understanding of the JavaScript language.</p>
 
-<p>In JavaScript, functions are executed in a specific context (often referred to as &#8220;scope&#8221;). <strong>Inside the function the <code>this</code> keyword becomes a reference to that scope.</strong> Since every function is in fact a property of some object&#8212;global functions are properties of the <code>window</code> object&#8212;the execution scope is the object from which the function was called, or (more precisely) the object that holds a reference to the function:</p>
+<p>In JavaScript, functions are executed in a specific context (often referred to as &#x201C;scope&#x201D;). <strong>Inside the function the <code>this</code> keyword becomes a reference to that scope.</strong> Since every function is in fact a property of some object&#x2014;global functions are properties of the <code>window</code> object&#x2014;the execution scope is the object from which the function was called, or (more precisely) the object that holds a reference to the function:</p>
 
 <pre><code class="javascript">
 window.name = "the window object"
@@ -225,7 +219,7 @@ function scopeTest() {
 
 // calling the function in global scope:
 scopeTest()
-// -> "the window object"
+// -&gt; "the window object"
 
 var foo = {
   name: "the foo object!",
@@ -233,10 +227,10 @@ var foo = {
 }
 
 foo.otherScopeTest()
-// -> "the foo object!"
+// -&gt; "the foo object!"
 </code></pre>
 
-<p>Because of the dynamic nature of the language, we can&#8217;t be sure that, for instance, <code>otherScopeTest()</code> will always be called on our <code>foo</code> object. The reference to it can be copied somewhere else, like on the <code>window</code> object:</p>
+<p>Because of the dynamic nature of the language, we can&#x2019;t be sure that, for instance, <code>otherScopeTest()</code> will always be called on our <code>foo</code> object. The reference to it can be copied somewhere else, like on the <code>window</code> object:</p>
 
 <pre><code class="javascript">
 // ... continuing from the last example
@@ -245,7 +239,7 @@ foo.otherScopeTest()
 window.test = foo.otherScopeTest
 // now we are actually calling it:
 test()
-// -> "the window object"
+// -&gt; "the window object"
 </code></pre>
 
 <p>The last call demonstrates how the same function can behave differently depending on its execution scope.</p>
@@ -277,7 +271,7 @@ runFx(fx2);
 </code></pre>
 
 <form style="margin: 1em 0;">
-  <input type="button" id="btnBindDemo" value="Try it out!"/>
+  <input type="button" id="btnBindDemo" value="Try it out!" />
 </form>
 
 <script type="text/javascript">
@@ -318,7 +312,7 @@ fx2(4, 5); // Alerts the proper name, then "1, 2, 3, 4, 5"
 </code></pre>
 
 <form style="margin: 1em 0;">
-  <input type="button" id="btnBindArgsDemo" value="Try it out!"/>
+  <input type="button" id="btnBindArgsDemo" value="Try it out!" />
 </form>
 
 <script type="text/javascript">
@@ -340,7 +334,7 @@ Event.observe('btnBindArgsDemo', 'click', function() {
 
 <h3>Not yet clear enough?</h3>
 
-<p>OK, try <a href="http://www.encytemedia.com/blog/articles/2007/7/18/javascript-scope-and-binding">Justin&#8217;s sweet article explaining function binding</a>.</p></div>
+<p>OK, try <a href="http://www.encytemedia.com/blog/articles/2007/7/18/javascript-scope-and-binding">Justin&#x2019;s sweet article explaining function binding</a>.</p></div>
   
 
 

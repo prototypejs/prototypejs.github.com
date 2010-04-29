@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Class.addMethods </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -172,11 +170,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -190,7 +184,7 @@ urchinTracker();
 <p>Adds methods to an existing class.</p></div>
     <div id="abody"><p><code>Class#addMethods</code> is a method available on classes that have been defined with <a href="create.html"><code>Class.create</code></a>. It can be used to add new instance methods to that class, or overwrite existing methods, after the class has been defined.</p>
 
-<p>New methods propagate down the inheritance chain. If the class has subclasses, those subclasses will receive the new methods — even in the context of <code>$super</code> calls. The new methods also propagate to instances of the class and of all its subclasses, even those that have <em>already</em> been instantiated.</p>
+<p>New methods propagate down the inheritance chain. If the class has subclasses, those subclasses will receive the new methods &#x2014;&#xA0;even in the context of <code>$super</code> calls. The new methods also propagate to instances of the class and of all its subclasses, even those that have <em>already</em> been instantiated.</p>
 
 <h3>Examples</h3>
 
@@ -216,7 +210,7 @@ var Snake = Class.create(Animal, {
 var ringneck = new Snake("Ringneck", "hissssssss");
 ringneck.speak();
 
-//-> alerts "Ringneck says: hissssssss!"
+//-&gt; alerts "Ringneck says: hissssssss!"
 
 // adding Snake#speak (with a supercall)
 Snake.addMethods({
@@ -227,8 +221,8 @@ Snake.addMethods({
 });
 
 ringneck.speak();
-//-> alerts "Ringneck says: hissssssss!"
-//-> alerts "You should probably run. He looks really mad."
+//-&gt; alerts "Ringneck says: hissssssss!"
+//-&gt; alerts "You should probably run. He looks really mad."
 
 // redefining Animal#speak
 Animal.addMethods({
@@ -238,8 +232,8 @@ Animal.addMethods({
 });
 
 ringneck.speak();
-//-> alerts "Ringneck snarls: hissssssss!"
-//-> alerts "You should probably run. He looks really mad."
+//-&gt; alerts "Ringneck snarls: hissssssss!"
+//-&gt; alerts "You should probably run. He looks really mad."
 </code></pre></div>
   
 

@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  String.gsub </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -288,11 +286,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -301,7 +295,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">gsub(pattern, replacement) -> string</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">gsub(pattern, replacement) -&gt; string</code></pre>
 
 <p>Returns the string with <em>every</em> occurence of a given pattern replaced by either a regular string, the returned value of a function or a <a href="../template.html"><code>Template</code> string</a>. The pattern can be a string or a regular expression.</p></div>
     <div id="abody"><p>If its second argument is a string <code>String#gsub</code> works just like the native JavaScript method <code>replace()</code> set to global match.</p>
@@ -310,31 +304,31 @@ urchinTracker();
 var mouseEvents = 'click dblclick mousedown mouseup mouseover mousemove mouseout';
 
 mouseEvents.gsub(' ', ', ');
-// -> 'click, dblclick, mousedown, mouseup, mouseover, mousemove, mouseout'
+// -&gt; 'click, dblclick, mousedown, mouseup, mouseover, mousemove, mouseout'
 
 mouseEvents.gsub(/\s+/, ', ');
-// -> 'click, dblclick, mousedown, mouseup, mouseover, mousemove, mouseout'
+// -&gt; 'click, dblclick, mousedown, mouseup, mouseover, mousemove, mouseout'
 </code></pre>
 
 <p>If you pass it a function, it will be invoked for every occurrence of the pattern with the match of the current pattern as its unique argument. Note that this argument is the returned value of the <code>match()</code> method called on the current pattern. It is in the form of an array where the first element is the entire match and every subsequent one corresponds to a parenthesis group in the regex.</p>
 
 <pre><code class="javascript">
 mouseEvents.gsub(/\w+/, function(match){return 'on' + match[0].capitalize()});
-// -> 'onClick onDblclick onMousedown onMouseup onMouseover onMousemove onMouseout'
+// -&gt; 'onClick onDblclick onMousedown onMouseup onMouseover onMousemove onMouseout'
 
 var markdown = '![a pear](/img/pear.jpg) ![an orange](/img/orange.jpg)';
 
 markdown.gsub(/!\[(.*?)\]\((.*?)\)/, function(match){
   return '&lt;img alt="' + match[1] + '" src="' + match[2] + '" /&gt;';
 });
-// -> '&lt;img alt="a pear" src="/img/pear.jpg" /&gt; &lt;img alt="an orange" src="/img/orange.jpg" /&gt;'
+// -&gt; '&lt;img alt="a pear" src="/img/pear.jpg" /&gt; &lt;img alt="an orange" src="/img/orange.jpg" /&gt;'
 </code></pre>
 
 <p>Lastly, you can pass <code>String#gsub</code> a <a href="../template.html"><code>Template</code> string</a> in which you can also access the returned value of the <code>match()</code> method using the ruby inspired notation: <code>#{0}</code> for the first element of the array, <code>#{1}</code> for the second one, and so on.  So our last example could be easily re-written as:</p>
 
 <pre><code class="javascript">
 markdown.gsub(/!\[(.*?)\]\((.*?)\)/, '&lt;img alt="#{1}" src="#{2}" /&gt;');
-// -> '&lt;img alt="a pear" src="/img/pear.jpg" /&gt; &lt;img alt="an orange" src="/img/orange.jpg" /&gt;'
+// -&gt; '&lt;img alt="a pear" src="/img/pear.jpg" /&gt; &lt;img alt="an orange" src="/img/orange.jpg" /&gt;'
 </code></pre>
 
 <p>If you need an equivalent to <code>String#gsub</code> but without global match set on, try  <a href="sub.html"><code>String#sub</code></a>.</p>

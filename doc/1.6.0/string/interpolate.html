@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  String.interpolate </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -288,11 +286,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -301,23 +295,23 @@ urchinTracker();
 <div class="box">1.6</div>
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">interpolate(object[, pattern]) -> string</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">interpolate(object[, pattern]) -&gt; string</code></pre>
 
-<p>Treats the string as a Template and fills it with <code>object</code>&#8217;s properties.</p></div>
+<p>Treats the string as a Template and fills it with <code>object</code>&#x2019;s properties.</p></div>
     <div id="abody"><p>Equivalent to calling <a href="../template/evaluate.html"><code>evaluate</code></a> on a previously-instantiated <a href="../template.html"><code>Template</code></a>.</p>
 
 <h3>Examples</h3>
 
 <pre><code class="javascript">
 "#{animals} on a #{transport}".interpolate({ animals: "Pigs", transport: "Surfboard" });
-//-> "Pigs on a Surfboard"
+//-&gt; "Pigs on a Surfboard"
 </code></pre>
 
 <pre><code class="javascript">
 var syntax = /(^|.|\r|\n)(\&lt;%=\s*(\w+)\s*%\&gt;)/; //matches symbols like '&lt;%= field %&gt;'
 var html = '&lt;div&gt;Name: &lt;b&gt;&lt;%= name %&gt;&lt;/b&gt;, Age: &lt;b&gt;&lt;%=age%&gt;&lt;/b&gt;&lt;/div&gt;';
 html.interpolate({ name: 'John Smith', age: 26 }, syntax);
-// -> &lt;div&gt;Name: &lt;b&gt;John Smith&lt;/b&gt;, Age: &lt;b&gt;26&lt;/b&gt;&lt;/div&gt;
+// -&gt; &lt;div&gt;Name: &lt;b&gt;John Smith&lt;/b&gt;, Age: &lt;b&gt;26&lt;/b&gt;&lt;/div&gt;
 </code></pre></div>
   
 

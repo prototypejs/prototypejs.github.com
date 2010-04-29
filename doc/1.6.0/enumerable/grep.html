@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Enumerable.grep </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -268,11 +266,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -281,7 +275,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">grep(regex[, iterator = Prototype.K[, context]]) -> Array</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">grep(regex[, iterator = Prototype.K[, context]]) -&gt; Array</code></pre>
 
 <p>Returns all the elements that match the filter. If an iterator is provided, it is used to produce the returned value for each selected element.</p></div>
     <div id="abody"><p>This method can filter items by string, regular expression, or any object with a <code>match</code> method. If <code>filter</code> is a string or regular expression, the filter is compared to the string representation of each element and those that match are added to the resulting array. Otherwise, <code>filter</code> is assumed to have a <code>match</code> method, and each item is passed as the first argument to <code>filter.match</code>. Those that return true are added to the resulting array.</p>
@@ -299,15 +293,15 @@ urchinTracker();
 <pre><code class="javascript">
 // Get all strings with a repeated letter somewhere
 ['hello', 'world', 'this', 'is', 'cool'].grep(/(.)\1/)
-// -> ['hello', 'cool']
+// -&gt; ['hello', 'cool']
 
 // Get all numbers ending with 0 or 5
 $R(1,30).grep(/[05]$/)
-// -> [5, 10, 15, 20, 25, 30]
+// -&gt; [5, 10, 15, 20, 25, 30]
 
 // Those, minus 1
 $R(1,30).grep(/[05]$/, function(n) { return n - 1; })
-// -> [4, 9, 14, 19, 24, 29]
+// -&gt; [4, 9, 14, 19, 24, 29]
 
 // Get all an element's children filtered by CSS selector
 // (the Selector instance has a "match" method)

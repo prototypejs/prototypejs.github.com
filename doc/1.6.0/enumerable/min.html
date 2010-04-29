@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Enumerable.min </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -268,11 +266,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -281,7 +275,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">min([iterator = Prototype.K[, context]]) -> minValue</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">min([iterator = Prototype.K[, context]]) -&gt; minValue</code></pre>
 
 <p>Returns the minimum element (or element-based computation), or <code>undefined</code> if the enumeration is empty.  Elements are either compared directly, or by first applying the iterator and comparing returned values.</p></div>
     <div id="abody"><p><strong>Note</strong>: for equivalent elements, the <strong>earliest</strong> one is returned.</p>
@@ -292,10 +286,10 @@ urchinTracker();
 
 <pre><code class="javascript">
 $R(1,10).min()
-// -> 1
+// -&gt; 1
 
 ['hello', 'world', 'gizmo'].min()
-// -> 'gizmo'
+// -&gt; 'gizmo'
 
 function Person(name, age) {
    this.name = name;
@@ -309,7 +303,7 @@ var daisy = new Person('Daisy', 22);
 [john, mark, daisy].min(function(person) {
   return person.age;
 })
-// -> 20
+// -&gt; 20
 </code></pre></div>
   
 

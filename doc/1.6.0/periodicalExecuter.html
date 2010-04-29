@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  PeriodicalExecuter </title>
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -168,11 +166,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -195,7 +189,7 @@ urchinTracker();
 
     <div id="abody"><p>This is a simple facility for periodical execution of a function.  This essentially encapsulates the native <code>clearInterval</code>/<code>setInterval</code> mechanism found in native <code>Window</code> objects.</p>
 
-<p>The only notable advantage provided by <code>PeriodicalExecuter</code> is that it shields you against multiple parallel executions of the callback function, should it take longer than the given interval to execute (it maintains an internal &#8220;running&#8221; flag, which is shielded against exceptions in the callback function).  This is especially useful if you use one to interact with the user at given intervals (e.g. use a <code>prompt</code> or <code>confirm</code> call): this will avoid multiple message boxes all waiting to be actioned.</p>
+<p>The only notable advantage provided by <code>PeriodicalExecuter</code> is that it shields you against multiple parallel executions of the callback function, should it take longer than the given interval to execute (it maintains an internal &#x201C;running&#x201D; flag, which is shielded against exceptions in the callback function).  This is especially useful if you use one to interact with the user at given intervals (e.g. use a <code>prompt</code> or <code>confirm</code> call): this will avoid multiple message boxes all waiting to be actioned.</p>
 
 <p>Of course, one might very well argue that using an actual object, not needing to maintain a global interval handle, etc. constitute notable advantages as well.</p>
 

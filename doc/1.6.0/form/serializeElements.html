@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Form.serializeElements </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -204,11 +202,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -217,7 +211,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">serializeElements(elements[, getHash = false]) -> string</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">serializeElements(elements[, getHash = false]) -&gt; string</code></pre>
 
 <p>Serialize an array of form elements to a string suitable for Ajax requests (default behavior) or, if optional <code>getHash</code> evaluates to <code>true</code>, an object hash where keys are form control names and values are data..</p></div>
     <div id="abody"><p>The preferred method to serialize a form is <a href="serialize.html"><code>Form.serialize</code></a>. Refer to it for further information and examples on the <code>getHash</code> parameter. However, with <code>serializeElements</code> you can serialize <em>specific</em> input elements of your choice, allowing you to specify a subset of form elements that you want to serialize data from.</p>
@@ -228,7 +222,7 @@ urchinTracker();
 
 <pre><code class="javascript">
 Form.serializeElements( $('myform').getInputs('text') )
-// -> serialized data
+// -&gt; serialized data
 </code></pre></div>
   
 

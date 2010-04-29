@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  ObjectRange </title>
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -168,11 +166,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -193,7 +187,7 @@ urchinTracker();
 
 
 
-    <div id="abody"><p>Ranges represent an interval of values.  The value type just needs to be &#8220;compatible,&#8221; that is, to implement a <code>succ</code> method letting us step from one value to the next (its <em>successor</em>).</p>
+    <div id="abody"><p>Ranges represent an interval of values.  The value type just needs to be &#x201C;compatible,&#x201D; that is, to implement a <code>succ</code> method letting us step from one value to the next (its <em>successor</em>).</p>
 
 <p>Prototype provides such a method for <code>Number</code> and <code>String</code>, but you are of course welcome to implement useful semantics in your own objects, in order to enable ranges based on them.</p>
 
@@ -207,22 +201,22 @@ urchinTracker();
 
 <pre><code class="javascript">
 $A($R(1, 5)).join(', ')
-// -> '1, 2, 3, 4, 5'
+// -&gt; '1, 2, 3, 4, 5'
 
 $R(1, 5).zip(['one', 'two', 'three', 'four', 'five'], function(tuple) {
   return tuple.join(' = ');
 })
-// -> ['1 = one', '2 = two', '3 = three', '4 = four', '5 = five']
+// -&gt; ['1 = one', '2 = two', '3 = three', '4 = four', '5 = five']
 </code></pre>
 
 <p><strong>Be careful with <code>String</code> ranges</strong>: as described in its <a href="string/succ.html"><code>succ</code></a> method, it does not use alphabetical boundaries, but goes all the way through the character table:</p>
 
 <pre><code class="javascript">
 $A($R('a', 'e'))
-// -> ['a', 'b', 'c', 'd', 'e'], no surprise there
+// -&gt; ['a', 'b', 'c', 'd', 'e'], no surprise there
 
 $A($R('ax', 'ba'))
-// -> Ouch!  Humongous array, starting as ['ax', 'ay', 'az', 'a{', 'a|', 'a}', 'a~'...]
+// -&gt; Ouch!  Humongous array, starting as ['ax', 'ay', 'az', 'a{', 'a|', 'a}', 'a~'...]
 </code></pre></div>
     <div id="method-excerpts">  
 <h3>Methods</h3>
@@ -234,7 +228,7 @@ $A($R('ax', 'ba'))
           <h4><a href="objectRange/include.html">include</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">include(value) -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">include(value) -&gt; Boolean</code></pre>
 
 <p>Determines whether the value is included in the range.</p></div>
       </div>

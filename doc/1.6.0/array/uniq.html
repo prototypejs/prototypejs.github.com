@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Array.uniq </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -232,11 +230,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -245,17 +239,17 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">uniq() -> newArray</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">uniq() -&gt; newArray</code></pre>
 
 <p>Produces a duplicate-free version of an array.  If no duplicates are found, the original array is returned.</p></div>
     <div id="abody"><h3>Example</h3>
 
 <pre><code class="javascript">
 ['Sam', 'Justin', 'Andrew', 'Dan', 'Sam'].uniq();
-// -> ['Sam', 'Justin', 'Andrew', 'Dan']
+// -&gt; ['Sam', 'Justin', 'Andrew', 'Dan']
 
 ['Prototype', 'prototype'].uniq();
-// -> ['Prototype', 'prototype'] because String comparison is case-sensitive
+// -&gt; ['Prototype', 'prototype'] because String comparison is case-sensitive
 </code></pre>
 
 <h3>Performance considerations</h3>
@@ -264,7 +258,7 @@ urchinTracker();
 
 <ul>
 <li>Since it does not require the array to be sorted, it has quadratic complexity.</li>
-<li>Since it relies on JavaScript&#8217;s <code>Array.concat</code>, it will yield a new, intermediary array every time it encounters a new value (a value that wasn&#8217;t already in the result array).</li>
+<li>Since it relies on JavaScript&#x2019;s <code>Array.concat</code>, it will yield a new, intermediary array every time it encounters a new value (a value that wasn&#x2019;t already in the result array).</li>
 </ul>
 
 <p>More efficient implementations could be devised.  This page will get updated if such an optimization is committed.</p></div>

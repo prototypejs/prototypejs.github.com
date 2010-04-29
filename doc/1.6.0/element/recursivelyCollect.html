@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.recursivelyCollect </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,12 +423,12 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">recursivelyCollect(element, property) -> [HTMLElement...]</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">recursivelyCollect(element, property) -&gt; [HTMLElement...]</code></pre>
 
-<p>Recursively collects elements whose relationship is specified by <code>property</code>. <code>property</code> has to be a <em>property</em> (a method won&#8217;t do!) of <code>element</code> that points to a <em>single</em> DOM node. Returns an array of <a href="extend.html">extended</a> elements.</p></div>
+<p>Recursively collects elements whose relationship is specified by <code>property</code>. <code>property</code> has to be a <em>property</em> (a method won&#x2019;t do!) of <code>element</code> that points to a <em>single</em> DOM node. Returns an array of <a href="extend.html">extended</a> elements.</p></div>
     <div id="abody"><p>This method is used internally by <a href="ancestors.html"><code>Element.ancestors</code></a>, <a href="descendants.html"><code>Element.descendants</code></a>, <a href="nextSiblings.html"><code>Element.nextSiblings</code></a>, <a href="previousSiblings.html"><code>Element.previousSiblings</code></a> and <a href="siblings.html"><code>Element.siblings</code></a> which offer really convenient way to grab elements, so directly accessing <code>Element.recursivelyCollect</code> should seldom be needed. However, if you are after something out of the ordinary, it is the way to go.</p>
 
-<p>Note that all of Prototype&#8217;s DOM traversal methods ignore text nodes and return element nodes only.</p>
+<p>Note that all of Prototype&#x2019;s DOM traversal methods ignore text nodes and return element nodes only.</p>
 
 <h3>Examples</h3>
 
@@ -453,7 +447,7 @@ urchinTracker();
 
 <pre><code class="javascript">
 $('fruits').recursivelyCollect('firstChild');
-// -> [li#apples, ul#list-of-apples, li#golden-delicious, p]
+// -&gt; [li#apples, ul#list-of-apples, li#golden-delicious, p]
 </code></pre></div>
   
 

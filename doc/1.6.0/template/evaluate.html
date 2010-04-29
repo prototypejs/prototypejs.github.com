@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Template.evaluate </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -168,11 +166,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -181,9 +175,9 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">evaluate(object) -> String</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">evaluate(object) -&gt; String</code></pre>
 
-<p>Applies the template to the given <code>object</code>&#8217;s data, producing a formatted string with symbols replaced by corresponding <code>object</code>&#8217;s properties.</p></div>
+<p>Applies the template to the given <code>object</code>&#x2019;s data, producing a formatted string with symbols replaced by corresponding <code>object</code>&#x2019;s properties.</p></div>
     <div id="abody"><h3>Examples</h3>
 
 <pre><code class="javascript">
@@ -191,16 +185,16 @@ var hrefTemplate = new Template('/dir/showAll?lang=#{language}&amp;categ=#{categ
 var selection = {category: 'books' , language: 'en-US'};
 
 hrefTemplate.evaluate(selection);
-// -> '/dir/showAll?lang=en-US&amp;categ=books&amp;lv='
+// -&gt; '/dir/showAll?lang=en-US&amp;categ=books&amp;lv='
 
 hrefTemplate.evaluate({language: 'jp', levels: 3, created: '10/12/2005'});
-// -> '/dir/showAll?lang=jp&amp;categ=&amp;lv=3'
+// -&gt; '/dir/showAll?lang=jp&amp;categ=&amp;lv=3'
 
 hrefTemplate.evaluate({});
-// -> '/dir/showAll?lang=&amp;categ=&amp;lv='
+// -&gt; '/dir/showAll?lang=&amp;categ=&amp;lv='
 
 hrefTemplate.evaluate(null);
-// -> error !
+// -&gt; error !
 </code></pre> </div>
   
 

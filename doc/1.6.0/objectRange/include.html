@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  ObjectRange.include </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -168,11 +166,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -181,7 +175,7 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">include(value) -> Boolean</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">include(value) -&gt; Boolean</code></pre>
 
 <p>Determines whether the value is included in the range.</p></div>
     <div id="abody"><p>This assumes the values in the range have a valid strict weak ordering (have valid semantics for the <code>&lt;</code> operator).  While <code>ObjectRange</code> mixes in <a href="../enumerable.html"><code>Enumerable</code></a>, this method overrides the default version of <a href="../enumerable/include.html"><code>include</code></a>, and is way more efficient (it uses a maximum of two comparisons).</p>
@@ -190,16 +184,16 @@ urchinTracker();
 
 <pre><code class="javascript">
 $R(1, 10).include(5)
-// -> true
+// -&gt; true
 
 $R('a', 'h').include('x')
-// -> false
+// -&gt; false
 
 $R(1, 10).include(10)
-// -> true
+// -&gt; true
 
 $R(1, 10, true).include(10)
-// -> false
+// -&gt; false
 </code></pre></div>
   
 

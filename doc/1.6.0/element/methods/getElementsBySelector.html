@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.getElementsBySelector </title>
 	<link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="http://prototypejs.org/learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,7 +423,7 @@ urchinTracker();
 <div class="box">deprecated</div>
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">getElementsBySelector(element, selector...) -> [HTMLElement...]</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">getElementsBySelector(element, selector...) -&gt; [HTMLElement...]</code></pre>
 
 <p>Takes an arbitrary number of CSS selectors (strings) and returns an array of <a href="http://prototypejs.org/api/element/extend.html">extended</a> children of <code>element</code> that match any of them.</p></div>
     <div id="abody"><p class="deprecated">As of Prototype 1.6, <code>Element#getElementsBySelector</code> has been deprecated in favor of the more concise <a href="http://prototypejs.org/api/element/select.html"><code>Element#select</code></a>.</p>
@@ -452,13 +446,13 @@ urchinTracker();
 &lt;/ul&gt;</code></pre>
 
 <pre><code class="javascript">$('apples').getElementsBySelector('[title="yummy!"]');
-// -> [h3, li#golden-delicious, li#mutsu]
+// -&gt; [h3, li#golden-delicious, li#mutsu]
 
 $('apples').getElementsBySelector( 'p#saying', 'li[title="yummy!"]');
-// -> [li#golden-delicious, li#mutsu,  p#saying]
+// -&gt; [li#golden-delicious, li#mutsu,  p#saying]
 
 $('apples').getElementsBySelector('[title="disgusting!"]');
-// -> []</code></pre>
+// -&gt; []</code></pre>
 
 <h3>Tip</h3>
 
@@ -467,9 +461,9 @@ $('apples').getElementsBySelector('[title="disgusting!"]');
 <pre><code class="javascript">var nodes  = $A(someUL.getElementsByTagName('li')).map(Element.extend);
 var nodes2 = someUL.getElementsBySelector('li');</code></pre>
 
-<p>In the first example, you must explicitly convert the result set to an <code>Array</code> (so that Prototype&#8217;s <a href="http://prototypejs.org/api/enumerable.html"><code>Enumerable</code></a> methods can be used) and must manually call <a href="http://prototypejs.org/api/element/extend.html"><code>Element.extend</code></a> on each node (so that custom instance methods can be used on the nodes). <code>Element#getElementsBySelector</code> takes care of both concerns on its own.</p>
+<p>In the first example, you must explicitly convert the result set to an <code>Array</code> (so that Prototype&#x2019;s <a href="http://prototypejs.org/api/enumerable.html"><code>Enumerable</code></a> methods can be used) and must manually call <a href="http://prototypejs.org/api/element/extend.html"><code>Element.extend</code></a> on each node (so that custom instance methods can be used on the nodes). <code>Element#getElementsBySelector</code> takes care of both concerns on its own.</p>
 
-<p>If you&#8217;re using 1.5.1 or above (and the performance optimizations therein), the speed difference between these two examples is negligible.</p></div>
+<p>If you&#x2019;re using 1.5.1 or above (and the performance optimizations therein), the speed difference between these two examples is negligible.</p></div>
   
 
 

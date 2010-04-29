@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Element.ancestors </title>
 	<link href="../../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -416,11 +414,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -429,18 +423,18 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">ancestors(element) -> [HTMLElement...]</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">ancestors(element) -&gt; [HTMLElement...]</code></pre>
 
-<p>Collects all of <code>element</code>&#8217;s ancestors and returns them as an array of <a href="../extend.html">extended</a> elements.</p></div>
-    <div id="abody"><p>The returned array&#8217;s first element is <code>element</code>&#8217;s direct ancestor (its <code>parentNode</code>), the second one is its grandparent and so on until the <code>html</code> element is reached. <code>html</code> will always be the last member of the array&#8230; unless you are looking for its ancestors obviously. But you wouldn&#8217;t do that, would you ?</p>
+<p>Collects all of <code>element</code>&#x2019;s ancestors and returns them as an array of <a href="../extend.html">extended</a> elements.</p></div>
+    <div id="abody"><p>The returned array&#x2019;s first element is <code>element</code>&#x2019;s direct ancestor (its <code>parentNode</code>), the second one is its grandparent and so on until the <code>html</code> element is reached. <code>html</code> will always be the last member of the array&#x2026; unless you are looking for its ancestors obviously. But you wouldn&#x2019;t do that, would you ?</p>
 
-<p>Note that all of Prototype’s DOM traversal methods ignore text nodes and return element nodes only.</p>
+<p>Note that all of Prototype&#x2019;s DOM traversal methods ignore text nodes and return element nodes only.</p>
 
 <h3>Examples</h3>
 
 <pre><code class="html">
 &lt;html&gt;
-[&#8230;]
+[&#x2026;]
   &lt;body&gt;
     &lt;div id="father"&gt;
       &lt;div id="kid"&gt;
@@ -452,11 +446,11 @@ urchinTracker();
 
 <pre><code class="javascript">
 $('kid').ancestors();
-// -> [div#father, body, html]  // Keep in mind that 
+// -&gt; [div#father, body, html]  // Keep in mind that 
 // the `body` and `html` elements will also be included!
 
 document.getElementsByTagName('html')[0].ancestors();
-// -> []
+// -&gt; []
 </code></pre></div>
   
 

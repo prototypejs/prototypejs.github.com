@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Enumerable </title>
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -268,11 +266,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -395,9 +389,9 @@ urchinTracker();
 
     <div id="abody"><p><code>Enumerable</code> provides a large set of useful methods for <em>enumerations</em>, that is, objects that act as collections of values. It is a cornerstone of Prototype.</p>
 
-<p><code>Enumerable</code> is what we like to call a <em>module</em>: a consistent set of methods intended not for independent use, but for <em>mixin</em>: incorporation into other objects that &#8220;fit&#8221; with it.  This meaning of the term &#8220;module&#8221; is borrowed from the Ruby world, which is fitting enough, since <code>Enumerable</code> attempts to mimic at least part of its Ruby-world namesake.</p>
+<p><code>Enumerable</code> is what we like to call a <em>module</em>: a consistent set of methods intended not for independent use, but for <em>mixin</em>: incorporation into other objects that &#x201C;fit&#x201D; with it.  This meaning of the term &#x201C;module&#x201D; is borrowed from the Ruby world, which is fitting enough, since <code>Enumerable</code> attempts to mimic at least part of its Ruby-world namesake.</p>
 
-<p>Quite a few objects, in Prototype, mix <code>Enumerable</code> in already.  The most visible cases are <a href="array.html"><code>Array</code></a> and <a href="hash.html"><code>Hash</code></a>, but you&#8217;ll find it in less obvious spots as well, such as in <a href="objectRange.html"><code>ObjectRange</code></a> and various DOM- or AJAX-related objects.</p>
+<p>Quite a few objects, in Prototype, mix <code>Enumerable</code> in already.  The most visible cases are <a href="array.html"><code>Array</code></a> and <a href="hash.html"><code>Hash</code></a>, but you&#x2019;ll find it in less obvious spots as well, such as in <a href="objectRange.html"><code>ObjectRange</code></a> and various DOM- or AJAX-related objects.</p>
 
 <h3>The <code>context</code> parameter</h3>
 
@@ -410,16 +404,16 @@ urchinTracker();
 }, myObject); // we have specified the context
 
 myObject
-//-> { foo: 0, bar: 1, baz: 2}
+//-&gt; { foo: 0, bar: 1, baz: 2}
 </code></pre>
 
 <p>If there is no context argument, the iterator function will preserve the scope it would have anyway.</p>
 
-<h3>Aliases: it&#8217;s all about having it your way</h3>
+<h3>Aliases: it&#x2019;s all about having it your way</h3>
 
-<p>Just like its Ruby counterpart, <code>Enumerable</code> cares about your comfort enough to provide more than one name for a few behaviors.  This is intended to reduce your learning curve when your technical background made you familiar with one name or another.  However, the documentation attempts to clearly state when one name is &#8220;preferred&#8221; over the other (perhaps due to readability, widely accepted intuitiveness, etc.).</p>
+<p>Just like its Ruby counterpart, <code>Enumerable</code> cares about your comfort enough to provide more than one name for a few behaviors.  This is intended to reduce your learning curve when your technical background made you familiar with one name or another.  However, the documentation attempts to clearly state when one name is &#x201C;preferred&#x201D; over the other (perhaps due to readability, widely accepted intuitiveness, etc.).</p>
 
-<p>Here are the aliases you&#8217;ll find in <code>Enumerable</code>:</p>
+<p>Here are the aliases you&#x2019;ll find in <code>Enumerable</code>:</p>
 
 <ul>
 <li><code>map</code> is the same as <a href="enumerable/collect.html"><code>collect</code></a>.</li>
@@ -448,15 +442,15 @@ myObject
 
 <h3>Mixing <code>Enumerable</code> in your own objects</h3>
 
-<p>So, let&#8217;s say you&#8217;ve created your very own collection-like object (say, some sort of Set, or perhaps something that dynamically fetches data ranges from the server side, lazy-loading style).  You want to be able to mix <code>Enumerable</code> in (and we commend you for it).  How do you go about this?</p>
+<p>So, let&#x2019;s say you&#x2019;ve created your very own collection-like object (say, some sort of Set, or perhaps something that dynamically fetches data ranges from the server side, lazy-loading style).  You want to be able to mix <code>Enumerable</code> in (and we commend you for it).  How do you go about this?</p>
 
-<p>The <code>Enumerable</code> module basically makes only one requirement on your object: it must provide a method named <code>_each</code> (note the leading underscore), that will accept a function as its unique argument, and will contain the actual &#8220;raw iteration&#8221; algorithm, invoking its argument with each element in turn.</p>
+<p>The <code>Enumerable</code> module basically makes only one requirement on your object: it must provide a method named <code>_each</code> (note the leading underscore), that will accept a function as its unique argument, and will contain the actual &#x201C;raw iteration&#x201D; algorithm, invoking its argument with each element in turn.</p>
 
 <p>As detailed in the documentation for <a href="enumerable/each.html"><code>each</code></a>, <code>Enumerable</code> provides all the extra layers (handling iteration short-circuits, passing numerical indices, etc.).  You just need to implement the actual basic iteration, as fits your internal structure.</p>
 
-<p>If this leaves you goggling, just have a look at Prototype&#8217;s <code>Array</code>, <code>Hash</code> or <code>ObjectRange</code> objects&#8217; source code.  They all begin with their own <code>_each</code> method, which should help you grasp the idea.</p>
+<p>If this leaves you goggling, just have a look at Prototype&#x2019;s <code>Array</code>, <code>Hash</code> or <code>ObjectRange</code> objects&#x2019; source code.  They all begin with their own <code>_each</code> method, which should help you grasp the idea.</p>
 
-<p>Once you&#8217;re done with this, you just need to mix <code>Enumerable</code> in, which you&#8217;ll usually do <em>before</em> defining your methods, so as to make sure whatever overrides you provide for <code>Enumerable</code> methods will indeed prevail.  In short, your code will probably end up looking like this:</p>
+<p>Once you&#x2019;re done with this, you just need to mix <code>Enumerable</code> in, which you&#x2019;ll usually do <em>before</em> defining your methods, so as to make sure whatever overrides you provide for <code>Enumerable</code> methods will indeed prevail.  In short, your code will probably end up looking like this:</p>
 
 <pre><code class="javascript">var YourObject = Class.create();
 Object.extend(YourObject.prototype, Enumerable);
@@ -492,7 +486,7 @@ obj.size();
           <h4><a href="enumerable/all.html">all</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">all([iterator = Prototype.K[, context]]) -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">all([iterator = Prototype.K[, context]]) -&gt; Boolean</code></pre>
 
 <p>Determines whether all the elements are boolean-equivalent to <code>true</code>, either
 directly or through computation by the provided iterator.</p></div>
@@ -504,7 +498,7 @@ directly or through computation by the provided iterator.</p></div>
           <h4><a href="enumerable/any.html">any</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">any([iterator = Prototype.K[, context]]) -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">any([iterator = Prototype.K[, context]]) -&gt; Boolean</code></pre>
 
 <p>Determines whether at least one element is boolean-equivalent to <code>true</code>,
 either directly or through computation by the provided iterator.</p></div>
@@ -516,7 +510,7 @@ either directly or through computation by the provided iterator.</p></div>
           <h4><a href="enumerable/collect.html">collect</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">collect(iterator[, context]) -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">collect(iterator[, context]) -&gt; Array</code></pre>
 
 <p>Returns the results of applying the iterator to each element.  Aliased as <a href="enumerable/map.html"><code>map</code></a>.</p></div>
       </div>
@@ -527,7 +521,7 @@ either directly or through computation by the provided iterator.</p></div>
           <h4><a href="enumerable/detect.html">detect</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">detect(iterator[, context]) -> firstElement | undefined</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">detect(iterator[, context]) -&gt; firstElement | undefined</code></pre>
 
 <p>Finds the first element for which the iterator returns <code>true</code>. Aliased by the <a href="enumerable/find.html"><code>find</code></a> method.</p></div>
       </div>
@@ -538,7 +532,7 @@ either directly or through computation by the provided iterator.</p></div>
           <h4><a href="enumerable/each.html">each</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">each(iterator[, context]) -> Enumerable</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">each(iterator[, context]) -&gt; Enumerable</code></pre>
 
 <p>The cornerstone of <code>Enumerable</code>.  It lets you iterate over all the elements in
 a generic fashion, then returns the <code>Enumerable</code>, thereby allowing chain-calling.</p></div>
@@ -550,7 +544,7 @@ a generic fashion, then returns the <code>Enumerable</code>, thereby allowing ch
           <h4><a href="enumerable/eachSlice.html">eachSlice</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">eachSlice(size[, iterator = Prototype.K[, context]]) -> [slice...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">eachSlice(size[, iterator = Prototype.K[, context]]) -&gt; [slice...]</code></pre>
 
 <p>Groups items in chunks based on a given size, with last chunk being possibly smaller.</p></div>
       </div>
@@ -561,7 +555,7 @@ a generic fashion, then returns the <code>Enumerable</code>, thereby allowing ch
           <h4><a href="enumerable/entries.html">entries</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">entries() -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">entries() -&gt; Array</code></pre>
 
 <p>Alias for the more generic <a href="enumerable/toArray.html"><code>toArray</code></a> method.</p></div>
       </div>
@@ -572,7 +566,7 @@ a generic fashion, then returns the <code>Enumerable</code>, thereby allowing ch
           <h4><a href="enumerable/find.html">find</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">find(iterator) -> firstElement | undefined</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">find(iterator) -&gt; firstElement |&#xA0;undefined</code></pre>
 
 <p>Finds the first element for which the iterator returns <code>true</code>. Convenience alias for <a href="enumerable/detect.html"><code>detect</code></a>, but constitutes the preferred (more readable) syntax.</p></div>
       </div>
@@ -583,7 +577,7 @@ a generic fashion, then returns the <code>Enumerable</code>, thereby allowing ch
           <h4><a href="enumerable/findAll.html">findAll</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">findAll(iterator[, context]) -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">findAll(iterator[, context]) -&gt; Array</code></pre>
 
 <p>Returns all the elements for which the iterator returned <code>true</code>.  Aliased as <a href="enumerable/select.html"><code>select</code></a>.</p></div>
       </div>
@@ -594,7 +588,7 @@ a generic fashion, then returns the <code>Enumerable</code>, thereby allowing ch
           <h4><a href="enumerable/grep.html">grep</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">grep(regex[, iterator = Prototype.K[, context]]) -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">grep(regex[, iterator = Prototype.K[, context]]) -&gt; Array</code></pre>
 
 <p>Returns all the elements that match the filter. If an iterator is provided, it is used to produce the returned value for each selected element.</p></div>
       </div>
@@ -605,7 +599,7 @@ a generic fashion, then returns the <code>Enumerable</code>, thereby allowing ch
           <h4><a href="enumerable/inGroupsOf.html">inGroupsOf</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">inGroupsOf(size[, filler = null]) -> [group...]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">inGroupsOf(size[, filler = null]) -&gt; [group...]</code></pre>
 
 <p>Groups items in fixed-size chunks, using a specific value to fill up the last chunk if necessary.</p></div>
       </div>
@@ -616,7 +610,7 @@ a generic fashion, then returns the <code>Enumerable</code>, thereby allowing ch
           <h4><a href="enumerable/include.html">include</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">include(object) -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">include(object) -&gt; Boolean</code></pre>
 
 <p>Determines whether a given object is in the <code>Enumerable</code> or not, based on the <code>==</code> comparison operator.  Aliased as <a href="enumerable/member.html"><code>member</code></a>.</p></div>
       </div>
@@ -627,7 +621,7 @@ a generic fashion, then returns the <code>Enumerable</code>, thereby allowing ch
           <h4><a href="enumerable/inject.html">inject</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">inject(accumulator, iterator[, context]) -> accumulatedValue</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">inject(accumulator, iterator[, context]) -&gt; accumulatedValue</code></pre>
 
 <p>Incrementally builds a result value based on the successive results of the
 iterator.  This can be used for array construction, numerical sums/averages,
@@ -640,7 +634,7 @@ etc.</p></div>
           <h4><a href="enumerable/invoke.html">invoke</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">invoke(methodName[, arg...]) -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">invoke(methodName[, arg...]) -&gt; Array</code></pre>
 
 <p>Invokes the same method, with the same arguments, for all items in a collection.  Returns the results of the method calls.</p></div>
       </div>
@@ -651,7 +645,7 @@ etc.</p></div>
           <h4><a href="enumerable/map.html">map</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">map(iterator) -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">map(iterator) -&gt; Array</code></pre>
 
 <p>Returns the results of applying the iterator to each element. Convenience alias for <a href="enumerable/collect.html"><code>collect</code></a>.</p></div>
       </div>
@@ -662,7 +656,7 @@ etc.</p></div>
           <h4><a href="enumerable/max.html">max</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">max([iterator = Prototype.K[, context]]) -> maxValue</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">max([iterator = Prototype.K[, context]]) -&gt; maxValue</code></pre>
 
 <p>Returns the maximum element (or element-based computation), or <code>undefined</code> if the enumeration is empty.  Elements are either compared directly, or by first applying the iterator and comparing returned values.</p></div>
       </div>
@@ -673,7 +667,7 @@ etc.</p></div>
           <h4><a href="enumerable/member.html">member</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">member(object) -> Boolean</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">member(object) -&gt; Boolean</code></pre>
 
 <p>Determines whether a given object is in the <code>Enumerable</code> or not, based on the <code>==</code> comparison operator.  Convenience alias for <a href="enumerable/include.html"><code>include</code></a>.</p></div>
       </div>
@@ -684,7 +678,7 @@ etc.</p></div>
           <h4><a href="enumerable/min.html">min</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">min([iterator = Prototype.K[, context]]) -> minValue</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">min([iterator = Prototype.K[, context]]) -&gt; minValue</code></pre>
 
 <p>Returns the minimum element (or element-based computation), or <code>undefined</code> if the enumeration is empty.  Elements are either compared directly, or by first applying the iterator and comparing returned values.</p></div>
       </div>
@@ -695,7 +689,7 @@ etc.</p></div>
           <h4><a href="enumerable/partition.html">partition</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">partition([iterator = Prototype.K[, context]]) -> [TrueArray, FalseArray]</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">partition([iterator = Prototype.K[, context]]) -&gt; [TrueArray, FalseArray]</code></pre>
 
 <p>Partitions the elements in two groups: those regarded as <code>true</code>, and those considered <code>false</code>.  By default, regular JavaScript boolean equivalence is used, but an iterator can be provided, that computes a boolean representation of the elements.</p></div>
       </div>
@@ -706,7 +700,7 @@ etc.</p></div>
           <h4><a href="enumerable/pluck.html">pluck</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">pluck(propertyName) -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">pluck(propertyName) -&gt; Array</code></pre>
 
 <p>Optimization for a common use-case of <a href="enumerable/collect.html"><code>collect</code></a>: fetching the same property for all the elements.  Returns the property values.</p></div>
       </div>
@@ -717,7 +711,7 @@ etc.</p></div>
           <h4><a href="enumerable/reject.html">reject</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">reject(iterator[, context]) -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">reject(iterator[, context]) -&gt; Array</code></pre>
 
 <p>Returns all the elements for which the iterator returned <code>false</code>.</p></div>
       </div>
@@ -728,7 +722,7 @@ etc.</p></div>
           <h4><a href="enumerable/select.html">select</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">select(iterator) -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">select(iterator) -&gt; Array</code></pre>
 
 <p>Alias for the <a href="enumerable/findAll.html"><code>findAll</code></a> method.</p></div>
       </div>
@@ -739,7 +733,7 @@ etc.</p></div>
           <h4><a href="enumerable/size.html">size</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">size() -> Number</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">size() -&gt; Number</code></pre>
 
 <p>Returns the size of the enumeration.</p></div>
       </div>
@@ -750,7 +744,7 @@ etc.</p></div>
           <h4><a href="enumerable/sortBy.html">sortBy</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">sortBy(iterator[, context]) -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">sortBy(iterator[, context]) -&gt; Array</code></pre>
 
 <p>Provides a custom-sorted view of the elements based on the criteria computed, for each element, by the iterator.</p></div>
       </div>
@@ -761,7 +755,7 @@ etc.</p></div>
           <h4><a href="enumerable/toArray.html">toArray</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">toArray() -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">toArray() -&gt; Array</code></pre>
 
 <p>Returns an <code>Array</code> representation of the enumeration. Aliased as <a href="enumerable/entries.html"><code>entries</code></a>.</p></div>
       </div>
@@ -772,7 +766,7 @@ etc.</p></div>
           <h4><a href="enumerable/zip.html">zip</a>
           
           </h4>
-           <div class="mexcerpt-cnt"><pre><code class="ebnf">zip(Sequence...[, iterator = Prototype.K]) -> Array</code></pre>
+           <div class="mexcerpt-cnt"><pre><code class="ebnf">zip(Sequence...[, iterator = Prototype.K]) -&gt; Array</code></pre>
 
 <p>Zips together (think of the zip on a pair of trousers) 2+ sequences, providing an array of tuples.  Each tuple contains one value per original sequence.  Tuples can be converted to something else by applying the optional iterator on them.</p></div>
       </div>

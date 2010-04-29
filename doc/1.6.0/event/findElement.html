@@ -1,9 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<title>Prototype JavaScript framework:  Event.findElement </title>
 	<link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
@@ -204,11 +202,7 @@ urchinTracker();
         </div>
         <!-- main -->
         <div id="main" class="clearfix">
-          <div id="pagenav">
-            <ul>
-              <li><a href="../../learn.html" title="Tips and tutorials for Prototype">Learn more about Prototype &raquo;</a></li>
-            </ul>
-          </div>
+          
           <div id="main-content">
             
 
@@ -217,10 +211,10 @@ urchinTracker();
 
 </h2>
   
-    <div id="excerpt"><pre><code class="ebnf">Event.findElement(event, tagName) -> Element</code></pre>
+    <div id="excerpt"><pre><code class="ebnf">Event.findElement(event, tagName) -&gt; Element</code></pre>
 
 <p>Returns the first DOM element with a given tag name, upwards from the one on which the event occurred.</p></div>
-    <div id="abody"><p>Sometimes, you&#8217;re not interested in the actual element that got hit by the event.  Sometimes you&#8217;re interested in its &#8220;closest element,&#8221; (either the original one, or its container, or its container&#8217;s container, etc.), defined by its tag (e.g., <code>&lt;p&gt;</code>).  This is what <code>findElement</code> is for.</p>
+    <div id="abody"><p>Sometimes, you&#x2019;re not interested in the actual element that got hit by the event.  Sometimes you&#x2019;re interested in its &#x201C;closest element,&#x201D; (either the original one, or its container, or its container&#x2019;s container, etc.), defined by its tag (e.g., <code>&lt;p&gt;</code>).  This is what <code>findElement</code> is for.</p>
 
 <p>The provided tag name will be compared in a case-insensitive manner.</p>
 
@@ -228,7 +222,7 @@ urchinTracker();
 
 <h3>Example</h3>
 
-<p>Here&#8217;s a simple code that lets you click everywhere on the page and hides the closest-fitting paragraph around your click (if any).</p>
+<p>Here&#x2019;s a simple code that lets you click everywhere on the page and hides the closest-fitting paragraph around your click (if any).</p>
 
 <pre><code class="javascript">
 Event.observe(document.body, 'click', function(event) {
@@ -238,7 +232,7 @@ Event.observe(document.body, 'click', function(event) {
 });
 </code></pre>
 
-<p>For more complex searches, you&#8217;ll need to get the actual element and use <a href="../element/methods/up.html"><code>up</code></a> on it, which lets you express your request with CSS syntax, and also search farther than the first match (plus, the result is extension-guaranteed):</p>
+<p>For more complex searches, you&#x2019;ll need to get the actual element and use <a href="../element/methods/up.html"><code>up</code></a> on it, which lets you express your request with CSS syntax, and also search farther than the first match (plus, the result is extension-guaranteed):</p>
 
 <pre><code class="javascript">
 Event.observe(document.body, 'click', function(event) {
@@ -254,7 +248,7 @@ Event.observe(document.body, 'click', function(event) {
 
 <h3>See also</h3>
 
-<p>If you&#8217;re looking for the element directly hit by the event, just use the <a href="element.html"><code>element</code></a> function.</p></div>
+<p>If you&#x2019;re looking for the element directly hit by the event, just use the <a href="element.html"><code>element</code></a> function.</p></div>
   
 
 
