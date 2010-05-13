@@ -142,39 +142,37 @@ that affects the serialized form of the form (see <code><a href="../../../dom/Fo
 if any of the values had been changed. It returns to its initial state when
 the data is submitted (saved).</p>
 
-<div class="highlight"><pre><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;example&quot;</span> <span class="na">action=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;fieldset&gt;</span>
-    <span class="nt">&lt;legend&gt;</span>Login Preferences<span class="nt">&lt;/legend&gt;</span>
-    <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">&quot;msg&quot;</span> <span class="na">class=</span><span class="s">&quot;message&quot;</span><span class="nt">&gt;</span>Current settings:<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;p&gt;</span>
-      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;greeting&quot;</span><span class="nt">&gt;</span>Greeting message<span class="nt">&lt;/label&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;greeting&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;greeting&quot;</span> <span class="na">value=</span><span class="s">&quot;Hello world!&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;h4&gt;</span>Login options<span class="nt">&lt;/h4&gt;</span>
-    <span class="nt">&lt;p&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;login-visible&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;login-visible&quot;</span> <span class="na">checked=</span><span class="s">&quot;checked&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;login-visible&quot;</span><span class="nt">&gt;</span>allow others to see my last login date<span class="nt">&lt;/label&gt;</span>
-    <span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;p&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;land-recent&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;land-recent&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;land-recent&quot;</span><span class="nt">&gt;</span>land on recent changes overview instead of the Dashboard<span class="nt">&lt;/label&gt;</span>
-    <span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;save&quot;</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;/fieldset&gt;</span>
-<span class="nt">&lt;/form&gt;</span>
- <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
-  <span class="k">new</span> <span class="nx">Form</span><span class="p">.</span><span class="nx">Observer</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="o">,</span> <span class="mf">0.3</span><span class="o">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">form</span><span class="o">,</span> <span class="nx">value</span><span class="p">){</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;msg&#39;</span><span class="p">).</span><span class="nx">update</span><span class="p">(</span><span class="s1">&#39;Your preferences have changed. Resubmit to save&#39;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
-    <span class="nx">form</span><span class="p">.</span><span class="nx">down</span><span class="p">().</span><span class="nx">setStyle</span><span class="p">({</span> <span class="nx">background</span><span class="o">:</span><span class="s1">&#39;lemonchiffon&#39;</span><span class="o">,</span> <span class="nx">borderColor</span><span class="o">:</span><span class="s1">&#39;red&#39;</span> <span class="p">})</span>
-  <span class="p">})</span>
-   <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">).</span><span class="nx">onsubmit</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;msg&#39;</span><span class="p">).</span><span class="nx">update</span><span class="p">(</span><span class="s1">&#39;Preferences saved!&#39;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">down</span><span class="p">().</span><span class="nx">setStyle</span><span class="p">({</span> <span class="nx">background</span><span class="o">:</span><span class="kc">null</span><span class="o">,</span> <span class="nx">borderColor</span><span class="o">:</span><span class="kc">null</span> <span class="p">})</span>
-    <span class="k">return</span> <span class="kc">false</span>
-  <span class="p">}</span>
-<span class="nt">&lt;/script&gt;</span>
-</pre>
-</div>
+<pre><code class="html">&lt;form id=&quot;example&quot; action=&quot;#&quot;&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Login Preferences&lt;/legend&gt;
+    &lt;p id=&quot;msg&quot; class=&quot;message&quot;&gt;Current settings:&lt;/p&gt;
+    &lt;p&gt;
+      &lt;label for=&quot;greeting&quot;&gt;Greeting message&lt;/label&gt;
+      &lt;input id=&quot;greeting&quot; type=&quot;text&quot; name=&quot;greeting&quot; value=&quot;Hello world!&quot; /&gt;
+    &lt;/p&gt;
+    &lt;h4&gt;Login options&lt;/h4&gt;
+    &lt;p&gt;
+        &lt;input id=&quot;login-visible&quot; type=&quot;checkbox&quot; name=&quot;login-visible&quot; checked=&quot;checked&quot; /&gt;
+        &lt;label for=&quot;login-visible&quot;&gt;allow others to see my last login date&lt;/label&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;input id=&quot;land-recent&quot; type=&quot;checkbox&quot; name=&quot;land-recent&quot; /&gt;
+        &lt;label for=&quot;land-recent&quot;&gt;land on recent changes overview instead of the Dashboard&lt;/label&gt;
+    &lt;/p&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;save&quot; /&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+ &lt;script type=&quot;text/javascript&quot;&gt;
+  new Form.Observer('example', 0.3, function(form, value){
+    $('msg').update('Your preferences have changed. Resubmit to save').style.color = 'red'
+    form.down().setStyle({ background:'lemonchiffon', borderColor:'red' })
+  })
+   $('example').onsubmit = function() {
+    $('msg').update('Preferences saved!').style.color = 'green'
+    this.down().setStyle({ background:null, borderColor:null })
+    return false
+  }
+&lt;/script&gt;</code></pre>
                 </div> <!-- .section-content -->
             </div> <!-- .section -->
 
@@ -202,7 +200,7 @@ the data is submitted (saved).</p>
       
       <div id="footer">
         <p><a href="http://prototypejs.org">Prototype JavaScript Framework</a> v1.7_rc1 API documentation.</p>
-        <p>Last updated on May 10, 2010 at 13:17 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
+        <p>Last updated on May 13, 2010 at 02:25 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
         <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.</p>
       </div> <!-- #footer -->
 

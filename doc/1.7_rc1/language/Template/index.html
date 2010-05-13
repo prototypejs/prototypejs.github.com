@@ -119,9 +119,7 @@
 formatted output for these objects, maybe inside a loop, you typically
 resort to concatenating string literals with the object's fields:</p>
 
-<div class="highlight"><pre><span class="s2">&quot;The TV show &quot;</span> <span class="o">+</span> <span class="nx">title</span> <span class="o">+</span> <span class="s2">&quot; was created by &quot;</span> <span class="o">+</span> <span class="nx">author</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="o">;</span>
-</pre>
-</div>
+<pre><code class="javascript">&quot;The TV show &quot; + title + &quot; was created by &quot; + author + &quot;.&quot;;</code></pre>
 
 <p>There's nothing wrong with this approach, except that it is hard to
 visualize the output immediately just by glancing at the concatenation
@@ -135,20 +133,18 @@ used in Ruby. The templates are created from strings that have embedded
 symbols in the form (e.g., <code>#{fieldName}</code>) that will be replaced by
 actual values when the template is applied (evaluated) to an object.</p>
 
-<div class="highlight"><pre><span class="c">// the template (our formatting expression)</span>
-<span class="kd">var</span> <span class="nx">myTemplate</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Template</span><span class="p">(</span>
- <span class="s1">&#39;The TV show #{title} was created by #{author}.&#39;</span><span class="p">);</span>
- <span class="c">// our data to be formatted by the template</span>
-<span class="kd">var</span> <span class="nx">show</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;The Simpsons&#39;</span><span class="o">,</span>
-  <span class="nx">author</span><span class="o">:</span> <span class="s1">&#39;Matt Groening&#39;</span><span class="o">,</span>
-  <span class="nx">network</span><span class="o">:</span> <span class="s1">&#39;FOX&#39;</span>
-<span class="p">};</span>
- <span class="c">// let&#39;s format our data</span>
-<span class="nx">myTemplate</span><span class="p">.</span><span class="nx">evaluate</span><span class="p">(</span><span class="nx">show</span><span class="p">);</span>
-<span class="c">// -&gt; &quot;The TV show The Simpsons was created by Matt Groening.&quot;</span>
-</pre>
-</div>
+<pre><code class="javascript">// the template (our formatting expression)
+var myTemplate = new Template(
+ 'The TV show #{title} was created by #{author}.');
+ // our data to be formatted by the template
+var show = {
+  title: 'The Simpsons',
+  author: 'Matt Groening',
+  network: 'FOX'
+};
+ // let's format our data
+myTemplate.evaluate(show);
+// -&gt; &quot;The TV show The Simpsons was created by Matt Groening.&quot;</code></pre>
 
 <h5>Templates are meant to be reused</h5>
 
@@ -157,22 +153,20 @@ data. The data is bound to the template only during the evaluation of the
 template, without affecting the template itself. The next example shows the
 same template being used with a handful of distinct objects.</p>
 
-<div class="highlight"><pre><span class="c">// creating a few similar objects</span>
-<span class="kd">var</span> <span class="nx">conversion1</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">from</span><span class="o">:</span> <span class="s1">&#39;meters&#39;</span><span class="o">,</span> <span class="nx">to</span><span class="o">:</span> <span class="s1">&#39;feet&#39;</span><span class="o">,</span> <span class="nx">factor</span><span class="o">:</span> <span class="mf">3.28</span> <span class="p">};</span>
-<span class="kd">var</span> <span class="nx">conversion2</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">from</span><span class="o">:</span> <span class="s1">&#39;kilojoules&#39;</span><span class="o">,</span> <span class="nx">to</span><span class="o">:</span> <span class="s1">&#39;BTUs&#39;</span><span class="o">,</span> <span class="nx">factor</span><span class="o">:</span> <span class="mf">0.9478</span> <span class="p">};</span>
-<span class="kd">var</span> <span class="nx">conversion3</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">from</span><span class="o">:</span> <span class="s1">&#39;megabytes&#39;</span><span class="o">,</span> <span class="nx">to</span><span class="o">:</span> <span class="s1">&#39;gigabytes&#39;</span><span class="o">,</span> <span class="nx">factor</span><span class="o">:</span> <span class="mi">1024</span> <span class="p">};</span>
- <span class="c">// the template</span>
-<span class="kd">var</span> <span class="nx">templ</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Template</span><span class="p">(</span>
- <span class="s1">&#39;Multiply by #{factor} to convert from #{from} to #{to}.&#39;</span><span class="p">);</span>
- <span class="c">// let&#39;s format each object</span>
-<span class="p">[</span><span class="nx">conversion1</span><span class="o">,</span> <span class="nx">conversion2</span><span class="o">,</span> <span class="nx">conversion3</span><span class="p">].</span><span class="nx">each</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span><span class="nx">conv</span><span class="p">){</span>
-    <span class="nx">templ</span><span class="p">.</span><span class="nx">evaluate</span><span class="p">(</span><span class="nx">conv</span><span class="p">);</span>
-<span class="p">});</span>
-<span class="c">// -&gt; Multiply by 3.28 to convert from meters to feet.</span>
-<span class="c">// -&gt; Multiply by 0.9478 to convert from kilojoules to BTUs.</span>
-<span class="c">// -&gt; Multiply by 1024 to convert from megabytes to gigabytes.</span>
-</pre>
-</div>
+<pre><code class="javascript">// creating a few similar objects
+var conversion1 = { from: 'meters', to: 'feet', factor: 3.28 };
+var conversion2 = { from: 'kilojoules', to: 'BTUs', factor: 0.9478 };
+var conversion3 = { from: 'megabytes', to: 'gigabytes', factor: 1024 };
+ // the template
+var templ = new Template(
+ 'Multiply by #{factor} to convert from #{from} to #{to}.');
+ // let's format each object
+[conversion1, conversion2, conversion3].each( function(conv){
+    templ.evaluate(conv);
+});
+// -&gt; Multiply by 3.28 to convert from meters to feet.
+// -&gt; Multiply by 0.9478 to convert from kilojoules to BTUs.
+// -&gt; Multiply by 1024 to convert from megabytes to gigabytes.</code></pre>
 
 <h5>Escape sequence</h5>
 
@@ -180,16 +174,14 @@ same template being used with a handful of distinct objects.</p>
 template that looks like a symbol, but is not supposed to be replaced. For
 these situations there's an escape character: the backslash (<code>\</code>).</p>
 
-<div class="highlight"><pre><span class="c">// NOTE: you&#39;re seeing two backslashes here because the backslash</span>
-<span class="c">// is also an escape character in JavaScript strings, so a literal</span>
-<span class="c">// backslash is represented by two backslashes.</span>
-<span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Template</span><span class="p">(</span>
- <span class="s1">&#39;in #{lang} we also use the \\#{variable} syntax for templates.&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">lang</span><span class="o">:</span><span class="s1">&#39;Ruby&#39;</span><span class="o">,</span> <span class="nx">variable</span><span class="o">:</span> <span class="s1">&#39;(not used)&#39;</span> <span class="p">};</span>
-<span class="nx">t</span><span class="p">.</span><span class="nx">evaluate</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-<span class="c">// -&gt; in Ruby we also use the #{variable} syntax for templates.</span>
-</pre>
-</div>
+<pre><code class="javascript">// NOTE: you're seeing two backslashes here because the backslash
+// is also an escape character in JavaScript strings, so a literal
+// backslash is represented by two backslashes.
+var t = new Template(
+ 'in #{lang} we also use the \\#{variable} syntax for templates.');
+var data = { lang:'Ruby', variable: '(not used)' };
+t.evaluate(data);
+// -&gt; in Ruby we also use the #{variable} syntax for templates.</code></pre>
 
 <h5>Custom syntaxes</h5>
 
@@ -201,15 +193,13 @@ object to match the replaceable symbols in the template string. Let's put
 together a template that uses a syntax similar to the now ubiquitous <code>{{ }}</code>
 constructs:</p>
 
-<div class="highlight"><pre><span class="c">// matches symbols like &#39;{{ field }}&#39;</span>
-<span class="kd">var</span> <span class="nx">syntax</span> <span class="o">=</span> <span class="sr">/(^|.|\r|\n)(\{{\s*(\w+)\s*}})/</span><span class="o">;</span>
- <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Template</span><span class="p">(</span>
- <span class="s1">&#39;&lt;div&gt;Name: &lt;b&gt;{{ name }}&lt;/b&gt;, Age: &lt;b&gt;{{ age }}&lt;/b&gt;&lt;/div&gt;&#39;</span><span class="o">,</span>
- <span class="nx">syntax</span><span class="p">);</span>
-<span class="nx">t</span><span class="p">.</span><span class="nx">evaluate</span><span class="p">(</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;John Smith&#39;</span><span class="o">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">26</span><span class="p">}</span> <span class="p">);</span>
-<span class="c">// -&gt; &lt;div&gt;Name: &lt;b&gt;John Smith&lt;/b&gt;, Age: &lt;b&gt;26&lt;/b&gt;&lt;/div&gt;</span>
-</pre>
-</div>
+<pre><code class="javascript">// matches symbols like '{{ field }}'
+var syntax = /(^|.|\r|\n)(\{{\s*(\w+)\s*}})/;
+ var t = new Template(
+ '&lt;div&gt;Name: &lt;b&gt;{{ name }}&lt;/b&gt;, Age: &lt;b&gt;{{ age }}&lt;/b&gt;&lt;/div&gt;',
+ syntax);
+t.evaluate( {name: 'John Smith', age: 26} );
+// -&gt; &lt;div&gt;Name: &lt;b&gt;John Smith&lt;/b&gt;, Age: &lt;b&gt;26&lt;/b&gt;&lt;/div&gt;</code></pre>
 
 <p>There are important constraints to any custom syntax. Any syntax must
 provide at least three groupings in the regular expression. The first
@@ -258,7 +248,7 @@ field inside the symbol.</p>
       
       <div id="footer">
         <p><a href="http://prototypejs.org">Prototype JavaScript Framework</a> v1.7_rc1 API documentation.</p>
-        <p>Last updated on May 10, 2010 at 13:19 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
+        <p>Last updated on May 13, 2010 at 02:26 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
         <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.</p>
       </div> <!-- #footer -->
 

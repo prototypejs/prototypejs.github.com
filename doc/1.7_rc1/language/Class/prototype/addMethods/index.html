@@ -138,45 +138,43 @@ instantiated.</p>
 
 <h5>Examples</h5>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">Animal</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="o">,</span> <span class="nx">sound</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">name</span>  <span class="o">=</span> <span class="nx">name</span><span class="o">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">sound</span> <span class="o">=</span> <span class="nx">sound</span><span class="o">;</span>
-  <span class="p">}</span><span class="o">,</span>
-   <span class="nx">speak</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">&quot; says: &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">sound</span> <span class="o">+</span> <span class="s2">&quot;!&quot;</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">});</span>
- <span class="c">// subclassing Animal</span>
-<span class="kd">var</span> <span class="nx">Snake</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">Animal</span><span class="o">,</span> <span class="p">{</span>
-  <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$super</span><span class="o">,</span> <span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">$super</span><span class="p">(</span><span class="nx">name</span><span class="o">,</span> <span class="s1">&#39;hissssssssss&#39;</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">});</span>
- <span class="kd">var</span> <span class="nx">ringneck</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Snake</span><span class="p">(</span><span class="s2">&quot;Ringneck&quot;</span><span class="p">);</span>
-<span class="nx">ringneck</span><span class="p">.</span><span class="nx">speak</span><span class="p">();</span>
- <span class="c">//-&gt; alerts &quot;Ringneck says: hissssssss!&quot;</span>
- <span class="c">// adding Snake#speak (with a supercall)</span>
-<span class="nx">Snake</span><span class="p">.</span><span class="nx">addMethods</span><span class="p">({</span>
-  <span class="nx">speak</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$super</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">$super</span><span class="p">();</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;You should probably run. He looks really mad.&quot;</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">});</span>
- <span class="nx">ringneck</span><span class="p">.</span><span class="nx">speak</span><span class="p">();</span>
-<span class="c">//-&gt; alerts &quot;Ringneck says: hissssssss!&quot;</span>
-<span class="c">//-&gt; alerts &quot;You should probably run. He looks really mad.&quot;</span>
- <span class="c">// redefining Animal#speak</span>
-<span class="nx">Animal</span><span class="p">.</span><span class="nx">addMethods</span><span class="p">({</span>
-  <span class="nx">speak</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39;snarls: &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">sound</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">});</span>
- <span class="nx">ringneck</span><span class="p">.</span><span class="nx">speak</span><span class="p">();</span>
-<span class="c">//-&gt; alerts &quot;Ringneck snarls: hissssssss!&quot;</span>
-<span class="c">//-&gt; alerts &quot;You should probably run. He looks really mad.&quot;</span>
-</pre>
-</div>
+<pre><code class="javascript">var Animal = Class.create({
+  initialize: function(name, sound) {
+    this.name  = name;
+    this.sound = sound;
+  },
+   speak: function() {
+    alert(this.name + &quot; says: &quot; + this.sound + &quot;!&quot;);
+  }
+});
+ // subclassing Animal
+var Snake = Class.create(Animal, {
+  initialize: function($super, name) {
+    $super(name, 'hissssssssss');
+  }
+});
+ var ringneck = new Snake(&quot;Ringneck&quot;);
+ringneck.speak();
+ //-&gt; alerts &quot;Ringneck says: hissssssss!&quot;
+ // adding Snake#speak (with a supercall)
+Snake.addMethods({
+  speak: function($super) {
+    $super();
+    alert(&quot;You should probably run. He looks really mad.&quot;);
+  }
+});
+ ringneck.speak();
+//-&gt; alerts &quot;Ringneck says: hissssssss!&quot;
+//-&gt; alerts &quot;You should probably run. He looks really mad.&quot;
+ // redefining Animal#speak
+Animal.addMethods({
+  speak: function() {
+    alert(this.name + 'snarls: ' + this.sound + '!');
+  }
+});
+ ringneck.speak();
+//-&gt; alerts &quot;Ringneck snarls: hissssssss!&quot;
+//-&gt; alerts &quot;You should probably run. He looks really mad.&quot;</code></pre>
       
       
 
@@ -190,7 +188,7 @@ instantiated.</p>
       
       <div id="footer">
         <p><a href="http://prototypejs.org">Prototype JavaScript Framework</a> v1.7_rc1 API documentation.</p>
-        <p>Last updated on May 10, 2010 at 13:18 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
+        <p>Last updated on May 13, 2010 at 02:26 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
         <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.</p>
       </div> <!-- #footer -->
 

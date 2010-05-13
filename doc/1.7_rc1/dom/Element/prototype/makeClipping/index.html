@@ -278,45 +278,39 @@
 
 <h5>Example</h5>
 
-<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;framer&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;/assets/2007/1/14/chairs.jpg&quot;</span> <span class="na">alt=</span><span class="s">&quot;example&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre>
-</div>
+<pre><code class="html">&lt;div id=&quot;framer&quot;&gt;
+  &lt;img src=&quot;/assets/2007/1/14/chairs.jpg&quot; alt=&quot;example&quot; /&gt;
+&lt;/div&gt;</code></pre>
 
 <p>Then:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;framer&#39;</span><span class="p">).</span><span class="nx">makeClipping</span><span class="p">().</span><span class="nx">setStyle</span><span class="p">({</span><span class="nx">width</span><span class="o">:</span> <span class="s1">&#39;100px&#39;</span><span class="o">,</span> <span class="nx">height</span><span class="o">:</span> <span class="s1">&#39;100px&#39;</span><span class="p">});</span>
-<span class="c">// -&gt; Element</span>
-</pre>
-</div>
+<pre><code class="javascript">$('framer').makeClipping().setStyle({width: '100px', height: '100px'});
+// -&gt; Element</code></pre>
 
 <p>Another example:</p>
 
-<div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">&quot;clipper&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Click me to try it out.<span class="nt">&lt;/a&gt;</span>
- <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;framer&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;/assets/2007/2/24/chairs.jpg&quot;</span> <span class="na">alt=</span><span class="s">&quot;example&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
- <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
-  <span class="kd">var</span> <span class="nx">Example</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">clip</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
-      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;clipper&#39;</span><span class="p">).</span><span class="nx">update</span><span class="p">(</span><span class="s1">&#39;undo clipping!&#39;</span><span class="p">);</span>
-      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;framer&#39;</span><span class="p">).</span><span class="nx">makeClipping</span><span class="p">().</span><span class="nx">setStyle</span><span class="p">({</span><span class="nx">width</span><span class="o">:</span> <span class="s1">&#39;100px&#39;</span><span class="o">,</span> <span class="nx">height</span><span class="o">:</span> <span class="s1">&#39;100px&#39;</span><span class="p">});</span>
-    <span class="p">}</span><span class="o">,</span>
-    <span class="nx">unClip</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
-      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;clipper&#39;</span><span class="p">).</span><span class="nx">update</span><span class="p">(</span><span class="s1">&#39;clip!&#39;</span><span class="p">);</span>
-      <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;framer&#39;</span><span class="p">).</span><span class="nx">undoClipping</span><span class="p">();</span>
-    <span class="p">}</span><span class="o">,</span>
-    <span class="nx">toggleClip</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
-      <span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;clipper&#39;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">==</span> <span class="s1">&#39;undo clipping!&#39;</span><span class="p">)</span> <span class="nx">Example</span><span class="p">.</span><span class="nx">unClip</span><span class="p">();</span>
-      <span class="k">else</span> <span class="nx">Example</span><span class="p">.</span><span class="nx">clip</span><span class="p">();</span>
-      <span class="nx">Event</span><span class="p">.</span><span class="nx">stop</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">};</span>
-  <span class="nx">Event</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="s1">&#39;clipper&#39;</span><span class="o">,</span> <span class="s1">&#39;click&#39;</span><span class="o">,</span> <span class="nx">Example</span><span class="p">.</span><span class="nx">toggleClip</span><span class="p">);</span>
-<span class="nt">&lt;/script&gt;</span>
-</pre>
-</div>
+<pre><code class="html">&lt;a id=&quot;clipper&quot; href=&quot;#&quot;&gt;Click me to try it out.&lt;/a&gt;
+ &lt;div id=&quot;framer&quot;&gt;
+  &lt;img src=&quot;/assets/2007/2/24/chairs.jpg&quot; alt=&quot;example&quot; /&gt;
+&lt;/div&gt;
+ &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;
+  var Example = {
+    clip: function(){
+      $('clipper').update('undo clipping!');
+      $('framer').makeClipping().setStyle({width: '100px', height: '100px'});
+    },
+    unClip: function(){
+      $('clipper').update('clip!');
+      $('framer').undoClipping();
+    },
+    toggleClip: function(event){
+      if($('clipper').innerHTML == 'undo clipping!') Example.unClip();
+      else Example.clip();
+      Event.stop(event);
+    }
+  };
+  Event.observe('clipper', 'click', Example.toggleClip);
+&lt;/script&gt;</code></pre>
       
       
 
@@ -333,7 +327,7 @@
       
       <div id="footer">
         <p><a href="http://prototypejs.org">Prototype JavaScript Framework</a> v1.7_rc1 API documentation.</p>
-        <p>Last updated on May 10, 2010 at 13:17 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
+        <p>Last updated on May 13, 2010 at 02:25 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
         <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.</p>
       </div> <!-- #footer -->
 

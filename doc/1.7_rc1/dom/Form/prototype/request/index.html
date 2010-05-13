@@ -161,43 +161,39 @@ serialized form parameters.</p></li>
 
 <p>Suppose you have this HTML form:</p>
 
-<div class="highlight"><pre><span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">&quot;person-example&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span> <span class="na">action=</span><span class="s">&quot;/user/info&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;fieldset&gt;&lt;legend&gt;</span>User info<span class="nt">&lt;/legend&gt;</span>
-    <span class="nt">&lt;ul&gt;</span>
-      <span class="nt">&lt;li&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;username&quot;</span><span class="nt">&gt;</span>Username:<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span> <span class="na">id=</span><span class="s">&quot;username&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;age&quot;</span><span class="nt">&gt;</span>Age:<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;age&quot;</span> <span class="na">id=</span><span class="s">&quot;age&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="na">size=</span><span class="s">&quot;3&quot;</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li&gt;</span>
-        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;hobbies&quot;</span><span class="nt">&gt;</span>Your hobbies are:<span class="nt">&lt;/label&gt;</span>
-        <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">&quot;hobbies[]&quot;</span> <span class="na">id=</span><span class="s">&quot;hobbies&quot;</span> <span class="na">multiple=</span><span class="s">&quot;multiple&quot;</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;option&gt;</span>coding<span class="nt">&lt;/option&gt;</span>
-          <span class="nt">&lt;option&gt;</span>swimming<span class="nt">&lt;/option&gt;</span>
-          <span class="nt">&lt;option&gt;</span>biking<span class="nt">&lt;/option&gt;</span>
-          <span class="nt">&lt;option&gt;</span>hiking<span class="nt">&lt;/option&gt;</span>
-          <span class="nt">&lt;option&gt;</span>drawing<span class="nt">&lt;/option&gt;</span>
-        <span class="nt">&lt;/select&gt;</span>
-      <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;serialize!&quot;</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;/fieldset&gt;</span>
-<span class="nt">&lt;/form&gt;</span>
-</pre>
-</div>
+<pre><code class="html">&lt;form id=&quot;person-example&quot; method=&quot;POST&quot; action=&quot;/user/info&quot;&gt;
+  &lt;fieldset&gt;&lt;legend&gt;User info&lt;/legend&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;label for=&quot;username&quot;&gt;Username:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; value=&quot;&quot; /&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;label for=&quot;age&quot;&gt;Age:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;age&quot; id=&quot;age&quot; value=&quot;&quot; size=&quot;3&quot; /&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;label for=&quot;hobbies&quot;&gt;Your hobbies are:&lt;/label&gt;
+        &lt;select name=&quot;hobbies[]&quot; id=&quot;hobbies&quot; multiple=&quot;multiple&quot;&gt;
+          &lt;option&gt;coding&lt;/option&gt;
+          &lt;option&gt;swimming&lt;/option&gt;
+          &lt;option&gt;biking&lt;/option&gt;
+          &lt;option&gt;hiking&lt;/option&gt;
+          &lt;option&gt;drawing&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;serialize!&quot; /&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
 
 <p>You can easily post it with Ajax like this:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;person-example&#39;</span><span class="p">).</span><span class="nx">request</span><span class="p">();</span> <span class="c">//done - it&#39;s posted</span>
- <span class="c">// do the same with a callback:</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;person-example&#39;</span><span class="p">).</span><span class="nx">request</span><span class="p">({</span>
-  <span class="nx">onComplete</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span> <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Form data saved!&#39;</span><span class="p">)</span> <span class="p">}</span>
-<span class="p">})</span>
-</pre>
-</div>
+<pre><code class="javascript">$('person-example').request(); //done - it's posted
+ // do the same with a callback:
+$('person-example').request({
+  onComplete: function(){ alert('Form data saved!') }
+})</code></pre>
 
 <p>To override the HTTP method and add some parameters, simply use <code>method</code>
 and <code>parameters</code> in the options. In this example we set the method to GET
@@ -205,13 +201,11 @@ and set two fixed parameters:
 <code>interests</code> and <code>hobbies</code>. The latter already exists in the form but this
 value will take precedence.</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;person-example&#39;</span><span class="p">).</span><span class="nx">request</span><span class="p">({</span>
-  <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;get&#39;</span><span class="o">,</span>
-  <span class="nx">parameters</span><span class="o">:</span> <span class="p">{</span> <span class="nx">interests</span><span class="o">:</span><span class="s1">&#39;JavaScript&#39;</span><span class="o">,</span> <span class="s1">&#39;hobbies[]&#39;</span><span class="o">:</span><span class="p">[</span><span class="s1">&#39;programming&#39;</span><span class="o">,</span> <span class="s1">&#39;music&#39;</span><span class="p">]</span> <span class="p">}</span><span class="o">,</span>
-  <span class="nx">onComplete</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span> <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Form data saved!&#39;</span><span class="p">)</span> <span class="p">}</span>
-<span class="p">})</span>
-</pre>
-</div>
+<pre><code class="javascript">$('person-example').request({
+  method: 'get',
+  parameters: { interests:'JavaScript', 'hobbies[]':['programming', 'music'] },
+  onComplete: function(){ alert('Form data saved!') }
+})</code></pre>
       
       
 
@@ -228,7 +222,7 @@ value will take precedence.</p>
       
       <div id="footer">
         <p><a href="http://prototypejs.org">Prototype JavaScript Framework</a> v1.7_rc1 API documentation.</p>
-        <p>Last updated on May 10, 2010 at 13:17 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
+        <p>Last updated on May 13, 2010 at 02:25 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
         <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.</p>
       </div> <!-- #footer -->
 

@@ -130,13 +130,11 @@ of the <a href="../../../ajax/Ajax/" title="Ajax (namespace)">Ajax</a>.</p>
 
 <h5>A basic example</h5>
 
-<div class="highlight"><pre><span class="k">new</span> <span class="nx">Ajax</span><span class="p">.</span><span class="nx">Request</span><span class="p">(</span><span class="s1">&#39;/your/url&#39;</span><span class="o">,</span> <span class="p">{</span>
-  <span class="nx">onSuccess</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c">// Handle the response content...</span>
-  <span class="p">}</span>
-<span class="p">});</span>
-</pre>
-</div>
+<pre><code class="javascript">new Ajax.Request('/your/url', {
+  onSuccess: function(response) {
+    // Handle the response content...
+  }
+});</code></pre>
 
 <h5>Request life-cycle</h5>
 
@@ -186,15 +184,13 @@ guaranteed.</p>
 defining only an <code>onComplete</code> callback even when they're only interested in
 "successful" responses, thereby testing it by hand:</p>
 
-<div class="highlight"><pre><span class="c">// This is too bad, there&#39;s better!</span>
-<span class="k">new</span> <span class="nx">Ajax</span><span class="p">.</span><span class="nx">Request</span><span class="p">(</span><span class="s1">&#39;/your/url&#39;</span><span class="o">,</span> <span class="p">{</span>
-  <span class="nx">onComplete</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="mi">200</span> <span class="o">==</span> <span class="nx">response</span><span class="p">.</span><span class="nx">status</span><span class="p">)</span>
-      <span class="c">// yada yada yada</span>
-  <span class="p">}</span>
-<span class="p">});</span>
-</pre>
-</div>
+<pre><code class="javascript">// This is too bad, there's better!
+new Ajax.Request('/your/url', {
+  onComplete: function(response) {
+    if (200 == response.status)
+      // yada yada yada
+  }
+});</code></pre>
 
 <p>First, as described below, you could use better "success" detection: success
 is generally defined, HTTP-wise, as either no response status or a "2xy"
@@ -204,13 +200,11 @@ response status (e.g., 201 is a success, too). See the example below.</p>
 callbacks specific to success and failure, which we listed above. Here's
 what you could do if you're only interested in success, for instance:</p>
 
-<div class="highlight"><pre><span class="k">new</span> <span class="nx">Ajax</span><span class="p">.</span><span class="nx">Request</span><span class="p">(</span><span class="s1">&#39;/your/url&#39;</span><span class="o">,</span> <span class="p">{</span>
-  <span class="nx">onSuccess</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c">// yada yada yada</span>
-  <span class="p">}</span>
-<span class="p">});</span>
-</pre>
-</div>
+<pre><code class="javascript">new Ajax.Request('/your/url', {
+  onSuccess: function(response) {
+      // yada yada yada
+  }
+});</code></pre>
 
 <h5>Automatic JavaScript response evaluation</h5>
 
@@ -258,16 +252,14 @@ implementations raise an exception when the header is not found. To make
 this easier, you can use the <code><a href="../../../ajax/Ajax/Response/prototype/getHeader/" title="Ajax.Response#getHeader (instance method)">Ajax.Response#getHeader</a></code> method, which
 delegates to the longer version and returns <code>null</code> if an exception occurs:</p>
 
-<div class="highlight"><pre><span class="k">new</span> <span class="nx">Ajax</span><span class="p">.</span><span class="nx">Request</span><span class="p">(</span><span class="s1">&#39;/your/url&#39;</span><span class="o">,</span> <span class="p">{</span>
-  <span class="nx">onSuccess</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c">// Note how we brace against null values</span>
-    <span class="k">if</span> <span class="p">((</span><span class="nx">response</span><span class="p">.</span><span class="nx">getHeader</span><span class="p">(</span><span class="s1">&#39;Server&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">match</span><span class="p">(</span><span class="sr">/Apache/</span><span class="p">))</span>
-      <span class="o">++</span><span class="nx">gApacheCount</span><span class="o">;</span>
-    <span class="c">// Remainder of the code</span>
-  <span class="p">}</span>
-<span class="p">});</span>
-</pre>
-</div>
+<pre><code class="javascript">new Ajax.Request('/your/url', {
+  onSuccess: function(response) {
+    // Note how we brace against null values
+    if ((response.getHeader('Server') || '').match(/Apache/))
+      ++gApacheCount;
+    // Remainder of the code
+  }
+});</code></pre>
 
 <h5>Evaluating JSON headers</h5>
 
@@ -278,13 +270,11 @@ yourself, as Prototype automatically does so. It passes the result as the
 is no such header &mdash; or its contents are invalid &mdash; <code>headerJSON</code>
 will be set to <code>null</code>.</p>
 
-<div class="highlight"><pre><span class="k">new</span> <span class="nx">Ajax</span><span class="p">.</span><span class="nx">Request</span><span class="p">(</span><span class="s1">&#39;/your/url&#39;</span><span class="o">,</span> <span class="p">{</span>
-  <span class="nx">onSuccess</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">transport</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">transport</span><span class="p">.</span><span class="nx">headerJSON</span>
-  <span class="p">}</span>
-<span class="p">});</span>
-</pre>
-</div>
+<pre><code class="javascript">new Ajax.Request('/your/url', {
+  onSuccess: function(transport) {
+    transport.headerJSON
+  }
+});</code></pre>
                 </div> <!-- .section-content -->
             </div> <!-- .section -->
 
@@ -327,7 +317,7 @@ will be set to <code>null</code>.</p>
       
       <div id="footer">
         <p><a href="http://prototypejs.org">Prototype JavaScript Framework</a> v1.7_rc1 API documentation.</p>
-        <p>Last updated on May 10, 2010 at 13:17 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
+        <p>Last updated on May 13, 2010 at 02:25 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
         <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.</p>
       </div> <!-- #footer -->
 

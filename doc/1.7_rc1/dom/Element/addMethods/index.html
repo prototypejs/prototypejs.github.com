@@ -288,39 +288,33 @@ with the given HTML tag if you specify <code>tagName</code>).</p>
 <p>You define the methods in a hash that you provide to <code><a href="../../../dom/Element/addMethods/" title="Element.addMethods (class method)">Element.addMethods</a></code>.
 Here's an example adding two methods:</p>
 
-<div class="highlight"><pre><span class="nx">Element</span><span class="p">.</span><span class="nx">addMethods</span><span class="p">({</span>
-   <span class="c">// myOwnMethod: Do something cool with the element</span>
-  <span class="nx">myOwnMethod</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">element</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">element</span><span class="p">)))</span> <span class="k">return</span><span class="o">;</span>
-    <span class="c">// ...do smething with &#39;element&#39;...</span>
-    <span class="k">return</span> <span class="nx">element</span><span class="o">;</span>
-  <span class="p">}</span><span class="o">,</span>
-   <span class="c">// wrap: Wrap the element in a new element using the given tag</span>
-  <span class="nx">wrap</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="o">,</span> <span class="nx">tagName</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">wrapper</span><span class="o">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">element</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">element</span><span class="p">)))</span> <span class="k">return</span><span class="o">;</span>
-    <span class="nx">wrapper</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Element</span><span class="p">(</span><span class="nx">tagName</span><span class="p">);</span>
-    <span class="nx">element</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">replaceChild</span><span class="p">(</span><span class="nx">wrapper</span><span class="o">,</span> <span class="nx">element</span><span class="p">);</span>
-    <span class="nx">wrapper</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nx">wrapper</span><span class="o">;</span>
-  <span class="p">}</span>
- <span class="p">});</span>
-</pre>
-</div>
+<pre><code class="javascript">Element.addMethods({
+   // myOwnMethod: Do something cool with the element
+  myOwnMethod: function(element) {
+    if (!(element = $(element))) return;
+    // ...do smething with 'element'...
+    return element;
+  },
+   // wrap: Wrap the element in a new element using the given tag
+  wrap: function(element, tagName) {
+    var wrapper;
+    if (!(element = $(element))) return;
+    wrapper = new Element(tagName);
+    element.parentNode.replaceChild(wrapper, element);
+    wrapper.appendChild(element);
+    return wrapper;
+  }
+ });</code></pre>
 
 <p>Once added, those can be used either via <code><a href="../../../dom/Element/" title="Element (class)">Element</a></code>:</p>
 
-<div class="highlight"><pre><span class="c">// Wrap the element with the ID &#39;foo&#39; in a div</span>
-<span class="nx">Element</span><span class="p">.</span><span class="nx">wrap</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="o">,</span> <span class="s1">&#39;div&#39;</span><span class="p">);</span>
-</pre>
-</div>
+<pre><code class="javascript">// Wrap the element with the ID 'foo' in a div
+Element.wrap('foo', 'div');</code></pre>
 
 <p>...or as instance methods of extended elements:</p>
 
-<div class="highlight"><pre><span class="c">// Wrap the element with the ID &#39;foo&#39; in a div</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">).</span><span class="nx">wrap</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
-</pre>
-</div>
+<pre><code class="javascript">// Wrap the element with the ID 'foo' in a div
+$('foo').wrap('div');</code></pre>
 
 <p>Note the following requirements and conventions for methods added to
 <code><a href="../../../dom/Element/" title="Element (class)">Element</a></code>:</p>
@@ -343,17 +337,13 @@ wrapper, because that makes more sense for that method.</p>
 <p>If you call <code><a href="../../../dom/Element/addMethods/" title="Element.addMethods (class method)">Element.addMethods</a></code> with <em>two</em> arguments, it will apply the
 methods only to elements with the given HTML tag:</p>
 
-<div class="highlight"><pre><span class="nx">Element</span><span class="p">.</span><span class="nx">addMethods</span><span class="p">(</span><span class="s1">&#39;DIV&#39;</span><span class="o">,</span> <span class="nx">my_div_methods</span><span class="p">);</span>
-<span class="c">// the given methods are now available on DIV elements, but not others</span>
-</pre>
-</div>
+<pre><code class="javascript">Element.addMethods('DIV', my_div_methods);
+// the given methods are now available on DIV elements, but not others</code></pre>
 
 <p>You can also pass an <em><code><a href="../../../language/Array/" title="Array (class)">Array</a></code></em> of tag names as the first argument:</p>
 
-<div class="highlight"><pre><span class="nx">Element</span><span class="p">.</span><span class="nx">addMethods</span><span class="p">([</span><span class="s1">&#39;DIV&#39;</span><span class="o">,</span> <span class="s1">&#39;SPAN&#39;</span><span class="p">]</span><span class="o">,</span> <span class="nx">my_additional_methods</span><span class="p">);</span>
-<span class="c">// DIV and SPAN now both have the given methods</span>
-</pre>
-</div>
+<pre><code class="javascript">Element.addMethods(['DIV', 'SPAN'], my_additional_methods);
+// DIV and SPAN now both have the given methods</code></pre>
 
 <p>(Tag names in the first argument are not case sensitive.)</p>
 
@@ -368,48 +358,38 @@ methods is best avoided or at least done only with great care.</p>
 <p>Our <code>wrap</code> method earlier was a complete example. For instance, given this
 paragraph:</p>
 
-<div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">&quot;first&quot;</span><span class="nt">&gt;</span>Some content...<span class="nt">&lt;/p&gt;</span>
-</pre>
-</div>
+<pre><code class="html">&lt;p id=&quot;first&quot;&gt;Some content...&lt;/p&gt;</code></pre>
 
 <p>...we might wrap it in a <code>div</code>:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;first&#39;</span><span class="p">).</span><span class="nx">wrap</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
-</pre>
-</div>
+<pre><code class="javascript">$('first').wrap('div');</code></pre>
 
 <p>...or perhaps wrap it and apply some style to the <code>div</code> as well:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;first&#39;</span><span class="p">).</span><span class="nx">wrap</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">).</span><span class="nx">setStyle</span><span class="p">({</span>
-  <span class="nx">backgroundImage</span><span class="o">:</span> <span class="s1">&#39;url(images/rounded-corner-top-left.png) top left&#39;</span>
-<span class="p">});</span>
-</pre>
-</div>
+<pre><code class="javascript">$('first').wrap('div').setStyle({
+  backgroundImage: 'url(images/rounded-corner-top-left.png) top left'
+});</code></pre>
 
 <h5>Example 2</h5>
 
 <p>We can add a method to elements that makes it a bit easier to update them
 via <code><a href="../../../ajax/Ajax/Updater/" title="Ajax.Updater (class)">Ajax.Updater</a></code>:</p>
 
-<div class="highlight"><pre><span class="nx">Element</span><span class="p">.</span><span class="nx">addMethods</span><span class="p">({</span>
-  <span class="nx">ajaxUpdate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">element</span><span class="o">,</span> <span class="nx">url</span><span class="o">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">element</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">element</span><span class="p">)))</span> <span class="k">return</span><span class="o">;</span>
-    <span class="nx">element</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;/images/spinner.gif&quot; alt=&quot;Loading...&quot;&gt;&#39;</span><span class="p">);</span>
-    <span class="nx">options</span> <span class="o">=</span> <span class="nx">options</span> <span class="o">||</span> <span class="p">{};</span>
-    <span class="nx">options</span><span class="p">.</span><span class="nx">onFailure</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">onFailure</span> <span class="o">||</span> <span class="nx">defaultFailureHandler</span><span class="p">.</span><span class="nx">curry</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
-    <span class="k">new</span> <span class="nx">Ajax</span><span class="p">.</span><span class="nx">Updater</span><span class="p">(</span><span class="nx">element</span><span class="o">,</span> <span class="nx">url</span><span class="o">,</span> <span class="nx">options</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nx">element</span><span class="o">;</span>
-  <span class="p">}</span>
-<span class="p">});</span>
-</pre>
-</div>
+<pre><code class="javascript">Element.addMethods({
+  ajaxUpdate: function(element, url, options) {
+    if (!(element = $(element))) return;
+    element.update('&lt;img src=&quot;/images/spinner.gif&quot; alt=&quot;Loading...&quot;&gt;');
+    options = options || {};
+    options.onFailure = options.onFailure || defaultFailureHandler.curry(element);
+    new Ajax.Updater(element, url, options);
+    return element;
+  }
+});</code></pre>
 
 <p>Now we can update an element via an Ajax call much more concisely than
 before:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">).</span><span class="nx">ajaxUpdate</span><span class="p">(</span><span class="s1">&#39;/new/content&#39;</span><span class="p">);</span>
-</pre>
-</div>
+<pre><code class="javascript">$('foo').ajaxUpdate('/new/content');</code></pre>
 
 <p>That will use <code><a href="../../../ajax/Ajax/Updater/" title="Ajax.Updater (class)">Ajax.Updater</a></code> to load new content into the 'foo' element,
 showing a spinner while the call is in progress. It even applies a default
@@ -427,7 +407,7 @@ failure handler (since we didn't supply one).</p>
       
       <div id="footer">
         <p><a href="http://prototypejs.org">Prototype JavaScript Framework</a> v1.7_rc1 API documentation.</p>
-        <p>Last updated on May 10, 2010 at 13:18 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
+        <p>Last updated on May 13, 2010 at 02:25 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
         <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.</p>
       </div> <!-- #footer -->
 

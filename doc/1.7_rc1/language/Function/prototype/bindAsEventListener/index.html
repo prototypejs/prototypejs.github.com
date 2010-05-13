@@ -155,38 +155,36 @@ want to know the event object is the first argument.</li>
 
 <h5>Example</h5>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">ContentUpdater</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">initialData</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">extend</span><span class="p">({}</span><span class="o">,</span> <span class="nx">initialData</span><span class="p">);</span>
-  <span class="p">}</span><span class="o">,</span>
-  <span class="c">// On an event, update the content in the elements whose</span>
-  <span class="c">// IDs are passed as arguments from our data</span>
-  <span class="nx">updateTheseHandler</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">argIndex</span><span class="o">,</span> <span class="nx">id</span><span class="o">,</span> <span class="nx">element</span><span class="o">;</span>
-    <span class="nx">event</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
-    <span class="k">for</span> <span class="p">(</span><span class="nx">argIndex</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="nx">argIndex</span> <span class="o">&lt;</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="o">;</span> <span class="o">++</span><span class="nx">argIndex</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">id</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">argIndex</span><span class="p">];</span>
-      <span class="nx">element</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">element</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="nx">id</span><span class="p">]).</span><span class="nx">escapeHTML</span><span class="p">());</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">});</span>
-<span class="kd">var</span> <span class="nx">cu</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ContentUpdater</span><span class="p">({</span>
-  <span class="nx">dispName</span><span class="o">:</span> <span class="s1">&#39;Joe Bloggs&#39;</span><span class="o">,</span>
-  <span class="nx">dispTitle</span><span class="o">:</span> <span class="s1">&#39;Manager &lt;provisional&gt;&#39;</span><span class="o">,</span>
-  <span class="nx">dispAge</span><span class="o">:</span> <span class="mi">47</span>
-<span class="p">});</span>
-<span class="c">// Using bindAsEventListener because of the variable arg lists:</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;btnUpdateName&#39;</span><span class="p">).</span><span class="nx">observe</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="o">,</span>
-  <span class="nx">cu</span><span class="p">.</span><span class="nx">updateTheseHandler</span><span class="p">.</span><span class="nx">bindAsEventListener</span><span class="p">(</span><span class="nx">cu</span><span class="o">,</span> <span class="s1">&#39;dispName&#39;</span><span class="p">)</span>
-<span class="p">);</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;btnUpdateAll&#39;</span><span class="p">).</span><span class="nx">observe</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="o">,</span>
-  <span class="nx">cu</span><span class="p">.</span><span class="nx">updateTheseHandler</span><span class="p">.</span><span class="nx">bindAsEventListener</span><span class="p">(</span><span class="nx">cu</span><span class="o">,</span> <span class="s1">&#39;dispName&#39;</span><span class="o">,</span> <span class="s1">&#39;dispTitle&#39;</span><span class="o">,</span> <span class="s1">&#39;dispAge&#39;</span><span class="p">)</span>
-<span class="p">);</span>
-</pre>
-</div>
+<pre><code class="javascript">var ContentUpdater = Class.create({
+  initialize: function(initialData) {
+    this.data = Object.extend({}, initialData);
+  },
+  // On an event, update the content in the elements whose
+  // IDs are passed as arguments from our data
+  updateTheseHandler: function(event) {
+    var argIndex, id, element;
+    event.stop();
+    for (argIndex = 1; argIndex &lt; arguments.length; ++argIndex) {
+      id = arguments[argIndex];
+      element = $(id);
+      if (element) {
+        element.update(String(this.data[id]).escapeHTML());
+      }
+    }
+  }
+});
+var cu = new ContentUpdater({
+  dispName: 'Joe Bloggs',
+  dispTitle: 'Manager &lt;provisional&gt;',
+  dispAge: 47
+});
+// Using bindAsEventListener because of the variable arg lists:
+$('btnUpdateName').observe('click',
+  cu.updateTheseHandler.bindAsEventListener(cu, 'dispName')
+);
+$('btnUpdateAll').observe('click',
+  cu.updateTheseHandler.bindAsEventListener(cu, 'dispName', 'dispTitle', 'dispAge')
+);</code></pre>
       
       
 
@@ -200,7 +198,7 @@ want to know the event object is the first argument.</li>
       
       <div id="footer">
         <p><a href="http://prototypejs.org">Prototype JavaScript Framework</a> v1.7_rc1 API documentation.</p>
-        <p>Last updated on May 10, 2010 at 13:18 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
+        <p>Last updated on May 13, 2010 at 02:26 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
         <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.</p>
       </div> <!-- #footer -->
 

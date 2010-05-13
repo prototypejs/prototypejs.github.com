@@ -295,9 +295,7 @@ have to worry about whitespace nodes.</p>
 <p>And as an added bonus, all elements returned are already extended
 (see <code><a href="../../../../dom/Element/extend/" title="Element.extend (class method)">Element.extend</a></code>) allowing chaining:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="nx">element</span><span class="p">).</span><span class="nx">down</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="o">,</span> <span class="mi">2</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
-</pre>
-</div>
+<pre><code class="javascript">$(element).down(1).next('li', 2).hide();</code></pre>
 
 <p>Walking the DOM has never been that easy!</p>
 
@@ -325,63 +323,49 @@ one at the specified index.</p>
 
 <h5>Examples</h5>
 
-<div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&quot;fruits&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;apples&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;ul&gt;</span>
-      <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;golden-delicious&quot;</span><span class="nt">&gt;</span>Golden Delicious<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;mutsu&quot;</span> <span class="na">class=</span><span class="s">&quot;yummy&quot;</span><span class="nt">&gt;</span>Mutsu<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;mcintosh&quot;</span> <span class="na">class=</span><span class="s">&quot;yummy&quot;</span><span class="nt">&gt;</span>McIntosh<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;ida-red&quot;</span><span class="nt">&gt;</span>Ida Red<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-  <span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
-</pre>
-</div>
+<pre><code class="html">&lt;ul id=&quot;fruits&quot;&gt;
+  &lt;li id=&quot;apples&quot;&gt;
+    &lt;ul&gt;
+      &lt;li id=&quot;golden-delicious&quot;&gt;Golden Delicious&lt;/li&gt;
+      &lt;li id=&quot;mutsu&quot; class=&quot;yummy&quot;&gt;Mutsu&lt;/li&gt;
+      &lt;li id=&quot;mcintosh&quot; class=&quot;yummy&quot;&gt;McIntosh&lt;/li&gt;
+      &lt;li id=&quot;ida-red&quot;&gt;Ida Red&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 
 <p>Get the first descendant of "#fruites":</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;fruits&#39;</span><span class="p">).</span><span class="nx">down</span><span class="p">();</span>
-<span class="c">// or:</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;fruits&#39;</span><span class="p">).</span><span class="nx">down</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<span class="c">// -&gt; li#apples</span>
-</pre>
-</div>
+<pre><code class="javascript">$('fruits').down();
+// or:
+$('fruits').down(0);
+// -&gt; li#apples</code></pre>
 
 <p>Get the third descendant of "#fruits":</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;fruits&#39;</span><span class="p">).</span><span class="nx">down</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-<span class="c">// -&gt; li#golden-delicious</span>
-</pre>
-</div>
+<pre><code class="javascript">$('fruits').down(3);
+// -&gt; li#golden-delicious</code></pre>
 
 <p>Get the first descendant of "#apples" with the node name "li":</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;apples&#39;</span><span class="p">).</span><span class="nx">down</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">);</span>
-<span class="c">// -&gt; li#golden-delicious</span>
-</pre>
-</div>
+<pre><code class="javascript">$('apples').down('li');
+// -&gt; li#golden-delicious</code></pre>
 
 <p>Get the first descendant of "#apples" with the node name "li" and the
 class name "yummy":</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;apples&#39;</span><span class="p">).</span><span class="nx">down</span><span class="p">(</span><span class="s1">&#39;li.yummy&#39;</span><span class="p">);</span>
-<span class="c">// -&gt; li#mutsu</span>
-</pre>
-</div>
+<pre><code class="javascript">$('apples').down('li.yummy');
+// -&gt; li#mutsu</code></pre>
 
 <p>Get the second descendant of "#fruits" with the class name "yummy":</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;fruits&#39;</span><span class="p">).</span><span class="nx">down</span><span class="p">(</span><span class="s1">&#39;.yummy&#39;</span><span class="o">,</span> <span class="mi">1</span><span class="p">);</span>
-<span class="c">// -&gt; li#mcintosh</span>
-</pre>
-</div>
+<pre><code class="javascript">$('fruits').down('.yummy', 1);
+// -&gt; li#mcintosh</code></pre>
 
 <p>Try to get the ninety-ninth descendant of "#fruits":</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;fruits&#39;</span><span class="p">).</span><span class="nx">down</span><span class="p">(</span><span class="mi">99</span><span class="p">);</span>
-<span class="c">// -&gt; undefined</span>
-</pre>
-</div>
+<pre><code class="javascript">$('fruits').down(99);
+// -&gt; undefined</code></pre>
       
       
 
@@ -398,7 +382,7 @@ class name "yummy":</p>
       
       <div id="footer">
         <p><a href="http://prototypejs.org">Prototype JavaScript Framework</a> v1.7_rc1 API documentation.</p>
-        <p>Last updated on May 10, 2010 at 13:17 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
+        <p>Last updated on May 13, 2010 at 02:25 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
         <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.</p>
       </div> <!-- #footer -->
 

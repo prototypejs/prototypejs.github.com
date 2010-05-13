@@ -152,13 +152,11 @@ The pattern can be a string or a regular expression.</p>
 <p>If its second argument is a string <code><a href="../../../../language/String/prototype/gsub/" title="String#gsub (instance method)">String#gsub</a></code> works just like the native JavaScript
 method <code>replace()</code> set to global match.</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">mouseEvents</span> <span class="o">=</span> <span class="s1">&#39;click dblclick mousedown mouseup mouseover mousemove mouseout&#39;</span><span class="o">;</span>
- <span class="nx">mouseEvents</span><span class="p">.</span><span class="nx">gsub</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">,</span> <span class="s1">&#39;, &#39;</span><span class="p">);</span>
-<span class="c">// -&gt; &#39;click, dblclick, mousedown, mouseup, mouseover, mousemove, mouseout&#39;</span>
- <span class="nx">mouseEvents</span><span class="p">.</span><span class="nx">gsub</span><span class="p">(</span><span class="sr">/\s+/</span><span class="o">,</span> <span class="s1">&#39;, &#39;</span><span class="p">);</span>
-<span class="c">// -&gt; &#39;click, dblclick, mousedown, mouseup, mouseover, mousemove, mouseout&#39;</span>
-</pre>
-</div>
+<pre><code class="javascript">var mouseEvents = 'click dblclick mousedown mouseup mouseover mousemove mouseout';
+ mouseEvents.gsub(' ', ', ');
+// -&gt; 'click, dblclick, mousedown, mouseup, mouseover, mousemove, mouseout'
+ mouseEvents.gsub(/\s+/, ', ');
+// -&gt; 'click, dblclick, mousedown, mouseup, mouseover, mousemove, mouseout'</code></pre>
 
 <p>If you pass it a function, it will be invoked for every occurrence of the pattern
 with the match of the current pattern as its unique argument. Note that this argument
@@ -166,25 +164,21 @@ is the returned value of the <code>match()</code> method called on the current p
 in the form of an array where the first element is the entire match and every subsequent
 one corresponds to a parenthesis group in the regex.</p>
 
-<div class="highlight"><pre><span class="nx">mouseEvents</span><span class="p">.</span><span class="nx">gsub</span><span class="p">(</span><span class="sr">/\w+/</span><span class="o">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">match</span><span class="p">){</span> <span class="k">return</span> <span class="s1">&#39;on&#39;</span> <span class="o">+</span> <span class="nx">match</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">capitalize</span><span class="p">()</span> <span class="p">});</span>
-<span class="c">// -&gt; &#39;onClick onDblclick onMousedown onMouseup onMouseover onMousemove onMouseout&#39;</span>
- <span class="kd">var</span> <span class="nx">markdown</span> <span class="o">=</span> <span class="s1">&#39;![a pear](/img/pear.jpg) ![an orange](/img/orange.jpg)&#39;</span><span class="o">;</span>
- <span class="nx">markdown</span><span class="p">.</span><span class="nx">gsub</span><span class="p">(</span><span class="sr">/!\[(.*?)\]\((.*?)\)/</span><span class="o">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">match</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="s1">&#39;&lt;img alt=&quot;&#39;</span> <span class="o">+</span> <span class="nx">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&quot; src=&quot;&#39;</span> <span class="o">+</span> <span class="nx">match</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&quot; /&gt;&#39;</span><span class="o">;</span>
-<span class="p">});</span>
-<span class="c">// -&gt; &#39;&lt;img alt=&quot;a pear&quot; src=&quot;/img/pear.jpg&quot; /&gt; &lt;img alt=&quot;an orange&quot; src=&quot;/img/orange.jpg&quot; /&gt;&#39;</span>
-</pre>
-</div>
+<pre><code class="javascript">mouseEvents.gsub(/\w+/, function(match){ return 'on' + match[0].capitalize() });
+// -&gt; 'onClick onDblclick onMousedown onMouseup onMouseover onMousemove onMouseout'
+ var markdown = '![a pear](/img/pear.jpg) ![an orange](/img/orange.jpg)';
+ markdown.gsub(/!\[(.*?)\]\((.*?)\)/, function(match) {
+  return '&lt;img alt=&quot;' + match[1] + '&quot; src=&quot;' + match[2] + '&quot; /&gt;';
+});
+// -&gt; '&lt;img alt=&quot;a pear&quot; src=&quot;/img/pear.jpg&quot; /&gt; &lt;img alt=&quot;an orange&quot; src=&quot;/img/orange.jpg&quot; /&gt;'</code></pre>
 
 <p>Lastly, you can pass <code><a href="../../../../language/String/prototype/gsub/" title="String#gsub (instance method)">String#gsub</a></code> a <code><a href="../../../../language/Template/" title="Template (class)">Template</a></code> string in which you can also access
 the returned value of the <code>match()</code> method using the ruby inspired notation: <code>#{0}</code>
 for the first element of the array, <code>#{1}</code> for the second one, and so on.
 So our last example could be easily re-written as:</p>
 
-<div class="highlight"><pre><span class="nx">markdown</span><span class="p">.</span><span class="nx">gsub</span><span class="p">(</span><span class="sr">/!\[(.*?)\]\((.*?)\)/</span><span class="o">,</span> <span class="s1">&#39;&lt;img alt=&quot;#{1}&quot; src=&quot;#{2}&quot; /&gt;&#39;</span><span class="p">);</span>
-<span class="c">// -&gt; &#39;&lt;img alt=&quot;a pear&quot; src=&quot;/img/pear.jpg&quot; /&gt; &lt;img alt=&quot;an orange&quot; src=&quot;/img/orange.jpg&quot; /&gt;&#39;</span>
-</pre>
-</div>
+<pre><code class="javascript">markdown.gsub(/!\[(.*?)\]\((.*?)\)/, '&lt;img alt=&quot;#{1}&quot; src=&quot;#{2}&quot; /&gt;');
+// -&gt; '&lt;img alt=&quot;a pear&quot; src=&quot;/img/pear.jpg&quot; /&gt; &lt;img alt=&quot;an orange&quot; src=&quot;/img/orange.jpg&quot; /&gt;'</code></pre>
 
 <p>If you need an equivalent to <code><a href="../../../../language/String/prototype/gsub/" title="String#gsub (instance method)">String#gsub</a></code> but without global match set on, try <code><a href="../../../../language/String/prototype/sub/" title="String#sub (instance method)">String#sub</a></code>.</p>
 
@@ -204,7 +198,7 @@ So our last example could be easily re-written as:</p>
       
       <div id="footer">
         <p><a href="http://prototypejs.org">Prototype JavaScript Framework</a> v1.7_rc1 API documentation.</p>
-        <p>Last updated on May 10, 2010 at 13:19 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
+        <p>Last updated on May 13, 2010 at 02:26 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
         <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.</p>
       </div> <!-- #footer -->
 

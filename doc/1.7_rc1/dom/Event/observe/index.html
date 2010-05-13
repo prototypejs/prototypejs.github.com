@@ -179,10 +179,8 @@ via <code><a href="../../../dom/Event/stopObserving/" title="Event.stopObserving
 that's the most convenient or direct way, it's more common to use its
 alias <code><a href="../../../dom/Element/prototype/observe/" title="Element#observe (instance method)">Element#observe</a></code>. These two statements have the same effect:</p>
 
-<div class="highlight"><pre><span class="nx">Event</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="o">,</span> <span class="s1">&#39;click&#39;</span><span class="o">,</span> <span class="nx">myHandler</span><span class="p">);</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">).</span><span class="nx">observe</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="o">,</span> <span class="nx">myHandler</span><span class="p">);</span>
-</pre>
-</div>
+<pre><code class="javascript">Event.observe('foo', 'click', myHandler);
+$('foo').observe('click', myHandler);</code></pre>
 
 <p>The examples in this documentation use the <code><a href="../../../dom/Element/prototype/observe/" title="Element#observe (instance method)">Element#observe</a></code> form.</p>
 
@@ -190,20 +188,16 @@ alias <code><a href="../../../dom/Element/prototype/observe/" title="Element#obs
 
 <p>Signature:</p>
 
-<div class="highlight"><pre><span class="kd">function</span> <span class="nx">handler</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c">// `this` = the element being observed</span>
-<span class="p">}</span>
-</pre>
-</div>
+<pre><code class="javascript">function handler(event) {
+  // `this` = the element being observed
+}</code></pre>
 
 <p>So for example, this will turn the background of the element 'foo' blue
 when it's clicked:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">).</span><span class="nx">observe</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="o">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">setStyle</span><span class="p">({</span><span class="nx">backgroundColor</span><span class="o">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">});</span>
-<span class="p">});</span>
-</pre>
-</div>
+<pre><code class="javascript">$('foo').observe('click', function(event) {
+  this.setStyle({backgroundColor: 'blue'});
+});</code></pre>
 
 <p>Note that we used <code>this</code> to refer to the element, and that we received the
 <code>event</code> object as a parameter (even on MSIE).</p>
@@ -221,11 +215,9 @@ has been fired.</p>
 bubbling), we can do so with the extended event object's <code><a href="../../../dom/Event/prototype/stop/" title="Event#stop (instance method)">Event#stop</a></code>
 method:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">).</span><span class="nx">observe</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="o">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">event</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
-<span class="p">});</span>
-</pre>
-</div>
+<pre><code class="javascript">$('foo').observe('click', function(event) {
+  event.stop();
+});</code></pre>
 
 <h5>Finding the Element Where the Event Occurred</h5>
 
@@ -234,29 +226,25 @@ until they're handled, we can observe an event on a container rather than
 individual elements within the container. This is sometimes called "event
 delegation". It's particularly handy for tables:</p>
 
-<div class="highlight"><pre><span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">&#39;records&#39;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;thead&gt;</span>
-    <span class="nt">&lt;tr&gt;&lt;th</span> <span class="na">colspan=</span><span class="s">&#39;2&#39;</span><span class="nt">&gt;</span>No record clicked<span class="nt">&lt;/th&gt;&lt;/tr&gt;</span>
-  <span class="nt">&lt;/thead&gt;</span>
-  <span class="nt">&lt;tbody&gt;</span>
-    <span class="nt">&lt;tr</span> <span class="na">data-recnum=</span><span class="s">&#39;1&#39;</span><span class="nt">&gt;&lt;td&gt;</span>1<span class="nt">&lt;/td&gt;&lt;td&gt;</span>First record<span class="nt">&lt;/td&gt;&lt;/tr&gt;</span>
-    <span class="nt">&lt;tr</span> <span class="na">data-recnum=</span><span class="s">&#39;2&#39;</span><span class="nt">&gt;&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;&lt;td&gt;</span>Second record<span class="nt">&lt;/td&gt;&lt;/tr&gt;</span>
-    <span class="nt">&lt;tr</span> <span class="na">data-recnum=</span><span class="s">&#39;3&#39;</span><span class="nt">&gt;&lt;td&gt;</span>3<span class="nt">&lt;/td&gt;&lt;td&gt;</span>Third record<span class="nt">&lt;/td&gt;&lt;/tr&gt;</span>
-  <span class="nt">&lt;/tbody&gt;</span>
-<span class="nt">&lt;/table&gt;</span>
-</pre>
-</div>
+<pre><code class="html">&lt;table id='records'&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th colspan='2'&gt;No record clicked&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr data-recnum='1'&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;First record&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr data-recnum='2'&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Second record&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr data-recnum='3'&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Third record&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
 
 <p>Instead of observing each cell or row, we can simply observe the table:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;records&#39;</span><span class="p">).</span><span class="nx">observe</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="o">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">clickedRow</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">findElement</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">clickedRow</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">down</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">).</span><span class="nx">update</span><span class="p">(</span><span class="s2">&quot;You clicked record #&quot;</span> <span class="o">+</span> <span class="nx">clickedRow</span><span class="p">.</span><span class="nx">readAttribute</span><span class="p">(</span><span class="s2">&quot;data-recnum&quot;</span><span class="p">));</span>
-  <span class="p">}</span>
-<span class="p">});</span>
-</pre>
-</div>
+<pre><code class="javascript">$('records').observe('click', function(event) {
+  var clickedRow = event.findElement('tr');
+  if (clickedRow) {
+    this.down('th').update(&quot;You clicked record #&quot; + clickedRow.readAttribute(&quot;data-recnum&quot;));
+  }
+});</code></pre>
 
 <p>When any row in the table is clicked, we update the table's first header
 cell saying which record was clicked. <code><a href="../../../dom/Event/prototype/findElement/" title="Event#findElement (instance method)">Event#findElement</a></code> finds the row
@@ -274,20 +262,18 @@ to use <code><a href="../../../language/Function/prototype/bind/" title="Functio
 context will be lost and <code>this</code> won't mean what we expect it to mean
 within the handler function. E.g.:</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">MyClass</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="o">,</span> <span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="o">;</span>
-    <span class="nx">element</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">element</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">element</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">element</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">handleClick</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
-    <span class="p">}</span>
-  <span class="p">}</span><span class="o">,</span>
-  <span class="nx">handleClick</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;My name is &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
-  <span class="p">}</span><span class="o">,</span>
-<span class="p">});</span>
-</pre>
-</div>
+<pre><code class="javascript">var MyClass = Class.create({
+  initialize: function(name, element) {
+    this.name = name;
+    element = $(element);
+    if (element) {
+      element.observe(this.handleClick.bind(this));
+    }
+  },
+  handleClick: function(event) {
+    alert(&quot;My name is &quot; + this.name);
+  },
+});</code></pre>
 
 <p>Without the <code><a href="../../../language/Function/prototype/bind/" title="Function#bind (instance method)">Function#bind</a></code>, when <code>handleClick</code> was triggered by the
 event, <code>this</code> wouldn't refer to the instance and so the alert wouldn't
@@ -327,7 +313,7 @@ observed, automatically extending the <code><a href="../../../dom/Event/" title=
       
       <div id="footer">
         <p><a href="http://prototypejs.org">Prototype JavaScript Framework</a> v1.7_rc1 API documentation.</p>
-        <p>Last updated on May 10, 2010 at 13:18 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
+        <p>Last updated on May 13, 2010 at 02:26 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
         <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.</p>
       </div> <!-- #footer -->
 

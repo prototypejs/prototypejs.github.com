@@ -285,41 +285,35 @@ is identical, so please refer to the <code><a href="../../../../dom/dollar-dolla
 
 <h5>Examples</h5>
 
-<div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&quot;fruits&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;apples&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;h3</span> <span class="na">title=</span><span class="s">&quot;yummy!&quot;</span><span class="nt">&gt;</span>Apples<span class="nt">&lt;/h3&gt;</span>
-    <span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&quot;list-of-apples&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;golden-delicious&quot;</span> <span class="na">title=</span><span class="s">&quot;yummy!&quot;</span> <span class="nt">&gt;</span>Golden Delicious<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;mutsu&quot;</span> <span class="na">title=</span><span class="s">&quot;yummy!&quot;</span><span class="nt">&gt;</span>Mutsu<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;mcintosh&quot;</span><span class="nt">&gt;</span>McIntosh<span class="nt">&lt;/li&gt;</span>
-      <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;ida-red&quot;</span><span class="nt">&gt;</span>Ida Red<span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
-    <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">&quot;saying&quot;</span><span class="nt">&gt;</span>An apple a day keeps the doctor away.<span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
-</pre>
-</div>
+<pre><code class="html">&lt;ul id=&quot;fruits&quot;&gt;
+  &lt;li id=&quot;apples&quot;&gt;
+    &lt;h3 title=&quot;yummy!&quot;&gt;Apples&lt;/h3&gt;
+    &lt;ul id=&quot;list-of-apples&quot;&gt;
+      &lt;li id=&quot;golden-delicious&quot; title=&quot;yummy!&quot; &gt;Golden Delicious&lt;/li&gt;
+      &lt;li id=&quot;mutsu&quot; title=&quot;yummy!&quot;&gt;Mutsu&lt;/li&gt;
+      &lt;li id=&quot;mcintosh&quot;&gt;McIntosh&lt;/li&gt;
+      &lt;li id=&quot;ida-red&quot;&gt;Ida Red&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p id=&quot;saying&quot;&gt;An apple a day keeps the doctor away.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 
 <p>Then:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;apples&#39;</span><span class="p">).</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;[title=&quot;yummy!&quot;]&#39;</span><span class="p">);</span>
-<span class="c">// -&gt; [h3, li#golden-delicious, li#mutsu]</span>
- <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;apples&#39;</span><span class="p">).</span><span class="nx">select</span><span class="p">(</span> <span class="s1">&#39;p#saying&#39;</span><span class="o">,</span> <span class="s1">&#39;li[title=&quot;yummy!&quot;]&#39;</span><span class="p">);</span>
-<span class="c">// -&gt; [li#golden-delicious, li#mutsu,  p#saying]</span>
- <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;apples&#39;</span><span class="p">).</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;[title=&quot;disgusting!&quot;]&#39;</span><span class="p">);</span>
-<span class="c">// -&gt; []</span>
-</pre>
-</div>
+<pre><code class="javascript">$('apples').select('[title=&quot;yummy!&quot;]');
+// -&gt; [h3, li#golden-delicious, li#mutsu]
+ $('apples').select( 'p#saying', 'li[title=&quot;yummy!&quot;]');
+// -&gt; [li#golden-delicious, li#mutsu,  p#saying]
+ $('apples').select('[title=&quot;disgusting!&quot;]');
+// -&gt; []</code></pre>
 
 <h5>Tip</h5>
 
 <p><code><a href="../../../../dom/Element/select/" title="Element.select (class method)">Element.select</a></code> can be used as a pleasant alternative to the native
 method <code>getElementsByTagName</code>:</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">nodes</span>  <span class="o">=</span> <span class="nx">$A</span><span class="p">(</span><span class="nx">someUL</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">)).</span><span class="nx">map</span><span class="p">(</span><span class="nx">Element</span><span class="p">.</span><span class="nx">extend</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">nodes2</span> <span class="o">=</span> <span class="nx">someUL</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">);</span>
-</pre>
-</div>
+<pre><code class="javascript">var nodes  = $A(someUL.getElementsByTagName('li')).map(Element.extend);
+var nodes2 = someUL.select('li');</code></pre>
 
 <p>In the first example, you must explicitly convert the result set to an
 <code><a href="../../../../language/Array/" title="Array (class)">Array</a></code> (so that Prototype's <code><a href="../../../../language/Enumerable/" title="Enumerable (mixin)">Enumerable</a></code> methods can be used) and
@@ -346,7 +340,7 @@ the speed difference between these two examples is negligible.</p>
       
       <div id="footer">
         <p><a href="http://prototypejs.org">Prototype JavaScript Framework</a> v1.7_rc1 API documentation.</p>
-        <p>Last updated on May 10, 2010 at 13:17 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
+        <p>Last updated on May 13, 2010 at 02:25 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
         <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.</p>
       </div> <!-- #footer -->
 

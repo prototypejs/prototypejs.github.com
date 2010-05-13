@@ -287,49 +287,39 @@ is both faster and more standard compliant.</p>
 
 <h5>Examples</h5>
 
-<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;food&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;fruits&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">&quot;first&quot;</span><span class="nt">&gt;</span>Kiwi, banana <span class="nt">&lt;em&gt;</span>and<span class="nt">&lt;/em&gt;</span> apple.<span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</pre>
-</div>
+<pre><code class="html">&lt;div id=&quot;food&quot;&gt;
+  &lt;div id=&quot;fruits&quot;&gt;
+    &lt;p id=&quot;first&quot;&gt;Kiwi, banana &lt;em&gt;and&lt;/em&gt; apple.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
 <p>Passing an HTML snippet:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;first&#39;</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;&lt;ul id=&quot;favorite&quot;&gt;&lt;li&gt;kiwi&lt;/li&gt;&lt;li&gt;banana&lt;/li&gt;&lt;li&gt;apple&lt;/li&gt;&lt;/ul&gt;&#39;</span><span class="p">);</span>
-<span class="c">// -&gt; Element (p#first)</span>
- <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;fruits&#39;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">;</span>
-<span class="c">// -&gt; &#39;&lt;ul id=&quot;favorite&quot;&gt;&lt;li&gt;kiwi&lt;/li&gt;&lt;li&gt;banana&lt;/li&gt;&lt;li&gt;apple&lt;/li&gt;&lt;/ul&gt;&#39;</span>
-</pre>
-</div>
+<pre><code class="javascript">$('first').replace('&lt;ul id=&quot;favorite&quot;&gt;&lt;li&gt;kiwi&lt;/li&gt;&lt;li&gt;banana&lt;/li&gt;&lt;li&gt;apple&lt;/li&gt;&lt;/ul&gt;');
+// -&gt; Element (p#first)
+ $('fruits').innerHTML;
+// -&gt; '&lt;ul id=&quot;favorite&quot;&gt;&lt;li&gt;kiwi&lt;/li&gt;&lt;li&gt;banana&lt;/li&gt;&lt;li&gt;apple&lt;/li&gt;&lt;/ul&gt;'</code></pre>
 
 <p>Again, with a <code>&lt;script&gt;</code> tag thrown in:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;favorite&#39;</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;&lt;p id=&quot;still-first&quot;&gt;Melon, oranges &lt;em&gt;and&lt;/em&gt; grapes.&lt;/p&gt;&lt;script&gt;alert(&quot;removed!&quot;)&lt;/script&gt;&#39;</span><span class="p">);</span>
-<span class="c">// -&gt; Element (ul#favorite) and prints &quot;removed!&quot; in an alert dialog.</span>
- <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;fruits&#39;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">;</span>
-<span class="c">// -&gt; &#39;&lt;p id=&quot;still-first&quot;&gt;Melon, oranges &lt;em&gt;and&lt;/em&gt; grapes.&lt;/p&gt;&#39;</span>
-</pre>
-</div>
+<pre><code class="javascript">$('favorite').replace('&lt;p id=&quot;still-first&quot;&gt;Melon, oranges &lt;em&gt;and&lt;/em&gt; grapes.&lt;/p&gt;&lt;script&gt;alert(&quot;removed!&quot;)&lt;/script&gt;');
+// -&gt; Element (ul#favorite) and prints &quot;removed!&quot; in an alert dialog.
+ $('fruits').innerHTML;
+// -&gt; '&lt;p id=&quot;still-first&quot;&gt;Melon, oranges &lt;em&gt;and&lt;/em&gt; grapes.&lt;/p&gt;'</code></pre>
 
 <p>With plain text:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;still-first&#39;</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;Melon, oranges and grapes.&#39;</span><span class="p">);</span>
-<span class="c">// -&gt; Element (p#still-first)</span>
- <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;fruits&#39;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">;</span>
-<span class="c">// -&gt; &#39;Melon, oranges and grapes.&#39;</span>
-</pre>
-</div>
+<pre><code class="javascript">$('still-first').replace('Melon, oranges and grapes.');
+// -&gt; Element (p#still-first)
+ $('fruits').innerHTML;
+// -&gt; 'Melon, oranges and grapes.'</code></pre>
 
 <p>Finally, relying on the <code>toString()</code> method:</p>
 
-<div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;fruits&#39;</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
-<span class="c">// -&gt; Element</span>
- <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;food&#39;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="o">;</span>
-<span class="c">// -&gt; &#39;123&#39;</span>
-</pre>
-</div>
+<pre><code class="javascript">$('fruits').replace(123);
+// -&gt; Element
+ $('food').innerHTML;
+// -&gt; '123'</code></pre>
 
 <h5>Warning</h5>
 
@@ -355,7 +345,7 @@ As a workaround, use the generic version instead
       
       <div id="footer">
         <p><a href="http://prototypejs.org">Prototype JavaScript Framework</a> v1.7_rc1 API documentation.</p>
-        <p>Last updated on May 10, 2010 at 13:17 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
+        <p>Last updated on May 13, 2010 at 02:25 UTC. Generated by <a href="http://pdoc.org">PDoc</a>. Uses <a href="http://famfamfam.com/lab/icons/silk/" title="famfamfam.com: Silk Icons">Silk Icons</a> and portions of <a href="http://github.com/280north/aristo/tree/master" title="280north's aristo at master - GitHub">Aristo</a>.</p>
         <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.</p>
       </div> <!-- #footer -->
 
