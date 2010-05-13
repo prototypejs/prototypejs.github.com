@@ -6,6 +6,15 @@ title: Prototype API Documentation
 Prototype API Documentation
 ===========================
 
+Current documentation
+-----------------------------
+
+* [Current stable version (1.6.1)](latest)
+* [Current edge version (1.7_rc2)](edge)
+
+Archives
+--------
+
 * [1.7_rc2](1.7_rc2)
 * [1.7_rc1](1.7_rc1)
 * [1.6.1](1.6.1)
