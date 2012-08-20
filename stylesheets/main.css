@@ -145,6 +145,7 @@ code {
   margin: 1.0em 0 0.6em;
 }
 
+
 #content h2 {
   font-size: 23px;
   color: #000;
@@ -173,4 +174,102 @@ code {
   font-size: 14px;
   color: #000;
   margin: 1.0em 0 0.6em;
+}
+
+/* FOOTER */
+
+#footer {
+  margin: 60px 120px 30px;
+}
+
+#footer .footer-content {
+  border-top: 1px solid #ddd;
+  padding-top: 30px;
+}
+
+#footer,
+#footer a,
+#footer a:link,
+#footer a:visited {
+  color: #999;
+}
+
+
+/* BLOG STUFF */
+
+#blog ul.posts-list {
+  list-style-type: none;
+}
+
+#blog ul.posts-list li {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+#blog #content h1 a,
+#blog #content h2 a,
+#blog #content h3 a,
+#blog #content h4 a,
+#blog #content h5 a,
+#blog #content h6 a {
+  border-bottom: none;
+}
+
+#blog #content .post-title {
+  margin-bottom: 5px;
+}
+
+#blog #content .posts-list .post-title {
+  margin-bottom: 0;
+}
+
+#blog .post-meta {
+  display: block;
+}
+
+#blog .post-content {
+  margin: 1em 0;
+}
+
+#blog .post-content ul li,
+#blog .post-content ol li {
+  margin-left: 20px;
+}
+
+#blog .post-content ul,
+#blog .post-content ul li {
+  list-style-type: decimal;
+}
+
+#blog .post-content ol,
+#blog .post-content ol li {
+  list-style-type: disc;
+}
+  
+
+#blog .post-digest {
+  /* TODO */
+}
+
+#blog .posts-list .post-digest {
+  margin: 0.3em 0;
+}
+
+
+/* COMPATIBILITY TABLE */
+
+table.compatibility {
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+  table.compatibility td, 
+  table.compatibility th {
+    border: 1px solid #ddd;
+    padding: 2px 4px;
+    text-align: left;
+  }
+
+table.compatibility tbody th {
+  font-weight: normal;
 }
