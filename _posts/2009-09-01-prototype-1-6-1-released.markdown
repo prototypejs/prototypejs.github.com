@@ -4,6 +4,7 @@ author: Sam Stephenson
 author_url: http://conio.net/
 sections: Featured, Releases, blog
 title: "Prototype 1.6.1 released"
+digest: We're pleased to announce the release of Prototype 1.6.1 today. This version features improved performance, an element metadata storage system, new mouse events, and compatibility with the latest browsers. It's also the first release of Prototype built with [Sprockets](http://getsprockets.org/), our JavaScript packaging tool, and [PDoc](http://pdoc.org/), our inline documentation tool.
 ---
 
 We're pleased to announce the release of Prototype 1.6.1 today. This version features improved performance, an element metadata storage system, new mouse events, and compatibility with the latest browsers. It's also the first release of Prototype built with [Sprockets](http://getsprockets.org/), our JavaScript packaging tool, and [PDoc](http://pdoc.org/), our inline documentation tool.

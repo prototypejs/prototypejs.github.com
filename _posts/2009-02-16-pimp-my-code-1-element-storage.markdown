@@ -4,6 +4,7 @@ author: Andrew Dupont
 author_url: http://andrewdupont.net/
 sections: blog
 title: "Pimp My Code #1: Element.Storage"
+digest: "Man, it's quiet around here. Interested in doing some pimpin'?"
 ---
 
 <p>Man, it's quiet around here. Interested in doing some pimpin'?</p> 
@@ -14,7 +15,7 @@ title: "Pimp My Code #1: Element.Storage"
 
 <p>The very first edition of <cite>Pimp My Code</cite> is special because the code we&#8217;ll be looking at <em>will be included in Prototype 1.6.1</em>. (It's a bit like if we were to Pimp [someone's] Ride™, then decide to keep the car for ourselves.) So this is more than just an academic exercise for us — the &#8220;pimped&#8221; result is now part of the Prototype source code.</p>
 
-<h3>The Original</h3>
+<h3>The original</h3>
 
 <p>The code in question, from Sébastien Grosjean (a.k.a. ZenCocoon), implements element &#8220;storage&#8221; — attaching of arbitrary data to DOM nodes in a safe and leak-free manner. Other frameworks have had this for a while; <a href="http://jquery.com/" title="jQuery: The Write Less, Do More, JavaScript Library">jQuery</a>&#8217;s <code>$.fn.data</code>, for instance, is used heavily by jQuery plugin authors <a href="http://docs.jquery.com/Internals/jQuery.data" title="Internals/jQuery.data - jQuery JavaScript Library">to great effect</a>. But Seb&#8217;s is based on the similar Mootools API, which I&#8217;ve admired since <a href="http://mootools.net/blog/2008/01/22/whats-new-in-12-element-storage/" title="MooTools - What&#8217;s New in 1.2: Element Storage">it debuted in Mootools 1.2</a>.</p>
 
@@ -26,45 +27,53 @@ title: "Pimp My Code #1: Element.Storage"
 
 <p>Let&#8217;s make a first pass at this, line-by-line.</p>
 
-<h3>The Critique</h3>
+<h3>The critique</h3>
 
-<macro:jscode language="javascript">Object.extend(Prototype, {UID: 1});</macro:jscode>
+{% highlight js %}
+Object.extend(Prototype, {UID: 1});
+{% endhighlight %}
 
 <p>Already we&#8217;ve gotten to something I&#8217;d change. Seb is using the <code>Prototype</code> namespace correctly here, in that he&#8217;s storing something that&#8217;s of concern only to the framework and should feel &#8220;private.&#8221; But my own preference is to move this property into the <code>Element.Storage</code> namespace. I am fickle and my mind is hard to read.</p>
 
-    Element.Storage = {
-      get: function(uid) {
-        return (this[uid] || (this[uid] = {}));
-      },
+{% highlight js %}
+Element.Storage = {
+  get: function(uid) {
+    return (this[uid] || (this[uid] = {}));
+  },
     
-      init: function(item) {
-        return (item.uid || (item.uid = Prototype.UID++));
-      }
-    }
+  init: function(item) {
+    return (item.uid || (item.uid = Prototype.UID++));
+  }
+};
+{% endhighlight %}
 
 <p>OK, another change jumps out at me. The <code>Element.Storage.init</code> method gets called in both <code>Element#store</code> and <code>Element#retrieve</code>; it handles the case where an element doesn&#8217;t have any existing metadata. It creates our custom property on the node and increments the counter.</p>
 
 <p>In other words, <code>store</code> and <code>retrieve</code> are the only two places where this method is needed, so I balk at making it public. My first instinct was to make it a private method inside a closure:</p>
 
-    (function() {
-      function _init(item) {
-        return (item.uid || (item.uid = Prototype.UID++));
-      }
+{% highlight js %}
+(function() {
+  function _init(item) {
+    return (item.uid || (item.uid = Prototype.UID++));
+  }
     
-      // ... rest of storage code
-    })();
+  // ... rest of storage code
+})();
+{% endhighlight %}
 
 <p>I started down this path but quickly stopped. Instead, we&#8217;re going to refactor this part so that the <code>init</code> case is handled without the need for a separate method. Let&#8217;s move on for now.</p>
 
-    Element.Methods.retrieve = function(element, property, dflt) {
-      if (!(element = $(element))) return;
-      if (element.uid == undefined) Element.Storage.init(element);
-      var storage = Element.Storage.get(element.uid);
-      var prop = storage[property];
-      if (dflt != undefined && prop == undefined)
-        prop = storage[property] = dflt;
-      return prop;
-    };
+{% highlight js %}
+Element.Methods.retrieve = function(element, property, dflt) {
+  if (!(element = $(element))) return;
+  if (element.uid == undefined) Element.Storage.init(element);
+  var storage = Element.Storage.get(element.uid);
+  var prop = storage[property];
+  if (dflt != undefined && prop == undefined)
+    prop = storage[property] = dflt;
+  return prop;
+};
+{% endhighlight %}
 
 <p>A few things to mention here.</p>
 
@@ -84,8 +93,7 @@ title: "Pimp My Code #1: Element.Storage"
   </li>
 
   <li>
-    <p><p>The custom property Seb&#8217;s been using is called <code>uid</code>. I&#8217;m going to change this to something that&#8217;s both (a) clearly private; (b) less likely to cause a naming collision. In keeping with existing Prototype convention, we&#8217;re going to call it <code>_prototypeUID</code>.</p>
-</p>
+    <p>The custom property Seb&#8217;s been using is called <code>uid</code>. I&#8217;m going to change this to something that&#8217;s both (a) clearly private; (b) less likely to cause a naming collision. In keeping with existing Prototype convention, we&#8217;re going to call it <code>_prototypeUID</code>.</p>
   </li>
 
   <li>
@@ -108,7 +116,7 @@ title: "Pimp My Code #1: Element.Storage"
 
 <p>Before we rewrite this code to reflect the changes I&#8217;ve suggested, we&#8217;re going to make a couple design decisions.</p>
 
-<h3>Feature Design</h3>
+<h3>Feature design</h3>
 
 <p>While I was deciding how to replace <code>Element.Storage.init</code>, I had an idea: rather than use ordinary <code>Object</code>s to store the data, we should be using Prototype&#8217;s <code>Hash</code>. In other words, we&#8217;ll create a global table of <code>Hash</code> objects, each one representing the custom key-value pairs for a specific element.</p>
 
@@ -118,32 +126,36 @@ title: "Pimp My Code #1: Element.Storage"
 
 <p>This new method also establishes some elegant parallels: the <code>store</code> and <code>retrieve</code> methods are really just aliases for <code>set</code> and <code>get</code> on the hash itself. Actually, <code>retrieve</code> will be a bit more complicated because of the &#8220;default value&#8221; feature, but we&#8217;ll be able to condense <code>store</code> down to two lines.</p>
 
-<h3>The Rewrite</h3>
+<h3>The rewrite</h3>
 
 <p>Enough blathering. Here&#8217;s the rewrite:</p>
 
-    Element.Storage = {
-      UID: 1
-    };
+{% highlight js %}
+Element.Storage = {
+  UID: 1
+};
+{% endhighlight %}
 
 <p>As promised, I&#8217;ve moved the <code>UID</code> counter. The <code>Element.Storage</code> object also acts as our global hashtable, but all its keys will be numeric, so the <code>UID</code> property won&#8217;t get in anyone&#8217;s way.</p>
 
 <p><code>Element#getStorage</code> assumes the duties of <code>Element.Storage.get</code> and <code>Element.Storage.init</code>, thereby making them obsolete. We&#8217;ve removed them.</p>
 
-    Element.addMethods({
-      getStorage: function(element) {
-        if (!(element = $(element))) return;
+{% highlight js %}
+Element.addMethods({
+  getStorage: function(element) {
+    if (!(element = $(element))) return;
     
-        if (Object.isUndefined(element._prototypeUID))
-          element._prototypeUID = Element.Storage.UID++;
+    if (Object.isUndefined(element._prototypeUID))
+      element._prototypeUID = Element.Storage.UID++;
     
-        var uid = element._prototypeUID;
+    var uid = element._prototypeUID;
     
-        if (!Element.Storage[uid])
-          Element.Storage[uid] = $H();
+    if (!Element.Storage[uid])
+      Element.Storage[uid] = $H();
     
-        return Element.Storage[uid];
-      },
+    return Element.Storage[uid];
+  },
+{% endhighlight %}
 
 <p>The new <code>getStorage</code> method checks for the presence of <code>_prototypeUID</code>. If it&#8217;s not there, it gets defined on the node.</p>
 
@@ -151,29 +163,33 @@ title: "Pimp My Code #1: Element.Storage"
 
 <p>As I said before, <code>Element#store</code> is much simpler now:</p>
 
-    store: function(element, key, value) {
-        if (!(element = $(element))) return;
-        element.getStorage().set(key, value);
-        return element;
-      },
+{% highlight js %}
+store: function(element, key, value) {
+  if (!(element = $(element))) return;
+  element.getStorage().set(key, value);
+  return element;
+},
+{% endhighlight %}
 
 <p>I thought about returning the stored value, to make it behave exactly like <code>Hash#set</code>, but some feedback from others suggested it was better to return the element itself for chaining purposes (as we do with many methods on <code>Element</code>).</p>
 
 <p>And <code>Element#retrieve</code> is nearly as simple:</p>
 
-    retrieve: function(element, key, defaultValue) {
-        if (!(element = $(element))) return;
+{% highlight js %}
+  retrieve: function(element, key, defaultValue) {
+    if (!(element = $(element))) return;
     
-        var hash = element.getStorage(), value = hash.get(key);
+    var hash = element.getStorage(), value = hash.get(key);
     
-        if (Object.isUndefined(value)) {
-          hash.set(key, defaultValue);
-          value = defaultValue;
-        }
+    if (Object.isUndefined(value)) {
+      hash.set(key, defaultValue);
+      value = defaultValue;
+    }
     
-        return value;
-      }
-    });
+    return value;
+  }
+});
+{% endhighlight %}
 
 <p>And we&#8217;re done.</p>
 
@@ -185,7 +201,7 @@ title: "Pimp My Code #1: Element.Storage"
 
 <p>Also, based on an excellent suggestion, we changed <code>Element#store</code> so that it could accept an object full of key/value pairs, much like <code>Hash#update</code>.</p>
 
-<h3>In Summation</h3>
+<h3>In summation</h3>
 
 <p>I was happy to come across Sébastien's submission. It was the perfect length for a drive-by refactoring; it made sense as a standalone piece of code, without need for an accompanying screenshot or block of HTML; and it implemented a feature we'd already had on the 1.6.1 roadmap.</p>
 
