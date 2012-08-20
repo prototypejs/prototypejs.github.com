@@ -9,8 +9,11 @@ Prototype API Documentation
 Current documentation
 -----------------------------
 
-* [Current stable version (1.6.1)](latest)
+* [Current stable version ({{ site.prototype.latest_stable_version }})](latest)
+
+{% if site.prototype.latest_edge_version %}
 * [Current edge version (1.7_rc2)](edge)
+{% endif %}
 
 Archives
 --------
