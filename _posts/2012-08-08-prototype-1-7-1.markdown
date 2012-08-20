@@ -1,0 +1,90 @@
+---
+layout: blog_archive
+author: Andrew Dupont
+author_url: http://andrewdupont.net/
+sections: Fearued, Releases, blog
+title: "Prototype 1.7.1"
+digest: "Not long ago, I tagged Prototype 1.7.1, an update 18 months in the making. It features an overhaul of our DOM library and better coexistence with ES5 methods, but quite a bit more as well."
+---
+
+I'm sure you're curious about why it's taken so long. But first let's look at what's been done in 1.7.1.
+
+### Prototype 1.7.1
+
+When last we spoke, I told you about the plans we had for 1.7.0.1 and 1.7.1 — a bugfix release and a minor release. They've been rolled into one large release that delivers the big things we promised from each version, plus a bunch of small fixes.
+
+#### DOM rewrite
+
+We've rewritten the `dom.js` section of Prototype from the ground up. Why? For a few reasons:
+
+1. We wanted to use the code conventions that the rest of Prototype used. This means creating named functions inside a private closure, then attaching those named functions to public objects to expose an interface. It makes for more concise code and helps you debug. For instance, the `Element.hide` function will now be called `hide` instead of `(anonymous function)` when you're looking at a call stack.
+
+2. We took the opportunity to change the way we register events. It makes us much less susceptible to dreaded memory leaks in older versions of Internet Explorer. Not only does this improve performance in IE on page unload (where before we'd have to unregister every event handler in order to prevent memory leaks), it also improves performance on a number of DOM-related methods, including `update` and `remove`.
+
+3. The wholesale rewrite let us consolidate repetitive code tasks into new convenience methods. For instance, we've minimized the amount of arbitrary property-setting on DOM nodes, opting instead to use our [storage methods](http://api.prototypejs.org/dom/Element/store/). In most browsers, only one expando property is set on DOM nodes; in IE8 and above, _zero_ properties are set, because we use IE's existing [uniqueID property](http://msdn.microsoft.com/en-us/library/ie/ms534704(v=vs.85\).aspx) instead of generating our own unique storage key for each element. This should make for faster DOM tasks in IE and better introspection across the board.
+
+4. Likewise, we got rid of a bunch of redundancies created when we added the [Element.Layout](http://api.prototypejs.org/dom/Element/Layout/) system, and fixed a few bugs for layout-related edge cases.
+
+5. If you're the crazy sort who likes to read the source code, you should find all of `dom.js` to be vastly more readable now. Workarounds for specific browsers are named in a consistent fashion, and most are [annotated with explanatory comments](https://github.com/sstephenson/prototype/blob/master/src/prototype/dom/dom.js#L117).
+
+
+#### ECMAScript 5 compatibility
+
+A number of methods popularized by Prototype are included in the [ECMAScript 5 specification](http://es5.github.com/). This is great news, but it means we have to be careful not to break code that presumes these methods will behave in an ES5-compliant way.
+
+We've rewritten some array methods — specifically `map`, `some`, `every`, and `filter` — so that they abide by the ES5 spec as closely as possible. That means, for instance, that they'll throw `TypeError`s if you try to call them on `null` values, just like they would in their native browser implementations.
+
+This means that Prototype acts as a [polyfill](http://remysharp.com/2010/10/08/what-is-a-polyfill/) for ES5 array methods, adding them to any browser that doesn't support them natively. Credit goes to [Arthur Schreiber](https://github.com/arthurschreiber) for spearheading this effort.
+
+One small compromise we chose to make: in ES5, these methods throw a `TypeError` if no iterator is given. In Prototype, the iterator is optional, and defaults to an identity function if omitted. We decided it was better to keep the latter behavior for backward-compatibility than to break existing code in the name of rigid ES5 compliance.
+
+Similarly, ES5 [also specifies](http://es5.github.com/#x15.3.4.5) `Function.prototype.bind`, so we've updated our `Function#bind` method to behave like an ES5 polyfill.
+
+#### Other fixes
+
+In addition to the bug fixes listed above, we fixed a bug with `Element.setOpacity` that was causing problems in IE9 and the upcoming IE10. And we fixed a number of small issues with unnecessary variable declarations, redundant code, and typos in documentation.
+
+Also, we fixed the way we serialize form values to be more accurate to the way browsers work. The [HTML spec says](http://www.w3.org/TR/html4/interact/forms.html#h-17.13.4.1) that line breaks (`\n`) are normalized to `\r\n`, and that spaces are replaced with `+` rather than URL-encoded as `%20`. So now we do the same thing. This may affect you if you use `Form.serialize` or `Hash#toQueryString`.
+
+#### Download, report bugs, and get help
+
+* [Download Prototype 1.7.1](https://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js)
+* [View the API documentation](http://api.prototypejs.org/)
+* [Check out the Prototype source code](https://github.com/sstephenson/prototype/) on GitHub
+* [Submit bug reports](https://prototype.lighthouseapp.com/projects/8886-prototype/overview) to Lighthouse
+* [Get Prototype help](http://prototypejs.org/discuss) on the mailing list or the #prototype IRC channel
+
+Thanks to a number of determined contributors who made this release possible!
+
+### Hey, I've got all kinds of questions.
+
+I don't blame you. Let's hear them.
+
+#### Why is development so slow?
+
+It's been a year and a half since our last release, which is slow even by Prototype's standards. It's because I'm now the only person who works on Prototype on a regular basis, and the pace of development has slowed as a result.
+
+Many of you have wondered whether Prototype is "dead," and I can say that it definitely isn't. But because of the way I work on Prototype — months of inaction followed by a flurry of commits and bug fixes — it's fair to say that Prototype _hibernates_ for long periods of time.
+
+Now, this doesn't bother me, but I can understand how it may bother you. If you're concerned about Prototype's future, I can only tell you that I have no plans to abandon its development. But, at the same time, I can't commit to any milestones or consistent release schedule, because I'm doing this in my free time.
+
+#### How about adding developers to the team?
+
+Sounds like a great idea.
+
+In the short term, if you have specific things you want to fix and you feel like they aren't getting done quickly enough, a GitHub pull request would be the best way to get it in front of my eyes.
+
+In the long term, if this process reveals some consistent and helpful contributors, I'd certainly be interested in adding those people to the core team.
+
+#### What about Prototype 2?
+
+That's an excellent question. To call Prototype 2 "vaporware" wouldn't be an insult; it'd just be accurate.
+
+Right now it's a collection of ideas contributed over the years by the Prototype core team and trusted friends. We know it's an opportunity to break backward-compatibility and thus cast off all the short-sighted decisions we've been dragging around for years. We know we want to introduce a few new code conventions. We know we want to make it intuitive and ordered while still addressing the common 80% of use cases.
+
+But so far, that doesn't add up to enough to differentiate it from Prototype 1.X.
+
+To treat it like a film: It's a sequel I'm interested in making, but only if I can get a good idea for where the story should go. I don't want to do a retread or a cash-in. I hope that makes sense.
+
+That means it's on the back burner for now — not an abandoned idea, but an incomplete one. My near-term plans are all about making improvements to 1.X. Ajax-related enhancements, among other things, are coming in 1.8. I'd love to add some other much-requested features as well.
+

@@ -1,0 +1,25 @@
+---
+layout: blog_archive
+author: Andrew Dupont
+author_url: http://andrewdupont.net/
+sections: Featured, Releases, blog
+title: "Prototype 1.7 RC2"
+digest: "We've just tagged Release Candidate 2 of Prototype 1.7, with the intent of putting out a final 1.7 release very soon."
+---
+
+In addition to the usual bug fixes, RC2 includes a late addition: the `Element#purge` method, used to dispose of an element (remove its event handlers and storage keys) before removing it from the page.
+
+In addition, `Element#update` now performs a similar cleanup process on content that will be replaced via `innerHTML`. Both these additions should help keep memory usage down, especially for apps that create and destroy lots of DOM nodes.
+
+Consult the [CHANGELOG](http://github.com/sstephenson/prototype/blob/1.7_rc2/CHANGELOG) for further details.
+
+### Download, report bugs, and get help
+
+* [Download Prototype 1.7 RC2](http://prototypejs.org/assets/2010/5/13/prototype.js)
+* [View the API documentation](http://api.prototypejs.org)
+* [Check out the Prototype source code](http://github.com/sstephenson/prototype/) on GitHub
+* [Submit bug reports](https://prototype.lighthouseapp.com/projects/8886-prototype/overview) to Lighthouse
+* [Get prototype help](/discuss) on the mailing list or #prototype IRC channel
+* [Talk to the core team](http://groups.google.com/group/prototype-core) on the prototype-core mailing list
+
+Thanks to the many contributors who made this release possible!

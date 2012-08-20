@@ -1,0 +1,36 @@
+---
+layout: blog_archive
+author: Andrew Dupont
+author_url: http://andrewdupont.net/
+sections: Fearued, Releases, blog
+title: "Prototype 1.7"
+digest: "Last week, we tagged the first stable release of 1.7, marking the end of a far-too-long release cycle. We've made more than 50 improvements since the last stable version and are already working on 1.7.0.1."
+---
+
+### What's new?
+
+To learn about new features in version 1.7, refer to the [blog post about the 1.7 RC1 release](http://prototypejs.org/2010/4/5/prototype-1-7-rc1-sizzle-layout-dimensions-api-event-delegation-and-more).
+
+As always, this release includes an assortment of bug fixes. Consult the CHANGELOG for further details, or [see the full diff between this release and RC3](http://github.com/sstephenson/prototype/compare/1.7_rc3...1.7).
+
+### What's next?
+
+As I said when we released RC3, I'm eager to resume work on [script.aculo.us 2.0](http://scripty2.com), which had its first beta release two months ago. But we've also got plenty planned for the next few versions of Prototype:
+
+* __The next bugfix version__ (1.7.0.1) will feature a rewrite of the DOM code to be easier to read and faster at the same time. We'll be consulting the [TaskSpeed benchmarks](http://dante.dojotoolkit.org/taskspeed/) throughout to measure our progress toward speeding up common DOM tasks.
+* __The next minor release__ (1.7.1) will feature better compatibility with ECMAScript5 for all the stuff we share: `Function#bind`, `Array#map`, and so on. We'll make sure these methods are up to spec so that we can implement them as proper [polyfills](http://remysharp.com/2010/10/08/what-is-a-polyfill/) when they don't exist in the browser &mdash; and use the native versions where they do exist.
+* __The next major release__ (1.8) will feature an overhaul of the Ajax code. We'll add a bunch of new features: JSONP, timeouts, guaranteed firing of callbacks for non-guaranteed readyStates, and a lot more.
+
+In addition, there are exciting things in the future for [Evidence](https://github.com/tobie/Evidence) (the eventual replacement for our unit testing library) and [Sprockets](http://getsprockets.org/) (our JavaScript concatenator and dependency manager).
+
+
+### Download, report bugs, and get help
+
+* [Download Prototype 1.7](https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js)
+* [View the API documentation](http://api.prototypejs.org)
+* [Check out the Prototype source code](http://github.com/sstephenson/prototype/) on GitHub
+* [Submit bug reports](https://prototype.lighthouseapp.com/projects/8886-prototype/overview) to Lighthouse
+* [Get Prototype help](/discuss) on the mailing list or #prototype IRC channel
+* [Talk to the core team](http://groups.google.com/group/prototype-core) on the prototype-core mailing list
+
+Thanks to the many contributors who made this release possible!
