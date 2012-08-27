@@ -21,7 +21,7 @@ We welcome any (and all!) of these:
 
 The Prototype core team uses [Lighthouse as its issue tracker](http://prototype.lighthouseapp.com/projects/8886/home). You have to [register first](http://prototype.lighthouseapp.com/users/new?to=%2Fprojects%2F8886-prototype%2Ftickets%2Fnew) to [open a new ticket](http://prototype.lighthouseapp.com/projects/8886-prototype/tickets/new), but it only takes a second (and it's free).
 
-Try to keep the title sef-descriptive and concise, but write your heart out in full description box. If you need to include a snippet of JavaScript code in your text, [mark it up appropriately](http://lighthouseapp.com/help/text-formatting), like so:
+Try to keep the title concise, but write your heart out in the full description box. If you need to include a snippet of JavaScript code in your text, [mark it up appropriately](http://lighthouseapp.com/help/text-formatting), like so:
 
     This line opens a popup every time, which scares me!
     
