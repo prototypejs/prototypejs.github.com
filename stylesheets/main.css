@@ -108,7 +108,12 @@ code {
 
 #content ul li {
   list-style-type: disc;
-  margin: 5px 0 8px 20px;
+  margin: 5px 0 8px 30px;
+}
+
+#content ol li {
+  list-style-type: decimal;
+  margin: 5px 0 8px 30px;
 }
 
 #content p {
@@ -136,6 +141,15 @@ code {
   background-color: transparent;
   border: 0;
   padding: 0;
+  line-height: 100%;
+}
+
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content h6 {
   line-height: 100%;
 }
 
