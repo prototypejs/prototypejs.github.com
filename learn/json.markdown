@@ -1,9 +1,9 @@
 ---
 layout: default
+title_header: true
+title: "Introduction to JSON"
 ---
 
-Introduction to JSON
-====================
 
 JSON (JavaScript Object Notation) is a lightweight data-interchange format (if you are new to JSON, you can read more about it on the [JSON website](http://www.json.org)). It is notably used by APIs all over the web and is a fast alternative to XML in Ajax requests. Prototype 1.5.1 finally features JSON encoding and parsing support.
 

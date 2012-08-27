@@ -1,9 +1,9 @@
 ---
 layout: default
+title: "Defining classes and inheritance"
+title_header: true
+site_section: documentation
 ---
-
-Defining classes and inheritance
-================================
 
 In the early versions of Prototype, the framework came with basic support for
 class creation: the [`Class.create()`](/api/class/create) method. Until now the

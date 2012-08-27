@@ -1,9 +1,9 @@
 ---
 layout: default
+title: "Upgrading to the latest stable release"
+title_header: true
+site_section: documentation
 ---
-
-Upgrading to the latest stable release
-======================================
 
 If you've put off the task of upgrading your old code to the latest stable release of Prototype, now you're out of excuses. Since version 1.6, Prototype comes with with an <a href="/assets/2008/4/22/prototype_update_helper.js">update helper</a> that will warn you of any deprecations or API changes.
 

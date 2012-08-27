@@ -1,16 +1,46 @@
 ---
 layout: default
+title: "Prototype Tips and Tutorials"
+title_header: true
+site_section: documentation
 ---
 
-Prototype Tips and Tutorials
-============================
+This area contains **narrative documentation** you can use to discover Prototype.
 
+If you are looking for **reference documentation**, hop over to the [API Docs](/api).
 
+<ul class="posts-list">
+  <li>
+    <h4 class="post-title"><a href="/learn/class-inheritance.html">Defining classes and inheritance</a></h4>
+    <p class="post-digest">
+      Learn how to define classes and subclasses in Prototype and how to make supercalls.
+    </p>
+  </li>
+  
+  <li>
+    <h4 class="post-title"><a href="/learn/extensions.html">How Prototype extends the DOM</a></h4>
+    <p class="post-digest">Learn how Prototype adds custom methods to DOM element nodes — and how you can define your own custom methods.</p>
+  </li>
+  
+  <li>
+    <h4 class="post-title"><a href="/learn/introduction-to-ajax.html">Introduction to Ajax</a></h4>
+    <p class="post-digest">Learn how Prototype simplifies the most common kinds of Ajax requests.</p>
+  </li>
+  
+  <li>
+    <h4 class="post-title"><a href="/learn/json.html">Introduction to JSON</a></h4>
+    <p class="post-digest">Learn about Prototype's support for JSON encoding and decoding.</p>
+  </li>
 
-Welcome to the Learn section!
+  <li>
+    <h4 class="post-title"><a href="/learn/event-delegation.html">Event delegation</a></h4>
+    <p class="post-digest">Learn about Prototype's support for event delegation: an advanced technique for event-driven programming.</p>
+  </li>
 
-This area contains **narrative documentation** you can use to discover Prototype, acquire skills in specific feature areas, etc.
+  <li>
+    <h4 class="post-title"><a href="/learn/element-layout.html">Measuring elements' dimensions and offsets</a></h4>
+    <p class="post-digest">Learn how Prototype makes it easy to get pixel measurements of elements.</p>
+  </li>
+  
+</ul>
 
-It is mostly articles and tutorials. You might also want to [check out the blog](/blog) for quick-bite examples. New docs in this section should happen fairly often.
-
-If you are looking for *reference documentation*, hop over to the [API Docs](/api)!
