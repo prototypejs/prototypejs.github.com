@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>Prototype JavaScript Framework</title>
+  <title>Prototype JavaScript Framework{% if page.title %} | {{ page.title | strip_html }}{% endif %}</title>
   <link rel="stylesheet" href="/stylesheets/main.css" type="text/css" media="screen" charset="utf-8">
 </head>
 <body {% if page.body_id %}id="{{ page.body_id }}"{% endif %}>
   <div id="wrapper">
+    {% include links.html %}
     <div id="header">
       <h1><a href="/"><img src="/images/header-logo-small.png" alt="Prototype JavaScript Framework" /></a></h1>
     </div>

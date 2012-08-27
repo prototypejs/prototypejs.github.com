@@ -71,7 +71,7 @@ code {
 
 #header {
   padding: 1px 0px 1px 120px;
-  margin-top: 50px;
+  /*margin-top: 50px;*/
   height: 75px;
   background: url(../images/header-stripe-small.png) repeat-x;
 }
@@ -272,4 +272,45 @@ table.compatibility {
 
 table.compatibility tbody th {
   font-weight: normal;
+}
+
+
+/* HEADER LINKS */
+
+div#links {
+  margin: 0 auto;
+  padding: 16px 0 16px 120px;
+  height: 16px;
+  overflow: hidden;
+}
+
+div#links li {
+  display: inline;
+}
+
+div#links li a {
+  color: #666;
+}
+
+div#links li.selected a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+ul#internal_links {
+  float: left;
+}
+
+ul#internal_links li {
+  margin-right: 25px;
+}
+
+ul#external_links {
+  float: right;
+}
+
+ul#external_links li {
+  margin-left: 25px;
+  padding-left: 21px;
 }
