@@ -1,27 +1,84 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<title>Prototype JavaScript Framework</title>
-	<link rel="stylesheet" href="/stylesheets/reset.css" type="text/css" media="screen" charset="utf-8">
-	<link rel="stylesheet" href="/stylesheets/main.css" type="text/css" media="screen" title="no title" charset="utf-8">
-</head>
-<body>
-	<div id="wrapper">
-		<div id="header">
-			<h1><a href="/"><img src="/images/header-logo-small.png" alt="Prototype JavaScript Framework" /></a></h1>
-		</div>
-		<div id="navigation">
-		</div>
-		<div id="main">
-			<div id="content">
-				<p>Hello world again and again.</p>
-			</div>
-		</div>
-		<div id="sidebar">
-		</div>
-		<div id="footer">
-		</div>
-	</div>
-</body>
-</html>
+---
+layout: none
+title: "Prototype JavaScript Framework"
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Prototype JavaScript framework: a foundation for ambitious web applications</title>
+    
+    <link href="/stylesheets/index.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="">
+    <div id="page">
+      <div id="links_wrapper">
+        <div id="links">
+          <ul id="internal_links">
+            <li class="selected"><a href="/">Home</a></li>
+            <li><a href="http://api.prototypejs.org">Documentation</a></li>
+            <li><a href="/blog">Weblog</a></li>
+          </ul>
+        </div> <!-- #links -->
+      </div> <!-- #links_wrapper -->
+    
+      <div id="masthead">
+        <div id="masthead_content">
+          <h1 onclick="with (document.body) className = className ? '' : 'grid'" id="logo"><span>Prototype JavaScript framework</span></h1>
+          <div id="pitch">
+            <h2><span>Advanced JavaScript made simple.</span></h2>
+            <p>Prototype is an open-source JavaScript framework that smooths over the rough edges
+              of cross-browser development so you can focus on writing kick-ass web applications.</p>
+          </div>
+        </div> <!-- #masthead_content -->
+      </div> <!-- #masthead -->
+    
+      <div id="buttons_wrapper"><div id="buttons">
+        <ul>
+          <li id="download_button"><a href="/download">
+            <span class="title">Download:</span>
+            <span class="description"><b>{{ site.prototype.latest_stable_version }}</b> (June 19, 2007) &amp; Git</span>
+          </a></li>
+          <li id="learn_button"><a href="/learn">
+            <span class="title">Learn:</span>
+            <span class="description">Docs &amp; tutorials</span>
+          </a></li>
+          <li id="discuss_button"><a href="/discuss.html">
+            <span class="title">Discuss:</span>
+            <span class="description">Mailing lists &amp; IRC</span>
+          </a></li>
+          <li id="contribute_button"><a href="/contribute.html">
+            <span class="title">Contribute:</span>
+            <span class="description">Report bugs &amp; patches</span>
+          </a></li>
+        </ul>
+      </div> <!-- #buttons --></div>
+      
+      <div id="more">
+        <div class="column sidebar-column">
+          
+          <h3><a href="/blog">Weblog</a></h3>
+          
+          {% for post in site.posts limit:1 %}
+            <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+            
+            {% if post.digest %}
+            <p>{{ post.digest | markdownify }}</p>
+            {% endif %}            
+          {% endfor %}
+          
+        </div> <!-- .column -->
+        
+        <div class="column main-column">
+          <h3 class="tagline"><span>A foundation for ambitious web applications.</span></h3>
+          <p>Prototype takes the complexity out of client-side web programming. Built to solve real-world problems, it adds useful extensions to the browser scripting environment and provides elegant APIs around the clumsy interfaces of Ajax and the Document Object Model.</p>
+
+          <p>
+            Getting started: <a href="/learn/class-inheritance">Defining classes and inheritance</a> &bull; <a href="/learn/extensions">How Prototype extends the DOM</a> &bull; <a href="/learn/introduction-to-ajax">Introduction to Ajax</a> &bull; <a href="/learn/using-json">Using JSON</a> &bull; <a href="/learn/event-delegation">Event delegation</a> &bull; <a href="/learn/element-layout">Using Element.Layout</a>
+          </p>
+          
+        </div> <!-- .column -->
+      </div> <!-- #more -->
+    </div> <!-- #page -->
+    
+  </body></html>
