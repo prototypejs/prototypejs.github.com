@@ -3,6 +3,7 @@ layout: default
 title: "Blog Archive"
 body_id: "blog"
 title_header: true
+site_section: "blog"
 ---
 
 <ul class="posts-list">
