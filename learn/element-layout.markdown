@@ -5,7 +5,6 @@ title: "Element.Layout: Your digital tape measure"
 site_section: documentation
 ---
 
-
 Why is it so hard to measure element dimensions accurately? For the same reason it's hard to do _anything_ in browser JavaScript: the APIs are inconsistent and ill-suited to our needs.
 
 Prototype 1.7 introduced `Element.Layout`, an attempt to give element measurements a sane and consistent API that's suited to common tasks.
@@ -112,5 +111,5 @@ Thus the constraint that the element's parent must be visible. If it weren't, we
 
 ### Further reading
 
-For more, visit the documentation pages for [`Element.Layout`](/api/dom/Element/Layout) and [`Element#measure`](/api/dom/Element/prototype/measure/).
+For more, visit the documentation pages for [`Element.Layout`](http://api.prototypejs.org/dom/Element/Layout/) and [`Element#measure`](http://api.prototypejs.org/dom/Element/prototype/measure).
 

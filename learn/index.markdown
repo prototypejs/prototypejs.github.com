@@ -5,9 +5,15 @@ title_header: true
 site_section: documentation
 ---
 
+### API Reference
+
+The documentation for the latest stable version of Prototype will always be located at [http://api.prototypejs.org](http://api.prototypejs.org).
+
+
+### Tutorials
+
 This area contains **narrative documentation** you can use to discover Prototype.
 
-If you are looking for **reference documentation**, hop over to the [API Docs](/api).
 
 <ul class="posts-list">
   <li>
