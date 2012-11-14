@@ -11,7 +11,7 @@ Prototype's JSON implementation is largely based on the work of [Douglas Crockfo
 
 ### Encoding
 
-Prototype's JSON encoding slightly differs from Crockford's implementation as it does not extend `Object.prototype`. The following methods are available: `Number#toJSON`, String#toJSON, Array#toJSON, [`Hash#toJSON`](http://api.prototypejs.org/language/Hash/prototype/toJSON/), [`Date#toJSON`](http://api.prototypejs.org/language/Date/prototype/toJSON/) and [`Object.toJSON`](http://api.prototypejs.org/language/Object/toJSON/).
+Prototype's JSON encoding slightly differs from Crockford's implementation as it does not extend `Object.prototype`. The following methods are available: `Number#toJSON`, `String#toJSON`, `Array#toJSON`, [`Hash#toJSON`](http://api.prototypejs.org/language/Hash/prototype/toJSON/), [`Date#toJSON`](http://api.prototypejs.org/language/Date/prototype/toJSON/), and [`Object.toJSON`](http://api.prototypejs.org/language/Object/toJSON/).
 
 If you are unsure of what type the data you need to encode is, your best bet is to use `Object.toJSON` like so:
 
