@@ -10,6 +10,9 @@ title: "Prototype JavaScript Framework"
     
     <link href="/stylesheets/index.css" rel="stylesheet" type="text/css" />
   </head>
+  
+{% assign latest_version = site.prototype.latest_stable_version %}
+
   <body class="">
     <div id="page">
       <div id="links_wrapper">
@@ -37,17 +40,19 @@ title: "Prototype JavaScript Framework"
         <ul>
           <li id="download_button"><a href="/download">
             <span class="title">Download:</span>
-            <span class="description"><b>{{ site.prototype.latest_stable_version }}</b> (June 19, 2007) &amp; Git</span>
+            <span class="description">
+              <b>{{ latest_version }}</b> (June 19, 2007) &amp; Git
+            </span>
           </a></li>
           <li id="learn_button"><a href="/learn">
             <span class="title">Learn:</span>
             <span class="description">Docs &amp; tutorials</span>
           </a></li>
-          <li id="discuss_button"><a href="/discuss.html">
+          <li id="discuss_button"><a href="/discuss">
             <span class="title">Discuss:</span>
             <span class="description">Mailing lists &amp; IRC</span>
           </a></li>
-          <li id="contribute_button"><a href="/contribute.html">
+          <li id="contribute_button"><a href="/contribute">
             <span class="title">Contribute:</span>
             <span class="description">Report bugs &amp; patches</span>
           </a></li>
@@ -74,7 +79,7 @@ title: "Prototype JavaScript Framework"
           <p>Prototype takes the complexity out of client-side web programming. Built to solve real-world problems, it adds useful extensions to the browser scripting environment and provides elegant APIs around the clumsy interfaces of Ajax and the Document Object Model.</p>
 
           <p>
-            Getting started: <a href="/learn/class-inheritance">Defining classes and inheritance</a> &bull; <a href="/learn/extensions">How Prototype extends the DOM</a> &bull; <a href="/learn/introduction-to-ajax">Introduction to Ajax</a> &bull; <a href="/learn/using-json">Using JSON</a> &bull; <a href="/learn/event-delegation">Event delegation</a> &bull; <a href="/learn/element-layout">Using Element.Layout</a>
+            Getting started: <a href="/learn/class-inheritance">Defining classes and inheritance</a> &bull; <a href="/learn/extensions">How Prototype extends the DOM</a> &bull; <a href="/learn/introduction-to-ajax">Introduction to Ajax</a> &bull; <a href="/learn/json">Using JSON</a> &bull; <a href="/learn/event-delegation">Event delegation</a> &bull; <a href="/learn/element-layout">Using Element.Layout</a>
           </p>
           
         </div> <!-- .column -->
