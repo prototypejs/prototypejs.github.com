@@ -7,7 +7,7 @@ site_section: documentation
 
 Prototype's DOM extensions set it apart from other JavaScript libraries. Prototype adds many convenience methods to elements returned by the `$()` function: for instance, you can write `$('comments').addClassName('active').show()` to get the element with the ID 'comments', add a class name to it and show it (if it was previously hidden). The 'comments' element didn't have those methods in native JavaScript; how is this possible? This document reveals some clever hacks found in Prototype.
 
-### The Element.extend() method
+### The Element.extend method
 
 Most of the DOM methods are encapsulated by the `Element.Methods` object and
 then copied over to the `Element` object (for convenience). They all receive the
@@ -56,7 +56,7 @@ matching a CSS selector) and other places - in the end, chances are you will
 rarely need to explicitly call `Element.extend()` at all.
 
 
-### Adding your own methods with Element.addMethods()
+### Adding your own methods with Element.addMethods
 
 If you have some DOM methods of your own that you'd like to add to those of
 Prototype, no problem! Prototype provides a mechanism for this, too. Suppose

@@ -7,13 +7,13 @@ site_section: documentation
 
 Why is it so hard to measure element dimensions accurately? For the same reason it's hard to do _anything_ in browser JavaScript: the APIs are inconsistent and ill-suited to our needs.
 
-Prototype 1.7 introduced `Element.Layout`, an attempt to give element measurements a sane and consistent API that's suited to common tasks.
+Prototype 1.7 introduced [`Element.Layout`](http://api.prototypejs.org/dom/Element/Layout/), an attempt to give element measurements a sane and consistent API that's suited to common tasks.
 
 ### The problem
 
 There are two main ways to measure elements on a web page. One is to use the old Internet Explorer–style properties like `offsetWidth` and `clientHeight`:
 
-{% highlight js %}
+{% highlight javascript %}
 $('troz').offsetWidth;  //-> 50
 $('troz').clientHeight; //-> 100
 {% endhighlight %}
@@ -39,15 +39,15 @@ We want a system with the upsides of both approaches. That means it should:
 2. allow us to measure any aspect of an element's box;
 3. work identically no matter which browser we're using.
 
-Enter `Element.Layout`.
+Enter [`Element.Layout`](http://api.prototypejs.org/dom/Element/Layout/).
 
-`Element.Layout` is a subclass of `Hash`. Imagine a hash with predefined keys, things like `height` and `width` and `padding-bottom` and `border-left` and `top` and `left`. Imagine that all of these keys have pixel values, and that the actual measuring is done the very first time you try to read a given property.
+`Element.Layout` is a subclass of [`Hash`](http://api.prototypejs.org/language/Hash/). Imagine a hash with predefined keys, things like `height` and `width` and `padding-bottom` and `border-left` and `top` and `left`. Imagine that all of these keys have pixel values, and that the actual measuring is done the very first time you try to read a given property.
 
 Got it? Let's jump to some use cases before I explain more.
 
 #### The simple case
 
-If you want a one-off measurement of an element, use `Element#measure`:
+If you want a one-off measurement of an element, use [`Element#measure`](http://api.prototypejs.org/dom/Element/prototype/measure/):
 
 {% highlight js %}
 $('troz').measure('width'); //-> 150
@@ -66,13 +66,13 @@ These measurements are **guaranteed to be in pixels, even in Internet Explorer**
 
 If you need to measure several things at once, though, `Element#measure` is not the most efficient way to do it. Behind the scenes, elements sometimes need a bit of manipulation before they'll report accurate dimensions, so it's best to try to minimize that manipulation cost.
 
-First, use `Element#getLayout` to obtain an instance of `Element.Layout`:
+First, use [`Element#getLayout`](http://api.prototypejs.org/dom/Element/prototype/getLayout/) to obtain an instance of `Element.Layout`:
 
 {% highlight js %}
 var layout = $('troz').getLayout();
 {% endhighlight %}
 
-Now use `Element.Layout#get` to retrieve values, using the same property names you used for `Element#measure`:
+Now use [`Element.Layout#get`](http://api.prototypejs.org/dom/Element/Layout/prototype/get/) to retrieve values, using the same property names you used for `Element#measure`:
 
 {% highlight js %}
 layout.get('width');  //-> 150

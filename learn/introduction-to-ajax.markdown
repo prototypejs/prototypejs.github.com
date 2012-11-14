@@ -7,7 +7,7 @@ site_section: documentation
 
 Prototype enables you to deal with Ajax calls in a very easy and fun way that is also safe (cross-browser). Besides simple requests, this module also deals in a smart way with JavaScript code returned from a server and provides helper classes for polling.
 
-Ajax functionality is contained in the global `Ajax` object. The transport for Ajax requests is _XmlHttpRequest_, with browser differences safely abstracted from the user. Actual requests are made by creating instances of the [`Ajax.Request`](/api/ajax/request) object.
+Ajax functionality is contained in the global `Ajax` object. The transport for Ajax requests is _XmlHttpRequest_, with browser differences safely abstracted from the user. Actual requests are made by creating instances of the [`Ajax.Request`](http://api.prototypejs.org/ajax/Ajax/Request/) object.
 
 {% highlight js %}
 new Ajax.Request('/some_url', { method:'get' });
@@ -65,7 +65,7 @@ Parameters are passed in as a hash (preferred) or a string of key-value pairs se
 
 You can use parameters with both GET and POST requests. Keep in mind, however, that GET requests to your application should never cause data to be changed. Also, browsers are less likely to cache a response to a POST request, but more likely to do so with GET.
 
-One of the primary applications for the parameters property is sending the contents of a FORM with an Ajax request, and Prototype gives you a helper method for this, called [`Form.serialize`](/api/form/serialize):
+One of the primary applications for the parameters property is sending the contents of a FORM with an Ajax request, and Prototype gives you a helper method for this, called [`Form.serialize`](http://api.prototypejs.org/dom/Form/serialize/):
 
 {% highlight js %}
 new Ajax.Request('/some_url', {
@@ -116,7 +116,7 @@ Every callback matching an _xmlHttpRequest_ transport state is allowed here, wit
 
 ### Updating your page dynamically with `Ajax.Updater`
 
-Developers often want to make Ajax requests to receive HTML fragments that update parts of the document. With `Ajax.Request` with an `onComplete` callback this is fairly easy, but with [`Ajax.Updater`](/api/ajax/updater) it's even easier!
+Developers often want to make Ajax requests to receive HTML fragments that update parts of the document. With `Ajax.Request` with an `onComplete` callback this is fairly easy, but with [`Ajax.Updater`](http://api.prototypejs.org/ajax/Ajax/Updater/) it's even easier!
 
 Suppose you have this code in your HTML document:
 
@@ -155,7 +155,7 @@ HTML in the container ('products') element. Nifty.
 
 You find the `Ajax.Updater` cool, but want to run it in periodical intervals
 to repeatedly fetch content from the server? Prototype framework has that,
-too - it's called [`Ajax.PeriodicalUpdater `](/api/ajax/periodicalupdater), and basically it's running
+too - it's called [`Ajax.PeriodicalUpdater `](http://api.prototypejs.org/ajax/Ajax/PeriodicalUpdater/), and basically it's running
 `Ajax.Updater` at regular intervals.
 
 {% highlight js %}
@@ -167,12 +167,12 @@ new Ajax.PeriodicalUpdater('products', '/some_url', {
 });
 {% endhighlight %}
 
-Two new options here are `frequency` and `decay`. Frequency is the interval in seconds at which the requests are to be made. Here, it's 1 second, which means we have an Ajax request every second. The default frequency is 2 seconds. Our users might be happy because the responsiveness of the application, but our servers might be taking quite a load if enough people leave their browsers open on the page for quite some time. That's why we have *the decay option* - it is the factor by which the frequency is multiplied every time when current response body is the same as previous one. First Ajax request will then be made in 1 second, second in 2, third in 4 seconds, fourth in 8 and so on. Of course, if the server always returns different content, decay will never take effect; this factor only makes sense when your content doesn't change so rapidly and your application tends to return the same content over and over.
+Two new options here are `frequency` and `decay`. Frequency is the interval in seconds at which the requests are to be made. Here, it's 1 second, which means we have an Ajax request every second. The default frequency is 2 seconds. Our users might be happy because the responsiveness of the application, but our servers might be taking quite a load if enough people leave their browsers open on the page for quite some time. That's why we have *the decay option* — it is the factor by which the frequency is multiplied every time when current response body is the same as previous one. First Ajax request will then be made in 1 second, second in 2, third in 4 seconds, fourth in 8 and so on. Of course, if the server always returns different content, decay will never take effect; this factor only makes sense when your content doesn't change so rapidly and your application tends to return the same content over and over.
 
 Having frequency falloff can take the load off the servers considerably because the overall number of requests is reduced. You can experiment with this factor while monitoring server load, or you can turn it off completely by passing 1 (which is default) or simply omitting it.
 
 
 ### Move along
 
-Learn more about [`Ajax.Request`](/api/ajax/request), [`Ajax.Updater`](/api/ajax/updater) and [`Ajax options`](/api/ajax/options).
+Learn more about [`Ajax.Request`](http://api.prototypejs.org/ajax/Ajax/Request/), [`Ajax.Updater`](http://api.prototypejs.org/ajax/Ajax/Updater/) and [`Ajax options`](http://api.prototypejs.org/ajax/).
 
