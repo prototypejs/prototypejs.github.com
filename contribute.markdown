@@ -5,57 +5,63 @@ layout: default
 Contribute
 ==========
 
-Think you found a bug? Got some handy code you think would fit awesomely in the framework? Or do you have what it takes to optimize some important method &mdash; or even a whole module &mdash; making it more flexible, powerful or speedy? Then prove your JavaScript-fu by contributing to Prototype!
-
-We welcome any (and all!) of these:
+Prototype welcomes any (and all) of these:
 
 * bug reports;
 * failing tests proving some feature is broken in certain cases;
-* code patches;
-* enhancement requests and patches;
-* additional tests for code that you believe hasn't got enough coverage;
+* patches/pull requests;
+* enhancement requests;
+* additional tests for code that you believe hasn’t got enough coverage;
 * API documentation contributions;
-* ideas and other interesting discussions on the mailing lists or in the IRC channel.
+* ideas and other interesting discussions.
 
 <h3 id="tickets">Submitting tickets</h3>
 
-The Prototype core team uses [Lighthouse as its issue tracker](http://prototype.lighthouseapp.com/projects/8886/home). You have to [register first](http://prototype.lighthouseapp.com/users/new?to=%2Fprojects%2F8886-prototype%2Ftickets%2Fnew) to [open a new ticket](http://prototype.lighthouseapp.com/projects/8886-prototype/tickets/new), but it only takes a second (and it's free).
+The Prototype core team uses [GitHub issues](https://github.com/sstephenson/prototype/issues) to track tickets. If you don't have an account, it’s easy to sign up.
 
-Try to keep the title concise, but write your heart out in the full description box. If you need to include a snippet of JavaScript code in your text, [mark it up appropriately](http://lighthouseapp.com/help/text-formatting), like so:
+Try to keep the title concise, but write your heart out in the full description box. If you need to include a snippet of JavaScript code in your text, [mark it up appropriately](https://help.github.com/articles/github-flavored-markdown), like so:
 
     This line opens a popup every time, which scares me!
     
-    @@@ javascript
+    ```javascript
     var scary = 'BOO!'
     window.alert(scary)
-    @@@
+    ```
     
     Can Prototype be used to make this less scary? Thank you.
-
-Just don't use this feature to paste actual patches; upload them to your ticket as attachments.
+    
+If you have a patch for the issue you’re describing, instead of filing a new issue you should probably make a pull request.
 
 <h3 id="patches">Writing code</h3>
+
+Prototype is on GitHub and strongly prefers that patches arrive in the form of [pull requests](https://help.github.com/articles/using-pull-requests). We use the fork-and-pull model ([as described here](https://help.github.com/articles/using-pull-requests#fork--pull)), thus, when you want to contribute a patch, you should:
+
+  1. fork the main Prototype repository;
+  2. create a [topic branch](http://stackoverflow.com/questions/284514/what-is-a-git-topic-branch) on your fork and commit some changes to that branch;
+  3. make a pull request from that branch to the main repo’s master branch.
   
-To contribute patches and tests, in most cases you will need:
+To work on Prototype development, you’ll need:
 
-1. the latest version of Prototype (ideally using a [Git](http://git.or.cz/) client, but [tarballs are also available](http://github.com/sstephenson/prototype/tree/master));
-2. your favorite code editor;
-3. all the modern web browsers your operating system can handle (to test in, of course);
-4. A recent version of [Ruby](http://ruby-lang.org) and its Rake library. Ruby is installed by default on OS X, but Windows users will need to use the [One-Click Ruby Installer](http://rubyinstaller.rubyforge.org/wiki/wiki.pl). Rake is used to "build" the consolidated JavaScript file and to run our automated test suite across supported browsers.
-  
-**Start by cloning the project from our repository:**
+  1. the latest version of the Prototype source tree;
+  2. your favorite code editor;
+  3. all the modern web browsers your operating system can handle (to test in, of course);
+  4. a recent version of [Ruby](http://ruby-lang.org) and its Rake library. Ruby is installed by default on OS X, but Windows users will need to use the [One-Click Ruby Installer](http://rubyinstaller.org). Rake is used to “build” the consolidated JavaScript file and to run our automated test suite across supported browsers.
 
-    git clone git://github.com/sstephenson/prototype.git
-    
-This will create a new directory named `prototype`. The most important directories in there are `src/`, in which all the code resides; and `test/`, which provides a testing framework as well as all the unit tests.
+To get started, clone the project to your disk, either from the main repo or from your fork. This will create a new directory named `prototype`. The most important directories in there are `src/`, in which all the code resides; and `test/`, which provides a testing framework as well as all the unit tests.
 
-While in the root directory of the project, write
+(Prototype relies on a few submodules, but it will try to fetch those submodules on demand. Or, instead, you can run `git submodule init` and `git submodule update`.)
+
+While in the root directory of the project, run:
 
     rake dist
 
-This predefined Rake task **merges all the source files** from `src/` to a single file: `dist/prototype.js`. Unit tests use this file. To see what unit tests look like, open up any of the HTML documents found in `test/unit/` in your browser. They run automatically, so you should see a flurry of green-colored rows after a few moments.
+This predefined Rake task **merges all the source files** from `src/` to a single file: `dist/prototype.js`. Unit tests use this file.
+
+To see what unit tests look like, open up any of the HTML documents found in `test/unit/` in your browser. They run automatically, so you should see a flurry of green-colored rows after a few moments.
 
 Usually there should be *no test failures* if you are using a [supported browser](http://prototypejs.org/download).
+
+To run specific tests in an automated fashion, you can use `rake test` to run the whole suite; or you can include a `TESTS` variable to run only certain test files.
 
 To see tests fail, **try to break something on purpose.** Open `src/array.js` and find the method named `first` near the top:
 
@@ -63,19 +69,13 @@ To see tests fail, **try to break something on purpose.** Open `src/array.js` an
       return this[0];
     },
   
-Just for the fun of it, change the return line to return a string (like "foo" or "hello!") and save the file. Build the `prototype.js` file again by issuing the `rake dist` command. Then open `test/unit/array.html` in a browser. A single test with a couple of assertions [should turn red](/assets/2007/1/15/array-fail.png). Congratulations, you have just broken Prototype! ;)
+Just for the fun of it, change the return line to return a string (like "foo" or "hello!") and save the file. Then run…
 
-From here you're on your own. **Make changes to source files in `src/`, add your methods, go crazy.** When you're done, create a new ticket on Lighthouse. Don't tell us which lines to change and don't paste changed source; you should *attach* a patch (sometimes called "a diff file") to your ticket. If you're using Git, you can create a patch like this:
+    rake test TESTS=array BROWSERS=chrome
+    
+…to run _just_ the array test file in just a single browser (Chrome in this case, but you could specify `ie` or `firefox` or `safari` instead). A single test with a couple of assertions [should turn red](/assets/2007/1/15/array-fail.png). Congratulations, you have just broken Prototype! ;)
 
-    # first be sure to commit your changes locally
-    git commit -a -m "fixed a bug regarding the DOM"
-
-    # make the patch file(s)
-    git format-patch origin
-
-This will make one patch file (prefixed with numbers) for each commit that you did locally. That's fine. Upload the files to your ticket. (If you're not using Git, there are other ways to generate diffs. They vary depending on your platform. Google is your friend.)
-
-**Alternatively to all this,** if you are a GitHub user as well, you can fork our project, push your changes there and send Sam (`sstephenson`) a [pull request](http://github.com/guides/pull-requests) via the GitHub interface.
+From here you're on your own. **Make changes to source files in `src/`, add your methods, go crazy.** When you're done, create a pull request on GitHub.
 
 Some coding guidelines:
 
@@ -103,7 +103,7 @@ Finally, run the tests:
 
     rake test
 
-This will run Prototype's entire test suite (all unit tests) across all installed browsers: Safari, Firefox, IE, Opera, and Konqueror (depending of your platform, of course). The tests run, page by page, and pass their results back to the terminal.
+This will run Prototype's entire test suite (all unit tests) across all installed browsers: Safari, Firefox, IE, Opera, and Chrome (depending of your platform, of course). The tests run, page by page, and pass their results back to the terminal.
 
 If any of the tests fail, you'll need to figure out why, make the changes, and run the tests again. To avoid re-running the whole test suite, you can limit the testing task to certain browsers and/or certain groups of tests:
 
@@ -124,10 +124,14 @@ We've seen enough of these:
 * patches that aren't cross-browser: test in at least 2 browsers, Firefox and another one;
 * duplicate requests or patches: search Lighthouse to find out if someone has beat you to it.
 
-<h3 id="compress">Prototype.js doesn't compress well! Can I submit a patch to fix that?</h3>
+<h3 id="documentation">Writing documentation</h3>
 
-There is nothing wrong with our code, but with your JS compression software. You can change your local copy of the framework to your liking and compress as much as you want, but we don't support it ourselves. What we recommend is good gzip settings on your webserver; the framework is less than 30 kB gzipped.
+Prototype uses [PDoc](http://pdoc.org) for documentation. PDoc looks at specially-formatted comments in the source code and extracts narrative documentation, then builds HTML around it. This is how we generate [the official documentation](http://api.prototypejs.org), but you can use this same process to generate similar documentation on your hard drive.
 
-If gzip isn't an option for you, several people maintain unofficial compressed versions of Prototype and/or [script.aculo.us](http://script.aculo.us). Google will point you in the right direction.
+From the project root, run…
 
-We also don't accept patches that change our code simply because it generated warnings from JSLint or Firefox's strict checking mode. Code linters check for idioms and constructs that _might_ be problematic; as a result, they generate scads of false positives.
+    rake doc
+    
+…and PDoc should build documentation for all of Prototype’s classes and methods. The documentation is placed in the `doc` subfolder, so you can open `doc/index.html` to view it.
+
+This is useful if you’d like to have local documentation, or if you want to generate documentation for an older version of Prototype (just check out the tag you want, then run `rake doc`). It’s also useful if you’d like to help write documentation, since you‘re able to preview the changes you’ve made before you submit a pull request.
