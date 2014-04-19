@@ -250,13 +250,13 @@ code {
   margin-left: 20px;
 }
 
-#blog .post-content ul,
-#blog .post-content ul li {
+#blog .post-content ol,
+#blog .post-content ol li {
   list-style-type: decimal;
 }
 
-#blog .post-content ol,
-#blog .post-content ol li {
+#blog .post-content ul,
+#blog .post-content ul li {
   list-style-type: disc;
 }
   
