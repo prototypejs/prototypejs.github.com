@@ -12,6 +12,7 @@ title: "Prototype JavaScript Framework"
   </head>
   
 {% assign latest_version = site.prototype.latest_stable_version %}
+{% assign latest_stable_release_date = site.prototype.latest_stable_release_date %}
 
   <body class="">
     <div id="page">
@@ -27,7 +28,7 @@ title: "Prototype JavaScript Framework"
     
       <div id="masthead">
         <div id="masthead_content">
-          <h1 onclick="with (document.body) className = className ? '' : 'grid'" id="logo"><span>Prototype JavaScript framework</span></h1>
+          <h1 id="logo"><span>Prototype JavaScript framework</span></h1>
           <div id="pitch">
             <h2><span>Advanced JavaScript made simple.</span></h2>
             <p>Prototype is an open-source JavaScript framework that smooths over the rough edges
@@ -41,7 +42,7 @@ title: "Prototype JavaScript Framework"
           <li id="download_button"><a href="/download">
             <span class="title">Download:</span>
             <span class="description">
-              <b>{{ latest_version }}</b> (June 5, 2012) &amp; Git
+              <b>{{ latest_version }}</b> ({{ latest_stable_release_date}}) &amp; Git
             </span>
           </a></li>
           <li id="learn_button"><a href="/learn">
