@@ -1,0 +1,28 @@
+---
+layout: blog_archive
+author: Andrew Dupont
+author_url: http://andrewdupont.net/
+sections: Featured, Releases, blog
+title: "Prototype 1.7.2"
+digest: "Like clockwork — assuming you own a horrible clock — the newest bugfix release of Prototype is out."
+---
+
+Because it’s a bugfix release, there are no earth-shattering changes, but here are the main ones:
+
+* We updated to the latest version of [Sizzle](http://sizzlejs.com) for better performance and to fix a few issues we’ve seen in the wild.
+* We fixed an issue in recent versions of IE where an internal capability check was inadvertently triggering a "This page uses Java" dialog.
+* We fixed a number of small issues in DOM- and layout-related methods.
+
+For further details, you can look at [all the commits since 1.7.1](https://github.com/sstephenson/prototype/compare/1.7.1...1.7.2).
+
+Since we tagged 1.7.2 last week, we’ve landed a bunch of bug fixes that will go into the next bugfix release. Also, note that we've moved our issue tracker off of Lighthouse and [into GitHub](https://github.com/sstephenson/prototype/issues) — thanks to [Jason Westbrook](https://github.com/jwestbrook) for helping to move tickets over to the new system.
+
+Thanks to everyone who contributed bug fixes and documentation rewrites, thereby making this release possible!
+
+#### Download and participate
+* [Download Prototype 1.7.2](https://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js)
+* [View the API documentation](http://api.prototypejs.org)
+* [Check out the Prototype source code](https://github.com/sstephenson/prototype/) on GitHub
+* [Submit bug reports](https://github.com/sstephenson/prototype/issues) to GitHub
+
+
