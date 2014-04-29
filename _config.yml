@@ -1,7 +1,6 @@
 destination: ./_site
-auto:        false
 lsi:         false
-server_port: 4000
+port:        4000
 pygments:    true
 markdown:    rdiscount
 textile:     redcloth
@@ -9,9 +8,9 @@ permalink:   /:year/:month/:day/:title
 
 # Site-wide constants
 prototype:
-  latest_stable_version: "1.7.1"
-  latest_stable_release_date: "June 5, 2012"
-  latest_stable_url: "https://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"
+  latest_stable_version: "1.7.2"
+  latest_stable_release_date: "April 18, 2014"
+  latest_stable_url: "https://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js"
   latest_edge_version: false
   latest_edge_url: ""
 
