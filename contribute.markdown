@@ -57,23 +57,39 @@ While in the root directory of the project, run:
 
 This predefined Rake task **merges all the source files** from `src/` to a single file: `dist/prototype.js`. Unit tests use this file.
 
-To see what unit tests look like, open up any of the HTML documents found in `test/unit/` in your browser. They run automatically, so you should see a flurry of green-colored rows after a few moments.
+<h4 id="unit_tests">Unit Tests</h4>
 
-Usually there should be *no test failures* if you are using a [supported browser](http://prototypejs.org/download).
+To see what unit tests look like, open up the `test/unit/tests` directory and look at any of the `*.test.js` files.
 
-To run specific tests in an automated fashion, you can use `rake test` to run the whole suite; or you can include a `TESTS` variable to run only certain test files.
+To start up a server for testing, run:
 
-To see tests fail, **try to break something on purpose.** Open `src/array.js` and find the method named `first` near the top:
+    rake test:start
+    
+and open a browser window to the instructed URL, likely `http://127.0.0.1:4567/test/`. The tests will take a few moments to run, but when they're done, you _should_ see a bunch of passed tests and no failed tests — if you're using a [supported browser](http://prototypejs.org/download), that is.
+
+If you want to run only some of the files you see in `test/unit/tests`, you can put them in the URL — `http://127.0.0.1:4567/test/ajax,string` will run only the tests in `ajax.test.js` and `string.test.js`.
+
+If you want to run tests in an automated fashion, you can start up the server with `rake test:start`, then run
+
+    rake test:run
+    
+in a second terminal window. The `test:run` task should run the tests against all the browsers which Prototype supports and which are installed on your system.
+
+You can tell the runner to use only specific browsers or to run only specific tests. For instance:
+
+    rake test:run BROWSERS=firefox,chrome TESTS=ajax,string
+    
+will run the tests from `ajax.test.js` and `string.test.js` in both Firefox and Chrome and report the results back to you.
+
+To see tests fail, **try to break something on purpose.** Open `src/lang/array.js` and find the method named `first` near the top:
 
     first: function() {
       return this[0];
     },
   
-Just for the fun of it, change the return line to return a string (like "foo" or "hello!") and save the file. Then run…
+Just for the fun of it, change the return line to return a string (like "foo" or "hello!") and save the file, then run `rake dist` to build a new distributable.
 
-    rake test TESTS=array BROWSERS=chrome
-    
-…to run _just_ the array test file in just a single browser (Chrome in this case, but you could specify `ie` or `firefox` or `safari` instead). A single test with a couple of assertions [should turn red](/assets/2007/1/15/array-fail.png). Congratulations, you have just broken Prototype! ;)
+Now start the test server and open `http://127.0.0.1:4567/test/array` in a browser of your choice. You should see that the `#first` test is now failing.
 
 From here you're on your own. **Make changes to source files in `src/`, add your methods, go crazy.** When you're done, create a pull request on GitHub.
 
@@ -83,35 +99,20 @@ Some coding guidelines:
   * keep variable names nice and descriptive;
   * don't forget to pick low-hanging performance fruit in common constructs such as loops;
   * follow the conventions already laid out in the code.
+  
+We use [Mocha](http://mochajs.org) for testing along with [Proclaim](https://github.com/rowanmanning/proclaim)'s TDD-style assertions. (We add some of our own assertions for convenience; check out `test/unit/static/js/test_helpers.js` to see what's been added.)
 
 
 <h3 id="testing">The importance of testing</h3>
 
-With unit testing we ensure adding new features will not break [old ones](/assets/2007/1/15/array-assertions-light.png). We also ensure that the library behaves the same way across all supported browsers. When you're submitting a patch you really **should** submit tests, also. That way we know you mean business and that we can safely roll it into core. With rare exception, **patches won't get applied if they don't have accompanying tests**; if you write the tests yourself (instead of waiting for someone else to write them for you) you vastly increase your patch's chance of acceptance.
+With unit testing we ensure adding new features will not break old ones. We also ensure that the library behaves the same way across all supported browsers.
+
+When you're submitting a pull request, please also submit tests to cover the code you've written. With rare exception, **patches won't get applied if they don't have accompanying tests**; if you write the tests yourself (instead of waiting for someone else to write them for you) you vastly increase your patch's chance of acceptance.
 
 Patches that _introduce new features_ should have test cases that demonstrate the new functionality.
 
 Patches that _fix bugs_ should include test cases in order to document what has been fixed. For this reason, your test cases should **fail** without your patch and **pass** after it has been applied.
 
-Before you test your changes, first be sure you've got the latest version of Prototype:
-
-    git pull
-    
-Git will pull in any changes made to Prototype since you last grabbed the source. Then, run `rake dist` so that the changes you made in `src/` get built into the distributable.
-
-Finally, run the tests:
-
-    rake test
-
-This will run Prototype's entire test suite (all unit tests) across all installed browsers: Safari, Firefox, IE, Opera, and Chrome (depending of your platform, of course). The tests run, page by page, and pass their results back to the terminal.
-
-If any of the tests fail, you'll need to figure out why, make the changes, and run the tests again. To avoid re-running the whole test suite, you can limit the testing task to certain browsers and/or certain groups of tests:
-
-    rake test BROWSERS=firefox TESTS=ajax,string
-
-*Note*: Most tests can be run outside of `rake` simply by opening the corresponding HTML file in a browser. But some tests (in particular, those in `ajax.js`) rely on client-server communication. Rake faciliates these tests by spawning a local web server.
-
-The unit testing library itself bears similarity's to Ruby's `Test::Unit` and allows for a broad range of different types of assertions. Here's a [presentation about it](http://mir.aculo.us/2006/9/16/adventures-in-javascript-testing).
 
 <h3 id="mistakes">Common mistakes</h3>
 
