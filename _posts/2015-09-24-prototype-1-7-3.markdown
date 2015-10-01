@@ -1,0 +1,31 @@
+---
+layout: blog_archive
+author: Andrew Dupont
+author_url: http://andrewdupont.net/
+sections: Featured, Releases, blog
+title: "Prototype 1.7.3"
+digest: "The new bugfix release of Prototype features lots of tiny fixes and one giant change under the hood."
+---
+
+First, the bugfixes. There are too many to cover individually, but here are the most important ones:
+
+* `Element.visible` will now check both the inline style and the computed style to determine whether an element is visible.
+* `Element.getOpacity` now consistently returns a number in all browsers, whereas before it was returning a string in recent versions of IE.
+* `Element.positionedOffset` now properly accounts for margins.
+* When an element has its last event observer removed with `Element.stopObserving`, we clean up the data structure that we created to hold the observers for that element. If your web page creates and destroys lots of elements, this will prevent the page from consuming more and more memory over time.
+
+For further details, you can look at [all the commits since 1.7.2](https://github.com/sstephenson/prototype/compare/1.7.2...1.7.3).
+
+There's one other change that affects the small number of kind souls who contribute fixes to Prototype: in between 1.7.2 and now, we replaced our unit testing framework. All our tests are now using <a href="http://mochajs.org">Mocha</a> along with <a href="https://github.com/rowanmanning/proclaim">Proclaim</a> assertions (with some tweaks of our own).
+
+The major benefit is that our entire test suite can run on one page, which makes it much easier to run the test server on one machine and visit the tests from another. That, in turn, greatly simplifies testing browsers that aren't supported on the OS of your development box (IE if you're on a Mac, or Safari if you're on Windows). And, of course, mobile device testing gets easier as well.
+
+Thanks to [Jason Westbrook](https://github.com/jwestbrook) for spearheading the effort, and to everyone else who contributed feedback. And, as always, thanks to everyone who contributed the fixes that made this release possible.
+
+#### Download and participate
+
+* [Download Prototype 1.7.3](https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js)
+* [View the API documentation](http://api.prototypejs.org)
+* [Check out the Prototype source code](https://github.com/sstephenson/prototype/) on GitHub
+* [Submit bug reports](https://github.com/sstephenson/prototype/issues) to GitHub
+

@@ -39,6 +39,10 @@ The latest version of Prototype is compatible with the following browsers:
       <td>&#8805; 6.0</td>
     </tr>
     <tr>
+      <th>Microsoft Edge</th>
+      <td>(all versions)</td>
+    </tr>
+    <tr>
       <th>Apple Safari</th>
       <td>&#8805; 2.0.4</td>
     </tr>
@@ -58,6 +62,11 @@ The latest version of Prototype is compatible with the following browsers:
 #### 1.7
 
 <ul>
+  <li>
+    <a href="https://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js" onmouseup="if(urchinTracker) urchinTracker('download/prototype-1.7.2');">
+      Download Prototype 1.7.2 (April 18, 2014)
+    </a>
+  </li>
   <li>
     <a href="https://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js" onmouseup="if(urchinTracker) urchinTracker('download/prototype-1.7.1');">
       Download Prototype 1.7.1 (June 5, 2012)

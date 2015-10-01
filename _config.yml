@@ -8,9 +8,9 @@ permalink:   /:year/:month/:day/:title
 
 # Site-wide constants
 prototype:
-  latest_stable_version: "1.7.2"
-  latest_stable_release_date: "April 18, 2014"
-  latest_stable_url: "https://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js"
+  latest_stable_version: "1.7.3"
+  latest_stable_release_date: "September 22, 2015"
+  latest_stable_url: "https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"
   latest_edge_version: false
   latest_edge_url: ""
 
