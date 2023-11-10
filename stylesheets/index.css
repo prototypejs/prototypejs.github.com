@@ -93,7 +93,6 @@ div#masthead h1#logo {
 
 div#masthead div#pitch {
   position: absolute;
-  background: url(../images/header-copy.png) no-repeat 0 1px;
   top: 0;
   left: 300px;
   width: 535px;
@@ -222,17 +221,17 @@ div#more {
 
   div#more h3 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    letter-spacing: -1px;    
+    letter-spacing: -1px;
     font-weight: bold;
     color: #444;
     font-size: 18px;
     margin: 0 0 5px;
   }
-  
+
 .column {
   width: 175px;
 }
-  
+
 .wide-column {
   width: 295px;
 }
@@ -318,4 +317,3 @@ ol, ul {
   padding-left: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-

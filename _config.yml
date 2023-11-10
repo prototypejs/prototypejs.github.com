@@ -2,7 +2,7 @@ destination: ./_site
 lsi:         false
 port:        4000
 pygments:    true
-markdown:    rdiscount
+markdown:    kramdown
 textile:     redcloth
 permalink:   /:year/:month/:day/:title
 
@@ -13,7 +13,3 @@ prototype:
   latest_stable_url: "https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"
   latest_edge_version: false
   latest_edge_url: ""
-
-
-
-     
