@@ -1,7 +1,7 @@
 destination: ./_site
 lsi:         false
 port:        4000
-pygments:    true
+highlighter: rouge
 markdown:    kramdown
 textile:     redcloth
 permalink:   /:year/:month/:day/:title
